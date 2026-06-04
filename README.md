@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/lya-logo.jpg" alt="Lya Studio Coder" width="300" />
+
 # 🌌 Lya Studio Coder
 
 ### A IDE local-first para orquestração de Inteligência Artificial
