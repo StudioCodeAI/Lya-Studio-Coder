@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="assets/lya-studio-shell-1420.png" alt="Lya Studio Coder" width="100%" />
-
 # 🌌 Lya Studio Coder
 
 ### A IDE local-first para orquestração de Inteligência Artificial
@@ -46,21 +44,6 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🖥️ **Desktop Self-Contained** | Instalador `.exe` e `.msi` que **embute o runtime** — não exige Node instalado. Instala por usuário, sem privilégio de administrador. |
 
 ➡️ **Detalhe completo de cada módulo:** [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md)
-
----
-
-## 📸 A Lya em ação
-
-<div align="center">
-
-| | |
-|:---:|:---:|
-| ![Workspace](assets/lya-studio-desktop-window.png) | ![Identidade](assets/lya-studio-identity-fixed.png) |
-| **Workspace integrado** | **Orquestração & identidade** |
-| ![Ollama](assets/lya-studio-ollama-ready.png) | ![Release](assets/lya-studio-v010-release-screen.png) |
-| **Motores locais (Ollama)** | **App desktop self-contained** |
-
-</div>
 
 ---
 
