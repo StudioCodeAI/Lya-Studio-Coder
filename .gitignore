@@ -1,42 +1,59 @@
-# =====================================================================
-#  Repositório de DISTRIBUIÇÃO — NÃO contém código-fonte.
-#  Esta lista existe para GARANTIR que nenhum fonte/binário pesado/segredo
-#  seja commitado por acidente. Os instaladores são publicados via Releases,
-#  nunca no histórico git.
-# =====================================================================
+# ============================================================================
+#  BLINDAGEM DE DISTRIBUIÇÃO — Lya Studio Coder
+#  Este repositório versiona SOMENTE a vitrine pública (README, docs, canal de
+#  feedback e imagens oficiais). TODO o código-fonte, build, dados e configs
+#  ficam LOCAIS e NUNCA são enviados ao GitHub.
+#  Estratégia: whitelist — ignora tudo e libera só o que pode ir ao ar.
+#  Os instaladores .exe/.msi são distribuídos via GitHub Releases, não pelo git.
+# ============================================================================
 
-# --- Código-fonte (jamais versionar aqui) ---
+# 1) Ignora TUDO por padrão
+/*
+
+# 2) Arquivos da vitrine na raiz
+!/.gitignore
+!/README.md
+!/CHANGELOG.md
+!/LICENSE
+!/SECURITY.md
+
+# 3) Pastas da vitrine
+!/docs/
+!/.github/
+!/assets/
+
+# 4) Em .github: só templates de feedback + financiamento (não o agents/ do projeto)
+/.github/*
+!/.github/ISSUE_TEMPLATE/
+!/.github/FUNDING.yml
+
+# 5) Em assets: só as imagens oficiais da vitrine (não os originais do projeto)
+/assets/*
+!/assets/lya-logo.jpg
+!/assets/lya-brand.jpg
+!/assets/lya-core.png
+!/assets/lya-icon.png
+# screenshots da galeria — só os verificados/usados (sem caminhos com username)
+!/assets/screenshots/
+/assets/screenshots/*
+!/assets/screenshots/tela-geral.png
+!/assets/screenshots/provedores.png
+!/assets/screenshots/orquestracao.png
+!/assets/screenshots/editor.png
+!/assets/screenshots/compilador.png
+!/assets/screenshots/n8n.png
+!/assets/screenshots/skills.png
+
+# Garantias extras (redundância contra vazamento de código/segredos)
+*.env
+.env*
+.env.example
 src/
 src-tauri/
 server.ts
-*.ts
-*.tsx
-!**/.github/**
-package.json
-package-lock.json
 node_modules/
-vite.config.*
-tsconfig*.json
-
-# --- Binários / instaladores (vão para Releases, não para o git) ---
+dist/
+runtime/
+engines/
 *.exe
 *.msi
-*.dmg
-*.AppImage
-*.deb
-*.zip
-*.7z
-
-# --- Segredos e estado ---
-.env
-.env.*
-!.env.example
-*.key
-*.pem
-
-# --- Lixo de SO / editor ---
-.DS_Store
-Thumbs.db
-*.log
-.idea/
-.vscode/

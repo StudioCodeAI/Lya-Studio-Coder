@@ -49,6 +49,27 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 
 ---
 
+## 📸 A Lya por dentro
+
+<div align="center">
+
+![Visão geral da Lya Studio Coder](assets/screenshots/tela-geral.png)
+
+**O cockpit completo** — explorador de arquivos, editor de código, terminal e o chat **COSMOS**, lado a lado num só ambiente.
+
+</div>
+
+| | |
+|:---:|:---:|
+| ![Provedores](assets/screenshots/provedores.png) | ![Orquestração de agentes](assets/screenshots/orquestracao.png) |
+| **🤖 Multi-provider** — Gemini, Claude, GPT, Ollama, Groq, NVIDIA, OpenRouter e mais, com status de conexão ao vivo. | **🎛️ Orquestração** — cada agente com seu motor real (local/online) e níveis de atuação ajustáveis. |
+| ![Explorador e editor](assets/screenshots/editor.png) | ![Compilador e preview](assets/screenshots/compilador.png) |
+| **📝 Explorador + Editor** — árvore de arquivos e editor Monaco profissional. | **🏗️ Compilador & Preview** — build/lint reais, com saída ao vivo e preview da interface. |
+| ![n8n Live](assets/screenshots/n8n.png) | ![Loja de Skills](assets/screenshots/skills.png) |
+| **🔗 n8n Live** — automação e pipelines RAG gerenciados pela própria IDE. | **🛒 Loja de Skills** — importe skills de qualquer repositório Git. |
+
+---
+
 ## 📊 Mapa de Estabilidade
 
 Transparência total. Cada funcionalidade recebe uma **nota de estabilidade** baseada em testes reais (end-to-end) e tempo de maturação. **Tudo abaixo de 80% está sinalizado como `🧪 Testes Pré-lançamento`** — funciona, mas ainda está endurecendo para produção.
@@ -133,6 +154,23 @@ Este repositório **é o canal oficial** de relacionamento com quem usa a Lya. A
 - [ ] 🧩 Memória embedded (dispensar Python para o ChromaDB)
 
 Acompanhe o progresso em [Discussions → Roadmap](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions) e no [CHANGELOG](CHANGELOG.md).
+
+---
+
+## ☕ Apoie o projeto
+
+A Lya Studio Coder é construída com dedicação — e com muito **token de IA**. Se a Lya te ajuda no dia a dia, considere **pagar um café para o desenvolvedor**: sua contribuição ajuda diretamente a **comprar tokens do Claude** (que constroem e evoluem a IDE), a manter o projeto vivo e a acelerar novas funcionalidades.
+
+**Patrocínio e qualquer ajuda são muito bem-vindos** — cada café vira código. 💛
+
+<div align="center">
+
+[![Doe um café no Ko-fi](https://img.shields.io/badge/☕%20Doe%20um%20caf%C3%A9-Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/SEU-USUARIO-KOFI)
+[![Patrocinar](https://img.shields.io/badge/💖%20Patrocinar-StudioCodeAI-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/StudioCodeAI)
+
+</div>
+
+> 🌌 Obrigado por fazer parte da evolução da Lya.
 
 ---
 
