@@ -1,0 +1,46 @@
+name: "💡 Sugerir melhoria / nova função"
+description: Tem uma ideia para deixar a Lya melhor? Adoramos ouvir.
+title: "[IDEIA] "
+labels: ["melhoria", "triagem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sua sugestão pode virar item de roadmap. Capriche no contexto! 🚀
+  - type: textarea
+    id: problema
+    attributes:
+      label: Qual necessidade ou dor isso resolve?
+      placeholder: "Hoje eu preciso fazer X manualmente porque..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposta
+    attributes:
+      label: O que você gostaria que a Lya fizesse?
+      placeholder: "Seria ótimo se eu pudesse..."
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área relacionada
+      options:
+        - Chat / IA
+        - Editor / Código
+        - Memória (NeuroCORE)
+        - Orquestração de Agentes
+        - Automação (n8n / Pipeline)
+        - Loja / Skills / Contas
+        - Build / Debug / Terminal
+        - Interface / Experiência
+        - Instalação / Desktop
+        - Outro
+    validations:
+      required: true
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Já tentou alguma alternativa? (opcional)
+    validations:
+      required: false

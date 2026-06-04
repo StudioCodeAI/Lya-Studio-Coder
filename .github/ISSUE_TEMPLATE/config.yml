@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🗣️ Discussions — conversar, mostrar setup, trocar ideia
+    url: https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions
+    about: Para conversas abertas, dúvidas gerais e mostrar o que você criou com a Lya.
+  - name: 📖 Documentação & FAQ
+    url: https://github.com/StudioCodeAI/Lya-Studio-Coder/blob/main/docs/FAQ.md
+    about: Respostas rápidas para as perguntas mais comuns.
+  - name: 🔐 Reportar vulnerabilidade de segurança (privado)
+    url: https://github.com/StudioCodeAI/Lya-Studio-Coder/security/advisories/new
+    about: Não abra issue pública para falhas de segurança — use este canal privado.

@@ -1,0 +1,42 @@
+# =====================================================================
+#  Repositório de DISTRIBUIÇÃO — NÃO contém código-fonte.
+#  Esta lista existe para GARANTIR que nenhum fonte/binário pesado/segredo
+#  seja commitado por acidente. Os instaladores são publicados via Releases,
+#  nunca no histórico git.
+# =====================================================================
+
+# --- Código-fonte (jamais versionar aqui) ---
+src/
+src-tauri/
+server.ts
+*.ts
+*.tsx
+!**/.github/**
+package.json
+package-lock.json
+node_modules/
+vite.config.*
+tsconfig*.json
+
+# --- Binários / instaladores (vão para Releases, não para o git) ---
+*.exe
+*.msi
+*.dmg
+*.AppImage
+*.deb
+*.zip
+*.7z
+
+# --- Segredos e estado ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# --- Lixo de SO / editor ---
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

@@ -1,0 +1,87 @@
+name: "🐞 Relatar problema / reclamação"
+description: Algo não funcionou como esperado? Conte aqui.
+title: "[BUG] "
+labels: ["bug", "triagem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por relatar! Quanto mais detalhes, mais rápido resolvemos. 🙏
+  - type: textarea
+    id: o-que-aconteceu
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o problema de forma clara.
+      placeholder: Ao clicar em X, o app fez Y em vez de Z...
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      placeholder: |
+        1. Abri o módulo '...'
+        2. Cliquei em '...'
+        3. Vi o erro '...'
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: O que você esperava que acontecesse?
+    validations:
+      required: false
+  - type: dropdown
+    id: modulo
+    attributes:
+      label: Em qual módulo?
+      options:
+        - Chat Multi-Provider
+        - Editor de Código
+        - Explorer / Find in Files
+        - Terminal
+        - Memória (NeuroCORE)
+        - Orquestração de Agentes
+        - Compilador & Simulador
+        - Run & Debug
+        - n8n Live / Pipeline RAG (pré-lançamento)
+        - Loja (Skills/Capacidades/Contas) (pré-lançamento)
+        - Embeddings nativos (pré-lançamento)
+        - Preview ao vivo (pré-lançamento)
+        - Túnel de compartilhamento (pré-lançamento)
+        - Provedores remotos (pré-lançamento)
+        - Instalação / Desktop
+        - Outro / não sei
+    validations:
+      required: true
+  - type: input
+    id: versao
+    attributes:
+      label: Versão da Lya
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: instalador
+    attributes:
+      label: Como instalou?
+      options:
+        - .exe (NSIS)
+        - .msi
+        - Não sei
+    validations:
+      required: false
+  - type: textarea
+    id: ambiente
+    attributes:
+      label: Ambiente (opcional)
+      placeholder: "Windows 11 23H2, com/sem Python, com/sem Ollama..."
+    validations:
+      required: false
+  - type: textarea
+    id: extra
+    attributes:
+      label: Prints / logs (opcional)
+      description: Cole imagens (arraste para cá) ou trechos de log relevantes.
+    validations:
+      required: false

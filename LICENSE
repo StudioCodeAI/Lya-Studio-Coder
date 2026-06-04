@@ -1,0 +1,35 @@
+Licença de Uso — Lya Studio Coder
+Copyright (c) 2026 Luis (Arquiteto Lya). Todos os direitos reservados.
+
+ESTE É UM SOFTWARE PROPRIETÁRIO. O código-fonte NÃO é distribuído.
+Este repositório contém apenas os instaladores (via Releases), a documentação
+e o canal de comunidade.
+
+1. CONCESSÃO DE USO
+   É concedida ao usuário final uma licença pessoal, intransferível e não
+   exclusiva para instalar e usar o Lya Studio Coder ("Software") em seus
+   próprios dispositivos, de forma gratuita, para fins pessoais e de avaliação.
+
+2. RESTRIÇÕES
+   É vedado: (a) realizar engenharia reversa, descompilar ou desmontar o
+   Software, exceto na medida expressamente permitida por lei; (b) redistribuir,
+   revender, sublicenciar ou hospedar os instaladores fora deste repositório
+   oficial; (c) remover ou alterar avisos de direitos autorais; (d) usar a marca,
+   nome ou identidade visual "Lya" sem autorização por escrito.
+
+3. DADOS DO USUÁRIO
+   O Software é local-first. Os dados gerados pelo usuário permanecem na máquina
+   do usuário. As chaves de API fornecidas pelo usuário são de sua exclusiva
+   responsabilidade e não são coletadas pelos autores.
+
+4. ISENÇÃO DE GARANTIAS
+   O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIAS DE QUALQUER NATUREZA,
+   EXPRESSAS OU IMPLÍCITAS, INCLUINDO, MAS NÃO SE LIMITANDO A, GARANTIAS DE
+   COMERCIABILIDADE E ADEQUAÇÃO A UM FIM ESPECÍFICO. Módulos sinalizados como
+   "Testes Pré-lançamento" podem conter instabilidades.
+
+5. LIMITAÇÃO DE RESPONSABILIDADE
+   EM NENHUMA HIPÓTESE OS AUTORES SERÃO RESPONSÁVEIS POR QUAISQUER DANOS
+   DECORRENTES DO USO OU DA INCAPACIDADE DE USO DO SOFTWARE.
+
+O uso do Software implica a aceitação desta Licença.

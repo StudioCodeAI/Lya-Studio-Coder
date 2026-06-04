@@ -1,0 +1,23 @@
+name: "❓ Dúvida de uso"
+description: Não conseguiu fazer algo? Pergunte aqui.
+title: "[DÚVIDA] "
+labels: ["dúvida", "triagem"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Antes de perguntar, dê uma olhada no [FAQ](../../blob/main/docs/FAQ.md). 😉
+  - type: textarea
+    id: duvida
+    attributes:
+      label: Qual é a sua dúvida?
+      placeholder: "Como faço para...?"
+    validations:
+      required: true
+  - type: input
+    id: versao
+    attributes:
+      label: Versão da Lya (se souber)
+      placeholder: "1.0.0"
+    validations:
+      required: false
