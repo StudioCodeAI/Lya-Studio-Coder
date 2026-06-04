@@ -165,8 +165,7 @@ A Lya Studio Coder é construída com dedicação — e com muito **token de IA*
 
 <div align="center">
 
-[![Doe um café no Ko-fi](https://img.shields.io/badge/☕%20Doe%20um%20caf%C3%A9-Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/SEU-USUARIO-KOFI)
-[![Patrocinar](https://img.shields.io/badge/💖%20Patrocinar-StudioCodeAI-EA4AAA?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/StudioCodeAI)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/lyastudiocoder)
 
 </div>
 

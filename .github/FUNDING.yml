@@ -1,11 +1,6 @@
 # Apoie o Lya Studio Coder ☕ — cada café vira código (e tokens do Claude).
-# >>> Substitua os placeholders pelo seu usuário real e descomente a linha. <<<
-
-# Ko-fi (recomendado — aceita cartão e Pix):
-# ko_fi: SEU_USUARIO_KOFI
-
-# Buy Me a Coffee:
-# custom: ["https://www.buymeacoffee.com/SEU_USUARIO"]
+ko_fi: lyastudiocoder
+custom: ["https://ko-fi.com/lyastudiocoder"]
 
 # GitHub Sponsors (se ativar no futuro):
 # github: [StudioCodeAI]
