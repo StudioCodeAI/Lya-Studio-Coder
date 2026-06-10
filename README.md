@@ -1,29 +1,52 @@
 <div align="center">
 
-<img src="assets/lya-logo.jpg" alt="Lya Studio Coder" width="300" />
+<img src="assets/lya-logo.jpg" alt="Lya Studio Coder" width="220" />
+
+<br/>
 
 # 🌌 Lya Studio Coder
 
-### A IDE local-first para orquestração de Inteligência Artificial
+### A IDE que orquestra todas as suas IAs em um único cockpit.
 
-**Gemini · Claude · GPT · Ollama** — num único ambiente, com memória vetorial de longa duração, automação n8n, terminal nativo e editor de código profissional.
+*Claude · Gemini · GPT · Ollama — local-first, multi-agente, sem vendor lock-in.*
 
-[![Versão](https://img.shields.io/badge/vers%C3%A3o-1.0.0-7c3aed?style=for-the-badge)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
-[![Plataforma](https://img.shields.io/badge/Windows-x64-0078D6?style=for-the-badge&logo=windows&logoColor=white)](#-download)
-[![Instalador](https://img.shields.io/badge/.exe%20%2B%20.msi-self--contained-22c55e?style=for-the-badge)](#-download)
-[![Local First](https://img.shields.io/badge/100%25-local%20first-ff0055?style=for-the-badge)](#-privacidade)
+<br/>
 
-[**⬇ Download**](#-download) · [**✨ Funcionalidades**](#-funcionalidades) · [**📊 Estabilidade**](#-mapa-de-estabilidade) · [**🌍 Comunidade**](COMMUNITY.md) · [**💬 Feedback & Suporte**](#-canal-da-comunidade) · [**❓ FAQ**](COMMUNITY.md#faq-da-comunidade)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.0.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+
+<br/>
+
+[![Versão](https://img.shields.io/badge/versão-1.0.0-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
+[![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Licença](https://img.shields.io/badge/Licença-Proprietária-orange?style=flat-square)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/StudioCodeAI/Lya-Studio-Coder?style=flat-square&color=ff0055)](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues)
+[![Discussions](https://img.shields.io/github/discussions/StudioCodeAI/Lya-Studio-Coder?style=flat-square&color=7c3aed)](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions)
+
+<br/>
+
+[**⬇️ Download**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest) · [**✨ Funcionalidades**](#-funcionalidades) · [**🚀 Quick Start**](docs/QUICK_START.md) · [**📊 Estabilidade**](#-mapa-de-estabilidade) · [**💬 Comunidade**](COMMUNITY.md) · [**❓ FAQ**](COMMUNITY.md#faq-da-comunidade)
 
 </div>
 
 ---
 
-## 🎯 O que é
+## 🎯 O problema que a Lya resolve
 
-**Lya Studio Coder** é um ambiente de desenvolvimento construído para quem vive de IA. Em vez de pular entre dez abas, sites e terminais, você opera **um único cockpit**: conversa com vários modelos de IA, executa código, debug, automações, tudo num lugar só.
+Você está desenvolvendo com IA em 2026. Sua rotina provavelmente parece com isso:
 
-> 🔒 **Seus dados nunca saem do seu computador.** Sem nuvem obrigatória, sem telemetria escondida. Você traz suas próprias chaves de API e decide o que conectar.
+- 🔄 Claude em uma aba para lógica de negócio
+- 🔄 Gemini em outra para análise de dados
+- 🔄 Terminal separado para rodar o código
+- 🔄 VS Code aberto ao lado
+- 🔄 Repetindo contexto para cada IA a cada nova conversa
+
+**Lya Studio Coder existe para acabar com isso.**
+
+Um único ambiente onde **todas as suas IAs trabalham juntas**, com memória compartilhada, terminais reais, editor profissional e orquestração de múltiplos agentes em paralelo — tudo rodando **100% na sua máquina**.
+
+> 🔒 **Seus dados nunca saem do seu computador.** Sem telemetria escondida. Sem nuvem obrigatória. Você traz suas chaves e decide o que conectar.
 
 ---
 
@@ -31,21 +54,22 @@
 
 Cada módulo é uma capacidade real, testada e em uso — não maquete.
 
-| 🧩 Categoria | O que entrega |
+| 🧩 Módulo | O que entrega |
 |---|---|
-| 🤖 **Chat Multi-Provider** | Gemini, Claude, GPT e Ollama na mesma sala. Streaming cancelável, markdown + realce de sintaxe, anexos, **gravação de voz**, ferramentas reais do agente liga/desliga, histórico completo. |
-| 🧠 **NeuroCORE — Memória Vetorial** | Memória de longa duração em ChromaDB. Classifica e indexa documentos, notas e histórico em 4 coleções (episódico, semântico, procedural, identidade). Recupera contexto automaticamente. |
-| 🎛️ **Orquestração de Agentes** | Mission Control estilo kanban: cada agente roda num motor real (Local/Online/CLI), com status online/offline ao vivo. A IA executa tarefas de verdade. |
-| 📝 **Editor de Código (Monaco)** | O mesmo coração do VS Code: IntelliSense, F12 / Go to Definition, multi-cursor, minimap, find references, realce de diff do Git. **Ctrl+K** edita código com IA. |
-| 🔍 **Explorer + Find in Files** | Árvore de arquivos VS Code-like, busca por nome **e por conteúdo** (regex, case-sensitive), ícones por tipo, preview. |
-| 💻 **Terminal Integrado** | PTY nativo (node-pty) de verdade, dentro do ambiente. Rode comandos, scripts e processos sem sair da IDE. |
-| 🏗️ **Compilador & Simulador** | Build e execução **reais** com saída de terminal ao vivo via streaming. Detecta o comando certo do projeto (npm, gradle, tsc, python). |
-| 🐞 **Run & Debug** | Depuração real de **Node.js** (CDP) e **Python** (debugpy/DAP): breakpoints, step, inspeção de variáveis e call stack. |
-| 🔗 **n8n Live + Pipeline RAG** | Servidor n8n gerenciado pela IDE + editor de pipeline RAG que recupera memória, dispara o LLM com contexto e publica o resultado. |
-| 🛒 **Loja de Skills, Capacidades & Contas** | Importe skills de repositórios Git, instale capacidades de dev sob demanda e conecte contas (Claude, Gemini, OpenAI, GitHub, Drive, SMTP) com teste de conexão. |
-| 🖥️ **Desktop Self-Contained** | Instalador `.exe` e `.msi` que **embute o runtime** — não exige Node instalado. Instala por usuário, sem privilégio de administrador. |
+| 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT e Ollama na mesma sala. Streaming cancelável, markdown, anexos, **gravação de voz**, function-calling real e histórico completo. |
+| 🎛️ **COSMOS — Orquestração** | Até 4 agentes de IA em paralelo (API, CLI, local). Cada slot com motor independente, status ao vivo e contexto compartilhado. |
+| 🧠 **NeuroCORE — Memória Vetorial** | ChromaDB local. Classifica e indexa documentos, notas e histórico em 4 coleções. A IA "lembra" do seu projeto entre sessões. |
+| 📝 **Editor Monaco** | O mesmo motor do VS Code. IntelliSense, F12, multi-cursor, diff de Git, **Ctrl+K** edita código com IA inline. |
+| 🔍 **Explorer + Find in Files** | Árvore VS Code-like, busca por nome **e por conteúdo** (regex, case-sensitive), preview. |
+| 💻 **Terminal Integrado** | PTY nativo (node-pty) real. Rode npm, python, git, qualquer coisa — sem sair da IDE. |
+| 🏗️ **Build & Compilador** | Build/run reais com saída ao vivo. Detecta automaticamente o comando do projeto (npm, gradle, tsc, python). |
+| 🐞 **Run & Debug** | Depuração real de **Node.js** (CDP) e **Python** (debugpy/DAP): breakpoints, step, variáveis, call stack. |
+| 🔗 **n8n Live + Pipeline RAG** | Servidor n8n gerenciado + editor de pipeline RAG que recupera memória, dispara LLM com contexto e publica resultado. |
+| 🔒 **LSCode Keychain** | Gerenciador centralizado de chaves API. Fonte única da verdade para todos os provedores — seus segredos ficam só na sua máquina. |
+| 🛒 **Loja de Skills** | Importe skills de repositórios Git. Instale capacidades sob demanda. |
+| 🖥️ **Desktop Self-Contained** | `.exe` e `.msi` que embute o runtime. **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
 
-➡️ **Detalhe completo de cada módulo:** [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md)
+➡️ **Detalhe completo:** [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md)
 
 ---
 
@@ -55,149 +79,142 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 
 ![Visão geral da Lya Studio Coder](assets/screenshots/tela-geral.png)
 
-**O cockpit completo** — explorador de arquivos, editor de código, terminal e o chat **COSMOS**, lado a lado num só ambiente.
+**O cockpit completo** — explorador de arquivos, editor de código, terminal e chat COSMOS, lado a lado.
 
 </div>
 
 | | |
 |:---:|:---:|
-| ![Provedores](assets/screenshots/provedores.png) | ![Orquestração de agentes](assets/screenshots/orquestracao.png) |
-| **🤖 Multi-provider** — Gemini, Claude, GPT, Ollama, Groq, NVIDIA, OpenRouter e mais, com status de conexão ao vivo. | **🎛️ Orquestração** — cada agente com seu motor real (local/online/CLI), status live. |
-| ![Explorador e editor](assets/screenshots/editor.png) | ![Compilador e preview](assets/screenshots/compilador.png) |
-| **📝 Explorador + Editor** — árvore de arquivos e editor Monaco profissional. | **🏗️ Compilador & Preview** — build/lint reais, com saída ao vivo e preview da interface. |
-| ![n8n Live](assets/screenshots/n8n.png) | ![Loja de Skills](assets/screenshots/skills.png) |
-| **🔗 n8n Live** — automação e pipelines RAG gerenciados pela própria IDE. | **🛒 Loja de Skills** — importe skills de qualquer repositório Git. |
+| ![Provedores](assets/screenshots/provedores.png) | ![Orquestração](assets/screenshots/orquestracao.png) |
+| **🤖 Multi-provider** — Claude, Gemini, GPT, Ollama, Groq e mais, com status ao vivo. | **🎛️ Orquestração COSMOS** — agentes com motores independentes, status live. |
+| ![Editor](assets/screenshots/editor.png) | ![Compilador](assets/screenshots/compilador.png) |
+| **📝 Editor Monaco** — árvore de arquivos e editor profissional com IA inline. | **🏗️ Build & Preview** — build/lint reais, saída ao vivo. |
+| ![n8n](assets/screenshots/n8n.png) | ![Skills](assets/screenshots/skills.png) |
+| **🔗 n8n Live** — automação e pipelines RAG gerenciados pela IDE. | **🛒 Loja de Skills** — importe skills de qualquer repositório Git. |
 
 ---
 
 ## 📊 Mapa de Estabilidade
 
-Transparência total. Cada funcionalidade recebe uma **nota de estabilidade** baseada em testes reais (end-to-end) e tempo de maturação. **Tudo abaixo de 80% está sinalizado como `🧪 Testes Pré-lançamento`** — ajude a melhorar!
+Transparência total. Cada módulo tem nota baseada em testes reais.
 
 ### ✅ Estável — pronto para o dia a dia
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
 | Chat Multi-Provider | `92%` | 🟢 Estável |
-| Editor de Código (Monaco) | `90%` | 🟢 Estável |
-| Zoom Global da Interface | `90%` | 🟢 Estável |
+| Editor Monaco | `90%` | 🟢 Estável |
+| Zoom Global | `90%` | 🟢 Estável |
 | Explorer + Find in Files | `88%` | 🟢 Estável |
 | Terminal Integrado (PTY) | `88%` | 🟢 Estável |
 | App Desktop (.exe / .msi) | `85%` | 🟢 Estável |
-| Memória NeuroCORE (ChromaDB) | `84%` | 🟢 Estável |
+| Memória NeuroCORE | `84%` | 🟢 Estável |
 | Orquestração de Agentes | `82%` | 🟢 Estável |
-| Compilador & Simulador | `82%` | 🟢 Estável |
+| Compilador & Build | `82%` | 🟢 Estável |
 | Run & Debug (Node + Python) | `80%` | 🟢 Estável |
 
-### 🧪 Testes Pré-lançamento — use e nos ajude a melhorar
+### 🧪 Em testes — use e nos ajude a melhorar
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
 | n8n Live + Pipeline RAG | `78%` | 🧪 Pré-lançamento |
-| Loja de Skills / Capacidades / Contas | `76%` | 🧪 Pré-lançamento |
-| Embeddings Nativos (llama.cpp) | `75%` | 🧪 Pré-lançamento |
-| Preview ao Vivo (dev server) | `72%` | 🧪 Pré-lançamento |
-| Túnel de Compartilhamento (Cloudflare) | `70%` | 🧪 Pré-lançamento |
-| Config. de Provedores Remotos | `70%` | 🧪 Pré-lançamento |
+| Loja de Skills / Capacidades | `76%` | 🧪 Pré-lançamento |
+| Embeddings Nativos | `75%` | 🧪 Pré-lançamento |
+| Preview ao Vivo | `72%` | 🧪 Pré-lançamento |
+| Túnel de Compartilhamento | `70%` | 🧪 Pré-lançamento |
+| Config. Provedores Remotos | `70%` | 🧪 Pré-lançamento |
 
-> 💡 Encontrou um problema num módulo `🧪`? **É exatamente isso que esperamos** — [abra um relato](#-canal-da-comunidade) e ajude a levar a nota acima de 80%.
+> 💡 Módulo `🧪` com problema? **[Abra um relato](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose)** e ajude a levar a nota acima de 80%.
 
 ---
 
-## ⬇ Download
+## ⬇️ Download
 
-A versão mais recente fica sempre em **[Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)**.
+A versão mais recente está sempre em **[Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)**.
 
 | Instalador | Para quem | Tamanho |
 |---|---|:---:|
-| **`Lya Studio Coder_1.0.0_x64-setup.exe`** (NSIS) | Maioria dos usuários — instala por usuário, sem admin | ~47 MB |
-| **`Lya Studio Coder_1.0.0_x64.msi`** (Windows Installer) | Ambientes corporativos / implantação via política | ~47 MB |
+| **`Lya Studio Coder_1.0.0_x64-setup.exe`** | Maioria dos usuários — instala por usuário, sem admin | ~47 MB |
+| **`Lya Studio Coder_1.0.0_x64.msi`** | Ambientes corporativos / implantação via política | ~47 MB |
 
-**Requisitos mínimos:** Windows 10/11 x64. O app é self-contained (o runtime vem embutido).
+**Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
-> ✅ **Assinatura Digital:** A Lya agora é assinada com certificado A3 — sem avisos do SmartScreen!
+> ✅ **Assinatura Digital:** Assinado com certificado A3 — sem alertas do SmartScreen.
 
-📖 Guia de instalação passo a passo: [docs/INSTALACAO.md](docs/INSTALACAO.md)
+📖 Guia passo a passo: [docs/INSTALACAO.md](docs/INSTALACAO.md) · ⚡ Em 5 minutos: [docs/QUICK_START.md](docs/QUICK_START.md)
 
 ---
 
 ## 🔒 Privacidade
 
-- **Local-first por princípio.** A IDE cria a pasta `~/.coreLyaDB` no seu perfil e guarda tudo ali: banco vetorial, modelos, histórico, configurações.
-- **Suas chaves, seu controle.** As chaves de API que você informar ficam só na sua máquina. Nenhuma é enviada para nós.
-- **Sem telemetria oculta.** Os módulos que se conectam à internet (provedores de IA, túnel) são explícitos e opcionais.
-
----
-
-## 🌍 Comunidade
-
-**Participe!** A Lya é construída pela comunidade.
-
-- 💬 **[Hub Oficial da Comunidade](COMMUNITY.md)** — todas as formas de se envolver
-- 🐞 **[Reportar um bug](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new?template=bug.md)** — algo não funciona?
-- 💡 **[Sugerir uma melhoria](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions/new?category=feature-ideas)** — quer uma nova feature?
-- 🗣️ **[Participar de Discussões](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions)** — conversar com a comunidade
-- 🤝 **[Contribuir com Código](CONTRIBUTING.md)** — implementar features, corrigir bugs
-- 📚 **[Melhorar Documentação](CONTRIBUTING.md)** — typos, exemplos, clareza
-
----
-
-## 💬 Canal da Comunidade
-
-Este repositório **é o canal oficial** de relacionamento com quem usa a Lya. Aqui sua voz vira melhoria de produto:
-
-| Você quer... | Use | Link |
-|---|---|---|
-| 🐞 **Relatar um bug / reclamar de algo** | Issues → *Relatar problema* | [Abrir relato](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new?choose) |
-| 💡 **Sugerir uma melhoria / nova função** | Discussions → *Feature Ideas* | [Sugerir](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions/new?category=feature-ideas) |
-| ❓ **Tirar uma dúvida de uso** | Discussions → *Q&A* | [Perguntar](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions/new?category=q-a) |
-| 🗣️ **Conversar, mostrar seu setup, trocar ideia** | Discussions | [Participar](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions) |
-
-> 📌 **Como tratamos seu feedback:** todo relato é lido, etiquetado por área e prioridade, e respondido. Sugestões viram itens de roadmap; bugs viram correções nas próximas versões. Você é ouvido.
+- **Local-first por princípio.** Banco vetorial, modelos, histórico e configurações ficam em `~/.coreLyaDB` — só na sua máquina.
+- **Suas chaves, seu controle.** Nenhuma chave de API é enviada para nós.
+- **Sem telemetria oculta.** Módulos com conexão à internet são explícitos e opcionais.
 
 ---
 
 ## 🗺️ Roadmap
 
-- [x] ✅ Assinatura digital do instalador (remover aviso do SmartScreen)
-- [ ] 🎨 Ícone e identidade visual definitivos da Lya
-- [ ] 📈 Levar os módulos `🧪` acima de 80% de estabilidade
+- [x] ✅ v1.0.0 — Lançamento público com assinatura digital
+- [ ] 🔄 v1.1.0 — COSMOS multi-agente + melhorias de estabilidade
+- [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
-- [ ] 🌐 Provedor Ollama Cloud
-- [ ] 🧩 Memória embedded (dispensar Python para o ChromaDB)
+- [ ] 🧩 Memória embedded (sem Python + ChromaDB)
+- [ ] 🌐 Ollama Cloud provider
+- [ ] 🏪 Marketplace de Skills
 
-Acompanhe o progresso em [Discussions → Roadmap](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions) e no [CHANGELOG](CHANGELOG.md).
+Acompanhe em [Discussions → Roadmap](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions) e no [CHANGELOG](CHANGELOG.md).
+
+---
+
+## 🌍 Comunidade
+
+**A Lya é construída com e para a comunidade.**
+
+| Você quer... | Canal |
+|---|---|
+| 🐞 Reportar um bug | [Issues → Relatar problema](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose) |
+| 💡 Sugerir uma feature | [Discussions → Feature Ideas](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions/new?category=feature-ideas) |
+| ❓ Tirar uma dúvida | [Discussions → Q&A](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions/new?category=q-a) |
+| 🗣️ Conversar e trocar ideias | [Discussions](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions) |
+| 📖 Guia completo da comunidade | [COMMUNITY.md](COMMUNITY.md) |
+
+> 📌 Todo relato é lido, etiquetado e respondido. Sugestões viram roadmap. Bugs viram correções. **Você é ouvido.**
 
 ---
 
 ## ☕ Apoie o projeto
 
-A Lya Studio Coder é construída com dedicação — e com muito **token de IA**. Se a Lya te ajuda no dia a dia, considere **pagar um café para o desenvolvedor**: sua contribuição ajuda direto no desenvolvimento.
-
-**Patrocínio e qualquer ajuda são muito bem-vindos** — cada café vira código. 💛
+A Lya é construída com dedicação — e com muito token de IA. Se ela te ajuda no dia a dia, considere apoiar:
 
 <div align="center">
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/lyastudiocoder)
 
-</div>
+**Cada café vira código. 💛**
 
-> 🌌 Obrigado por fazer parte da evolução da Lya.
+</div>
 
 ---
 
 ## 📄 Licença & Distribuição
 
-O **Lya Studio Coder** é distribuído como **software proprietário e gratuito** para uso pessoal e avaliação. O código-fonte **não é aberto**. Veja [LICENSE](LICENSE).
-
-Os instaladores são publicados exclusivamente aqui, via **GitHub Releases**. Não baixe a Lya de outras fontes.
+**Lya Studio Coder** é distribuído como **software proprietário e gratuito** para uso pessoal e avaliação. O código-fonte não é aberto. Os instaladores são publicados exclusivamente via **[GitHub Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases)**. Não baixe a Lya de outras fontes. Veja [LICENSE](LICENSE).
 
 ---
 
 <div align="center">
 
-**Feito com 🌌 para quem orquestra inteligência.**
+⭐ **Gostou? Dê uma estrela — ajuda o projeto a crescer!**
 
-*Reporte bugs · Sugira melhorias · Faça parte da evolução da Lya.*
+<br/>
+
+*Feito com 🌌 para quem orquestra inteligência.*
+
+*Se você pensa, você executa. Se você executa, você indexa. Se você indexa, você evolui.*
+
+<br/>
+
+**[Studio Code AI](https://github.com/StudioCodeAI) · Ponta Grossa, Brasil 🇧🇷**
 
 </div>
