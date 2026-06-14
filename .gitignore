@@ -22,6 +22,11 @@
 !/.github/
 !/assets/
 
+# 3b) Em docs: vitrine pública, EXCETO material interno (runbooks, mockups, infra de orquestração)
+/docs/ASSINATURA-A3.md
+/docs/mockups/
+/docs/paperclip-setup/
+
 # 4) Em .github: só templates de feedback + financiamento (não o agents/ do projeto)
 /.github/*
 !/.github/ISSUE_TEMPLATE/

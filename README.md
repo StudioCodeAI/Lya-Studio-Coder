@@ -12,11 +12,11 @@
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.0.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.0.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.0.0-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Versão](https://img.shields.io/badge/versão-1.0.1-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
 [![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
@@ -109,7 +109,6 @@ Transparência total. Cada módulo tem nota baseada em testes reais.
 | Terminal Integrado (PTY) | `88%` | 🟢 Estável |
 | App Desktop (.exe / .msi) | `85%` | 🟢 Estável |
 | Memória NeuroCORE | `84%` | 🟢 Estável |
-| Orquestração de Agentes | `82%` | 🟢 Estável |
 | Compilador & Build | `82%` | 🟢 Estável |
 | Run & Debug (Node + Python) | `80%` | 🟢 Estável |
 
@@ -117,6 +116,7 @@ Transparência total. Cada módulo tem nota baseada em testes reais.
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
+| Orquestração COSMOS (multi-agente) | `62%` | 🧪 Pré-lançamento |
 | n8n Live + Pipeline RAG | `78%` | 🧪 Pré-lançamento |
 | Loja de Skills / Capacidades | `76%` | 🧪 Pré-lançamento |
 | Embeddings Nativos | `75%` | 🧪 Pré-lançamento |
@@ -134,12 +134,12 @@ A versão mais recente está sempre em **[Releases](https://github.com/StudioCod
 
 | Instalador | Para quem | Tamanho |
 |---|---|:---:|
-| **`Lya Studio Coder_1.0.0_x64-setup.exe`** | Maioria dos usuários — instala por usuário, sem admin | ~47 MB |
-| **`Lya Studio Coder_1.0.0_x64.msi`** | Ambientes corporativos / implantação via política | ~47 MB |
+| **`Lya Studio Coder_1.0.1_x64-setup.exe`** | Maioria dos usuários — instala por usuário, sem admin | ~46 MB |
+| **`Lya Studio Coder_1.0.1_x64_en-US.msi`** | Ambientes corporativos / implantação via política | ~70 MB |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
-> ✅ **Assinatura Digital:** Assinado com certificado A3 — sem alertas do SmartScreen.
+> ⚠️ **SmartScreen:** esta build de pré-lançamento **não** tem assinatura de código Authenticode, então o Windows exibe o aviso de "editor desconhecido" — clique em **Mais informações → Executar assim mesmo**. A autoria e a integridade ficam registradas na [Declaração de Propriedade](docs/DECLARACAO-PROPRIEDADE-1.0.1.md), com o **SHA-256** de cada instalador para conferência. Assinatura EV/OV (sem aviso) virá no lançamento oficial.
 
 📖 Guia passo a passo: [docs/INSTALACAO.md](docs/INSTALACAO.md) · ⚡ Em 5 minutos: [docs/QUICK_START.md](docs/QUICK_START.md)
 
@@ -155,8 +155,9 @@ A versão mais recente está sempre em **[Releases](https://github.com/StudioCod
 
 ## 🗺️ Roadmap
 
-- [x] ✅ v1.0.0 — Lançamento público com assinatura digital
-- [ ] 🔄 v1.1.0 — COSMOS multi-agente + melhorias de estabilidade
+- [x] ✅ v1.0.0 — Lançamento público da IDE
+- [x] ✅ v1.0.1 — COSMOS soberano no chat, custo por token e correções (ver [CHANGELOG](CHANGELOG.md))
+- [ ] 🔄 v1.1.0 — COSMOS multi-agente estável + assinatura de código (EV/OV)
 - [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
 - [ ] 🧩 Memória embedded (sem Python + ChromaDB)
