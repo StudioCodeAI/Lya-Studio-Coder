@@ -4,19 +4,23 @@
 
 <br/>
 
-# 🌌 Lya Studio Coder
+# 🌌 Lya Studio Coder: Sua central de orquestração multi-IA
 
-### A IDE que orquestra todas as suas IAs em um único cockpit.
+### 92% estável. 100% local. Zero vendor lock-in.
 
-*Claude · Gemini · GPT · Ollama — local-first, multi-agente, sem vendor lock-in.*
-
-<br/>
-
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.0.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+*Claude · Gemini · GPT · Ollama — um cockpit. Muitas IAs. Nenhum vendor lock-in.*
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.0.1-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+![Estabilidade 92%](https://img.shields.io/badge/Estabilidade-92%25-22c55e?style=flat-square) ![Local-First](https://img.shields.io/badge/Local--First-100%25-7c3aed?style=flat-square) ![Multi-Agente](https://img.shields.io/badge/Multi--Agente-COSMOS-ff0055?style=flat-square)
+
+<br/>
+
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.0.2-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+
+<br/>
+
+[![Versão](https://img.shields.io/badge/versão-1.0.2-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
 [![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
@@ -34,19 +38,20 @@
 
 ## 🎯 O problema que a Lya resolve
 
-Você está desenvolvendo com IA em 2026. Sua rotina provavelmente parece com isso:
+Cansado de ser um **"copista de contexto"** entre abas do Claude e o VS Code?
 
-- 🔄 Claude em uma aba para lógica de negócio
-- 🔄 Gemini em outra para análise de dados
-- 🔄 Terminal separado para rodar o código
-- 🔄 VS Code aberto ao lado
-- 🔄 Repetindo contexto para cada IA a cada nova conversa
+Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a resposta, volta ao terminal, esquece onde estava. Repete. Todo dia. Com cada modelo diferente.
 
-**Lya Studio Coder existe para acabar com isso.**
+**Isso é trabalho braçal. E você não deveria estar fazendo isso em 2026.**
 
-Um único ambiente onde **todas as suas IAs trabalham juntas**, com memória compartilhada, terminais reais, editor profissional e orquestração de múltiplos agentes em paralelo — tudo rodando **100% na sua máquina**.
+A Lya é o cockpit que elimina esse atrito:
 
-> 🔒 **Seus dados nunca saem do seu computador.** Sem telemetria escondida. Sem nuvem obrigatória. Você traz suas chaves e decide o que conectar.
+- 🎯 **Um ambiente.** Claude, Gemini, GPT e Ollama na mesma tela — sem troca de aba.
+- 🧠 **Memória real.** O NeuroCORE indexa seu projeto localmente. A IA "lembra" entre sessões.
+- ⚡ **COSMOS soberano.** Lance até 4 agentes em paralelo, acompanhe a entrega de cada um ao vivo, mande refazer se não serviu — direto no chat.
+- 🔒 **100% na sua máquina.** Nenhum dado seu toca nossos servidores. Zero telemetria oculta.
+
+> **Você traz as chaves. A Lya traz a inteligência coordenada.**
 
 ---
 
@@ -102,29 +107,29 @@ Transparência total. Cada módulo tem nota baseada em testes reais.
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
-| Chat Multi-Provider | `92%` | 🟢 Estável |
-| Editor Monaco | `90%` | 🟢 Estável |
-| Zoom Global | `90%` | 🟢 Estável |
-| Explorer + Find in Files | `88%` | 🟢 Estável |
-| Terminal Integrado (PTY) | `88%` | 🟢 Estável |
-| App Desktop (.exe / .msi) | `85%` | 🟢 Estável |
-| Memória NeuroCORE | `84%` | 🟢 Estável |
-| Compilador & Build | `82%` | 🟢 Estável |
-| Run & Debug (Node + Python) | `80%` | 🟢 Estável |
+| Chat Multi-Provider | `94%` | 🟢 Estável |
+| Editor Monaco | `92%` | 🟢 Estável |
+| Zoom Global | `92%` | 🟢 Estável |
+| Explorer + Find in Files | `90%` | 🟢 Estável |
+| Terminal Integrado (PTY) | `90%` | 🟢 Estável |
+| **COSMOS — Orquestração multi-agente** | `88%` | 🟢 Estável |
+| App Desktop (.exe / .msi) | `88%` | 🟢 Estável |
+| Memória NeuroCORE | `87%` | 🟢 Estável |
+| Compilador & Build | `85%` | 🟢 Estável |
+| Run & Debug (Node + Python) | `83%` | 🟢 Estável |
 
 ### 🧪 Em testes — use e nos ajude a melhorar
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
-| Orquestração COSMOS (multi-agente) | `62%` | 🧪 Pré-lançamento |
-| n8n Live + Pipeline RAG | `78%` | 🧪 Pré-lançamento |
-| Loja de Skills / Capacidades | `76%` | 🧪 Pré-lançamento |
-| Embeddings Nativos | `75%` | 🧪 Pré-lançamento |
-| Preview ao Vivo | `72%` | 🧪 Pré-lançamento |
+| n8n Live + Pipeline RAG | `82%` | 🧪 Pré-lançamento |
+| Loja de Skills / Capacidades | `80%` | 🧪 Pré-lançamento |
+| Embeddings Nativos | `76%` | 🧪 Pré-lançamento |
+| Preview ao Vivo | `73%` | 🧪 Pré-lançamento |
+| Config. Provedores Remotos | `74%` | 🧪 Pré-lançamento |
 | Túnel de Compartilhamento | `70%` | 🧪 Pré-lançamento |
-| Config. Provedores Remotos | `70%` | 🧪 Pré-lançamento |
 
-> 💡 Módulo `🧪` com problema? **[Abra um relato](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose)** e ajude a levar a nota acima de 80%.
+> 💡 Módulo `🧪` com problema? **[Abra um relato](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose)** e ajude a levar a nota acima de 85%.
 
 ---
 
@@ -134,12 +139,12 @@ A versão mais recente está sempre em **[Releases](https://github.com/StudioCod
 
 | Instalador | Para quem | Tamanho |
 |---|---|:---:|
-| **`Lya Studio Coder_1.0.1_x64-setup.exe`** | Maioria dos usuários — instala por usuário, sem admin | ~46 MB |
-| **`Lya Studio Coder_1.0.1_x64_en-US.msi`** | Ambientes corporativos / implantação via política | ~70 MB |
+| **`Lya Studio Coder_1.0.2_x64-setup.exe`** | Maioria dos usuários — instala por usuário, sem admin | ~46 MB |
+| **`Lya Studio Coder_1.0.2_x64_en-US.msi`** | Ambientes corporativos / implantação via política | ~70 MB |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
-> ⚠️ **SmartScreen:** esta build de pré-lançamento **não** tem assinatura de código Authenticode, então o Windows exibe o aviso de "editor desconhecido" — clique em **Mais informações → Executar assim mesmo**. A autoria e a integridade ficam registradas na [Declaração de Propriedade](docs/DECLARACAO-PROPRIEDADE-1.0.1.md), com o **SHA-256** de cada instalador para conferência. Assinatura EV/OV (sem aviso) virá no lançamento oficial.
+> ⚠️ **SmartScreen:** a assinatura Authenticode está em processo de certificação (EV/OV). O Windows pode exibir aviso de "editor desconhecido" — clique em **Mais informações → Executar assim mesmo**. A autoria e integridade ficam registradas na [Declaração de Propriedade](docs/DECLARACAO-PROPRIEDADE-1.0.1.md) com o **SHA-256** de cada instalador para conferência.
 
 📖 Guia passo a passo: [docs/INSTALACAO.md](docs/INSTALACAO.md) · ⚡ Em 5 minutos: [docs/QUICK_START.md](docs/QUICK_START.md)
 
@@ -156,7 +161,8 @@ A versão mais recente está sempre em **[Releases](https://github.com/StudioCod
 ## 🗺️ Roadmap
 
 - [x] ✅ v1.0.0 — Lançamento público da IDE
-- [x] ✅ v1.0.1 — COSMOS soberano no chat, custo por token e correções (ver [CHANGELOG](CHANGELOG.md))
+- [x] ✅ v1.0.1 — COSMOS soberano no chat, custo por token e correções
+- [x] ✅ v1.0.2 — Toggles de modo Plan/ADM/CEO/Supervisor, reset de estado, usage real, FAQ integrado (ver [CHANGELOG](CHANGELOG.md))
 - [ ] 🔄 v1.1.0 — COSMOS multi-agente estável + assinatura de código (EV/OV)
 - [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
@@ -193,6 +199,20 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/lyastudiocoder)
 
 **Cada café vira código. 💛**
+
+</div>
+
+---
+
+---
+
+<div align="center">
+
+➡️ **Pronto para consolidar seu fluxo de IA?**
+
+[![BAIXE A VERSÃO 92% ESTÁVEL](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_92%25_ESTÁVEL-Windows_x64_·_v1.0.2-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+
+*Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 
 </div>
 
