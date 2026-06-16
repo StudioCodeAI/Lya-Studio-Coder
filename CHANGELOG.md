@@ -6,6 +6,55 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.0.2] — 2026-06-15
+
+### ✨ Adicionado
+- **Toggles de modo de operação** — seletor proeminente na barra do chat (ao lado de Stream)
+  para alternar entre **Plan / ADM / CEO / Supervisor**, cada um com seu comportamento e
+  gate de autorização distinto. Slash `/modo` continua funcionando.
+- **Reset de estado** — endpoint `POST /api/system/reset-state` + botão **"Limpar todas as
+  conversas"** no histórico: limpa conversas, tarefas de missão e fila de ordens sem tocar
+  em contas ou memória do NeuroCORE.
+- **Custo real por token** — os 4 streams de LLM (Anthropic, Gemini, OpenAI-compat, Ollama)
+  emitem usage real; o HUD exibe o custo em US$ com selo **`real`** ou **`est.`** conforme
+  o provedor suportar. Contadores começam em 0 (sem baseline fictício).
+- **Auto-preços OpenRouter** — botão *"Importar do OpenRouter"* em Config → Geral → *Preços
+  de Tokens*: puxa o catálogo completo (~300 modelos) e mescla na tabela editável.
+- **FAQ integrado** — 27 perguntas e respostas em 7 categorias (accordion por grupo) direto
+  no Config → Geral, sem abrir documentação externa.
+- **LyaAtom SVG** — ícone de átomo exclusivo (3 órbitas + núcleo dourado) substituiu o Ω
+  genérico na activity bar.
+- **Activity bar colorida** — cada seção com cor distintiva (amarelo / laranja / teal / roxo /
+  âmbar); item ativo = borda esquerda no accent color da skin.
+- **Clippy + cargo-audit** na Loja de Capacidades — detecção automática das ferramentas Rust.
+- **MissionTracker ao vivo** — widget fixo acima do input enquanto uma missão roda; mostra
+  status, Stars, entregas, arquivos e tokens em tempo real; ao terminar, posta o resultado
+  consolidado como mensagem do chat. Engine-agnóstico (API, CLI, Ollama).
+- **Microsoft Store (MSIX)** — pacote `LyaStudioCoder_1.0.2.0_x64.msix` gerado e enviado
+  para certificação. Quando aprovado, instalação com trust completo (sem SmartScreen).
+
+### 🔧 Alterado
+- **COSMOS promovido a Estável (88%)** no Mapa de Estabilidade — o modo soberano (rework,
+  pausa por agente, entrega ao vivo no chat) está maduro o suficiente para uso no dia a dia.
+- **Loja 100% real** — catálogo de skills nasce vazio e é preenchido pelo registry real
+  (`/api/skills`); downloads e autores fictícios removidos.
+- **Usage real no caminho do agente** — `agentAnthropic`, `agentGemini` e `agentOpenAILike`
+  agora acumulam e repassam `usage` ao frontend; custo US$ calculado por tokens reais.
+- CEO tem gate de **autorização única** (1ª ação mutante para → 1 clique libera toda a
+  tarefa; reseta ao trocar de modo). PLAN bloqueia ferramentas mutantes no servidor. ADM = livre.
+- Sync de Skills corrigido (era `setTimeout` fake → agora `POST /api/skills/import-git` real).
+
+### 📌 Distribuição & Conhecido
+- Instaladores 1.0.2: `.exe` NSIS **~46 MB** + `.msi` **~70 MB** (runtime embutido).
+- Assinatura Authenticode em processo de regularização (certificado Code Signing ICP-Brasil
+  solicitado à AC). SmartScreen exibe aviso padrão no `.exe`/`.msi` — clique em
+  *Mais informações → Executar assim mesmo*. Integridade verificável pelo SHA-256 em
+  [Declaração de Propriedade 1.0.2](docs/DECLARACAO-PROPRIEDADE-1.0.2.md).
+- **Microsoft Store:** MSIX enviado para certificação; sem aviso SmartScreen quando distribuído
+  pela Store.
+
+---
+
 ## [1.0.1] — 2026-06-14
 
 ### ✨ Adicionado
@@ -76,5 +125,6 @@ instalador self-contained para Windows x64 (`.exe` NSIS + `.msi`).
 - Ícone ainda genérico; identidade visual definitiva no roadmap.
 - Memória requer Python + ChromaDB instalados na máquina.
 
+[1.0.2]: https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.0.2
 [1.0.1]: https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.0.1
 [1.0.0]: https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.0.0
