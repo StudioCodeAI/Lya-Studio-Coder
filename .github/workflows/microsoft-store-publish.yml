@@ -1,14 +1,18 @@
+# Gatilho manual ate a ponte de publicacao existir.
+# Para reativar: trocar 'workflow_dispatch' por 'release:\n    types: [published]'.
+#   1. App Azure AD com papel Gerente associado no Partner Center
+#   2. Secrets: AZURE_AD_TENANT_ID, SELLER_ID, AZURE_AD_APPLICATION_CLIENT_ID, AZURE_AD_APPLICATION_SECRET
+#   3. Arquivo .msix anexado como asset da release
 name: Publicar MSIX na Microsoft Store
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
 
 jobs:
   publish-to-store:
     runs-on: windows-latest
     steps:
-      - name: Checkout do repositório
+      - name: Checkout do repositorio
         uses: actions/checkout@v4
 
       - name: Baixar o arquivo MSIX da Release
@@ -18,8 +22,13 @@ jobs:
           mkdir release
           gh release download ${{ github.event.release.tag_name }} --pattern "*.msix" --dir release
 
-      - name: Setup MSStore CLI
-        uses: microsoft/microsoft-store-apppublisher@v1.2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install MSStore CLI
+        run: npm install -g @microsoft/msstore-cli
 
       - name: Autenticar e Publicar na Microsoft Store
         env:
@@ -33,10 +42,9 @@ jobs:
             Write-Error "Nenhum arquivo .msix encontrado na release."
             exit 1
           }
-          
+
           Write-Host "Configurando credenciais do Partner Center..."
           msstore reconfigure --tenantId $env:MSSTORE_TENANT_ID --sellerId $env:MSSTORE_SELLER_ID --clientId $env:MSSTORE_CLIENT_ID --clientSecret $env:MSSTORE_CLIENT_SECRET
-          
-          Write-Host "Iniciando publicação do pacote $($msixFile.Name)..."
-          # O Product ID da Lya Studio Coder
+
+          Write-Host "Iniciando publicacao do pacote $($msixFile.Name)..."
           msstore publish $msixFile.FullName --productId 9NRW0DWTW9Z8

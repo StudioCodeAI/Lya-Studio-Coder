@@ -1,13 +1,17 @@
+# Gatilho manual ate os pre-requisitos existirem.
+# Para reativar: trocar 'workflow_dispatch' por 'release:\n    types: [released]'.
+#   1. Pacote StudioCodeAI.LyaStudioCoder submetido manualmente ao winget-pkgs (1a versao)
+#   2. Secret WINGET_TOKEN = PAT classico, escopo public_repo
+#   3. Fork microsoft/winget-pkgs na conta StudioCodeAI (FEITO)
 name: Publish to winget
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
 
 jobs:
   publish:
     runs-on: windows-latest
     steps:
-      - uses: vedantmgoyal2009/winget-releaser@v2
+      - uses: vedantmgoyal9/winget-releaser@v2
         with:
           identifier: StudioCodeAI.LyaStudioCoder
           installers-regex: '\.exe$|\.msi$'
