@@ -3,7 +3,7 @@
 **Produto:** Lya Studio Coder
 **Versão:** 1.0.2
 **Identificador:** com.lya.studiocoder
-**Data do build:** 2026-06-15
+**Data do build:** 2026-06-16 (reedição 1.0.2 — ver nota abaixo)
 **Titular dos direitos:** LC REPRESENTAÇÕES LTDA — CNPJ 52.867.002/0001-86
 **Arquiteto / autor técnico:** Luis Antonio Cardozo
 
@@ -19,9 +19,15 @@ cujos hashes constam aqui.
 
 | Arquivo | Tamanho (bytes) | SHA-256 |
 |---|---|---|
-| `Lya Studio Coder_1.0.2_x64-setup.exe` (NSIS) | 48.095.264 | `2E4056705D4090695670E77EE630639BFBED958EA41CF932C36D550C943FFDA8` |
-| `Lya Studio Coder_1.0.2_x64_en-US.msi` (MSI) | 73.297.920 | `01AD394E1D5D7887976AE129595ECB6287D805667A26007AA43DFC8C87302D43` |
-| `LyaStudioCoder_1.0.2.0_x64.msix` (Microsoft Store) | — | `C27ABAC3EF4B436FA04C4C4D44486E0A98908DF1C3837466B1FD78E33C1EF5EF` |
+| `Lya Studio Coder_1.0.2_x64-setup.exe` (NSIS) | 49.309.097 | `BD405CD6D38F380C38B56C3B1EAC95E99C0F5B6DFF93AF7DE933417A5D9FB3B7` |
+| `Lya Studio Coder_1.0.2_x64_en-US.msi` (MSI) | 74.619.046 | `ABD77389B67E4192B1771E58FA8B9571B766C08FF08ACB365A7E9D95A9658655` |
+| `LyaStudioCoder_1.0.2.0_x64.msix` (Microsoft Store) | 79.675.870 | `A6798AB51624E7832BFE5CFCE6EDB4D9F226BF6DD0C67A315BDE78EBF042B409` |
+
+> **Reedição 2026-06-16:** os instaladores 1.0.2 foram reconstruídos para corrigir
+> (a) o ícone do app/tiles — agora a identidade visual real da Lya, não mais o placeholder
+> genérico — e (b) uma falha de inicialização do backend empacotado que abria a janela em
+> branco. Os hashes acima substituem os da primeira publicação de 1.0.2. Por mudarem os
+> artefatos, **este documento precisa ser assinado novamente** com o e-CNPJ.
 
 Para conferir a integridade de um instalador, recalcule o resumo e compare:
 
