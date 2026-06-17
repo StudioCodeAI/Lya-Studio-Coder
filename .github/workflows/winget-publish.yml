@@ -1,0 +1,14 @@
+name: Publish to winget
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - uses: vedantmgoyal2009/winget-releaser@v2
+        with:
+          identifier: StudioCodeAI.LyaStudioCoder
+          installers-regex: '\.exe$|\.msi$'
+          token: ${{ secrets.WINGET_TOKEN }}

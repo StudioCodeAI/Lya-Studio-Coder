@@ -27,10 +27,11 @@
 /docs/mockups/
 /docs/paperclip-setup/
 
-# 4) Em .github: só templates de feedback + financiamento (não o agents/ do projeto)
+# 4) Em .github: templates de feedback, financiamento e workflows de CI/CD
 /.github/*
 !/.github/ISSUE_TEMPLATE/
 !/.github/FUNDING.yml
+!/.github/workflows/
 
 # 5) Em assets: só as imagens oficiais da vitrine (não os originais do projeto)
 /assets/*
