@@ -1,0 +1,42 @@
+name: Publicar MSIX na Microsoft Store
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-to-store:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Baixar o arquivo MSIX da Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir release
+          gh release download ${{ github.event.release.tag_name }} --pattern "*.msix" --dir release
+
+      - name: Setup MSStore CLI
+        uses: microsoft/microsoft-store-apppublisher@v1.2
+
+      - name: Autenticar e Publicar na Microsoft Store
+        env:
+          MSSTORE_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+          MSSTORE_SELLER_ID: ${{ secrets.SELLER_ID }}
+          MSSTORE_CLIENT_ID: ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }}
+          MSSTORE_CLIENT_SECRET: ${{ secrets.AZURE_AD_APPLICATION_SECRET }}
+        run: |
+          $msixFile = Get-ChildItem -Path release -Filter *.msix | Select-Object -First 1
+          if ($null -eq $msixFile) {
+            Write-Error "Nenhum arquivo .msix encontrado na release."
+            exit 1
+          }
+          
+          Write-Host "Configurando credenciais do Partner Center..."
+          msstore reconfigure --tenantId $env:MSSTORE_TENANT_ID --sellerId $env:MSSTORE_SELLER_ID --clientId $env:MSSTORE_CLIENT_ID --clientSecret $env:MSSTORE_CLIENT_SECRET
+          
+          Write-Host "Iniciando publicação do pacote $($msixFile.Name)..."
+          # O Product ID da Lya Studio Coder
+          msstore publish $msixFile.FullName --productId 9NRW0DWTW9Z8
