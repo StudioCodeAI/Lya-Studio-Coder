@@ -116,15 +116,21 @@ Cada melhoria de engenharia é um argumento de venda — não uma linha de chang
 
 A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs single-agent para tarefas paralelas).
 
-- **COSMOS + Stars 1–3 + Star 4 (Cérebro/Memória)** — orquestrador-CEO soberano lidera workers independentes (API / CLI / local), cada um com motor, chave e ferramentas próprios. Stars 1–3 são workers genéricos; a **Star 4 é especializada em memória e grounding**.
-- **Distribuição Dinâmica por Capacidade** — o COSMOS lê as `capabilities` de cada slot e decide, no planejamento, **quantas Stars convocar e o papel de cada uma**. Tarefa trivial → resolve sozinho; frentes paralelas reais → distribui.
-- **Quadro Negro (Mission Blackboard)** — a Star 4 compila um documento compartilhado (fontes + plano) **injetado em toda Star antes de agir**. Grounding que elimina alucinação: as Stars escrevem do quadro, não do palpite.
+- **COSMOS + Stars 1–4** — orquestrador-CEO soberano lidera até 4 workers independentes (API / CLI / local), cada um com motor, chave e ferramentas próprios.
 - **4 Modos de Operação** — `PLAN` (sem mutação), `ADM` (livre), `CEO` (autorização única), `Supervisor` (gate por ação). Enforcement real no servidor.
 - **Protocolo Estruturado COSMOS↔Stars** — Stars encerram com envelope `<<LYA:OUTPUT>> {status, confidence, artifacts, errors[]}`. COSMOS lê o envelope diretamente — sem parsear prosa. Retrabalho com `errors[]` estruturados.
 - **Visibilidade Soberana** — "Olho do COSMOS" na TopBar: estado de missão, equipe e build visíveis em **todas as abas** sem chamar ferramentas. Contexto global injetado no system prompt a cada turno (`snapshotContextBlock`).
 - **`mission_rework` ilimitado** — COSMOS reprova e reexecuta qualquer Star com correção estruturada. Sem limite de rodadas.
 - **Fila cifrada com override** — ordens enfileiradas aguardam vez; `mode: "override"` fura a fila imediatamente.
 - **MCP dinâmico** — ferramentas de servidores MCP do usuário (JSON-RPC STDIO) registradas em tempo real via `tool-matrix.ts` e disponíveis nos dois paths (API e CLI).
+
+### 🔜 Em breve — próximo pré-lançamento
+
+> Já implementado e em testes internos; chega no próximo build. O diagrama de arquitetura abaixo já reflete este desenho.
+
+- **Star 4 → Cérebro & Memória** — a Star 4 deixa de ser worker genérico e vira especialista em memória e grounding (Stars 1–3 seguem genéricas).
+- **Distribuição Dinâmica por Capacidade** — o COSMOS lê as `capabilities` de cada slot e decide, no planejamento, **quantas Stars convocar e o papel de cada uma**.
+- **Quadro Negro (Mission Blackboard)** — documento compartilhado (fontes + plano) **injetado em toda Star antes de agir** — grounding que elimina alucinação.
 
 ---
 
@@ -185,14 +191,14 @@ Transparência total. Cada módulo tem nota baseada em testes reais.
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
-| **COSMOS — Orquestração multi-agente** | `95%` | 🟢 Estável |
 | Chat Multi-Provider | `94%` | 🟢 Estável |
+| **COSMOS — Orquestração multi-agente** | `93%` | 🟢 Estável |
 | Editor Monaco | `92%` | 🟢 Estável |
 | Zoom Global | `92%` | 🟢 Estável |
 | Explorer + Find in Files | `90%` | 🟢 Estável |
 | Terminal Integrado (PTY) | `90%` | 🟢 Estável |
-| Memória NeuroCORE | `89%` | 🟢 Estável |
 | App Desktop (.exe / .msi) | `88%` | 🟢 Estável |
+| Memória NeuroCORE | `87%` | 🟢 Estável |
 | Compilador & Build | `85%` | 🟢 Estável |
 | Run & Debug (Node + Python) | `83%` | 🟢 Estável |
 
