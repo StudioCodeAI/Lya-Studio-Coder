@@ -124,6 +124,34 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 
 ---
 
+## 🏗️ Arquitetura
+
+Da casca desktop ao orquestrador soberano — toda a Lya em uma visão. **Tudo roda na sua máquina**: shell Tauri (Rust) → servidor Node local → COSMOS coordenando até 4 Stars, com memória vetorial (ChromaDB) e segredos cifrados (AES-256-GCM) — sem nuvem no caminho crítico.
+
+<div align="center">
+
+![Arquitetura geral da Lya Studio Coder](assets/arquitetura-geral.png)
+
+**Visão geral** — Tauri shell · React SPA · Node/Express · módulos críticos · provedores de IA.
+
+</div>
+
+### Pipeline de Orquestração COSMOS
+
+Como uma ordem vira entrega: o COSMOS planeja, distribui dinamicamente por capacidade, as Stars 1–3 executam em paralelo e o COSMOS consolida e indexa — com a Star 4 (Cérebro/Memória) alimentando o Quadro Negro compartilhado para eliminar alucinação.
+
+<div align="center">
+
+![Pipeline de orquestração COSMOS](assets/pipeline-orquestracao.png)
+
+**Máquina de estados da Missão** — `PENDING → PLANNING → DISTRIBUTING → EXECUTING → CONSOLIDATING → INDEXING → DONE`.
+
+</div>
+
+> 📐 Fonte editável: [`docs/ARQUITETURA-LYA-STUDIO-CODER.drawio`](docs/ARQUITETURA-LYA-STUDIO-CODER.drawio) (abra no [draw.io](https://www.drawio.com/)).
+
+---
+
 ## 📸 A Lya por dentro
 
 <div align="center">
