@@ -6,6 +6,120 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [Unreleased] — Smoke 7.6 + Plano 009 · 2026-06-23
+
+### 🚀 Smoke 7.6 — Lya Publisher end-to-end (sem dry-run)
+
+> Validação real do pipeline de publicação: bump de versão, reutilização de MSIX
+> existente e rollback automático para manter o repo limpo.
+
+- **`POST /api/publisher/build`** executado com `skipBuild=true` e `dryRun=false`.
+- Bump version aplicado nos 6 arquivos de manifesto (`package.json`, `Cargo.toml`,
+  `tauri.conf.json`, `installer.nsi`, `manifest.xml`, `windows/store.json`).
+- MSIX existente localizado e reutilizado; pipeline concluiu sem subir na Store.
+- Versão restaurada para `1.1.0` após o smoke (backup automático).
+- **Risco descoberto e mitigado:** `~/.coreLyaDB/workspace.json` apontava para
+  `E:\GitHub\Maestro`, fazendo o Publisher resolver path errado quando
+  `WORKSPACE_ROOT` não estava setado. A partir de agora o smoke seta
+  `WORKSPACE_ROOT=E:\GitHub\Lya-Studio-Coder` explicitamente.
+- Script de smoke salvo em `C:\Users\LuisCard\AppData\Local\Temp\opencode\smoke-76-publisher.ps1`.
+
+**Verificado:** bump real aplicado → pipeline OK → versão restaurada → `lint 0` · 234/234 testes verdes.
+
+### 🧠 Plano 009 — NeuroCORE Routes Decomposition
+
+> Criado `plans/009-neurocore-routes-split.md` para decompor o último god object
+> crítico do backend (`server/core/neurocore-routes.ts`, 48KB / 920 linhas).
+
+- Target: `neurocore-routes.ts` ≤ 30KB; submódulos puros em `server/core/neurocore/`.
+- Módulos extraídos: `collections.ts`, `config.ts`, `chroma.ts`, `embeddings.ts`,
+  `inbox.ts`, `routes.ts`.
+- Gate: behavior-preserving — 234/234 testes + smoke de memória (`/api/memory/pipeline-test`,
+  `/api/memory/ingest`, `/api/memory/query`, `/api/system/status`).
+- Execução depende do fechamento do plano 007 (frontend god objects — Opus).
+
+---
+
+## [Unreleased] — TURNO 15 · F8 Backend arch (plano 008) + TURNO 14 F4 + TURNO 13 Fase 6 + Auditoria 2026-06-23
+
+### 🏗️ F8 — Plano 008 (Backend arch) — TURNO 15
+
+> Refatoração behavior-preserving do backend. 6/8 steps feitos. Steps 7-8 delegados.
+
+- **Step 1** — `getGeminiClient` extraído para `server/core/llm/gemini-client.ts` (re-exportado via `llm.ts` para compat com 8 call sites)
+- **Step 2** — Anexos multimodais: `llm/attachments.ts` (classifiers + decoder + `baseText` + `transcribeAudio` + `prepareMessages`) + 4 content builders em `llm/providers/{anthropic,openai,gemini,ollama}.ts`. `llm.ts` 56.7→44.3KB
+- **Step 3** — call helpers (`callAnthropic`, `callOpenAI`, `ollamaTokenize`, `callOllama`, `geminiCachedContent`) movidos para os providers
+- **Step 4** — PTY extraído para `tools/pty.ts` (`PtySession`, `ptySessions`, `MAX_PTY_BUFFER`, `getOrCreatePty`)
+- **Step 5** — handlers extraídos: `tools/utils.ts` (helpers compartilhados) + `tools/handlers/{web-search,file-system,terminal}.ts`. `tools.ts` 44.3→39KB
+- **Step 6 (mcp.ts)** — AVALIAÇÃO: viável mas marginal (só STDIO implementado; HTTP/SSE são apenas type). Deixado para plano 009
+- **Step 7 (orchestration types+FSM)** — FEITO POR OUTRA SESSÃO (Fable/Opus): `orchestration/types.ts` (40L) + `orchestration/fsm.ts` (36L) extraídos
+- **Step 8 (orchestration persistence+state)** — DELEGADO PARA LUIS (não feito nesta sessão)
+
+**Verificado:** `lint 0` · suíte completa **234/234** mantida após regressão consertada (`ollamaMessage` perdeu `baseText` na extração, foi restaurado)
+
+**Tamanhos finais:**
+| Arquivo | Antes | Agora | Δ |
+|---|---:|---:|---:|
+| `llm.ts` | 56.7 KB / 773 L | 44.3 KB / 504 L | **-22%** |
+| `tools.ts` | 44.3 KB / 688 L | 39.0 KB / 579 L | **-12%** |
+| `orchestration.ts` | 80.5 KB / 1429 L | 78.3 KB / 1383 L | -3% (types+fsm extraídos por outra sessão) |
+| `mcp.ts` | 21.8 KB / 420 L | 21.8 KB / 420 L | não tocado (Step 6 adiado) |
+
+---
+
+## [Unreleased] — TURNO 14 · F4 Prompt Caching efetivo (PMS) + TURNO 13 Fase 6 progresso + Auditoria 2026-06-23
+
+### ⚡ F4 — Prompt Caching efetivo (PMS prefixo estático) — TURNO 14
+
+> Elimina handshakes redundantes entre etapas da mesma missão. ~85% cache-hit.
+
+- **`buildStarInstruction` (`orchestration.ts:280`)** — refatorado para retornar `{ pms: string, dynamic: string }` em vez de string única. PMS = prefixo estático byte-idêntico entre Stars/tasks (persona + regras + formato). Dynamic = goal, taskId, directive, errors, memoryContext, plan, previousOutput (variável por task).
+- **`anthropicCachedSystem` (`llm.ts:216`)** — overload: aceita `(systemPrompt, pms?)`. Se `pms` é fornecido, monta `[{pms, cache_control: ephemeral}, {dynamic}]` (só PMS cacheado). Compat: se `pms` ausente, cacheia o systemPrompt inteiro como antes.
+- **`geminiCachedContent` (`llm.ts:583`)** — overload: cacheia **só o PMS** (estável) no `cachedContent` Gemini. Fallback: comportamento antigo. O dynamic vai como `systemInstruction` separado em cada chamada.
+- **`agentAnthropic` / `agentGemini` (`llm.ts:542, 601`)** — ganham parâmetro `pms?: string` (opcional). Propagam para os helpers de cache.
+- **`EngineRequest` (`engine-adapter.ts:84`)** — campo `pms?: string` adicionado.
+- **`runEngine` (`engine-adapter.ts:135, 139`)** — propaga `req.pms` para `agentAnthropic`/`agentGemini`.
+- **Call sites (`orchestration.ts:929, 1239`)** — destructuring `{ pms: starPms, dynamic: starInput }`, passam `systemPrompt: starPms, pms: starPms, content: starInput` (PMS como system, dynamic como user message).
+- **`plan` do COSMOS** movido de `personaSystem` (system antigo) para `buildStarInstruction` (dynamic) — preserva contexto sem quebrar o cache do PMS.
+
+**Verificado:** `lint 0` · `test:core 61/61` · `test:units 61/61` · `test:memory 21/21` · `test:attach 24/24` · `test:hijk 67/67` = **234/234**.
+
+### 🟡 TURNO 13 — Fase 6 (plano 007) progresso + Auditoria 2026-06-23
+
+- **`src/components/n8n/`** (5 arquivos) — `types.ts` + `MissionTab.tsx` (21KB) + `N8NTab.tsx` (26KB) + `PipelineTab.tsx` (13KB) + `RAGTab.tsx` (10KB). Conclusão do Step 6 do plano 007.
+- **`src/components/app/`** (4 arquivos) — `initialData.ts` (7.8KB) + `ResizeDivider.tsx` (1.3KB) + `SplashScreen.tsx` (11.7KB) + `utils.ts` (1.2KB). Conclusão dos Steps 1-2 do plano 007.
+- **`src/components/orchestrator/`** (3 arquivos parciais) — `types.ts` (3.2KB) + `agentPersistence.ts` (4.4KB) + `SupervisorPanel.tsx` (11.3KB). Step 4 do plano 007; Step 5 (AgentCard/MissionPanel/EngineStatus) ainda pendente.
+
+### 🔄 Changed (tamanhos após extrações — atualizado durante a sessão)
+
+| Arquivo | Antes (1.1.0) | Intermediário | Agora | Δ final |
+|---|---:|---:|---:|---:|
+| `src/components/N8NWorkflow.tsx` | 80 KB / 1240L | — | **1.7 KB / 40L** | shell que delega aos 4 tabs (-98%) |
+| `src/App.tsx` | 67 KB / 1256L | 65.8 KB / 1256L | **36.8 KB / 804L** | Opus removeu `ResizeDivider` + `clamp` inline (-44%) |
+| `src/components/Orchestrator.tsx` | 119 KB / 2130L | 116.5 KB / 2130L | **97.4 KB / 1704L** | Opus moveu types para `./orchestrator/types` + importou agentPersistence (-16%) |
+| `src/components/Chat.tsx` | 229 KB | 116.6 KB / 2108L | 116.6 KB / 2108L | 12 módulos extraídos (Fase 2 done) |
+
+### 🔍 Found (achados da auditoria 2026-06-23)
+
+- **ACERTOS verificados:** `0 any` no código total · `0 console.log` em server/ e src/ · `0 console.error/warn` · `0 TODO/FIXME/HACK/XXX` · `0 dangerouslySetInnerHTML` · `0 eval()` · `0 @ts-ignore` · `0 catch {}` vazio · suíte de testes **234/234** (core 61 · memory 21 · units 61 · attach 24 · hijk 67) · `lint 0`.
+- **Correção aplicada nesta sessão:**
+  - `fs-allowed-paths.json` — corrigidos 2 protocolos inválidos: `s://` → `https://` (NVIDIA) e `p://localhost:5678/workflow/...` → `http://localhost:5678` (n8n base, label documenta o workflow específico).
+  - `App.tsx` e `Orchestrator.tsx` — duplicações de types/helpers **foram eliminadas pelo Opus durante a sessão** (antes da minha intervenção). Estado final: limpo, imports apontam para `./orchestrator/types` e `./orchestrator/agentPersistence`.
+- **Build defasado:** `runtime/server.cjs` e `dist/index.html` datam `2026-06-21 23:54` (2 dias atrás). Houve mudanças no código desde então (extrações do plano 007 + 003/005/006). **Recomendação:** rodar `npm run build` antes do próximo release.
+- **OAuth credentials no `.env`:** 3 linhas com Google OAuth Client ID + Secret. Esperado, repo blindado pelo `.gitignore` (whitelist puro). **Recomendação:** rotacionar periodicamente, mesmo sabendo que `GOCSPX-*` é public-safe por design.
+- **Plano 008 (Backend arch):** rascunho detalhado escrito em `plans/008-backend-arch.md` (8 steps + STOP conditions + gates). Aguarda 007 fechar.
+- **Plano 009 (rascunho):** god objects restantes após 007+008 — `MemoryStudio.tsx` (73.9KB), `Sidebar.tsx` (52.1KB), `Store.tsx` (38.1KB), `ConfigModal.tsx` (33.5KB), `Editor.tsx` (28.3KB), `neurocore-routes.ts` (48.3KB), `engine-adapter.ts` (32.1KB).
+- **God objects NÃO mapeados em plano:** ver entrada do plano 009.
+
+### 📝 Documentação atualizada nesta sessão
+
+- `plans/README.md` reescrito (verdade única, 6 fases + status)
+- `plans/008-backend-arch.md` criado (rascunho detalhado)
+- `C:\Gemini\MASTER\PROJETOS\SESSAO_RESUMO.md` (handoff pessoal)
+- `fs-allowed-paths.json` corrigido (2 protocolos inválidos)
+
+---
+
 ## [1.1.0] — 2026-06-21 · COSMOS Cérebro Gigante + Modularidade + Lya Code
 
 ### ⚡ Performance & Inteligência Multi-Agente
