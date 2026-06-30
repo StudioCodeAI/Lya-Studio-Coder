@@ -29,11 +29,11 @@
 ### 4. Atualizar o Winget (MANDATÓRIO)
 > **Sempre realizar a atualização do Winget para que a versão da loja e do terminal reflitam a mais recente.**
 
-No fork `StudioCodeAI/winget-pkgs`, crie uma branch (ex: `add-StudioCodeAI.LyaStudioCoder-X.Y.Z`) e atualize/crie os 3 manifestos YAML abaixo:
+No fork `StudioCodeAI/winget-pkgs`, crie uma branch (ex: `add-StudioCodeAI.LyaStudioCoder-X.Y.Z`) e atualize/crie os 3 manifestos YAML abaixo usando **ManifestVersion: 1.12.0** (ou superior suportada, evite a 1.9.0 que é obsoleta):
 1. `manifests/s/StudioCodeAI/LyaStudioCoder/X.Y.Z/StudioCodeAI.LyaStudioCoder.yaml`
 2. `manifests/s/StudioCodeAI/LyaStudioCoder/X.Y.Z/StudioCodeAI.LyaStudioCoder.locale.en-US.yaml`
 3. `manifests/s/StudioCodeAI/LyaStudioCoder/X.Y.Z/StudioCodeAI.LyaStudioCoder.installer.yaml`
 
-Certifique-se de preencher corretamente o `InstallerSha256` gerado com os novos `.exe` e `.msi`. O `Publisher` oficial no manifesto Winget deve ser `Studio Code AI`.
+**Atenção aos metadados:** NÃO inclua URLs de `PrivacyUrl` apontando para `SECURITY.md` pois isso causa rejeição na revisão do Winget. O `Publisher` oficial no manifesto Winget deve ser `Studio Code AI`.
 
 Em seguida, abra um **Pull Request** no `microsoft/winget-pkgs` com o título `New package: StudioCodeAI.LyaStudioCoder version X.Y.Z`.
