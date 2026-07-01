@@ -6,6 +6,15 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.1.1] — i18n Hotfix · 2026-06-30
+
+### 🌐 Internacionalização (i18n) - Fase 1
+- **Adicionado:** Suporte nativo a idiomas com motor `i18next`.
+- **Modificado:** Tradução completa do "Painel de Configurações" e interface do "Chat Principal" para Inglês e Espanhol.
+- **Corrigido:** Seletor visual de idioma agora reflete as alterações nos textos da aplicação.
+
+---
+
 ## [Unreleased] — Smoke 7.6 + Plano 009 · 2026-06-23
 
 ### 🚀 Smoke 7.6 — Lya Publisher end-to-end (sem dry-run)
