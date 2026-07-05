@@ -6,6 +6,62 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.1.2] — COSMOS Dynamic Distribution + i18n Trilíngue + Quick-Launch CLIs · 2026-07-05
+
+> Release que leva ao público tudo que estava em pré-lançamento: a nova
+> arquitetura de distribuição dinâmica do COSMOS, a Star 4 como Cérebro &
+> Memória, o Quadro Negro compartilhado e a interface trilíngue (PT/EN/ES).
+> Gates do build: `lint 0` · **173/173 testes** (core 66 · attach 24 · units 83).
+
+### 🎛️ COSMOS — Distribuição Dinâmica (sai do pré-lançamento)
+- **Star 4 → Cérebro & Memória:** deixa de ser worker genérico e vira especialista
+  em grounding — compila fontes antes das Stars 1–3 agirem (`STAR4_PREFLIGHT`) e
+  arquiva o resultado no ChromaDB ao final (`STAR4_ARCHIVING`).
+- **Distribuição por capacidade:** o COSMOS lê as `capabilities` de cada slot e
+  decide no planejamento quantas Stars convocar e o papel de cada uma.
+- **Quadro Negro (Mission Blackboard):** documento compartilhado (fontes + plano)
+  injetado em toda Star antes de agir — grounding que elimina alucinação.
+- **Contexto encadeado de fases:** cada Star recebe a saída consolidada das fases
+  anteriores (`previousOutput`) — missões multi-fase sem perda de contexto.
+- **Auto-memória por missão:** toda missão `DONE` indexa resumo em `conversations`
+  (`type: mission`) no ChromaDB — o COSMOS lembra do que já entregou.
+
+### 🌐 Internacionalização (i18n) — Fase 2: interface trilíngue PT/EN/ES
+- **TopBar + Sidebar completas** (Rounds 1–2): menus, views, tooltips, Olho do
+  COSMOS, explorer, busca em arquivos, integrações, provedores, painel CLI,
+  modal Abrir Pasta/Novo Projeto.
+- **Chrome geral** (Round 3): SplashScreen (manifesto + slogans), ErrorBoundary,
+  MissionTracker (status ao vivo, contadores, resultado consolidado).
+- **ConfigModal 100%** (Round 4 parcial): chaveiro, modelos, RAG, console de
+  handshake — ~60 chaves novas.
+
+### ⚡ Quick-Launch de CLIs na TopBar
+- CLIs instaladas (Claude Code, opencode, AGY, LyaCode, MiniMax, custom) viram
+  ícones de 1 clique no topo — com o **glifo da marca real** de cada CLI.
+- **Claude Code abre ao lado do editor** (layout `terminal-right`), padrão da
+  extensão oficial; demais CLIs abrem no terminal integrado.
+- **Super CLI:** menu com todos os agentes (busca + lista, offline atenuado).
+
+### 🧠 Memória — ChromaDB multi-coleções
+- 4 coleções de projeto (`decisions`/`patterns`/`bugs`/`conversations`) + recall
+  ponderado por coleção + filtro por `type` no query + 21 testes dedicados.
+
+### 🏗️ Arquitetura interna (behavior-preserving)
+- Frontend: `App.tsx` 67→29KB · `N8NWorkflow.tsx` 80→1.7KB (submódulos extraídos).
+- Backend: `llm.ts` decomposto em `llm/providers/*` + `llm/attachments.ts`;
+  `tools.ts` em `tools/handlers/*` + `tools/pty.ts`; FSM da orquestração em
+  `orchestration/{types,fsm}.ts`.
+
+### 🔧 Correções e decisões
+- **Gemini CLI descontinuada pelo Google** — Gemini agora roda exclusivamente
+  via API (Chaveiro). Slot `cli` do Gemini não é mais recomendado.
+- **Authenticode/ICP-Brasil cancelado como pré-requisito:** distribuição oficial
+  = GitHub Releases + Microsoft Store (MSIX assinado pela Microsoft na certificação).
+- MSIX self-contained (node.exe + cli.mjs embutidos) — fix da certificação da Store.
+- `keyFor` async → `resolveApiKeyForProvider` (keychain como fonte única em missões).
+
+---
+
 ## [1.1.1] — i18n Hotfix · 2026-06-30
 
 ### 🌐 Internacionalização (i18n) - Fase 1
@@ -15,7 +71,7 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
-## [Unreleased] — Smoke 7.6 + Plano 009 · 2026-06-23
+## [1.1.2 · detalhe] — Smoke 7.6 + Plano 009 · 2026-06-23
 
 ### 🚀 Smoke 7.6 — Lya Publisher end-to-end (sem dry-run)
 
@@ -49,7 +105,7 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
-## [Unreleased] — TURNO 15 · F8 Backend arch (plano 008) + TURNO 14 F4 + TURNO 13 Fase 6 + Auditoria 2026-06-23
+## [1.1.2 · detalhe] — TURNO 15 · F8 Backend arch (plano 008) + TURNO 14 F4 + TURNO 13 Fase 6 + Auditoria 2026-06-23
 
 ### 🏗️ F8 — Plano 008 (Backend arch) — TURNO 15
 

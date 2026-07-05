@@ -1,7 +1,7 @@
-# Lya Studio Coder
+# Lya Studio Coder — Guia do Desenvolvedor
 
-**IDE local-first para orquestração de IA.**  
-Gemini, Claude, GPT e Ollama num único ambiente — com memória vetorial, automação n8n e terminal integrado.
+**IDE local-first para orquestração de IA.** `v1.1.2`  
+Claude, Gemini, GPT e Ollama num único ambiente — com orquestração multi-agente (COSMOS + Stars), memória vetorial, automação n8n, terminal integrado e interface trilíngue (PT/EN/ES).
 
 > 🚨 **Atenção:** Veja as [Regras de Lançamento e Winget](RELEASE_PROCESS.md) antes de criar uma nova versão.
 
@@ -69,10 +69,14 @@ Detecta seu ambiente, instala dependências, cria o `.env` com as chaves que voc
 ### 3. Inicie
 
 ```bash
-npm run dev
+npx tsx server.ts
 ```
 
 Abra: [http://localhost:3000](http://localhost:3000)
+
+> **Por que não `npm run dev`?** O `tsx watch` reinicia o processo no HMR e derruba
+> sessões PTY abertas, causando crash no terminal integrado. `npx tsx server.ts`
+> (sem watch) é o caminho estável.
 
 ---
 
@@ -160,11 +164,20 @@ O modelo nativo (GGUF ~24 MB) é baixado para `~/.coreLyaDB/models/embeddings`. 
 ## Comandos
 
 ```bash
-npm run setup    # setup interativo (primeira vez)
-npm run dev      # desenvolvimento (porta 3000)
-npm run build    # build de produção
-npm run start    # inicia build de produção
-npm run lint     # verifica tipos TypeScript
+npm run setup           # setup interativo (primeira vez)
+npx tsx server.ts       # desenvolvimento (porta 3000) — caminho estável, sem watch
+npm run build           # build de produção (vite + esbuild → runtime/server.cjs)
+npm run start           # inicia build de produção
+npm run lint            # verifica tipos TypeScript (obrigatório após cada mudança)
+
+# Testes (gate de release: todos verdes)
+npm run test:core       # 66 testes — lógica da orquestração COSMOS
+npm run test:attach     # 24 testes — anexos multimodais
+npm run test:units      # 83 testes — módulos core
+
+# Utilitários
+npm run ping            # verifica engines online
+npm run try             # smoke de orquestração local
 ```
 
 ---
@@ -175,10 +188,13 @@ Requer [Rust](https://rustup.rs/) instalado.
 
 ```bash
 npm run build
-npm run tauri build
+npx tauri build
 ```
 
-O instalador `.exe` é gerado em `src-tauri/target/release/bundle/`.
+Os instaladores `.exe` (NSIS) e `.msi` (WiX) são gerados em
+`src-tauri/target/release/bundle/`. O pacote `.msix` para a Microsoft Store é
+gerado por `scripts/build-msix.ps1` (self-contained: embute `node.exe` + runtime)
+ou pelo **Lya Publisher** direto na IDE.
 
 ---
 
