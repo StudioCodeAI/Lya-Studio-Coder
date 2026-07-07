@@ -75,7 +75,7 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🔒 **LSCode Keychain** | Gerenciador centralizado de chaves API. Fonte única da verdade para todos os provedores — seus segredos ficam só na sua máquina. |
 | 🛒 **Loja de Skills** | Importe skills de repositórios Git. Instale capacidades sob demanda. |
 | 🖥️ **Desktop Self-Contained** | `.exe` e `.msi` que embute o runtime. **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
-| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE. Build Tauri + MSIX + upload SAS + Partner Center API em um clique. Histórico de submissões, screenshots drag-and-drop, SSE ao vivo. |
+| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE. Build Tauri + MSIX + upload SAS + Partner Center API em um clique. Histórico de submissões, screenshots drag-and-drop, SSE ao vivo. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
 | 🌍 **Interface Trilíngue** | Português, Inglês e Espanhol nativos via `i18next`. TopBar, Sidebar, Splash, Missões e Configurações traduzidos — troque de idioma sem reiniciar. |
 | ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. Claude Code abre ao lado do editor, como na extensão oficial. |
 

@@ -100,6 +100,13 @@ O mesmo motor do VS Code, integrado.
 - Probe genérico OpenAI-compat (NVIDIA NIM, Groq, DeepSeek, Together, OpenRouter).
 - Lista os motores liberados na API e testa a conexão.
 
+## 🚀 Lya Publisher (Microsoft Store) — `82%` 🧪
+
+- Publica seu app na **Microsoft Store** sem sair da IDE: bump de versão → build Tauri → MSIX → upload (SAS) → submissão via Partner Center API.
+- Dashboard com pipeline em 1 clique, dry-run, histórico de submissões, screenshots drag-and-drop e log ao vivo (SSE).
+- Credenciais (Entra ID) guardadas cifradas — AES-256-GCM — em `~/.coreLyaDB/accounts.json`.
+- 📘 **Configuração completa (manual ou delegada à IA):** [LYA-PUBLISHER-SETUP.md](LYA-PUBLISHER-SETUP.md)
+
 ---
 
 📊 Resumo no [Mapa de Estabilidade](../README.md#-mapa-de-estabilidade).
