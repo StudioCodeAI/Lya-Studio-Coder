@@ -73,7 +73,7 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🐞 **Run & Debug** | Depuração real de **Node.js** (CDP) e **Python** (debugpy/DAP): breakpoints, step, variáveis, call stack. |
 | 🔗 **n8n Live + Pipeline RAG** | Servidor n8n gerenciado + editor de pipeline RAG que recupera memória, dispara LLM com contexto e publica resultado. |
 | 🔒 **LSCode Keychain** | Gerenciador centralizado de chaves API. Fonte única da verdade para todos os provedores — seus segredos ficam só na sua máquina. |
-| 🛒 **Loja de Skills** | Catálogo de skills importáveis de repositórios Git *(pré-lançamento — ver Mapa de Estabilidade)*. Capacidades de dev reais instaláveis sob demanda. |
+| 🛒 **Loja de Skills** | Importe skills de qualquer repositório Git — o conteúdo real vai pra memória vetorial (ChromaDB), e o COSMOS/Stars já acham e usam via busca semântica. Capacidades de dev reais instaláveis sob demanda. |
 | 🖥️ **Desktop Self-Contained** | `.exe` e `.msi` que embute o runtime. **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
 | 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE. Build Tauri + MSIX + upload SAS + Partner Center API em um clique. Histórico de submissões, screenshots drag-and-drop, SSE ao vivo. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
 | 🌍 **Interface 100% Trilíngue** | Português, Inglês e Espanhol nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. Detecta o idioma do sistema no 1º uso; troque a qualquer momento sem reiniciar. |
@@ -223,7 +223,7 @@ Transparência total. Cada módulo tem nota baseada em testes reais.
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
 | n8n Live + Pipeline RAG | `82%` | 🧪 Pré-lançamento |
-| Loja de Skills / Capacidades | `70%` | 🧪 Pré-lançamento — import via Git ainda não conecta ao motor de execução das Stars |
+| Loja de Skills / Capacidades | `88%` | 🧪 Pré-lançamento |
 | Embeddings Nativos | `76%` | 🧪 Pré-lançamento |
 | Config. Provedores Remotos | `74%` | 🧪 Pré-lançamento |
 | Preview ao Vivo | `73%` | 🧪 Pré-lançamento |
