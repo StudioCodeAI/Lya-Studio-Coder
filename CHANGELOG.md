@@ -6,6 +6,31 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.1.3] — i18n 100% + UX do Chat + Fix Crítico do Publisher · 2026-07-09
+
+> Fecha o ciclo de internacionalização iniciado na v1.1.2 (agora **100% da IDE**
+> traduzida, 0 texto hardcoded) e resolve inconsistências de versão/UX
+> encontradas em uso real. Gates do build: `lint 0` (com o novo `version-audit`)
+> · **173/173 testes** (core 66 · attach 24 · units 83).
+
+### 🌍 Internacionalização — 100% concluída (Rounds R8+R9)
+- Últimos painéis migrados: Publisher, Configurações, Infra, MCP, SkillEditor, Contas, HardwareMonitor.
+- Erros de `/api/orchestration/*` e `/api/supervisor/*` (22 pontos) agora devolvem `{error, code, params}` — o frontend traduz pelo código via `i18n.exists()`, com fallback seguro pro texto do servidor.
+- `i18n-audit`: **1621 chaves em paridade** × 3 idiomas, 0 warnings de hardcode.
+
+### 🖥️ Chat — mais fácil de diferenciar quem fala
+- Mensagens do usuário ganharam uma caixa sutil tingida na cor de destaque (padrão Antigravity); mensagens da IA seguem limpas.
+- Cada mensagem da IA mostra o **nome do modelo** (maior, sem repetir "COSMOS" — já sabido pelo cabeçalho do chat).
+- Novo campo **"Usuário"** em Orquestração → Perfil (contraparte de "Nome da IA"): vazio = "Arquiteto" (padrão); pode ser personalizado.
+
+### 🐛 Correções
+- **Lya Publisher:** o botão "Publicar na Store" podia pegar o `.msix` errado quando havia mais de um pacote na pasta de build (escolhia por ordem alfabética, não por data) — agora reusa a mesma lógica "mais recente" do Build.
+- **Fonte única de versão:** `splash`/`sidebar`/notas de versão mostravam números diferentes entre si (bug antigo, não coberto pelo bump automático). Nova fonte única `src/lib/version.ts` + guard `version-audit.mjs` no lint, que trava o build se alguma fonte de versão ficar dessincronizada.
+- **TopBar:** ícone duplicado entre Claude Code e OpenClaude (CLI não-relacionada à Anthropic, glifo copiado por engano) corrigido; CLIs customizadas (Azure CLI, Copilot CLI) ganharam ícone de marca real em vez do genérico.
+- Notas de Versão in-app e FAQ/Manual atualizados (estavam travados desde a v1.1.0).
+
+---
+
 ## [1.1.2] — COSMOS Dynamic Distribution + i18n Trilíngue + Quick-Launch CLIs · 2026-07-05
 
 > Release que leva ao público tudo que estava em pré-lançamento: a nova
