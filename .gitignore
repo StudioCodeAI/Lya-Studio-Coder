@@ -26,6 +26,9 @@
 /docs/ASSINATURA-A3.md
 /docs/mockups/
 /docs/paperclip-setup/
+# Specs internas, avaliações de arquitetura, benchmarks e planos de sessão —
+# NUNCA públicas. Ver /docs/docs-sigilosos/README.md para as regras completas.
+/docs/docs-sigilosos/
 
 # 4) Em .github: templates de feedback, financiamento e workflows de CI/CD
 /.github/*
