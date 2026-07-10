@@ -139,7 +139,7 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 
 - **Star 4 → Cérebro & Memória** — a Star 4 deixou de ser worker genérico e virou especialista em memória e grounding: compila as fontes **antes** das Stars 1–3 agirem e arquiva o resultado no ChromaDB ao final.
 - **Distribuição Dinâmica por Capacidade** — o COSMOS lê as `capabilities` de cada slot e decide, no planejamento, **quantas Stars convocar e o papel de cada uma**.
-- **Quadro Negro (Mission Blackboard)** — documento compartilhado (fontes + plano) **injetado em toda Star antes de agir** — grounding que elimina alucinação.
+- **SBB — Shared Blackboard** (método Lya Studio Coder, ex-"Quadro Negro") — a memória situacional da missão, dividida e **compartilhada em tempo real**: fontes + plano injetados em toda Star antes de agir — grounding que elimina alucinação. Quando só um usuário vê (ou no diagnóstico do COSMOS), é o **Blackboard**; com plateia, é o **SBB**.
 - **Contexto encadeado de fases** — cada Star recebe a saída consolidada das fases anteriores; missões multi-fase sem perda de contexto.
 
 ### 🔜 Em breve — próximo bloco (v1.2)
@@ -162,7 +162,7 @@ Da casca desktop ao orquestrador soberano — toda a Lya em uma visão. **Tudo r
 
 ### Pipeline de Orquestração COSMOS
 
-Como uma ordem vira entrega: o COSMOS planeja, distribui dinamicamente por capacidade, as Stars 1–3 executam em paralelo e o COSMOS consolida e indexa — com a Star 4 (Cérebro/Memória) alimentando o Quadro Negro compartilhado para eliminar alucinação.
+Como uma ordem vira entrega: o COSMOS planeja, distribui dinamicamente por capacidade, as Stars 1–3 executam em paralelo e o COSMOS consolida e indexa — com a Star 4 (Cérebro/Memória) alimentando o **SBB — Shared Blackboard** (a memória situacional compartilhada em tempo real) para eliminar alucinação.
 
 <div align="center">
 
@@ -284,7 +284,7 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ v1.0.1 — COSMOS soberano no chat, custo por token e correções
 - [x] ✅ v1.0.2 — Toggles de modo Plan/ADM/CEO/Supervisor, reset de estado, usage real, FAQ integrado (ver [CHANGELOG](CHANGELOG.md))
 - [x] ✅ v1.1.0 — COSMOS Cérebro Gigante: corredor CLI invencível, protocolo estruturado COSMOS↔Stars, Olho do COSMOS, Lya Publisher (Microsoft Store)
-- [x] ✅ v1.1.2 — Distribuição Dinâmica (Star 4 Cérebro & Memória + Quadro Negro), interface trilíngue PT/EN/ES, quick-launch de CLIs na TopBar
+- [x] ✅ v1.1.2 — Distribuição Dinâmica (Star 4 Cérebro & Memória + Quadro Negro, hoje batizado SBB — Shared Blackboard), interface trilíngue PT/EN/ES, quick-launch de CLIs na TopBar
 - [x] ✅ v1.1.3 — Interface 100% traduzida (PT/EN/ES), UX do chat (diferenciação usuário/IA, nome configurável), fix crítico do Lya Publisher
 - [ ] 🔄 v1.2.0 — Loja com catálogo Open VSX (temas, grammars, snippets, icon themes)
 - [ ] 🎨 Identidade visual definitiva da Lya
