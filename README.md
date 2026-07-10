@@ -241,9 +241,9 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 | Instalador | Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`Lya Studio Coder_1.1.3_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.3/Lya.Studio.Coder_1.1.3_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~47 MB | `81262299…5A7AE66D` |
-| [**`Lya Studio Coder_1.1.3_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.3/Lya.Studio.Coder_1.1.3_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~71 MB | `89C83869…EF5FE047` |
-| [**`LyaStudioCoder_1.1.3.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.3/LyaStudioCoder_1.1.3.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~76 MB | `56C59AFF…2EC3DB163` |
+| [**`Lya Studio Coder_1.1.3_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.3/Lya.Studio.Coder_1.1.3_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~47 MB | `AC0372A7…A67261BC3` |
+| [**`Lya Studio Coder_1.1.3_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.3/Lya.Studio.Coder_1.1.3_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~71 MB | `BBBC1749…8279C5C13` |
+| [**`LyaStudioCoder_1.1.3.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.3/LyaStudioCoder_1.1.3.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~76 MB | `5E27FF71…3068137F0` |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
@@ -252,13 +252,13 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 ```
 Lya Studio Coder_1.1.3_x64-setup.exe
-81262299210787D95FA6C08107BF17F0FAA599A753EE1DC7C05233A75A7AE66D
+AC0372A7D2D808527AF114A683D83674292C68C37FF283859CB5FD1A67261BC3
 
 Lya Studio Coder_1.1.3_x64_en-US.msi
-89C8386952DAA3898A89F11172304C28BEE222FAB7DBAAF1060C081EEF5FE047
+BBBC174963468FD2B5960835FB87BA5E31126B8A6E21629B16EE9678279C5C13
 
 LyaStudioCoder_1.1.3.0_x64.msix
-56C59AFF0BB18F4DC63325AF3AB00268A0A27DD3F4055B47C189D482EC3DB163
+5E27FF716F29EC6F55C8E034FE5498B5B266762F00F2472E0B0118F3068137F0
 ```
 
 Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
