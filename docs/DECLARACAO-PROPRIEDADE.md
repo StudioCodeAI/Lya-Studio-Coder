@@ -71,3 +71,18 @@ _______________________________________________
 **LC REPRESENTAÇÕES LTDA**
 CNPJ 52.867.002/0001-86
 *(assinado digitalmente com certificado e-CNPJ ICP-Brasil)*
+
+---
+
+## Registro de assinatura
+
+Este certificado foi **assinado digitalmente em 10/07/2026** com certificado
+e-CNPJ ICP-Brasil da titular (padrão PAdES/PKCS#7). O documento juridicamente
+válido é o arquivo assinado:
+
+- **Arquivo:** [`DECLARACAO-PROPRIEDADE.pdf`](DECLARACAO-PROPRIEDADE.pdf)
+- **SHA-256:** `60FD9A7652ECE357B238DE0F7763626D22824CD400D6CA276B3F50C7D15C3660`
+- **Verificação:** https://validar.iti.gov.br
+
+Este arquivo Markdown é a versão-fonte do texto; em caso de divergência,
+prevalece o PDF assinado.
