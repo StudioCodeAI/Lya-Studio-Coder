@@ -15,7 +15,7 @@ Bem-vindo à Lya! Este guia te coloca rodando em menos de 5 minutos.
 ### **Passo 1: Download & Instalação** (2 min)
 
 1. Acesse [Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
-2. Baixe: `Lya Studio Coder_1.0.0_x64-setup.exe`
+2. Baixe: `Lya.Studio.Coder_1.1.3_x64-setup.exe`
 3. Execute e clique em "Instalar"
 
 ✅ Pronto! Lya está no seu menu Iniciar.

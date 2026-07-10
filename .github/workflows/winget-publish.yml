@@ -1,11 +1,18 @@
-# Gatilho manual ate os pre-requisitos existirem.
-# Para reativar: trocar 'workflow_dispatch' por 'release:\n    types: [released]'.
-#   1. Pacote StudioCodeAI.LyaStudioCoder submetido manualmente ao winget-pkgs (1a versao)
-#   2. Secret WINGET_TOKEN = PAT classico, escopo public_repo
-#   3. Fork microsoft/winget-pkgs na conta StudioCodeAI (FEITO)
+# Dispara automaticamente quando uma release é publicada no GitHub.
+# Pré-requisitos (todos atendidos):
+#   1. Pacote StudioCodeAI.LyaStudioCoder já existe no winget-pkgs ✅
+#   2. Secret WINGET_TOKEN = PAT clássico, escopo public_repo ✅
+#   3. Fork microsoft/winget-pkgs na conta StudioCodeAI ✅
+#
+# Observação: apenas .msi no regex — o NSIS (.exe) sem code signing
+# é bloqueado pelo Defender na validação do winget. Quando os binários
+# forem assinados (certificado OV/EV), adicionar '|\.exe$' no regex.
 name: Publish to winget
+
 on:
-  workflow_dispatch:
+  release:
+    types: [released]
+  workflow_dispatch: # mantido para testes manuais pontuais
 
 jobs:
   publish:
@@ -14,5 +21,5 @@ jobs:
       - uses: vedantmgoyal9/winget-releaser@v2
         with:
           identifier: StudioCodeAI.LyaStudioCoder
-          installers-regex: '\.exe$|\.msi$'
+          installers-regex: '\.msi$'
           token: ${{ secrets.WINGET_TOKEN }}
