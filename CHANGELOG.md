@@ -11,6 +11,10 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 > **Eles têm correção. O Lya Studio Coder tem CURA.** Novo bloco em progresso:
 > a IDE conserta o próprio build sozinha — e **lembra de cada conserto**.
 
+### 🔌 Tools MCP nas missões da equipe (2026-07-11)
+- Servidores MCP conectados no MCP Store agora ficam disponíveis também para a **equipe em missão** (COSMOS + Stars) — antes, só o chat recebia as ferramentas dinâmicas. Você conectou de propósito; a orquestração respeita.
+- Validação ao vivo da sincronia com memória externa via MCP: leitura, escrita e boot verificados fim-a-fim contra os arquivos reais no disco — incluindo o teste de falha honesta (servidor desligado = ferramenta some de verdade, sem fingir sucesso).
+
 ### 🩹 Missão AUTO_FIX (Q.1 · 2026-07-10)
 - Novo tipo de missão: você define o **alvo-verde** (ex.: `npm run lint && npm test`) e a IDE entra no loop build → erro → correção → rebuild até o comando passar de verdade (exit code real — nunca auto-relato da IA).
 - **Disjuntor anti-degeneração:** fingerprint de cada erro + escada de escalada (autocrítica → abordagem alternativa → cérebro maior → pausa soberana com diagnóstico). Sem loop infinito queimando tokens: sem progresso, a missão para e explica.
