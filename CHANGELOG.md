@@ -21,6 +21,11 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 - **Dinâmica de confiança:** receita que funciona ganha reforço (e é promovida a Receita); receita que falha perde; fracassos viram **anti-receitas** ("não tente isto de novo"). Cicatriz só nasce de verde real — alegação sem prova não entra na memória.
 - A memória é da **sua instância** (Core5 embutido, local): a IDE fica melhor quanto mais você a usa.
 
+### 🚀 Motor Antigravity (Google Managed Agents) — porta API endurecida (2026-07-11)
+- Novo provider **Antigravity API** selecionável como motor de Star: agente autônomo do Google que roda num sandbox remoto e devolve o resultado pronto. Chave configurável na Carteira (a chave de preview expira em 24h; o hint avisa que o botão Testar consome cota real).
+- **Revisão adversária aplicada** sobre a integração: pré-voo agora reconhece o motor corretamente (antes aparecia offline com chave válida), retry desabilitado (cada tentativa custaria um sandbox novo), timeout configurável + cancelamento propagado ao fetch, anexo não-texto gera aviso visível (nunca some mudo) e resposta vazia vira falha honesta — verde só é verde de verdade.
+- Suíte de testes offline nova cobrindo a extração de resposta do motor (11 asserts).
+
 ---
 
 ## [1.1.3] — i18n 100% + UX do Chat + Fix Crítico do Publisher · 2026-07-09
