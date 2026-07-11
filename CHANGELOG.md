@@ -6,6 +6,23 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [Não lançado] — Projeto CURA: auto-correção que aprende · em desenvolvimento
+
+> **Eles têm correção. O Lya Studio Coder tem CURA.** Novo bloco em progresso:
+> a IDE conserta o próprio build sozinha — e **lembra de cada conserto**.
+
+### 🩹 Missão AUTO_FIX (Q.1 · 2026-07-10)
+- Novo tipo de missão: você define o **alvo-verde** (ex.: `npm run lint && npm test`) e a IDE entra no loop build → erro → correção → rebuild até o comando passar de verdade (exit code real — nunca auto-relato da IA).
+- **Disjuntor anti-degeneração:** fingerprint de cada erro + escada de escalada (autocrítica → abordagem alternativa → cérebro maior → pausa soberana com diagnóstico). Sem loop infinito queimando tokens: sem progresso, a missão para e explica.
+- Funciona com qualquer motor (local, API ou CLI) — engine-agnóstico por construção.
+
+### 🧬 Memória de Cicatrizes (Q.2 · 2026-07-10)
+- Cada erro **curado** vira uma cicatriz consultável: na próxima vez que a mesma ferida aparecer, a receita conhecida entra no briefing e a cura sai mais rápida e mais barata. Verificado ao vivo: mesma falha plantada 2× → 2ª cura em **1 iteração** citando a cicatriz.
+- **Dinâmica de confiança:** receita que funciona ganha reforço (e é promovida a Receita); receita que falha perde; fracassos viram **anti-receitas** ("não tente isto de novo"). Cicatriz só nasce de verde real — alegação sem prova não entra na memória.
+- A memória é da **sua instância** (Core5 embutido, local): a IDE fica melhor quanto mais você a usa.
+
+---
+
 ## [1.1.3] — i18n 100% + UX do Chat + Fix Crítico do Publisher · 2026-07-09
 
 > Fecha o ciclo de internacionalização iniciado na v1.1.2 (agora **100% da IDE**
