@@ -181,11 +181,20 @@ embutido na IDE — 100% local, sem servidor externo obrigatório.
 - **Sua instância, seus dados.** A memória vive na sua máquina; ela fica melhor quanto mais
   você usa a Lya — e nunca sai do seu controle.
 
+### ❓ Core5 ou ChromaDB — qual eu uso?
+
+- **Por padrão, só o Core5 roda** — motor embutido (LanceDB), sem instalar nada. Você abre a IDE e a memória já funciona.
+- **ChromaDB é o motor legado** (o "antigo", que existia antes do Core5 e precisava de Python instalado à parte). Ele continua disponível, mas hoje só entra nas buscas se estiver explicitamente habilitado na configuração de memória — não basta só ter o processo rodando.
+- **Dá pra usar os dois ao mesmo tempo.** A arquitetura já suporta rodar Core5 + ChromaDB juntos: cada busca consulta todos os motores habilitados e mescla os resultados sem duplicar.
+- **O embedding (a "tradução" do seu texto em vetores de busca) é o mesmo pros dois motores** — não existe um embedding exclusivo do Core5 nem do Chroma. Por padrão roda um modelo local (~384 dimensões, zero custo, zero API), com fallback pra um modelo online (Gemini/OpenAI/NVIDIA) se você configurar chave pra isso.
+- **Quando faz sentido ligar o ChromaDB?** Só se você já tinha uma base ChromaDB de uma versão anterior da Lya e quer manter acesso a ela. Pra uso novo, o Core5 embutido já resolve sozinho.
+- **Hoje não tem toggle na interface** pra ligar/desligar cada motor — só editando a configuração de memória diretamente. Está no radar como melhoria futura.
+
 ---
 
 ## 🏗️ Arquitetura
 
-Da casca desktop ao orquestrador soberano — toda a Lya em uma visão. **Tudo roda na sua máquina**: shell Tauri (Rust) → servidor Node local → COSMOS coordenando até 4 Stars, com memória vetorial (ChromaDB) e segredos cifrados (AES-256-GCM) — sem nuvem no caminho crítico.
+Da casca desktop ao orquestrador soberano — toda a Lya em uma visão. **Tudo roda na sua máquina**: shell Tauri (Rust) → servidor Node local → COSMOS coordenando até 4 Stars, com memória vetorial (Core5 embutido, LanceDB) e segredos cifrados (AES-256-GCM) — sem nuvem no caminho crítico.
 
 <div align="center">
 

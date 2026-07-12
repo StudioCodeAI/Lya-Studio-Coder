@@ -24,16 +24,25 @@ Iniciar e na Área de Trabalho.
 Ao abrir, a Lya cria a pasta de dados **`~/.coreLyaDB`** no seu perfil de usuário.
 É lá que ficam banco vetorial, modelos, histórico e configurações.
 
-## 4. (Opcional) Habilite a Memória
+## 4. Memória de longo prazo — já vem pronta
 
-A memória de longa duração (NeuroCORE) usa o **ChromaDB**, que precisa de Python:
+A memória (**Core5**) já funciona assim que você abre a IDE — motor embutido
+(LanceDB), zero dependência de Python ou processo externo. Você não precisa
+instalar nada pra IA lembrar do seu projeto entre sessões.
+
+### (Opcional) ChromaDB — motor legado
+
+Se você já usava uma versão antiga da Lya com **ChromaDB** e quer continuar
+acessando aquela base, ele segue disponível como opção adicional:
 
 ```bash
 pip install chromadb
 ```
 
-A IDE sobe o servidor ChromaDB automaticamente ao iniciar. Sem ele, o app funciona
-normalmente — apenas a memória fica offline.
+A IDE sobe o servidor ChromaDB automaticamente ao iniciar, mas ele só entra
+nas buscas se estiver habilitado na configuração de memória (`~/.coreLyaDB/memory-config.json`
+— ainda não tem um botão dedicado na interface para isso). Sem ChromaDB instalado,
+o app funciona normalmente com o Core5 embutido sozinho.
 
 ## 5. (Opcional) Agentes locais com Ollama
 
