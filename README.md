@@ -46,7 +46,7 @@ Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a respo
 
 **Isso é trabalho braçal. E você não deveria estar fazendo isso em 2026.**
 
-A Lya é o cockpit que elimina esse atrito:
+# A Lya é o cockpit que elimina esse atrito:
 
 - 🎯 **Um ambiente.** Claude, Gemini, GPT e Ollama na mesma tela — sem troca de aba.
 - 🧠 **Memória real.** O Core5 indexa seu projeto localmente e aprende com cada correção. A IA "lembra" entre sessões — e entre erros já curados.
