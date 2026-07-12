@@ -1,12 +1,24 @@
-# Dispara automaticamente quando uma release é publicada no GitHub.
-# Pré-requisitos (todos atendidos):
+# Dispara automaticamente quando uma release é publicada no GitHub, mas FICA PAUSADO
+# no environment "winget-release-gate" até aprovação manual — ver docs-sigilosos/
+# PROCEDIMENTO-WINGET-DEFENDER-FP.md ("Ordem obrigatória de release").
+#
+# Antes de aprovar o gate, confirme (nessa ordem):
+#   1. .msix já submetido e aprovado no Microsoft Partner Center
+#   2. Instaladores (.exe/.msi/.msix) já submetidos ao WDSI (Defender) e
+#      com veredito "sem detecção" (https://www.microsoft.com/en-us/wdsi/submissionhistory)
+#   3. Só então aprovar o job em Actions → esta execução → Review deployments
+#
+# Pré-requisitos de infra (todos atendidos):
 #   1. Pacote StudioCodeAI.LyaStudioCoder já existe no winget-pkgs ✅
 #   2. Secret WINGET_TOKEN = PAT clássico, escopo public_repo ✅
 #   3. Fork microsoft/winget-pkgs na conta StudioCodeAI ✅
 #
-# Observação: apenas .msi no regex — o NSIS (.exe) sem code signing
-# é bloqueado pelo Defender na validação do winget. Quando os binários
-# forem assinados (certificado OV/EV), adicionar '|\.exe$' no regex.
+# Observação: apenas .msi no regex — o NSIS (.exe) sem code signing costuma
+# disparar o Defender na validação do winget a cada versão nova (mesmo já
+# tendo sido limpo pelo WDSI numa versão anterior, o hash muda). Depois do
+# veredito "sem detecção" do WDSI para o .exe desta versão, adicionar
+# '|\.exe$' manualmente no regex antes de aprovar o gate (ou reabrir o PR
+# com o .exe igual foi feito na v1.1.3).
 name: Publish to winget
 
 on:
@@ -17,6 +29,7 @@ on:
 jobs:
   publish:
     runs-on: windows-latest
+    environment: winget-release-gate
     steps:
       - uses: vedantmgoyal9/winget-releaser@v2
         with:
