@@ -49,7 +49,7 @@ Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a respo
 A Lya é o cockpit que elimina esse atrito:
 
 - 🎯 **Um ambiente.** Claude, Gemini, GPT e Ollama na mesma tela — sem troca de aba.
-- 🧠 **Memória real.** O NeuroCORE indexa seu projeto localmente. A IA "lembra" entre sessões.
+- 🧠 **Memória real.** O Core5 indexa seu projeto localmente e aprende com cada correção. A IA "lembra" entre sessões — e entre erros já curados.
 - ⚡ **COSMOS soberano.** Lance até 4 agentes em paralelo, acompanhe a entrega de cada um ao vivo, mande refazer se não serviu — direto no chat.
 - 🔒 **100% na sua máquina.** Nenhum dado seu toca nossos servidores. Zero telemetria oculta.
 
@@ -65,7 +65,7 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 |---|---|
 | 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT e Ollama na mesma sala. Streaming cancelável, markdown, anexos, **gravação de voz**, function-calling real e histórico completo. |
 | 🎛️ **COSMOS — Orquestração** | Até 4 agentes de IA em paralelo (API, CLI, local). Cada slot com motor independente, status ao vivo e contexto compartilhado. |
-| 🧠 **NeuroCORE — Memória Vetorial** | ChromaDB local. Classifica e indexa documentos, notas e histórico em 4 coleções. A IA "lembra" do seu projeto entre sessões. |
+| 🧠 **Core5 — Memória de Longo Prazo** | Motor de memória embutido (LanceDB, zero dependência de Python/Docker). Classifica e indexa documentos, notas, decisões e histórico. A IA "lembra" do seu projeto entre sessões — e fica melhor quanto mais você usa. |
 | 📝 **Editor Monaco** | O mesmo motor do VS Code. IntelliSense, F12, multi-cursor, diff de Git, **Ctrl+K** edita código com IA inline. |
 | 🔍 **Explorer + Find in Files** | Árvore VS Code-like, busca por nome **e por conteúdo** (regex, case-sensitive), preview. |
 | 💻 **Terminal Integrado** | PTY nativo (node-pty) real. Rode npm, python, git, qualquer coisa — sem sair da IDE. |
@@ -126,6 +126,15 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 - **Fila cifrada com override** — ordens enfileiradas aguardam vez; `mode: "override"` fura a fila imediatamente.
 - **MCP dinâmico** — ferramentas de servidores MCP do usuário (JSON-RPC STDIO) registradas em tempo real via `tool-matrix.ts` e disponíveis nos dois paths (API e CLI).
 
+### 🩹 Em desenvolvimento — Projeto CURE: a IDE conserta o próprio build sozinha
+
+> Eles têm correção. O Lya Studio Coder tem **CURE** — e ela lembra de cada mistake (erro do dia a dia) já corrigido.
+
+- **Missão AUTO_FIX** — defina o alvo-verde (ex.: `npm run lint && npm test`) e a IDE entra no loop build → mistake → correção → rebuild até o comando passar de verdade (exit code real, nunca auto-relato da IA). Disjuntor anti-degeneração: escada de escalada (autocrítica → abordagem alternativa → cérebro maior → pausa soberana com diagnóstico) evita loop infinito queimando tokens. Engine-agnóstico — funciona com motor local, API ou CLI.
+- **CURE SCAR** (scar: a marca que fica depois que um mistake é corrigido) — cada mistake curado vira um scar consultável no Core5: na próxima vez que o mesmo mistake aparecer, a receita conhecida entra no briefing e a cure sai mais rápida e mais barata. Verificado ao vivo: mesmo mistake plantado 2× → 2ª cure em **1 iteração** citando o scar. Receita que funciona ganha reforço; receita que falha vira **anti-receita** ("não tente isto de novo") — scar só nasce de verde real, nunca de alegação sem prova.
+- **Motor Antigravity (Google Managed Agents)** — novo provider selecionável como motor de Star: agente autônomo que roda num sandbox remoto e devolve o resultado pronto. Porta endurecida após revisão adversária: pré-voo honesto, retry desabilitado (cada tentativa custa um sandbox novo), timeout + cancelamento propagados, resposta vazia vira falha honesta em vez de sucesso falso.
+- **Tools MCP nas missões da equipe** — servidores MCP conectados no MCP Store agora ficam disponíveis também para a equipe em missão (COSMOS + Stars), não só para o chat.
+
 ### ✨ Novo na v1.1.3 — interface 100% traduzida + chat mais claro
 
 > Entregue, testado e no ar neste build (gates: `lint 0` · **173/173 testes**):
@@ -145,6 +154,32 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 ### 🔜 Em breve — próximo bloco (v1.2)
 
 - **Open VSX na Loja** — temas de cor, grammars TextMate, snippets e icon themes do catálogo [Open VSX](https://open-vsx.org/) instaláveis direto na Store da Lya — com transparência total sobre o que cada extensão pode entregar dentro do Monaco.
+
+---
+
+## 🧠 Memória de Longo Prazo — Core5
+
+A Lya não esquece o seu projeto quando você fecha a aba. O **Core5** é o motor de memória
+embutido na IDE — 100% local, sem servidor externo obrigatório.
+
+- **Embutido, sem dependência pesada.** Motor local (LanceDB) que roda dentro do próprio
+  processo da IDE — sem exigir Python, Docker ou um serviço à parte rodando em segundo plano
+  pra ter memória. O ChromaDB segue disponível como backend legado/alternativo.
+- **Aprende com cada correção.** Todo mistake curado pelo Projeto CURE vira um scar
+  consultável: da próxima vez que o mesmo mistake aparecer, a IA já entra sabendo a receita —
+  mais rápido e mais barato. Scars só nascem de sucesso comprovado (exit code real),
+  nunca de alegação da IA.
+- **Captura contínua, sem travar a resposta.** Decisões relevantes da conversa são
+  enfileiradas e gravadas em lote (write-behind) — a escrita na memória nunca bloqueia o chat.
+  Guarda **anti-loop de feedback**: o que já veio de uma busca na memória nunca é regravado
+  como memória nova.
+- **Continuidade entre ferramentas.** Além da memória local da IDE, a Lya fala **MCP** com uma
+  instância externa do Core5 (ex.: Claude Code, Claude Desktop) — conectando de verdade via
+  handshake real (o indicador de status só acende quando a conexão está provada, nunca por
+  decoração). Isso permite compartilhar contexto do mesmo projeto entre a IDE e as CLIs de IA
+  que você já usa no dia a dia.
+- **Sua instância, seus dados.** A memória vive na sua máquina; ela fica melhor quanto mais
+  você usa a Lya — e nunca sai do seu controle.
 
 ---
 
@@ -213,7 +248,7 @@ Transparência total. Cada módulo tem nota baseada em testes reais.
 | Explorer + Find in Files | `91%` | 🟢 Estável |
 | Terminal Integrado (PTY) | `90%` | 🟢 Estável |
 | App Desktop (.exe / .msi / .msix) | `90%` | 🟢 Estável |
-| Memória NeuroCORE | `89%` | 🟢 Estável |
+| Memória Core5 (embutida) | `89%` | 🟢 Estável |
 | Lya Publisher (Microsoft Store) | `85%` | 🟢 Estável |
 | Compilador & Build | `86%` | 🟢 Estável |
 | Run & Debug (Node + Python) | `84%` | 🟢 Estável |

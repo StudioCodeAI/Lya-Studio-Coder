@@ -6,23 +6,28 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
-## [Não lançado] — Projeto CURA: auto-correção que aprende · em desenvolvimento
+## [Não lançado] — Projeto CURE: auto-correção que aprende · em desenvolvimento
 
-> **Eles têm correção. O Lya Studio Coder tem CURA.** Novo bloco em progresso:
-> a IDE conserta o próprio build sozinha — e **lembra de cada conserto**.
+> **Eles têm correção. O Lya Studio Coder tem CURE.** Novo bloco em progresso:
+> a IDE conserta o próprio build sozinha — e **lembra de cada mistake (erro do dia a dia) já corrigido**.
+
+### 🧠 Rebrand da memória: NeuroCORE → Core5 + continuidade externa via MCP (2026-07-11)
+- A memória embutida da IDE (motor local LanceDB, zero dependência de Python) passa a se chamar **Core5** — mesmo nome do cérebro de memória externo do ecossistema, evolução natural do antigo NeuroCORE. ChromaDB segue disponível como backend legado/backup.
+- Novo conector: a IDE fala **MCP** com uma instância externa do Core5 (ex.: Claude Code, Claude Desktop) e conecta de verdade — indicador de status só acende com handshake real, nunca por decoração. Objetivo: compartilhar contexto do mesmo projeto entre a IDE e as CLIs de IA do dia a dia.
+- **Captura contínua write-behind:** decisões relevantes da conversa são enfileiradas e gravadas em lote sem travar a resposta do chat; guarda anti-loop de feedback (o que veio de uma busca na memória nunca vira memória nova de novo).
 
 ### 🔌 Tools MCP nas missões da equipe (2026-07-11)
 - Servidores MCP conectados no MCP Store agora ficam disponíveis também para a **equipe em missão** (COSMOS + Stars) — antes, só o chat recebia as ferramentas dinâmicas. Você conectou de propósito; a orquestração respeita.
 - Validação ao vivo da sincronia com memória externa via MCP: leitura, escrita e boot verificados fim-a-fim contra os arquivos reais no disco — incluindo o teste de falha honesta (servidor desligado = ferramenta some de verdade, sem fingir sucesso).
 
 ### 🩹 Missão AUTO_FIX (Q.1 · 2026-07-10)
-- Novo tipo de missão: você define o **alvo-verde** (ex.: `npm run lint && npm test`) e a IDE entra no loop build → erro → correção → rebuild até o comando passar de verdade (exit code real — nunca auto-relato da IA).
-- **Disjuntor anti-degeneração:** fingerprint de cada erro + escada de escalada (autocrítica → abordagem alternativa → cérebro maior → pausa soberana com diagnóstico). Sem loop infinito queimando tokens: sem progresso, a missão para e explica.
+- Novo tipo de missão: você define o **alvo-verde** (ex.: `npm run lint && npm test`) e a IDE entra no loop build → mistake → correção → rebuild até o comando passar de verdade (exit code real — nunca auto-relato da IA).
+- **Disjuntor anti-degeneração:** fingerprint de cada mistake + escada de escalada (autocrítica → abordagem alternativa → cérebro maior → pausa soberana com diagnóstico). Sem loop infinito queimando tokens: sem progresso, a missão para e explica.
 - Funciona com qualquer motor (local, API ou CLI) — engine-agnóstico por construção.
 
-### 🧬 Memória de Cicatrizes (Q.2 · 2026-07-10)
-- Cada erro **curado** vira uma cicatriz consultável: na próxima vez que a mesma ferida aparecer, a receita conhecida entra no briefing e a cura sai mais rápida e mais barata. Verificado ao vivo: mesma falha plantada 2× → 2ª cura em **1 iteração** citando a cicatriz.
-- **Dinâmica de confiança:** receita que funciona ganha reforço (e é promovida a Receita); receita que falha perde; fracassos viram **anti-receitas** ("não tente isto de novo"). Cicatriz só nasce de verde real — alegação sem prova não entra na memória.
+### 🧬 CURE SCAR (Q.2 · 2026-07-10)
+- Scar (a marca que fica depois que um mistake é corrigido): cada mistake **curado** vira um scar consultável — na próxima vez que o mesmo mistake aparecer, a receita conhecida entra no briefing e a cure sai mais rápida e mais barata. Verificado ao vivo: mesmo mistake plantado 2× → 2ª cure em **1 iteração** citando o scar.
+- **Dinâmica de confiança:** receita que funciona ganha reforço (e é promovida a Receita); receita que falha perde; fracassos viram **anti-receitas** ("não tente isto de novo"). Scar só nasce de verde real — alegação sem prova não entra na memória.
 - A memória é da **sua instância** (Core5 embutido, local): a IDE fica melhor quanto mais você a usa.
 
 ### 🚀 Motor Antigravity (Google Managed Agents) — porta API endurecida (2026-07-11)
