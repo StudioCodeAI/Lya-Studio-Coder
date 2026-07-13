@@ -11,6 +11,12 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 > **Eles têm correção. O Lya Studio Coder tem CURE.** Novo bloco em progresso:
 > a IDE conserta o próprio build sozinha — e **lembra de cada mistake (erro do dia a dia) já corrigido**.
 
+### 🔤 Loja de Linguagens: gramáticas, snippets e temas de ícone (2026-07-13)
+- Nova categoria **Linguagens** na Loja, honesta sobre o que instala de verdade — nada de fingir.
+- **Gramáticas** (TextMate, offline): realce de sintaxe para linguagens que o editor não trazia de fábrica, começando por **`.env`** e **Prisma** (`.prisma`). Elas herdam automaticamente todos os temas de cor já instalados.
+- **Snippets** ativáveis por pacote (TypeScript, React Hooks, Python, HTML5): digite o atalho e o Autocompletar oferece o trecho pronto. Liga/desliga cada pacote sem reiniciar.
+- **Temas de ícone** do explorador (Studio, Emoji e Mono) em Configurações → Temas: troque como os arquivos aparecem na barra lateral, com efeito imediato.
+
 ### 🧠 Rebrand da memória: NeuroCORE → Core5 + continuidade externa via MCP (2026-07-11)
 - A memória embutida da IDE (motor local LanceDB, zero dependência de Python) passa a se chamar **Core5** — mesmo nome do cérebro de memória externo do ecossistema, evolução natural do antigo NeuroCORE. ChromaDB segue disponível como backend legado/backup.
 - Novo conector: a IDE fala **MCP** com uma instância externa do Core5 (ex.: Claude Code, Claude Desktop) e conecta de verdade — indicador de status só acende com handshake real, nunca por decoração. Objetivo: compartilhar contexto do mesmo projeto entre a IDE e as CLIs de IA do dia a dia.
