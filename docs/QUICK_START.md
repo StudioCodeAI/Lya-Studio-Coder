@@ -87,6 +87,7 @@ A tela se divide em 4 áreas:
    npm install tailwindcss
    npm run dev
    ```
+   > Esses comandos rodam **o seu projeto** (App.jsx) no terminal integrado — não são comandos da IDE.
 4. Código roda em tempo real!
 
 ---

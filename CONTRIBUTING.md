@@ -45,11 +45,23 @@ cd Lya-Studio-Coder
 git remote add upstream https://github.com/StudioCodeAI/Lya-Studio-Coder.git
 
 # 4. Instale dependências
-yarn install
+npm install
 
-# 5. Inicie o dev server (ou siga docs/DEVELOPMENT.md para mais detalhes)
-yarn dev
+# 5. Inicie o servidor (SEM watch — o tsx watch derruba as sessões PTY do terminal)
+npx tsx server.ts
 ```
+
+### Portão de qualidade (git hook pre-push)
+
+O gate de lint + testes roda **localmente** via git hook (não há CI cloud — o
+código-fonte não é versionado no repositório público). Instale uma vez:
+
+```bash
+cp scripts/git-hooks/pre-push .git/hooks/pre-push
+```
+
+A partir daí, todo `git push` roda `npm run lint && npm test` e bloqueia em
+falha. Bypass consciente (emergência): `git push --no-verify`.
 
 ### Estrutura do Projeto
 
