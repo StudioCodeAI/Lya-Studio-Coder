@@ -16,13 +16,13 @@
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.2.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.1.4-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
 [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.2.0-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Versão](https://img.shields.io/badge/versão-1.1.4-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
 [![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
@@ -144,7 +144,7 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 - **Tools MCP nas missões da equipe** — servidores MCP conectados no MCP Store ficam disponíveis para a equipe em missão (COSMOS + Stars), não só para o chat.
 - **IDE como Servidor MCP** — Claude Code/Desktop/Cursor/Antigravity conectam-se ao LSCoder e consomem missão/SBB/CURE como tools (`lscoder_*`). JSON-RPC 2.0, zero dependência nova.
 
-### 🧩 Extensões VS Code de verdade (novo na v1.2.0)
+### 🧩 Extensões VS Code de verdade (🧪 em testes — chega na v1.2.0)
 
 - **Extension Host em runtime** — extensões `.vsix` reais (formato VS Code) instalam, ativam, desativam e desinstalam **sem rebuild e sem reiniciar a IDE**, rodando sobre `@codingame/monaco-vscode-api`. Prettier de verdade ativando e formatando o documento — não simulação.
 - **Catálogo Open VSX na Loja** — busca no [Open VSX](https://open-vsx.org/) com **badge honesto por extensão** (JS provado · Declarativa · Não suportada): a Loja só promete o que realmente entrega. Importação de `.vsix` local também.
@@ -212,9 +212,9 @@ Da casca desktop ao orquestrador soberano — toda a Lya em uma visão. **Tudo r
 
 <div align="center">
 
-![Arquitetura geral da Lya Studio Coder v1.2.0](assets/arquitetura-geral.png)
+![Arquitetura geral da Lya Studio Coder](assets/arquitetura-geral.png)
 
-**Visão geral v1.2.0** — Tauri shell · React SPA · Node/Express · CURE · Core5 768d · MCP bidirecional · Extension Host · 8+ provedores de IA.
+**Visão geral** — Tauri shell · React SPA · Node/Express · CURE · Core5 768d · MCP bidirecional · Extension Host (em testes) · 8+ provedores de IA.
 
 </div>
 
@@ -308,9 +308,9 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 | Instalador | Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`Lya Studio Coder_1.2.0_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.2.0/Lya.Studio.Coder_1.2.0_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~51 MB | `23C78893…64D1FFAC8` |
-| [**`Lya Studio Coder_1.2.0_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.2.0/Lya.Studio.Coder_1.2.0_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~76 MB | `2EBF6C81…365C7686` |
-| [**`LyaStudioCoder_1.2.0.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.2.0/LyaStudioCoder_1.2.0.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~81 MB | `97E6707C…E37F77E0` |
+| [**`Lya Studio Coder_1.1.4_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.4/Lya.Studio.Coder_1.1.4_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~49 MB | `B137FFE6…54701F4E` |
+| [**`Lya Studio Coder_1.1.4_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.4/Lya.Studio.Coder_1.1.4_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~74 MB | `1A2BF8B1…229B5624` |
+| [**`LyaStudioCoder_1.1.4.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.4/LyaStudioCoder_1.1.4.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~79 MB | `11B6D95A…EFCF152B` |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
@@ -318,14 +318,14 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 <summary>🔐 SHA-256 completos para verificação</summary>
 
 ```
-Lya Studio Coder_1.2.0_x64-setup.exe
-23C78893C31AC715123F3660BFBA0338E9E5A466E8E1BD4C84A274A64D1FFAC8
+Lya Studio Coder_1.1.4_x64-setup.exe
+B137FFE64CABBDB2340C1922AA7BE94841C3BFD8AD908841F54B9E0554701F4E
 
-Lya Studio Coder_1.2.0_x64_en-US.msi
-2EBF6C81B5627E63DDFC7A0DE2FC18B65B85C289FCD68E9804C7EE50365C7686
+Lya Studio Coder_1.1.4_x64_en-US.msi
+1A2BF8B172547D6DD30A54401B51B0A137EBE0330325790D7739FFF7229B5624
 
-LyaStudioCoder_1.2.0.0_x64.msix
-97E6707C8AF5BB73D95548E26CE32D419BB3814F0682DF7C016215D7E37F77E0
+LyaStudioCoder_1.1.4.0_x64.msix
+11B6D95A67F37B45B9AEC158466B91A824EC8D362E2986E22B6E99EEEFCF152B
 ```
 
 Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
@@ -361,7 +361,7 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ Loja de Linguagens — Grammars TextMate, snippets, icon themes, 8+ temas de cor
 - [x] ✅ Segurança: auth-gate RCE, sandbox default-deny, symlink-escape, chave n8n cifrada
 - [x] ✅ v1.1.4 — Consolidação: CURE completo, Core5 768d, MCP bidirecional, Loja de Linguagens, hardening de segurança · **🏪 certificada na Microsoft Store**
-- [x] ✅ v1.2.0 — Extension Host real (`.vsix` em runtime), catálogo Open VSX na Loja, COSMOS operando extensões, atualização pela IDE
+- [ ] 🧪 v1.2.0 (em testes) — Extension Host real (`.vsix` em runtime), catálogo Open VSX na Loja, COSMOS operando extensões, atualização pela IDE
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
@@ -406,7 +406,7 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 
 ➡️ **Pronto para consolidar seu fluxo de IA?**
 
-[![BAIXE A VERSÃO 97% ESTÁVEL](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_97%25_ESTÁVEL-Windows_x64_·_v1.2.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![BAIXE A VERSÃO 97% ESTÁVEL](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_97%25_ESTÁVEL-Windows_x64_·_v1.1.4-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 
 *Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 

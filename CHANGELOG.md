@@ -43,7 +43,7 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
-## [1.2.0] — Extension Host de verdade + atualização pela IDE · 2026-07-15
+## [1.2.0] — Extension Host de verdade + atualização pela IDE · 🧪 em testes (não lançada)
 
 > Reunificação do repo experimental **LSCODE** (F4.2): o Extension Host provado lá
 > volta para a linha estável, plugado na camada auth-gate.
