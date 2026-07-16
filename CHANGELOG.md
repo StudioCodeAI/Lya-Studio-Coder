@@ -43,6 +43,34 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.2.0] — Extension Host de verdade + atualização pela IDE · 2026-07-15
+
+> Reunificação do repo experimental **LSCODE** (F4.2): o Extension Host provado lá
+> volta para a linha estável, plugado na camada auth-gate.
+
+### 🧩 Extension Host — extensões VS Code reais (`.vsix`)
+- **Aba Extensões**: catálogo Open VSX com badge honesto por categoria (JS provado ·
+  Declarativa · Não suportada), detalhe com licença/deps, instalar/ativar/desativar/
+  desinstalar em runtime e **importar `.vsix` local**.
+- **Runtime de produção** (`exthost.html` + `src/exthost/`): extensões instaladas carregam
+  do backend EM RUNTIME (sem rebuild) sobre `@codingame/monaco-vscode-api` v35 — prettier
+  real ativa em ~520ms e formata o documento de verdade.
+- **COSMOS opera as extensões**: cada comando registrado vira tool `ext__*` na tool-matrix;
+  Stars invocam via function-calling nativo e o resultado muda o desfecho da missão
+  (validado end-to-end com Ollama local).
+- **Plugado no auth-gate**: `/ws/exthost` valida upgrade (`checkWsAuth`), a página recebe o
+  token de sessão (`injectSessionToken`) e todo fetch `/api` leva `x-lya-token`.
+- Harnesses de verificação viva: `exthost-verify` · `exthost-tools-verify` · `exthost-mission-verify`.
+
+### 🔄 Atualização pela IDE
+- **Verificar atualização** em Configurações (junto das Notas de Versão): consulta a última
+  release publicada (`GET /api/update/check`) e compara com a versão local.
+- Havendo versão nova, o botão **Instalar** abre a página do app na **Microsoft Store**
+  (quando o productId está configurado — env `LYA_STORE_PRODUCT_ID` ou Carteira) ou a
+  página da release no GitHub, reusando o `/api/open-url` seguro.
+
+---
+
 ## [1.1.3] — i18n 100% + UX do Chat + Fix Crítico do Publisher · 2026-07-09
 
 > Fecha o ciclo de internacionalização iniciado na v1.1.2 (agora **100% da IDE**

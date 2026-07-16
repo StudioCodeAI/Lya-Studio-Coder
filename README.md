@@ -6,23 +6,23 @@
 
 # 🌌 Lya Studio Coder: Sua central de orquestração multi-IA
 
-### 96% estável. 100% local. Zero vendor lock-in. Interface 100% traduzida em 3 idiomas.
+### 97% estável. 100% local. Zero vendor lock-in. Interface 100% traduzida em 3 idiomas.
 
 *Claude · Gemini · GPT · Ollama — um cockpit. Muitas IAs. Nenhum vendor lock-in.*
 
 <br/>
 
-![Estabilidade 96%](https://img.shields.io/badge/Estabilidade-96%25-22c55e?style=flat-square) ![Local-First](https://img.shields.io/badge/Local--First-100%25-7c3aed?style=flat-square) ![Multi-Agente](https://img.shields.io/badge/Multi--Agente-COSMOS-ff0055?style=flat-square) ![Idiomas](https://img.shields.io/badge/PT_·_EN_·_ES-100%25_i18n-0ea5e9?style=flat-square)
+![Estabilidade 97%](https://img.shields.io/badge/Estabilidade-97%25-22c55e?style=flat-square) ![Local-First](https://img.shields.io/badge/Local--First-100%25-7c3aed?style=flat-square) ![Multi-Agente](https://img.shields.io/badge/Multi--Agente-COSMOS-ff0055?style=flat-square) ![Idiomas](https://img.shields.io/badge/PT_·_EN_·_ES-100%25_i18n-0ea5e9?style=flat-square) ![CURE](https://img.shields.io/badge/CURE-Auto--Fix-ff6b9d?style=flat-square)
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.1.3-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.2.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
 [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.1.3-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Versão](https://img.shields.io/badge/versão-1.2.0-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
 [![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
@@ -49,8 +49,8 @@ Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a respo
 # A Lya é o cockpit que elimina esse atrito:
 
 - 🎯 **Um ambiente.** Claude, Gemini, GPT e Ollama na mesma tela — sem troca de aba.
-- 🧠 **Memória real.** O Core5 indexa seu projeto localmente e aprende com cada correção. A IA "lembra" entre sessões — e entre erros já curados.
-- ⚡ **COSMOS soberano.** Lance até 4 agentes em paralelo, acompanhe a entrega de cada um ao vivo, mande refazer se não serviu — direto no chat.
+- 🧠 **Memória real (768d).** O Core5 indexa seu projeto localmente com embeddings de 768 dimensões (nomic-embed-text-v1.5) e aprende com cada correção. A IA "lembra" entre sessões — e entre erros já curados.
+- ⚡ **COSMOS soberano + CURE.** Lance até 4 agentes em paralelo, acompanhe a entrega de cada um ao vivo, e deixe a IDE consertar o próprio build sozinha — com memória de cicatrizes que impede a repetição do mesmo erro.
 - 🔒 **100% na sua máquina.** Nenhum dado seu toca nossos servidores. Zero telemetria oculta.
 
 > **Você traz as chaves. A Lya traz a inteligência coordenada.**
@@ -63,21 +63,23 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 
 | 🧩 Módulo | O que entrega |
 |---|---|
-| 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT e Ollama na mesma sala. Streaming cancelável, markdown, anexos, **gravação de voz**, function-calling real e histórico completo. |
-| 🎛️ **COSMOS — Orquestração** | Até 4 agentes de IA em paralelo (API, CLI, local). Cada slot com motor independente, status ao vivo e contexto compartilhado. |
-| 🧠 **Core5 — Memória de Longo Prazo** | Motor de memória embutido (LanceDB, zero dependência de Python/Docker). Classifica e indexa documentos, notas, decisões e histórico. A IA "lembra" do seu projeto entre sessões — e fica melhor quanto mais você usa. |
-| 📝 **Editor Monaco** | O mesmo motor do VS Code. IntelliSense, F12, multi-cursor, diff de Git, **Ctrl+K** edita código com IA inline. |
-| 🔍 **Explorer + Find in Files** | Árvore VS Code-like, busca por nome **e por conteúdo** (regex, case-sensitive), preview. |
+| 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT, Ollama (local + cloud) e **Antigravity** na mesma sala. Streaming cancelável, markdown, anexos, **gravação de voz**, function-calling real e histórico completo. |
+| 🎛️ **COSMOS — Orquestração** | Até 4 agentes de IA em paralelo (API, CLI, local). Cada slot com motor independente, status ao vivo, contexto compartilhado e **tools MCP dinâmico**. |
+| 🩹 **CURE — Auto-Correção** | A IDE conserta o próprio build sozinha: loop build→mistake→correção→rebuild com disjuntor anti-degeneração, **CURE SCAR** (memória de cicatrizes com dinâmica de confiança), **Auto Scar Fix** (preview preventivo no composer, custo zero) e **roteamento Planner→Executor** por classificação de ferida. |
+| 🧠 **Core5 — Memória 768d** | Motor de memória embutido (LanceDB, **nomic-embed-text-v1.5 768d**, zero dependência de Python/Docker). Cascata de embedding dimensão-safe (Gemini online 768d → nomic local 768d). Captura contínua write-behind com anti-loop de feedback. Continuidade MCP com Core5 externo (Claude Code, Claude Desktop). |
+| 📝 **Editor Monaco** | O mesmo motor do VS Code. IntelliSense, F12, multi-cursor, diff de Git, **Ctrl+K** edita código com IA inline. **Grammars TextMate** (vscode-textmate + oniguruma WASM, offline) + **snippets** ativáveis por pacote. |
+| 🔍 **Explorer + Find in Files** | Árvore VS Code-like, busca por nome **e por conteúdo** (regex, case-sensitive), preview. **Temas de ícone** (Studio, Emoji, Mono). |
 | 💻 **Terminal Integrado** | PTY nativo (node-pty) real. Rode npm, python, git, qualquer coisa — sem sair da IDE. |
 | 🏗️ **Build & Compilador** | Build/run reais com saída ao vivo. Detecta automaticamente o comando do projeto (npm, gradle, tsc, python). |
 | 🐞 **Run & Debug** | Depuração real de **Node.js** (CDP) e **Python** (debugpy/DAP): breakpoints, step, variáveis, call stack. |
 | 🔗 **n8n Live + Pipeline RAG** | Servidor n8n gerenciado + editor de pipeline RAG que recupera memória, dispara LLM com contexto e publica resultado. |
-| 🔒 **LSCode Keychain** | Gerenciador centralizado de chaves API. Fonte única da verdade para todos os provedores — seus segredos ficam só na sua máquina. |
-| 🛒 **Loja de Skills** | Importe skills de qualquer repositório Git — o conteúdo real vai pra memória vetorial (ChromaDB), e o COSMOS/Stars já acham e usam via busca semântica. Capacidades de dev reais instaláveis sob demanda. |
+| 🔒 **LSCode Keychain** | Gerenciador centralizado de chaves API (Carteira cifrada AES-256-GCM). Fonte única da verdade para todos os provedores — seus segredos ficam só na sua máquina. |
+| 🛒 **Loja de Skills + Linguagens** | Importe skills de repositórios Git (indexação real na memória vetorial). Grammars, snippets, **8+ temas de cor** (Dracula, Tokyo Night, Atom One Dark…) e icon themes — tudo instalável direto na Store. |
 | 🖥️ **Desktop Self-Contained** | `.exe` e `.msi` que embute o runtime. **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
-| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE. Build Tauri + MSIX + upload SAS + Partner Center API em um clique. Histórico de submissões, screenshots drag-and-drop, SSE ao vivo. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
-| 🌍 **Interface 100% Trilíngue** | Português, Inglês e Espanhol nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. Detecta o idioma do sistema no 1º uso; troque a qualquer momento sem reiniciar. |
-| ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. Claude Code abre ao lado do editor, como na extensão oficial. |
+| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE. Build Tauri + MSIX + upload SAS + Partner Center API em um clique. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
+| 🌍 **Interface 100% Trilíngue** | Português, Inglês e Espanhol nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **1698 chaves i18n em paridade**. |
+| 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (Claude Code/Desktop/Cursor conectam e usam missão/SBB/CURE como tools). |
+| ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
 
 ➡️ **Detalhe completo:** [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md)
 
@@ -106,11 +108,14 @@ Cada melhoria de engenharia é um argumento de venda — não uma linha de chang
 ## 🛡️ Segurança por Padrão
 
 - **AES-256-GCM em repouso** — chaves API e tokens OAuth cifrados com IV aleatório por valor. Chave mestra em `~/.coreLyaDB/.master.key` (permissão `0600`). Nunca em texto plano.
-- **Path traversal bloqueado** — `isPathAllowed()` resolve ambos os lados com `path.resolve()` antes do `startsWith()`. Bypass via `../..` é fechado na raiz.
-- **Fila de ordens cifrada** — `engineKeys` na fila de missões são cifradas em disco (mesmo padrão do `accounts.json`). A rota pública usa `publicOrder()` — nunca vaza segredo.
-- **Metacaracteres escapados** — prompts do usuário nunca vão para `shell: true`; args sempre passam como array para `cross-spawn`.
+- **Auth-gate no servidor** — bind `127.0.0.1` (fecha LAN) + allowlist de Origin/Host (fecha browser externo + DNS-rebinding) + guard no upgrade WebSocket + token de sessão. RCE remota impossível.
+- **Path traversal bloqueado** — `isPathAllowed()` resolve ambos os lados com `path.resolve()` antes do `startsWith()`. Bypass via `../..` fechado na raiz. Symlink-escape bloqueado via `realpath`.
+- **Sandbox de filesystem (default-deny)** — lista vazia = nega tudo (escopado ao `WORKSPACE_ROOT`). Toda operação validada contra `fs-allowed-paths.json`. `FS_SANDBOX_BLOCKED` retornado sem exceção.
+- **Fila de ordens cifrada** — `engineKeys` na fila de missões são cifradas em disco (mesmo padrão do `accounts.json`). Rota pública usa `publicOrder()` — nunca vaza segredo.
+- **Chave n8n cifrada** — chave n8n agora em AES-256-GCM em repouso; `GET /api/n8n/config` não devolve a chave (só `hasKey`).
+- **open-url seguro** — `explorer.exe` sem shell + `isSafeExternalUrl` (validação de protocolo/domínio).
+- **Metacaracteres escapados** — prompts nunca vão para `shell: true`; args sempre passam como array para `cross-spawn`.
 - **domGuard** — patch do React para bloquear `insertBefore` injetado por extensões de navegador que causam crash.
-- **Sandbox de filesystem** — toda operação de leitura/escrita via agente é validada contra `fs-allowed-paths.json`. `FS_SANDBOX_BLOCKED` retornado sem exceção.
 
 ---
 
@@ -126,38 +131,40 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 - **Fila cifrada com override** — ordens enfileiradas aguardam vez; `mode: "override"` fura a fila imediatamente.
 - **MCP dinâmico** — ferramentas de servidores MCP do usuário (JSON-RPC STDIO) registradas em tempo real via `tool-matrix.ts` e disponíveis nos dois paths (API e CLI).
 
-### 🩹 Em desenvolvimento — Projeto CURE: a IDE conserta o próprio build sozinha
+### 🩹 Projeto CURE — a IDE conserta o próprio build sozinha (entregue e em uso)
 
 > Eles têm correção. O Lya Studio Coder tem **CURE** — e ela lembra de cada mistake (erro do dia a dia) já corrigido.
 
 - **Missão AUTO_FIX** — defina o alvo-verde (ex.: `npm run lint && npm test`) e a IDE entra no loop build → mistake → correção → rebuild até o comando passar de verdade (exit code real, nunca auto-relato da IA). Disjuntor anti-degeneração: escada de escalada (autocrítica → abordagem alternativa → cérebro maior → pausa soberana com diagnóstico) evita loop infinito queimando tokens. Engine-agnóstico — funciona com motor local, API ou CLI.
 - **CURE SCAR** (scar: a marca que fica depois que um mistake é corrigido) — cada mistake curado vira um scar consultável no Core5: na próxima vez que o mesmo mistake aparecer, a receita conhecida entra no briefing e a cure sai mais rápida e mais barata. Verificado ao vivo: mesmo mistake plantado 2× → 2ª cure em **1 iteração** citando o scar. Receita que funciona ganha reforço; receita que falha vira **anti-receita** ("não tente isto de novo") — scar só nasce de verde real, nunca de alegação sem prova.
-- **Motor Antigravity (Google Managed Agents)** — novo provider selecionável como motor de Star: agente autônomo que roda num sandbox remoto e devolve o resultado pronto. Porta endurecida após revisão adversária: pré-voo honesto, retry desabilitado (cada tentativa custa um sandbox novo), timeout + cancelamento propagados, resposta vazia vira falha honesta em vez de sucesso falso.
-- **Tools MCP nas missões da equipe** — servidores MCP conectados no MCP Store agora ficam disponíveis também para a equipe em missão (COSMOS + Stars), não só para o chat.
+- **Auto Scar Fix** — prevenção custo-zero no composer: enquanto o Arquiteto digita, o sistema consulta a memória de cicatrizes usando **só embedding local do Core5** (ZERO chamada de modelo). Badge âmbar/vermelho aparece em tempo real com receita conhecida ou aviso de risco — **sem nunca bloquear o envio**.
+- **Roteamento Planner→Executor** — classifica a ferida por custo (receita existente → executor pequeno; erro novo estruturado → médio; anti-receita sem solução → grande/regente). O COSMOS escala automaticamente o motor certo para cada tipo de problema.
+- **MissionTracker com CURE** — painel rosa dedicado na interface: iterações, degrau d1–d4, alvo-verde, executor roteado, cicatriz citada, regente de plantão e pausa soberana — tudo ao vivo.
+- **Motor Antigravity (Google Managed Agents)** — provider selecionável como motor de Star: agente autônomo que roda num sandbox remoto e devolve o resultado pronto. Porta endurecida após revisão adversária: pré-voo honesto, retry desabilitado, timeout + cancelamento propagados.
+- **Tools MCP nas missões da equipe** — servidores MCP conectados no MCP Store ficam disponíveis para a equipe em missão (COSMOS + Stars), não só para o chat.
+- **IDE como Servidor MCP** — Claude Code/Desktop/Cursor/Antigravity conectam-se ao LSCoder e consomem missão/SBB/CURE como tools (`lscoder_*`). JSON-RPC 2.0, zero dependência nova.
 
-### ✨ Novo na v1.1.3 — interface 100% traduzida + chat mais claro
+### 🧩 Extensões VS Code de verdade (novo na v1.2.0)
 
-> Entregue, testado e no ar neste build (gates: `lint 0` · **173/173 testes**):
+- **Extension Host em runtime** — extensões `.vsix` reais (formato VS Code) instalam, ativam, desativam e desinstalam **sem rebuild e sem reiniciar a IDE**, rodando sobre `@codingame/monaco-vscode-api`. Prettier de verdade ativando e formatando o documento — não simulação.
+- **Catálogo Open VSX na Loja** — busca no [Open VSX](https://open-vsx.org/) com **badge honesto por extensão** (JS provado · Declarativa · Não suportada): a Loja só promete o que realmente entrega. Importação de `.vsix` local também.
+- **COSMOS opera as extensões** — cada comando registrado por uma extensão vira uma ferramenta (`ext__*`) que a equipe de IA invoca em missão: o resultado da extensão muda o desfecho da missão. Nenhuma outra IDE com Monaco faz isso.
+- **Atualização pela IDE** — "Verificar atualização" em Configurações compara a versão local com a última release e leva direto à Microsoft Store ou ao GitHub para instalar.
 
-- **Interface 100% em PT/EN/ES** — os últimos painéis (Publisher, Configurações, Infra, MCP) e as mensagens de erro da Orquestração/Supervisor foram traduzidos. Zero texto hardcoded restante nos 47 componentes da IDE.
-- **Chat mais fácil de ler** — mensagens do usuário ganharam uma caixa sutil (como no Antigravity) pra diferenciar de cara quem escreveu o quê; o nome do modelo aparece maior no lugar do "COSMOS" repetido em toda mensagem.
-- **Seu nome no chat, do seu jeito** — novo campo "Usuário" em Orquestração → Perfil: deixe em branco pra continuar como "Arquiteto" ou personalize.
-- **Fix no Lya Publisher** — corrigido um bug em que o botão "Publicar na Store" podia pegar o pacote `.msix` errado quando havia mais de uma versão na pasta de build.
+### 🔤 Loja de Linguagens (v1.1.4)
 
-### ✨ v1.1.2 — a equipe ficou mais inteligente
+- **Grammars TextMate** (offline, vscode-textmate + oniguruma WASM): realce de sintaxe para linguagens que o editor não trazia de fábrica (`.env`, `.prisma`). Herdam automaticamente todos os temas de cor.
+- **Snippets** ativáveis por pacote (TypeScript, React Hooks, Python, HTML5).
+- **Temas de ícone** do explorador (Studio, Emoji, Mono).
+- **8+ temas de cor** embutidos: Lya Dark, Dracula, One Dark Pro, Tokyo Night, Monokai, Night Owl, Solarized Dark, GitHub Light, **Atom One Dark** (editor + skin UI).
 
-- **Star 4 → Cérebro & Memória** — a Star 4 deixou de ser worker genérico e virou especialista em memória e grounding: compila as fontes **antes** das Stars 1–3 agirem e arquiva o resultado no ChromaDB ao final.
-- **Distribuição Dinâmica por Capacidade** — o COSMOS lê as `capabilities` de cada slot e decide, no planejamento, **quantas Stars convocar e o papel de cada uma**.
-- **SBB — Shared Blackboard** (método Lya Studio Coder, ex-"Quadro Negro") — a memória situacional da missão, dividida e **compartilhada em tempo real**: fontes + plano injetados em toda Star antes de agir — grounding que elimina alucinação. Quando só um usuário vê (ou no diagnóstico do COSMOS), é o **Blackboard**; com plateia, é o **SBB**.
-- **Contexto encadeado de fases** — cada Star recebe a saída consolidada das fases anteriores; missões multi-fase sem perda de contexto.
+### 🔜 Em breve — próximo bloco
 
-### 🔜 Em breve — próximo bloco (v1.2)
-
-- **Open VSX na Loja** — temas de cor, grammars TextMate, snippets e icon themes do catálogo [Open VSX](https://open-vsx.org/) instaláveis direto na Store da Lya — com transparência total sobre o que cada extensão pode entregar dentro do Monaco.
+- **Mais cobertura de extensões** — ampliar a faixa de extensões JS suportadas pelo Extension Host (linters, language servers) mantendo a transparência do badge honesto.
 
 ---
 
-## 🧠 Memória de Longo Prazo — Core5
+## 🧠 Memória de Longo Prazo — Core5 (768d)
 
 A Lya não esquece o seu projeto quando você fecha a aba. O **Core5** é o motor de memória
 embutido na IDE — 100% local, sem servidor externo obrigatório.
@@ -165,54 +172,61 @@ embutido na IDE — 100% local, sem servidor externo obrigatório.
 - **Embutido, sem dependência pesada.** Motor local (LanceDB) que roda dentro do próprio
   processo da IDE — sem exigir Python, Docker ou um serviço à parte rodando em segundo plano
   pra ter memória. O ChromaDB segue disponível como backend legado/alternativo.
+- **768 dimensões, unificado.** Todos os motores (Core5 embutido + ChromaDB legado) usam
+  **nomic-embed-text-v1.5 (768d)** como embedding padrão — qualidade uniforme, sem mix de
+  dimensões. Cascata dimensão-safe: Gemini online 768d (grátis, chave auto-resolvida da
+  Carteira) → nomic local 768d (llama.cpp, CPU, zero API) → guarda que descarta qualquer
+  vetor com dimensão incompatível. Impossível corromper a base.
+- **Velocímetro da Memória.** Arco de velocidade (emb/s) + latência + fonte ativa + barra
+  de capacidade por backend — informação real da telemetria, não decoração.
 - **Aprende com cada correção.** Todo mistake curado pelo Projeto CURE vira um scar
   consultável: da próxima vez que o mesmo mistake aparecer, a IA já entra sabendo a receita —
   mais rápido e mais barato. Scars só nascem de sucesso comprovado (exit code real),
   nunca de alegação da IA.
-- **Captura contínua, sem travar a resposta.** Decisões relevantes da conversa são
-  enfileiradas e gravadas em lote (write-behind) — a escrita na memória nunca bloqueia o chat.
+- **Captura contínua write-behind.** Decisões relevantes da conversa são enfileiradas e
+  gravadas em lote (5 itens ou 10s) — a escrita na memória nunca bloqueia o chat.
   Guarda **anti-loop de feedback**: o que já veio de uma busca na memória nunca é regravado
-  como memória nova.
-- **Continuidade entre ferramentas.** Além da memória local da IDE, a Lya fala **MCP** com uma
-  instância externa do Core5 (ex.: Claude Code, Claude Desktop) — conectando de verdade via
-  handshake real (o indicador de status só acende quando a conexão está provada, nunca por
-  decoração). Isso permite compartilhar contexto do mesmo projeto entre a IDE e as CLIs de IA
-  que você já usa no dia a dia.
+  como memória nova. Piso de 40 chars corta fragmento trivial.
+- **Continuidade entre ferramentas.** A Lya fala **MCP** com uma instância externa do Core5
+  (ex.: Claude Code, Claude Desktop) — conectando de verdade via handshake real (o indicador
+  de status só acende quando a conexão está provada, nunca por decoração). Compartilhe
+  contexto do mesmo projeto entre a IDE e as CLIs de IA do dia a dia.
+- **Living Border.** Borda com veio de luz rosa-lilás-neon (assinatura Lya) que gira/pulsa
+  quando a memória está online e fica parada quando offline — a animação virou o indicador.
 - **Sua instância, seus dados.** A memória vive na sua máquina; ela fica melhor quanto mais
   você usa a Lya — e nunca sai do seu controle.
 
 ### ❓ Core5 ou ChromaDB — qual eu uso?
 
-- **Por padrão, só o Core5 roda** — motor embutido (LanceDB), sem instalar nada. Você abre a IDE e a memória já funciona.
-- **ChromaDB é o motor legado** (o "antigo", que existia antes do Core5 e precisava de Python instalado à parte). Ele continua disponível, mas hoje só entra nas buscas se estiver explicitamente habilitado na configuração de memória — não basta só ter o processo rodando.
-- **Dá pra usar os dois ao mesmo tempo.** A arquitetura já suporta rodar Core5 + ChromaDB juntos: cada busca consulta todos os motores habilitados e mescla os resultados sem duplicar.
-- **O embedding (a "tradução" do seu texto em vetores de busca) é o mesmo pros dois motores** — não existe um embedding exclusivo do Core5 nem do Chroma. Por padrão roda um modelo local (~384 dimensões, zero custo, zero API), com fallback pra um modelo online (Gemini/OpenAI/NVIDIA) se você configurar chave pra isso.
-- **Quando faz sentido ligar o ChromaDB?** Só se você já tinha uma base ChromaDB de uma versão anterior da Lya e quer manter acesso a ela. Pra uso novo, o Core5 embutido já resolve sozinho.
-- **Hoje não tem toggle na interface** pra ligar/desligar cada motor — só editando a configuração de memória diretamente. Está no radar como melhoria futura.
+- **Por padrão, só o Core5 roda** — motor embutido (LanceDB, 768d), sem instalar nada. Você abre a IDE e a memória já funciona.
+- **ChromaDB é o motor legado** (o "antigo", que existia antes do Core5 e precisava de Python à parte). Continua disponível, mas só entra nas buscas se estiver explicitamente habilitado.
+- **Dá pra usar os dois ao mesmo tempo.** A arquitetura suporta rodar Core5 + ChromaDB juntos: cada busca consulta todos os motores habilitados e mescla os resultados sem duplicar.
+- **O embedding é o mesmo pros dois motores** — nomic-embed-text-v1.5 (768d) unificado, com cascata Gemini online → nomic local → guarda de dimensão. A chave fica na Carteira cifrada (1 lugar só).
+- **Quando faz sentido ligar o ChromaDB?** Só se você já tinha uma base ChromaDB de uma versão anterior. Pra uso novo, o Core5 embutido já resolve sozinho.
 
 ---
 
 ## 🏗️ Arquitetura
 
-Da casca desktop ao orquestrador soberano — toda a Lya em uma visão. **Tudo roda na sua máquina**: shell Tauri (Rust) → servidor Node local → COSMOS coordenando até 4 Stars, com memória vetorial (Core5 embutido, LanceDB) e segredos cifrados (AES-256-GCM) — sem nuvem no caminho crítico.
+Da casca desktop ao orquestrador soberano — toda a Lya em uma visão. **Tudo roda na sua máquina**: shell Tauri (Rust) → servidor Node local (auth-gate `127.0.0.1`) → COSMOS coordenando até 4 Stars com **CURE** (auto-correção + cicatrizes), memória vetorial 768d (Core5/LanceDB + cascata Gemini/nomic), **MCP bidirecional** (cliente + servidor), e segredos cifrados (AES-256-GCM) — sem nuvem no caminho crítico.
 
 <div align="center">
 
-![Arquitetura geral da Lya Studio Coder](assets/arquitetura-geral.png)
+![Arquitetura geral da Lya Studio Coder v1.2.0](assets/arquitetura-geral.png)
 
-**Visão geral** — Tauri shell · React SPA · Node/Express · módulos críticos · provedores de IA.
+**Visão geral v1.2.0** — Tauri shell · React SPA · Node/Express · CURE · Core5 768d · MCP bidirecional · Extension Host · 8+ provedores de IA.
 
 </div>
 
-### Pipeline de Orquestração COSMOS
+### Pipeline de Orquestração COSMOS + CURE
 
-Como uma ordem vira entrega: o COSMOS planeja, distribui dinamicamente por capacidade, as Stars 1–3 executam em paralelo e o COSMOS consolida e indexa — com a Star 4 (Cérebro/Memória) alimentando o **SBB — Shared Blackboard** (a memória situacional compartilhada em tempo real) para eliminar alucinação.
+Como uma ordem vira entrega: o COSMOS planeja (com **Auto Scar Fix** preventivo), distribui dinamicamente por capacidade, as Stars 1–3 executam em paralelo (com tools MCP dinâmico) e o COSMOS consolida e indexa — com a Star 4 (Cérebro/Memória) alimentando o **SBB — Shared Blackboard**. Em missões **AUTO_FIX**, o loop CURE opera com disjuntor, cicatrizes e roteamento por classificação de ferida.
 
 <div align="center">
 
-![Pipeline de orquestração COSMOS](assets/pipeline-orquestracao.png)
+![Pipeline de orquestração COSMOS + CURE](assets/pipeline-orquestracao.png)
 
-**Máquina de estados da Missão** — `PENDING → PLANNING → DISTRIBUTING → EXECUTING → CONSOLIDATING → INDEXING → DONE`.
+**Máquina de estados** — `PENDING → PLANNING → DISTRIBUTING → EXECUTING → CONSOLIDATING → INDEXING → DONE` · CURE: `verify → fingerprint → disjuntor d1–d4 → re-brief → fix`.
 
 </div>
 
@@ -243,33 +257,36 @@ Como uma ordem vira entrega: o COSMOS planeja, distribui dinamicamente por capac
 
 ## 📊 Mapa de Estabilidade
 
-Transparência total. Cada módulo tem nota baseada em testes reais.
+Transparência total. Cada módulo tem nota baseada em testes reais e uso em produção.
 
 ### ✅ Estável — pronto para o dia a dia
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
-| Chat Multi-Provider | `95%` | 🟢 Estável |
-| **COSMOS — Orquestração multi-agente** | `95%` | 🟢 Estável — benchmark 9.6/10 |
-| **Interface Trilíngue (PT/EN/ES)** | `96%` | 🟢 Estável — 0 texto hardcoded nos 47 componentes |
-| Editor Monaco | `93%` | 🟢 Estável |
+| **Interface Trilíngue (PT/EN/ES)** | `97%` | 🟢 Estável — 1698 chaves i18n, 0 hardcoded |
+| Chat Multi-Provider | `96%` | 🟢 Estável |
+| **COSMOS — Orquestração multi-agente** | `96%` | 🟢 Estável — benchmark 9.6/10 |
+| Editor Monaco + TextMate + Snippets | `94%` | 🟢 Estável |
+| **Memória Core5 768d (embutida)** | `93%` | 🟢 Estável — LanceDB + nomic 768d + Velocímetro |
 | Zoom Global | `92%` | 🟢 Estável |
 | Explorer + Find in Files | `91%` | 🟢 Estável |
+| **Loja de Skills + Linguagens** | `91%` | 🟢 Estável — import Git real + temas + grammars |
 | Terminal Integrado (PTY) | `90%` | 🟢 Estável |
 | App Desktop (.exe / .msi / .msix) | `90%` | 🟢 Estável |
-| Memória Core5 (embutida) | `89%` | 🟢 Estável |
-| Lya Publisher (Microsoft Store) | `85%` | 🟢 Estável |
-| Compilador & Build | `86%` | 🟢 Estável |
-| Run & Debug (Node + Python) | `84%` | 🟢 Estável |
+| **Embeddings 768d (Cascata)** | `90%` | 🟢 Estável — Gemini online → nomic local → guarda |
+| Lya Publisher (Microsoft Store) | `88%` | 🟢 Estável |
+| Compilador & Build | `87%` | 🟢 Estável |
+| Run & Debug (Node + Python) | `85%` | 🟢 Estável |
+| n8n Live + Pipeline RAG | `84%` | 🟢 Estável |
 
 ### 🧪 Em testes — use e nos ajude a melhorar
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
-| n8n Live + Pipeline RAG | `82%` | 🧪 Pré-lançamento |
-| Loja de Skills / Capacidades | `88%` | 🧪 Pré-lançamento |
-| Embeddings Nativos | `76%` | 🧪 Pré-lançamento |
-| Config. Provedores Remotos | `74%` | 🧪 Pré-lançamento |
+| **CURE — Auto-Correção (AUTO_FIX)** | `82%` | 🧪 Pré-lançamento — CURE SCAR + roteamento funcionais |
+| **MCP Bidirecional (cliente + servidor)** | `80%` | 🧪 Pré-lançamento |
+| **Antigravity (Google Managed Agents)** | `78%` | 🧪 Pré-lançamento |
+| Config. Provedores Remotos | `76%` | 🧪 Pré-lançamento |
 | Preview ao Vivo | `73%` | 🧪 Pré-lançamento |
 | Túnel de Compartilhamento | `70%` | 🧪 Pré-lançamento |
 
@@ -285,9 +302,9 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 | Instalador | Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`Lya Studio Coder_1.1.3_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.3/Lya.Studio.Coder_1.1.3_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~47 MB | `AC0372A7…A67261BC3` |
-| [**`Lya Studio Coder_1.1.3_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.3/Lya.Studio.Coder_1.1.3_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~71 MB | `BBBC1749…8279C5C13` |
-| [**`LyaStudioCoder_1.1.3.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.1.3/LyaStudioCoder_1.1.3.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~76 MB | `5E27FF71…3068137F0` |
+| [**`Lya Studio Coder_1.2.0_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.2.0/Lya.Studio.Coder_1.2.0_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~51 MB | `23C78893…64D1FFAC8` |
+| [**`Lya Studio Coder_1.2.0_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.2.0/Lya.Studio.Coder_1.2.0_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~76 MB | `2EBF6C81…365C7686` |
+| [**`LyaStudioCoder_1.2.0.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.2.0/LyaStudioCoder_1.2.0.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~81 MB | `97E6707C…E37F77E0` |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
@@ -295,14 +312,14 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 <summary>🔐 SHA-256 completos para verificação</summary>
 
 ```
-Lya Studio Coder_1.1.3_x64-setup.exe
-AC0372A7D2D808527AF114A683D83674292C68C37FF283859CB5FD1A67261BC3
+Lya Studio Coder_1.2.0_x64-setup.exe
+23C78893C31AC715123F3660BFBA0338E9E5A466E8E1BD4C84A274A64D1FFAC8
 
-Lya Studio Coder_1.1.3_x64_en-US.msi
-BBBC174963468FD2B5960835FB87BA5E31126B8A6E21629B16EE9678279C5C13
+Lya Studio Coder_1.2.0_x64_en-US.msi
+2EBF6C81B5627E63DDFC7A0DE2FC18B65B85C289FCD68E9804C7EE50365C7686
 
-LyaStudioCoder_1.1.3.0_x64.msix
-5E27FF716F29EC6F55C8E034FE5498B5B266762F00F2472E0B0118F3068137F0
+LyaStudioCoder_1.2.0.0_x64.msix
+97E6707C8AF5BB73D95548E26CE32D419BB3814F0682DF7C016215D7E37F77E0
 ```
 
 Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
@@ -326,16 +343,22 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 
 - [x] ✅ v1.0.0 — Lançamento público da IDE
 - [x] ✅ v1.0.1 — COSMOS soberano no chat, custo por token e correções
-- [x] ✅ v1.0.2 — Toggles de modo Plan/ADM/CEO/Supervisor, reset de estado, usage real, FAQ integrado (ver [CHANGELOG](CHANGELOG.md))
-- [x] ✅ v1.1.0 — COSMOS Cérebro Gigante: corredor CLI invencível, protocolo estruturado COSMOS↔Stars, Olho do COSMOS, Lya Publisher (Microsoft Store)
-- [x] ✅ v1.1.2 — Distribuição Dinâmica (Star 4 Cérebro & Memória + Quadro Negro, hoje batizado SBB — Shared Blackboard), interface trilíngue PT/EN/ES, quick-launch de CLIs na TopBar
-- [x] ✅ v1.1.3 — Interface 100% traduzida (PT/EN/ES), UX do chat (diferenciação usuário/IA, nome configurável), fix crítico do Lya Publisher
-- [ ] 🔄 v1.2.0 — Loja com catálogo Open VSX (temas, grammars, snippets, icon themes)
+- [x] ✅ v1.0.2 — Toggles de modo Plan/ADM/CEO/Supervisor, reset de estado, usage real, FAQ integrado
+- [x] ✅ v1.1.0 — COSMOS Cérebro Gigante: corredor CLI invencível, protocolo estruturado COSMOS↔Stars, Olho do COSMOS, Lya Publisher
+- [x] ✅ v1.1.2 — Distribuição Dinâmica (Star 4 Cérebro & Memória + SBB — Shared Blackboard), interface trilíngue PT/EN/ES, quick-launch de CLIs
+- [x] ✅ v1.1.3 — Interface 100% traduzida (PT/EN/ES), UX do chat, fix crítico do Lya Publisher
+- [x] ✅ Memória embedded Core5 768d (sem Python + ChromaDB) — nomic-embed-text-v1.5 unificado, cascata dimensão-safe, Velocímetro
+- [x] ✅ Ollama Cloud + Local providers — funcionais e em uso diário
+- [x] ✅ Projeto CURE completo — AUTO_FIX, CURE SCAR, Auto Scar Fix, roteamento Planner→Executor, MissionTracker
+- [x] ✅ Motor Antigravity (Google Managed Agents) — porta CLI + API endurecida
+- [x] ✅ MCP Bidirecional — IDE como cliente MCP + IDE como servidor MCP (6 tools `lscoder_*`)
+- [x] ✅ Loja de Linguagens — Grammars TextMate, snippets, icon themes, 8+ temas de cor
+- [x] ✅ Segurança: auth-gate RCE, sandbox default-deny, symlink-escape, chave n8n cifrada
+- [x] ✅ v1.1.4 — Consolidação: CURE completo, Core5 768d, MCP bidirecional, Loja de Linguagens, hardening de segurança
+- [x] ✅ v1.2.0 — Extension Host real (`.vsix` em runtime), catálogo Open VSX na Loja, COSMOS operando extensões, atualização pela IDE
+- [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
-- [ ] 🧩 Memória embedded (sem Python + ChromaDB)
-- [ ] 🌐 Ollama Cloud provider
-- [ ] 🏪 Marketplace de Skills
 
 Acompanhe em [Discussions → Roadmap](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions) e no [CHANGELOG](CHANGELOG.md).
 
@@ -377,7 +400,7 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 
 ➡️ **Pronto para consolidar seu fluxo de IA?**
 
-[![BAIXE A VERSÃO 96% ESTÁVEL](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_96%25_ESTÁVEL-Windows_x64_·_v1.1.3-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![BAIXE A VERSÃO 97% ESTÁVEL](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_97%25_ESTÁVEL-Windows_x64_·_v1.2.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 
 *Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 
