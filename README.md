@@ -297,6 +297,12 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 ## ⬇️ Download
 
 > 🏪 **Agora na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
+> A build da Store é a **[v1.1.4, certificada e assinada pela própria Microsoft](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.1.4)** — passou pela validação de segurança e conformidade do Partner Center.
+
+> 📦 **winget** — em moderação na [winget-pkgs](https://github.com/microsoft/winget-pkgs/pull/400151). Assim que aprovado:
+> ```powershell
+> winget install StudioCodeAI.LyaStudioCoder
+> ```
 
 Prefere o instalador direto? A versão mais recente está sempre em **[Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)**.
 
@@ -354,7 +360,7 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ MCP Bidirecional — IDE como cliente MCP + IDE como servidor MCP (6 tools `lscoder_*`)
 - [x] ✅ Loja de Linguagens — Grammars TextMate, snippets, icon themes, 8+ temas de cor
 - [x] ✅ Segurança: auth-gate RCE, sandbox default-deny, symlink-escape, chave n8n cifrada
-- [x] ✅ v1.1.4 — Consolidação: CURE completo, Core5 768d, MCP bidirecional, Loja de Linguagens, hardening de segurança
+- [x] ✅ v1.1.4 — Consolidação: CURE completo, Core5 768d, MCP bidirecional, Loja de Linguagens, hardening de segurança · **🏪 certificada na Microsoft Store**
 - [x] ✅ v1.2.0 — Extension Host real (`.vsix` em runtime), catálogo Open VSX na Loja, COSMOS operando extensões, atualização pela IDE
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
