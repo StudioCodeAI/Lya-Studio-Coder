@@ -43,6 +43,52 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.3.0] — Projeto Fábrica: a IDE que se testa, se conhece e se publica · 2026-07-17
+
+> **Fábrica v1.3** — seis frentes que endurecem a IDE de ponta a ponta: testes E2E
+> industriais, memória do próprio código e histórico, agentes de QA sob o COSMOS,
+> tela inicial + explorer forte, instalação real de extensões e um serviço que
+> **publica a própria release** (e provou seu valor achando e corrigindo os bugs do
+> próprio empacotamento nesta v1.3.0).
+
+### 🧪 Testes de verdade, do boot ao release
+- Suíte E2E industrial (Playwright) cobrindo as superfícies principais — shell, chat,
+  explorer, orquestração, memória, publisher — com relatórios e traços por execução.
+- **Agentes de QA sob o COSMOS**: em ordens de teste o COSMOS convoca trabalhadores de
+  QA/Simulação que rodam os testes e devolvem um placar **honesto por construção**
+  (verde derivado do código de saída real, não do que o agente diz).
+
+### 🧠 A IDE conhece o próprio projeto
+- **Busca no código-base** (RAG local-first da pasta aberta, incremental ao salvar) e
+  **histórico da IDE** (chats, missões e desfechos) — as duas viram ferramentas que o
+  COSMOS e as Stars consultam para fundamentar o trabalho, com rerank híbrido que não
+  mente em português curto. Tudo local, com chave única na Carteira e privacidade por
+  toggle (desligado = nada gravado).
+
+### 🚀 Começar e navegar
+- **Tela Inicial**: criar projeto por template (vazio · Node/TS · React+Vite · Python ·
+  Express · Tauri) ou **por descrição** (o COSMOS monta e valida o build). Abrir, clonar
+  por URL e recentes.
+- **Explorer forte**: badges de git por arquivo, Revelar no Explorer, exclusão para a
+  Lixeira e **Ctrl+P** (abertura rápida fuzzy).
+
+### 🧩 Extensões Open VSX de verdade
+- Instalar extensão do registro **ou por URL/`.vsix`**, com sandbox de extração,
+  varredura de honestidade (JS provado · declarativa · recusa transparente) e
+  anti-SSRF. O COSMOS instala extensão por ordem do chat.
+
+### 🏭 Lya Build Releases (LBR) — a publicação vira máquina
+- Um serviço de release em fases, retomável e persistido: fabricação (gates → build →
+  auditoria de bundle → hash), evidências e submissão, **gate soberano de laudos** e
+  publicação (GitHub release + vitrine + winget). Stepper dedicado no Lya Publisher e
+  operável pelo próprio chat do COSMOS.
+- **Prova de fogo**: publicar esta v1.3.0 pela própria máquina desenterrou e corrigiu
+  bugs reais do empacotamento (versão do MSIX, coleta de instaladores, caminhos com
+  espaço) que só aparecem numa publicação de verdade — exatamente o que um serviço de
+  release existe para blindar.
+
+---
+
 ## [1.2.0] — Extension Host de verdade + atualização pela IDE · 🧪 em testes (não lançada)
 
 > Reunificação do repo experimental **LSCODE** (F4.2): o Extension Host provado lá
