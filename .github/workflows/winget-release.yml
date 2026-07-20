@@ -1,0 +1,50 @@
+name: Release to GitHub and Winget
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  security-prescan:
+    name: VirusTotal Pre-scan
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Download release assets
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: ${{ github.repository }}
+          tag: ${{ github.event.release.tag_name }}
+          fileName: "*.exe"
+          # Ajuste para .msix se necessário
+
+      - name: Run VirusTotal API Check
+        # Só roda o pré-scan se o secret existir; sem ele o passo é pulado
+        # (não bloqueia o release) em vez de quebrar o job inteiro.
+        env:
+          VT_API_KEY: ${{ secrets.VIRUSTOTAL_API_KEY }}
+        if: ${{ env.VT_API_KEY != '' }}
+        run: |
+          # Encontra o instalador baixado
+          $installer = Get-ChildItem -Filter "*.exe" | Select-Object -First 1
+          if (-not $installer) {
+            Write-Error "Nenhum instalador encontrado no release para análise."
+            exit 1
+          }
+
+          Write-Host "Executando pré-scan de $($installer.Name) via VirusTotal..."
+          .\scripts\virustotal-prescan.ps1 -FilePath $installer.FullName -ApiKey $env:VT_API_KEY
+
+  publish-winget:
+    name: Publish to Winget Packages
+    needs: security-prescan
+    runs-on: windows-latest
+    steps:
+      - name: Submit to Winget Releaser
+        uses: vedantmgoyal9/winget-releaser@v2
+        with:
+          identifier: StudioCodeAI.LyaStudioCoder
+          installers-regex: '\.exe$' # Ajuste se for msix
+          token: ${{ secrets.WINGET_TOKEN }}
