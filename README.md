@@ -6,13 +6,13 @@
 
 # 🌌 Lya Studio Coder: Sua central de orquestração multi-IA
 
-### 97% estável. 100% local. Zero vendor lock-in. Interface 100% traduzida em 3 idiomas.
+### 98% estável. 100% local. Zero vendor lock-in. Interface 100% traduzida em 3 idiomas.
 
 *Claude · Gemini · GPT · Ollama — um cockpit. Muitas IAs. Nenhum vendor lock-in.*
 
 <br/>
 
-![Estabilidade 97%](https://img.shields.io/badge/Estabilidade-97%25-22c55e?style=flat-square) ![Local-First](https://img.shields.io/badge/Local--First-100%25-7c3aed?style=flat-square) ![Multi-Agente](https://img.shields.io/badge/Multi--Agente-COSMOS-ff0055?style=flat-square) ![Idiomas](https://img.shields.io/badge/PT_·_EN_·_ES-100%25_i18n-0ea5e9?style=flat-square) ![CURE](https://img.shields.io/badge/CURE-Auto--Fix-ff6b9d?style=flat-square)
+![Estabilidade 98%](https://img.shields.io/badge/Estabilidade-98%25-22c55e?style=flat-square) ![Local-First](https://img.shields.io/badge/Local--First-100%25-7c3aed?style=flat-square) ![Multi-Agente](https://img.shields.io/badge/Multi--Agente-COSMOS-ff0055?style=flat-square) ![Idiomas](https://img.shields.io/badge/PT_·_EN_·_ES-100%25_i18n-0ea5e9?style=flat-square) ![CURE](https://img.shields.io/badge/CURE-Auto--Fix-ff6b9d?style=flat-square)
 
 <br/>
 
@@ -77,7 +77,7 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🛒 **Loja de Skills + Linguagens** | Importe skills de repositórios Git (indexação real na memória vetorial). Grammars, snippets, **8+ temas de cor** (Dracula, Tokyo Night, Atom One Dark…) e icon themes — tudo instalável direto na Store. |
 | 🖥️ **Desktop Self-Contained** | `.exe` e `.msi` que embute o runtime. **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
 | 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE. Build Tauri + MSIX + upload SAS + Partner Center API em um clique. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
-| 🌍 **Interface 100% Trilíngue** | Português, Inglês e Espanhol nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **1698 chaves i18n em paridade**. |
+| 🌍 **Interface 100% Trilíngue** | Português, Inglês e Espanhol nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **1897 chaves i18n em paridade**. |
 | 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (Claude Code/Desktop/Cursor conectam e usam missão/SBB/CURE como tools). |
 | ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
 
@@ -263,32 +263,32 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
-| **Interface Trilíngue (PT/EN/ES)** | `97%` | 🟢 Estável — 1698 chaves i18n, 0 hardcoded |
-| Chat Multi-Provider | `96%` | 🟢 Estável |
-| **COSMOS — Orquestração multi-agente** | `96%` | 🟢 Estável — benchmark 9.6/10 |
-| Editor Monaco + TextMate + Snippets | `94%` | 🟢 Estável |
-| **Memória Core5 768d (embutida)** | `93%` | 🟢 Estável — LanceDB + nomic 768d + Velocímetro |
+| **Interface Trilíngue (PT/EN/ES)** | `98%` | 🟢 Estável — 1897 chaves i18n, 0 hardcoded (painel de Debug traduzido) |
+| Chat Multi-Provider | `97%` | 🟢 Estável — cancelamento Gemini encerra o request de verdade |
+| **COSMOS — Orquestração multi-agente** | `97%` | 🟢 Estável — /parar cancela a inferência em voo (AbortController por missão) |
+| Editor Monaco + TextMate + Snippets | `96%` | 🟢 Estável — rascunho por-aba preserva edição não salva |
+| **Memória Core5 768d (embutida)** | `94%` | 🟢 Estável — LanceDB + nomic 768d + dedup em janela deslizante |
 | Zoom Global | `92%` | 🟢 Estável |
-| Explorer + Find in Files | `91%` | 🟢 Estável |
+| Explorer + Find in Files | `93%` | 🟢 Estável — sandbox de path endurecido (sem traversal p/ irmão) |
 | **Loja de Skills + Linguagens** | `91%` | 🟢 Estável — import Git real + temas + grammars |
-| Terminal Integrado (PTY) | `90%` | 🟢 Estável |
-| App Desktop (.exe / .msi / .msix) | `90%` | 🟢 Estável |
-| **Embeddings 768d (Cascata)** | `90%` | 🟢 Estável — Gemini online → nomic local → guarda |
-| Lya Publisher (Microsoft Store) | `88%` | 🟢 Estável |
-| Compilador & Build | `87%` | 🟢 Estável |
-| Run & Debug (Node + Python) | `85%` | 🟢 Estável |
-| n8n Live + Pipeline RAG | `84%` | 🟢 Estável |
+| Terminal Integrado (PTY) | `92%` | 🟢 Estável — sem PTY órfão (teardown no shutdown) |
+| App Desktop (.exe / .msi / .msix) | `91%` | 🟢 Estável — carimbo de versão com guarda de drift |
+| **Embeddings 768d (Cascata)** | `92%` | 🟢 Estável — Gemini online → nomic local → guarda + sem vetor-zero morto |
+| Lya Publisher (Microsoft Store) | `90%` | 🟢 Estável — status resiliente a blip de rede |
+| Compilador & Build | `88%` | 🟢 Estável |
+| Run & Debug (Node + Python) | `88%` | 🟢 Estável — falha de conexão do debugger reportada (sem ok falso) |
+| n8n Live + Pipeline RAG | `89%` | 🟢 Estável — disparo real via Webhook + auto-start + resultado retornado |
 
 ### 🧪 Em testes — use e nos ajude a melhorar
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
-| **CURE — Auto-Correção (AUTO_FIX)** | `82%` | 🧪 Pré-lançamento — CURE SCAR + roteamento funcionais |
-| **MCP Bidirecional (cliente + servidor)** | `80%` | 🧪 Pré-lançamento |
+| **CURE — Auto-Correção (AUTO_FIX)** | `84%` | 🧪 Pré-lançamento — cicatriz neutra deixou de virar órfã |
+| **MCP Bidirecional (cliente + servidor)** | `82%` | 🧪 Pré-lançamento — sem servidor MCP órfão no shutdown |
 | **Antigravity (Google Managed Agents)** | `78%` | 🧪 Pré-lançamento |
-| Config. Provedores Remotos | `76%` | 🧪 Pré-lançamento |
-| Preview ao Vivo | `73%` | 🧪 Pré-lançamento |
-| Túnel de Compartilhamento | `70%` | 🧪 Pré-lançamento |
+| Config. Provedores Remotos | `79%` | 🧪 Pré-lançamento — teste SMTP real + erro de rede propagado |
+| Preview ao Vivo | `78%` | 🧪 Pré-lançamento — detecta `0.0.0.0`/IP LAN + sem dev server órfão |
+| Túnel de Compartilhamento | `74%` | 🧪 Pré-lançamento — túnel encerrado no shutdown (URL não fica pública sem dono) |
 
 > 💡 Módulo `🧪` com problema? **[Abra um relato](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose)** e ajude a levar a nota acima de 85%.
 
@@ -310,9 +310,9 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 | Instalador | Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`Lya Studio Coder_1.3.0_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.0/Lya.Studio.Coder_1.3.0_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~51 MB | `99BC90C7…1067A57526` |
-| [**`Lya Studio Coder_1.3.0_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.0/Lya.Studio.Coder_1.3.0_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~76 MB | `C8419C0F…D5364015` |
-| [**`LyaStudioCoder_1.3.0.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.0/LyaStudioCoder_1.3.0.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~81 MB | `699BBD78…911EF227` |
+| [**`Lya Studio Coder_1.3.0_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.0/Lya.Studio.Coder_1.3.0_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~52 MB | `D6F61381…34BFE5B8F0` |
+| [**`Lya Studio Coder_1.3.0_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.0/Lya.Studio.Coder_1.3.0_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~77 MB | `9A048A47…74CB28BF68` |
+| [**`LyaStudioCoder_1.3.0.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.0/LyaStudioCoder_1.3.0.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~81 MB | `B1E8BAC1…9BB85EEA32` |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
@@ -321,13 +321,13 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 ```
 Lya Studio Coder_1.3.0_x64-setup.exe
-99BC90C753FF8BF2EB09CAF277E7984ED81D5A4BEBEBC44D11A7091067A57526
+D6F6138199D4B7285A692F9A7274A414238FAB716A5DA485DCF25A34BFE5B8F0
 
 Lya Studio Coder_1.3.0_x64_en-US.msi
-C8419C0F25DAE1D2A8B89B98610B9832065888A6CF3E1A0E693C5C82D5364015
+9A048A470E8C707E5B0AB393C1F06C20A95A77D1EF311FF6C1F21274CB28BF68
 
 LyaStudioCoder_1.3.0.0_x64.msix
-699BBD788532C7DB5E39A6F4F8320A0527EB4591295B489EBC5B4A1F911EF227
+B1E8BAC13D9D4C4B26FF38940FD2C53D67A6F1FCB6D68894AA40DB9BB85EEA32
 ```
 
 Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`

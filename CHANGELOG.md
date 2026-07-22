@@ -45,6 +45,15 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ## [1.3.0] — Projeto Fábrica: a IDE que se testa, se conhece e se publica · 2026-07-17
 
+> **Re-emissão 2026-07-22 (Projeto ARESTA):** os binários da v1.3.0 foram
+> reconstruídos após uma auditoria fio-a-fio dos 20 módulos que encontrou e
+> corrigiu **18 bugs reais** antes de qualquer download — fim de processos-filho
+> órfãos no shutdown (cloudflared/n8n/preview/PTY/MCP/debug), sandbox de arquivos
+> endurecido contra travessia de caminho, cancelamento de missão que interrompe a
+> inferência em voo, disparo real de workflows n8n via Webhook, editor que não
+> perde mais a edição não salva ao trocar de aba, memória sem vetor-morto, teste
+> SMTP real, e o painel de Debug 100% traduzido. Lint 0 · 24/24 suítes verdes.
+
 > **Fábrica v1.3** — seis frentes que endurecem a IDE de ponta a ponta: testes E2E
 > industriais, memória do próprio código e histórico, agentes de QA sob o COSMOS,
 > tela inicial + explorer forte, instalação real de extensões e um serviço que
