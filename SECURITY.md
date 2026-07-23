@@ -4,7 +4,8 @@
 
 | Versão | Suporte |
 |---|:---:|
-| 1.0.x | ✅ |
+| 1.3.x (mais recente) | ✅ |
+| < 1.3.0 | ❌ |
 
 ## Como reportar uma vulnerabilidade
 
