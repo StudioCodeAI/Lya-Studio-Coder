@@ -63,6 +63,23 @@ cp scripts/git-hooks/pre-push .git/hooks/pre-push
 A partir daí, todo `git push` roda `npm run lint && npm test` e bloqueia em
 falha. Bypass consciente (emergência): `git push --no-verify`.
 
+### Rede de segurança da blindagem (git hook pre-commit)
+
+Além do `.gitignore`, há uma segunda camada local que roda **antes** de cada
+commit: verifica cada arquivo staged contra a allowlist do que já é vitrine
+pública hoje (README/CHANGELOG/docs não-sigilosos/.github/assets) e escaneia
+o conteúdo por padrões de segredo (mesma lógica de `scripts/audit-bundle.mjs`).
+Instale uma vez:
+
+```bash
+cp scripts/git-hooks/pre-commit .git/hooks/pre-commit
+```
+
+Se o commit for bloqueado, é porque um arquivo staged é código-fonte (ou algo
+gitignorado) que escapou via `git add -A`/`git add -f`, ou porque um segredo
+foi detectado no conteúdo. Bypass consciente (nunca em código real):
+`git commit --no-verify`.
+
 ### Estrutura do Projeto
 
 ```
