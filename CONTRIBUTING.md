@@ -51,17 +51,33 @@ npm install
 npx tsx server.ts
 ```
 
+### Git hooks — instalação automática
+
+Os hooks do projeto (`pre-push` e `pre-commit`, descritos abaixo) são instalados
+**automaticamente pelo `npm install`** — o script `prepare` copia
+`scripts/git-hooks/*` para `.git/hooks/`. É idempotente e nunca sobrescreve um
+hook que você tenha customizado à mão.
+
+```bash
+npm run hooks:install     # reinstalar/atualizar manualmente
+LYA_SKIP_HOOKS=1 npm i    # instalar dependências sem tocar nos hooks
+```
+
 ### Portão de qualidade (git hook pre-push)
 
 O gate de lint + testes roda **localmente** via git hook (não há CI cloud — o
-código-fonte não é versionado no repositório público). Instale uma vez:
+código-fonte não é versionado no repositório público).
+
+Todo `git push` roda `npm run lint` + a suíte completa (`E2E=1 npm test`, que
+inclui o build e o Playwright) e bloqueia em falha. O mesmo gate à mão:
 
 ```bash
-cp scripts/git-hooks/pre-push .git/hooks/pre-push
+npm run test:full        # = E2E=1 npm test (suítes offline + build + E2E)
+npm test                 # só as suítes offline (piso obrigatório)
 ```
 
-A partir daí, todo `git push` roda `npm run lint && npm test` e bloqueia em
-falha. Bypass consciente (emergência): `git push --no-verify`.
+Bypass consciente (emergência): `git push --no-verify`. Pular só o E2E,
+mantendo lint + suítes: `LYA_SKIP_E2E=1 git push`.
 
 ### Rede de segurança da blindagem (git hook pre-commit)
 
@@ -69,16 +85,25 @@ Além do `.gitignore`, há uma segunda camada local que roda **antes** de cada
 commit: verifica cada arquivo staged contra a allowlist do que já é vitrine
 pública hoje (README/CHANGELOG/docs não-sigilosos/.github/assets) e escaneia
 o conteúdo por padrões de segredo (mesma lógica de `scripts/audit-bundle.mjs`).
-Instale uma vez:
-
-```bash
-cp scripts/git-hooks/pre-commit .git/hooks/pre-commit
-```
+Também já vem instalado pelo `npm install`.
 
 Se o commit for bloqueado, é porque um arquivo staged é código-fonte (ou algo
 gitignorado) que escapou via `git add -A`/`git add -f`, ou porque um segredo
 foi detectado no conteúdo. Bypass consciente (nunca em código real):
 `git commit --no-verify`.
+
+### Camadas de teste
+
+| Camada | Comando | O que cobre |
+|---|---|---|
+| Lógica/backend | `npm test` | suítes offline (orquestração, memória, segurança, ferramentas…) |
+| Componente (React) | `npm run test:component` | componentes isolados em jsdom (Vitest + Testing Library) |
+| Ponta a ponta | `npm run test:e2e` | a IDE rodando de verdade (Playwright) |
+| Tudo | `npm run test:full` | o mesmo gate do `pre-push` |
+
+Testes de componente vivem em `tests/component/*.test.tsx` (config em
+`vitest.config.ts`); use `npm run test:component:watch` durante o
+desenvolvimento.
 
 ### Estrutura do Projeto
 
