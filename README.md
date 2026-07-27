@@ -6,13 +6,13 @@
 
 # 🌌 Lya Studio Coder: Sua central de orquestração multi-IA
 
-### 98% estável. 100% local. Zero vendor lock-in. Interface 100% traduzida em 3 idiomas.
+### 92% auditado nos 20 módulos. 100% local. Zero vendor lock-in. Interface 100% traduzida em 3 idiomas.
 
 *Claude · Gemini · GPT · Ollama — um cockpit. Muitas IAs. Nenhum vendor lock-in.*
 
 <br/>
 
-![Estabilidade 98%](https://img.shields.io/badge/Estabilidade-98%25-22c55e?style=flat-square) ![Local-First](https://img.shields.io/badge/Local--First-100%25-7c3aed?style=flat-square) ![Multi-Agente](https://img.shields.io/badge/Multi--Agente-COSMOS-ff0055?style=flat-square) ![Idiomas](https://img.shields.io/badge/PT_·_EN_·_ES-100%25_i18n-0ea5e9?style=flat-square) ![CURE](https://img.shields.io/badge/CURE-Auto--Fix-ff6b9d?style=flat-square)
+![Estabilidade auditada 92%](https://img.shields.io/badge/Auditada-92%25_·_20_módulos-22c55e?style=flat-square) ![Local-First](https://img.shields.io/badge/Local--First-100%25-7c3aed?style=flat-square) ![Multi-Agente](https://img.shields.io/badge/Multi--Agente-COSMOS-ff0055?style=flat-square) ![Idiomas](https://img.shields.io/badge/PT_·_EN_·_ES-100%25_i18n-0ea5e9?style=flat-square) ![CURE](https://img.shields.io/badge/CURE-Auto--Fix-ff6b9d?style=flat-square)
 
 <br/>
 
@@ -77,11 +77,65 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🛒 **Loja de Skills + Linguagens** | Importe skills de repositórios Git (indexação real na memória vetorial). Grammars, snippets, **8+ temas de cor** (Dracula, Tokyo Night, Atom One Dark…) e icon themes — tudo instalável direto na Store. |
 | 🖥️ **Desktop Self-Contained** | `.exe` e `.msi` que embute o runtime. **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
 | 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE. Build Tauri + MSIX + upload SAS + Partner Center API em um clique. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
-| 🌍 **Interface 100% Trilíngue** | Português, Inglês e Espanhol nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **1897 chaves i18n em paridade**. |
+| 🌍 **Interface 100% Trilíngue** | Português, Inglês e Espanhol nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **1986 chaves i18n em paridade**. |
 | 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (Claude Code/Desktop/Cursor conectam e usam missão/SBB/CURE como tools). |
 | ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
 
 ➡️ **Detalhe completo:** [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md)
+
+---
+
+## 🔎 v1.3.1 — Varredura Total: a IDE auditada fio a fio
+
+> A 1.3.1 não traz módulo novo. Traz **prova**. Os 20 módulos da IDE foram medidos um a um
+> por uma rubrica de 7 eixos, e **69 defeitos reais foram corrigidos** em 5 ondas — quase
+> todos da mesma família, a mais perigosa que existe num software de IA: **funciona, mas
+> mente**. Não dá erro. Devolve resultado plausível. E você só descobre depois.
+
+**O achado mais grave da varredura inteira:** o **Salvar do Editor nunca gravava em disco**.
+O botão e o `Ctrl+S` marcavam a aba como "Salvo ✓", descartavam o rascunho e mexiam apenas no
+estado da interface — não existia rota de escrita no backend. Fechar a IDE descartava a edição.
+Corrigido, com o ✓ agora derivado da confirmação real do disco. O irmão dele veio junto: leitura
+recusada abria a aba **vazia**, e o primeiro `Ctrl+S` gravaria esse vazio por cima do seu arquivo.
+
+Uma amostra do resto — cada linha é algo que a IDE dizia ter feito e não tinha:
+
+- **Contexto local cortado em silêncio.** Nenhum `options` ia ao Ollama: valia a janela padrão do
+  servidor e o começo de um prompt longo era **descartado sem aviso** — o modelo respondia com
+  confiança sobre um contexto que nunca viu. Agora `num_ctx`/`num_predict`/`keep_alive` vão
+  explícitos, ajustáveis **por modelo**, a janela se adapta ao prompt real e, quando nem o teto
+  cobre, sai um aviso junto da resposta dizendo quanto não coube.
+- **Sandbox furado por symlink.** As rotas do Explorer conferiam contenção por prefixo de texto:
+  um link simbólico dentro da raiz apontando pra fora **lia, sobrescrevia e deletava** fora do
+  workspace. Fechado com `realpath` nos dois lados.
+- **Credencial recusada voltando verde** na Carteira · **3 arquivos de config sobrescritos**
+  quando ilegíveis · **resposta de IA cortada no teto de tokens** passando por completa · **erro
+  no meio do streaming engolido** · skill que ativava sem persistir nada · busca de memória que
+  falhava se disfarçando de "nada encontrado" · Pausar/Parar de missão como disparo-e-esquece.
+- **Custo escondido:** `git status` a cada 2,5 s com a IDE minimizada, a árvore inteira relida a
+  cada tecla do `Ctrl+P`, um GET do estado completo por evento de orquestração e 12 subprocessos
+  por chamada de `/api/capabilities`.
+
+**E três frentes que fecham distância do mercado**, saídas de um radar de estado da arte que
+agora roda antes de cada release:
+
+- **MCP na revisão corrente (2025-11-25).** A IDE falava `2024-11-05` — três revisões atrás. Agora
+  o handshake é **negociado de verdade** nos dois papéis (cliente e servidor), o cabeçalho
+  `MCP-Protocol-Version` acompanha toda chamada HTTP e servidor que responde revisão desconhecida
+  vira **erro visível** — não mais um ✓ verde que quebra na primeira ferramenta.
+- **Teto de gasto por missão que realmente freia.** O custo já era contabilizado; faltava o freio.
+  Passou do teto, a missão é interrompida pelo mesmo caminho do Parar (aborta a inferência em voo)
+  e o motivo diz quanto gastou, qual era o limite e onde ajustar. Vem ligado: US$ 5 · 2 M tokens.
+- **Onde já estamos à frente:** o **SBB — Shared Blackboard** com grounding anti-alucinação, o
+  review soberano do COSMOS lendo envelope estruturado a custo zero (contra debate multi-agente
+  com juiz dedicado, ~2,5× mais caro) e a fronteira anti-prompt-injection do `prompt-safety`.
+
+**A prova acompanha a correção:** cada onda entregou suítes novas **dentro do `npm test` no mesmo
+commit** — suíte fora do gate apodrece. Estado do portão hoje: **lint 0 erros · 1986 chaves i18n
+em paridade e 0 texto fixo · 420/420 testes de componente · 73/73 E2E**.
+
+📊 Média auditada dos 20 módulos: **92,2%** — sem nenhum achado alto ou crítico em aberto. O que
+sobrou no funil é eixo de *prova* (mais teste automatizado), não de comportamento.
 
 ---
 
@@ -160,6 +214,9 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 
 ### 🔜 Em breve — próximo bloco
 
+- **Desfazer o que o agente escreveu** — checkpoint antes de cada edição feita pela IA, com rollback de um clique mesmo em pasta sem repositório Git.
+- **Trilha de auditoria das ações do agente** — responder com precisão "o que a IA fez ontem no meu projeto?", persistido e consultável.
+- **Reranking de 2ª passada na memória** — hoje a busca devolve na ordem do vetor; a 2ª passada reordena por relevância real.
 - **Mais cobertura de extensões** — ampliar a faixa de extensões JS suportadas pelo Extension Host (linters, language servers) mantendo a transparência do badge honesto.
 
 ---
@@ -263,13 +320,13 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
-| **Interface Trilíngue (PT/EN/ES)** | `98%` | 🟢 Estável — 1897 chaves i18n, 0 hardcoded (painel de Debug traduzido) |
+| **Interface Trilíngue (PT/EN/ES)** | `98%` | 🟢 Estável — 1986 chaves i18n, 0 hardcoded (erros de orquestração traduzidos) |
 | Chat Multi-Provider | `97%` | 🟢 Estável — cancelamento Gemini encerra o request de verdade |
 | **COSMOS — Orquestração multi-agente** | `97%` | 🟢 Estável — /parar cancela a inferência em voo (AbortController por missão) |
-| Editor Monaco + TextMate + Snippets | `96%` | 🟢 Estável — rascunho por-aba preserva edição não salva |
+| Editor Monaco + TextMate + Snippets | `96%` | 🟢 Estável — Salvar grava em disco de verdade (✓ só com confirmação do backend) |
 | **Memória Core5 768d (embutida)** | `94%` | 🟢 Estável — LanceDB + nomic 768d + dedup em janela deslizante |
 | Zoom Global | `92%` | 🟢 Estável |
-| Explorer + Find in Files | `93%` | 🟢 Estável — sandbox de path endurecido (sem traversal p/ irmão) |
+| Explorer + Find in Files | `93%` | 🟢 Estável — sandbox com `realpath` nos dois lados (symlink-escape fechado) |
 | **Loja de Skills + Linguagens** | `91%` | 🟢 Estável — import Git real + temas + grammars |
 | Terminal Integrado (PTY) | `92%` | 🟢 Estável — sem PTY órfão (teardown no shutdown) |
 | App Desktop (.exe / .msi / .msix) | `91%` | 🟢 Estável — carimbo de versão com guarda de drift |
@@ -297,11 +354,13 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 ## ⬇️ Download
 
 > 🚀 **Versão mais recente: [v1.3.0 — Projeto Fábrica](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.0)** (publicada pelo próprio serviço de release da IDE, o Lya Build Releases).
+>
+> 🔎 A **v1.3.1 — Varredura Total** ([o que muda](#-v131--varredura-total-a-ide-auditada-fio-a-fio)) está pronta no código e **retida até os instaladores serem gerados e conferidos por hash**. Enquanto isso, o download abaixo é a 1.3.0 — não anunciamos binário que ainda não existe.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A build da Store é a **[v1.1.4, certificada e assinada pela própria Microsoft](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.1.4)** — a v1.3.0 entra na Store assim que concluir a certificação do Partner Center.
+> A build da Store é a **[v1.3.0, certificada e assinada pela própria Microsoft](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.0)** — mesma versão do GitHub, ao vivo desde 22/07/2026.
 
-> 📦 **winget** — em moderação na [winget-pkgs](https://github.com/microsoft/winget-pkgs/pull/400151). Assim que aprovado:
+> 📦 **winget** — em moderação na [winget-pkgs](https://github.com/microsoft/winget-pkgs/pull/406076). Assim que aprovado:
 > ```powershell
 > winget install StudioCodeAI.LyaStudioCoder
 > ```
@@ -364,7 +423,9 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ Segurança: auth-gate RCE, sandbox default-deny, symlink-escape, chave n8n cifrada
 - [x] ✅ v1.1.4 — Consolidação: CURE completo, Core5 768d, MCP bidirecional, Loja de Linguagens, hardening de segurança · **🏪 certificada na Microsoft Store**
 - [x] ✅ **v1.3.0 — Projeto Fábrica** — testes E2E industriais, RAG do código-base + histórico da IDE, agentes de QA sob o COSMOS, Tela Inicial + Explorer forte, Open VSX real (`.vsix`/URL), e o **Lya Build Releases** (a IDE publica a própria release) · **🚀 versão mais recente**
-- [ ] 🏪 v1.3.0 na Microsoft Store — em certificação no Partner Center
+- [x] ✅ **v1.3.0 na Microsoft Store** — certificada e ao vivo (MSIX assinado pela Microsoft)
+- [ ] 🔎 **v1.3.1 — Varredura Total** — 20 módulos auditados, 69 defeitos corrigidos, MCP 2025-11-25, contexto local honesto no Ollama e teto de gasto por missão · **em preparação de release**
+- [ ] 🔄 Pós-1.3.1 — desfazer as edições do agente (rollback), trilha de auditoria persistente das ações do agente e reranking de 2ª passada na memória
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
