@@ -16,13 +16,13 @@
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
 [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.3.0-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Versão](https://img.shields.io/badge/versão-1.3.1-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
 [![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
@@ -353,12 +353,10 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 
 ## ⬇️ Download
 
-> 🚀 **Versão mais recente: [v1.3.0 — Projeto Fábrica](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.0)** (publicada pelo próprio serviço de release da IDE, o Lya Build Releases).
->
-> 🔎 A **v1.3.1 — Varredura Total** ([o que muda](#-v131--varredura-total-a-ide-auditada-fio-a-fio)) está pronta no código e **retida até os instaladores serem gerados e conferidos por hash**. Enquanto isso, o download abaixo é a 1.3.0 — não anunciamos binário que ainda não existe.
+> 🚀 **Versão mais recente: [v1.3.1 — Varredura Total](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.1)** ([o que muda](#-v131--varredura-total-a-ide-auditada-fio-a-fio)) — nenhum módulo novo, 69 defeitos reais corrigidos nos 20 módulos auditados.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A build da Store é a **[v1.3.0, certificada e assinada pela própria Microsoft](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.0)** — mesma versão do GitHub, ao vivo desde 22/07/2026.
+> A build da Store é a **[v1.3.0, certificada e assinada pela própria Microsoft](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.0)**, ao vivo desde 22/07/2026 — a **1.3.1 está em envio** e passa a valer na Store quando a certificação concluir.
 
 > 📦 **winget** — em moderação na [winget-pkgs](https://github.com/microsoft/winget-pkgs/pull/406076). Assim que aprovado:
 > ```powershell
@@ -369,9 +367,9 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 | Instalador | Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`Lya Studio Coder_1.3.0_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.0/Lya.Studio.Coder_1.3.0_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~52 MB | `D6F61381…34BFE5B8F0` |
-| [**`Lya Studio Coder_1.3.0_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.0/Lya.Studio.Coder_1.3.0_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~77 MB | `9A048A47…74CB28BF68` |
-| [**`LyaStudioCoder_1.3.0.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.0/LyaStudioCoder_1.3.0.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~81 MB | `B1E8BAC1…9BB85EEA32` |
+| [**`Lya Studio Coder_1.3.1_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.1/Lya.Studio.Coder_1.3.1_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~58 MB | `901955F5…C6E538AB1B` |
+| [**`Lya Studio Coder_1.3.1_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.1/Lya.Studio.Coder_1.3.1_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~90 MB | `DEE12E1A…B97428614F` |
+| [**`LyaStudioCoder_1.3.1.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.1/LyaStudioCoder_1.3.1.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~95 MB | `17CF9B12…5B7EF0BA1A` |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
@@ -379,14 +377,14 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 <summary>🔐 SHA-256 completos para verificação</summary>
 
 ```
-Lya Studio Coder_1.3.0_x64-setup.exe
-D6F6138199D4B7285A692F9A7274A414238FAB716A5DA485DCF25A34BFE5B8F0
+Lya Studio Coder_1.3.1_x64-setup.exe
+901955F55E6CD3CE28539A606D6307246F5D84BF6AE8068D5777EAC6E538AB1B
 
-Lya Studio Coder_1.3.0_x64_en-US.msi
-9A048A470E8C707E5B0AB393C1F06C20A95A77D1EF311FF6C1F21274CB28BF68
+Lya Studio Coder_1.3.1_x64_en-US.msi
+DEE12E1A54006F66074AA662C56FC4A1FF8D3AE74B88A01151998BB97428614F
 
-LyaStudioCoder_1.3.0.0_x64.msix
-B1E8BAC13D9D4C4B26FF38940FD2C53D67A6F1FCB6D68894AA40DB9BB85EEA32
+LyaStudioCoder_1.3.1.0_x64.msix
+17CF9B12462BECE832E78B520A59D1385A27533666C497A7A44F935B7EF0BA1A
 ```
 
 Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
@@ -422,9 +420,9 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ Loja de Linguagens — Grammars TextMate, snippets, icon themes, 8+ temas de cor
 - [x] ✅ Segurança: auth-gate RCE, sandbox default-deny, symlink-escape, chave n8n cifrada
 - [x] ✅ v1.1.4 — Consolidação: CURE completo, Core5 768d, MCP bidirecional, Loja de Linguagens, hardening de segurança · **🏪 certificada na Microsoft Store**
-- [x] ✅ **v1.3.0 — Projeto Fábrica** — testes E2E industriais, RAG do código-base + histórico da IDE, agentes de QA sob o COSMOS, Tela Inicial + Explorer forte, Open VSX real (`.vsix`/URL), e o **Lya Build Releases** (a IDE publica a própria release) · **🚀 versão mais recente**
+- [x] ✅ **v1.3.0 — Projeto Fábrica** — testes E2E industriais, RAG do código-base + histórico da IDE, agentes de QA sob o COSMOS, Tela Inicial + Explorer forte, Open VSX real (`.vsix`/URL), e o **Lya Build Releases** (a IDE publica a própria release)
 - [x] ✅ **v1.3.0 na Microsoft Store** — certificada e ao vivo (MSIX assinado pela Microsoft)
-- [ ] 🔎 **v1.3.1 — Varredura Total** — 20 módulos auditados, 69 defeitos corrigidos, MCP 2025-11-25, contexto local honesto no Ollama e teto de gasto por missão · **em preparação de release**
+- [x] ✅ **v1.3.1 — Varredura Total** — 20 módulos auditados, 69 defeitos corrigidos, MCP 2025-11-25, contexto local honesto no Ollama e teto de gasto por missão · **🚀 versão mais recente**
 - [ ] 🔄 Pós-1.3.1 — desfazer as edições do agente (rollback), trilha de auditoria persistente das ações do agente e reranking de 2ª passada na memória
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
@@ -470,7 +468,7 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 
 ➡️ **Pronto para consolidar seu fluxo de IA?**
 
-[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.3.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.3.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 
 *Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 
