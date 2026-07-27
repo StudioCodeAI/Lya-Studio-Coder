@@ -356,7 +356,7 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 > 🚀 **Versão mais recente: [v1.3.1 — Varredura Total](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.1)** ([o que muda](#-v131--varredura-total-a-ide-auditada-fio-a-fio)) — nenhum módulo novo, 69 defeitos reais corrigidos nos 20 módulos auditados.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A build da Store é a **[v1.3.0, certificada e assinada pela própria Microsoft](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.0)**, ao vivo desde 22/07/2026 — a **1.3.1 está em envio** e passa a valer na Store quando a certificação concluir.
+> A build ao vivo na Store é a **[v1.3.0, certificada e assinada pela própria Microsoft](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.0)**, publicada em 22/07/2026 — a **1.3.1 entrou em certificação em 27/07/2026** (enviada pelo próprio Lya Publisher, dentro da IDE) e passa a valer na Store quando a análise concluir.
 
 > 📦 **winget** — em moderação na [winget-pkgs](https://github.com/microsoft/winget-pkgs/pull/408479). Assim que aprovado:
 > ```powershell
