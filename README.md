@@ -356,7 +356,7 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 > 🚀 **Versão mais recente: [v1.3.1 — Varredura Total](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.1)** ([o que muda](#-v131--varredura-total-a-ide-auditada-fio-a-fio)) — nenhum módulo novo, 69 defeitos reais corrigidos nos 20 módulos auditados.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A build ao vivo na Store é a **[v1.3.0, certificada e assinada pela própria Microsoft](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.0)**, publicada em 22/07/2026 — a **1.3.1 entrou em certificação em 27/07/2026** (enviada pelo próprio Lya Publisher, dentro da IDE) e passa a valer na Store quando a análise concluir.
+> A build ao vivo na Store é a **v1.3.1**, certificada e assinada pela própria Microsoft em 27/07/2026 — e enviada pelo **Lya Publisher, de dentro da própria IDE**. Store, GitHub Release e código fonte na mesma versão.
 
 > 📦 **winget** — em moderação na [winget-pkgs](https://github.com/microsoft/winget-pkgs/pull/408479). Assim que aprovado:
 > ```powershell
@@ -423,6 +423,7 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ **v1.3.0 — Projeto Fábrica** — testes E2E industriais, RAG do código-base + histórico da IDE, agentes de QA sob o COSMOS, Tela Inicial + Explorer forte, Open VSX real (`.vsix`/URL), e o **Lya Build Releases** (a IDE publica a própria release)
 - [x] ✅ **v1.3.0 na Microsoft Store** — certificada e ao vivo (MSIX assinado pela Microsoft)
 - [x] ✅ **v1.3.1 — Varredura Total** — 20 módulos auditados, 69 defeitos corrigidos, MCP 2025-11-25, contexto local honesto no Ollama e teto de gasto por missão · **🚀 versão mais recente**
+- [x] ✅ **v1.3.1 na Microsoft Store** — certificada e ao vivo, **publicada pelo Lya Publisher de dentro da própria IDE**
 - [ ] 🔄 Pós-1.3.1 — desfazer as edições do agente (rollback), trilha de auditoria persistente das ações do agente e reranking de 2ª passada na memória
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya

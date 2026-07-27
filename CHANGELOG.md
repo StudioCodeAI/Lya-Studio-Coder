@@ -16,7 +16,7 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
   - **A submissão nascia vazia.** O pedido de nova submissão ia com um corpo em branco, e a API tratava isso como "app sem descrição nenhuma" em vez de aproveitar a última publicação: recusava com *"The size of Listings must be 1 or more"*. Sem corpo, ela clona a publicação anterior — textos dos 3 mercados, preço, categoria e visibilidade intactos.
   - **O pacote novo nunca substituía o antigo.** Faltava o passo que aposenta o pacote da versão anterior e registra o novo. Se a submissão tivesse ido adiante, a Store receberia **de novo a versão velha**, com o log dizendo que a nova subiu.
   - **O arquivo ia no formato errado.** O canal de upload espera um **ZIP** com o pacote dentro; a IDE mandava o `.msix` cru. O envio agora empacota sozinho (sem dependência nova, sem recomprimir os ~95 MB de um MSIX que já é comprimido) e apaga o temporário ao terminar.
-- Resultado verificado ao vivo: **v1.3.1 enviada pela IDE e aceita em certificação pela Microsoft**, com o pacote 1.3.1.0 no lugar do 1.3.0.0 e zero erros na análise. O painel **Histórico** acompanha o andamento sem sair da IDE.
+- Resultado verificado ao vivo: **v1.3.1 enviada pela IDE, certificada pela Microsoft e publicada na Store no mesmo dia**, com o pacote 1.3.1.0 no lugar do 1.3.0.0 e zero erros na análise. O painel **Histórico** acompanhou o andamento sem sair da IDE.
 - Suíte no gate no mesmo commit: **17 asserções novas** cobrindo os três defeitos — inclusive a leitura byte a byte do ZIP gerado.
 
 ### 🛰️ MCP 2025-11-25, contexto local honesto e teto de gasto por missão (2026-07-27)
