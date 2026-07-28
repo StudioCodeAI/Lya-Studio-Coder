@@ -76,7 +76,7 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🔒 **LSCode Keychain** | Gerenciador centralizado de chaves API (Carteira cifrada AES-256-GCM). Fonte única da verdade para todos os provedores — seus segredos ficam só na sua máquina. |
 | 🛒 **Loja de Skills + Linguagens** | Importe skills de repositórios Git (indexação real na memória vetorial). Grammars, snippets, **8+ temas de cor** (Dracula, Tokyo Night, Atom One Dark…) e icon themes — tudo instalável direto na Store. |
 | 🖥️ **Desktop Self-Contained** | `.exe` e `.msi` que embute o runtime. **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
-| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE. Build Tauri + MSIX + upload SAS + Partner Center API em um clique. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
+| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE: build Tauri + MSIX + upload + Partner Center. **Provado no mundo real** — a v1.3.1 que está na Store foi enviada por ele, da própria IDE, e certificada pela Microsoft no mesmo dia. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
 | 🌍 **Interface 100% Trilíngue** | Português, Inglês e Espanhol nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **1986 chaves i18n em paridade**. |
 | 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (Claude Code/Desktop/Cursor conectam e usam missão/SBB/CURE como tools). |
 | ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
@@ -331,7 +331,7 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 | Terminal Integrado (PTY) | `92%` | 🟢 Estável — sem PTY órfão (teardown no shutdown) |
 | App Desktop (.exe / .msi / .msix) | `91%` | 🟢 Estável — carimbo de versão com guarda de drift |
 | **Embeddings 768d (Cascata)** | `92%` | 🟢 Estável — Gemini online → nomic local → guarda + sem vetor-zero morto |
-| Lya Publisher (Microsoft Store) | `90%` | 🟢 Estável — status resiliente a blip de rede |
+| **Lya Publisher (Microsoft Store)** | `96%` | 🟢 Estável — **publicou a própria v1.3.1 na Store de ponta a ponta**: troca de pacote, empacotamento e envio cobertos por teste |
 | Compilador & Build | `88%` | 🟢 Estável |
 | Run & Debug (Node + Python) | `88%` | 🟢 Estável — falha de conexão do debugger reportada (sem ok falso) |
 | n8n Live + Pipeline RAG | `89%` | 🟢 Estável — disparo real via Webhook + auto-start + resultado retornado |
