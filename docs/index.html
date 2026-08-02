@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lya Studio Coder - A IDE Multi-IA Local-First</title>
+    <meta name="description" content="A IDE que orquestra todas as suas IAs em um único cockpit. Local-first, multi-agente, sem vendor lock-in.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fundo espacial com gradientes radiais -->
+    <div class="space-background">
+        <div class="glow-orb top-left"></div>
+        <div class="glow-orb bottom-right"></div>
+        <div class="stars"></div>
+    </div>
+
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <svg width="24" height="24" viewBox="0 0 100 100" class="logo-icon">
+                    <circle cx="50" cy="50" r="15" fill="#f59e0b" />
+                    <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(0 50 50)"/>
+                    <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(60 50 50)"/>
+                    <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(120 50 50)"/>
+                </svg>
+                <span>Lya Studio Coder</span>
+            </div>
+        </div>
+        <div class="nav-middle">
+            <a href="https://github.com/StudioCodeAI/Lya-Studio-Coder/blob/main/docs/FUNCIONALIDADES.md" target="_blank">Funcionalidades</a>
+            <a href="https://github.com/StudioCodeAI/Lya-Studio-Coder/blob/main/README.md#2-a-orquestradora-principal-cosmos" target="_blank">COSMOS</a>
+            <a href="https://github.com/StudioCodeAI/Lya-Studio-Coder/blob/main/docs/privacy.md" target="_blank">Privacidade</a>
+            <a href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases" target="_blank">Download</a>
+            <a href="https://github.com/StudioCodeAI/Lya-Studio-Coder#readme" target="_blank">Sobre</a>
+        </div>
+        <div class="nav-right">
+            <a href="https://github.com/StudioCodeAI/Lya-Studio-Coder" target="_blank" class="btn-outline">Documentação</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-badge">
+            <span class="dot primary"></span>
+            Local-First · Multi-Agente
+        </div>
+
+        <div class="atom-container" id="atom-container">
+            <!-- Renderizado via atom-animation.js -->
+        </div>
+
+        <h1 class="hero-title">Lya Studio Coder</h1>
+        
+        <p class="hero-subtitle">
+            A IDE que orquestra todas as suas IAs em um único cockpit.<br>
+            Local-first, multi-agente, sem vendor lock-in.
+        </p>
+
+        <div class="llm-badges">
+            <span class="llm-badge"><span class="dot dot-claude"></span> Claude</span>
+            <span class="llm-badge"><span class="dot dot-gemini"></span> Gemini</span>
+            <span class="llm-badge"><span class="dot dot-gpt"></span> GPT</span>
+            <span class="llm-badge"><span class="dot dot-ollama"></span> Ollama</span>
+        </div>
+
+        <div class="hero-cta">
+            <a href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases" class="btn-primary">Explorar &rarr;</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        © Lya Studio. Todos os direitos reservados.
+    </footer>
+
+    <script src="atom-animation.js"></script>
+</body>
+</html>
