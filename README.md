@@ -22,7 +22,11 @@
 
 <br/>
 
-### ⚡ Instalação Rápida (Windows)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/install-title-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/install-title-light.svg">
+  <img alt="Instalação Rápida (Windows)" src="assets/install-title-dark.svg">
+</picture>
 ```bash
 winget install StudioCodeAI.LyaStudioCoder
 ```
