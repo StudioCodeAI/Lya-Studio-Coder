@@ -85,6 +85,7 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🧩 Módulo | O que entrega |
 |---|---|
 | 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT, Ollama (local + cloud) e **Antigravity** na mesma sala. Streaming cancelável, markdown, anexos, **gravação de voz**, function-calling real e histórico completo. |
+| 🧭 **OmniRouter — Provedor Local Nativo** | O [OmniRouter](https://github.com/diegosouzapw/OmniRoute) entra como provedor de 1ª classe, lado a lado com Ollama e Llama.cpp: instale, inicie (terminal real dentro da IDE, sem processo escondido) e pare direto da aba Integrações. A IDE descobre sozinha os modelos reais expostos pelo seu OmniRouter — zero configuração manual. |
 | 🎛️ **COSMOS — Orquestração** | Até 4 agentes de IA em paralelo (API, CLI, local). Cada slot com motor independente, status ao vivo, contexto compartilhado e **tools MCP dinâmico**. |
 | 🩹 **CURE — Auto-Correção** | A IDE conserta o próprio build sozinha: loop build→mistake→correção→rebuild com disjuntor anti-degeneração, **CURE SCAR** (memória de cicatrizes com dinâmica de confiança), **Auto Scar Fix** (preview preventivo no composer, custo zero) e **roteamento Planner→Executor** por classificação de ferida. |
 | 🧠 **Core5 — Memória 768d** | Motor de memória embutido (LanceDB, **nomic-embed-text-v1.5 768d**, zero dependência de Python/Docker). Cascata de embedding dimensão-safe (Gemini online 768d → nomic local 768d). Captura contínua write-behind com anti-loop de feedback. Continuidade MCP com Core5 externo (Claude Code, Claude Desktop). |
@@ -499,12 +500,26 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ **v1.3.0 na Microsoft Store** — certificada e ao vivo (MSIX assinado pela Microsoft)
 - [x] ✅ **v1.3.1 — Varredura Total** — 20 módulos auditados, 69 defeitos corrigidos, MCP 2025-11-25, contexto local honesto no Ollama e teto de gasto por missão · **🚀 versão mais recente**
 - [x] ✅ **v1.3.1 na Microsoft Store** — certificada e ao vivo, **publicada pelo Lya Publisher de dentro da própria IDE**
+- [x] ✅ **OmniRouter** integrado como provedor local nativo (instalar/iniciar/parar pela aba Integrações, descoberta automática de modelos)
 - [ ] 🔄 Pós-1.3.1 — desfazer as edições do agente (rollback), trilha de auditoria persistente das ações do agente e reranking de 2ª passada na memória
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
+- [ ] 🔮 Tradutor de linguagem nativo no motor (multi-linguagem, arquivos modulares lado a lado) — visão de longo prazo
 
 Acompanhe em [Discussions → Roadmap](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions) e no [CHANGELOG](CHANGELOG.md).
+
+---
+
+## 🤝 Integrações abertas & agradecimentos
+
+> Quando existe uma ferramenta open source que já resolve bem um problema, a estratégia da Lya é **integrar**, não competir nem reinventar.
+
+**[OmniRouter](https://github.com/diegosouzapw/OmniRoute)** é um roteador de modelos local que a Lya adotou como **provedor nativo** — lado a lado com Ollama e Llama.cpp na aba Provedores. Ele fica com o que já faz melhor do que qualquer coisa que escreveríamos do zero: um gateway OpenAI-compatível com um catálogo enorme de modelos atrás de um único endpoint local. A Lya cuida do resto — instalar, ligar/desligar direto da aba Integrações e descobrir sozinha os modelos reais que ele expõe.
+
+Não absorvemos o OmniRouter inteiro para dentro do código da Lya — ele é escrito em JS/Rust, um stack diferente do nosso (TypeScript/Node), então integrar via API foi o caminho certo em vez de fork. É uma fronteira que pretendemos derrubar de verdade: o motor da Lya vai ganhar, no futuro, um **tradutor de linguagem nativo** capaz de rodar múltiplas linguagens e arquivos modulares lado a lado no mesmo projeto — abrindo caminho para esse tipo de absorção completa entre ecossistemas diferentes. (Visão de longo prazo, sem data.)
+
+**Obrigado à equipe do OmniRouter** por construir uma ferramenta tão sólida e aberta. 🙏
 
 ---
 
