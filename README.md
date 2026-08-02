@@ -376,8 +376,8 @@ Como uma ordem vira entrega: o COSMOS planeja (com **Auto Scar Fix** preventivo)
 |:---:|:---:|
 | ![Provedores](assets/screenshots/provedores.png) | ![Orquestração](assets/screenshots/orquestracao.png) |
 | **🤖 Multi-provider** — Claude, Gemini, GPT, Ollama, Groq e mais, com status ao vivo. | **🎛️ Orquestração COSMOS** — agentes com motores independentes, status live. |
-| ![Editor](assets/screenshots/editor.png) | ![Compilador](assets/screenshots/compilador.png) |
-| **📝 Editor Monaco** — árvore de arquivos e editor profissional com IA inline. | **🏗️ Build & Preview** — build/lint reais, saída ao vivo. |
+| ![COSMOS](assets/screenshots/cosmos.png) | ![Publisher](assets/screenshots/publisher.png) |
+| **🧠 Inteligência COSMOS** — chat com contexto total e liderança de IAs. | **🚀 Lya Publisher** — publique na Microsoft Store direto da IDE. |
 | ![n8n](assets/screenshots/n8n.png) | ![Skills](assets/screenshots/skills.png) |
 | **🔗 n8n Live** — automação e pipelines RAG gerenciados pela IDE. | **🛒 Loja de Skills** — importe skills de qualquer repositório Git. |
 
