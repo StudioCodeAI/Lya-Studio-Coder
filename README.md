@@ -22,6 +22,14 @@
 
 <br/>
 
+### ⚡ Instalação Rápida (Windows)
+```bash
+winget install StudioCodeAI.LyaStudioCoder
+```
+*(Ou instale via [Microsoft Store](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR) / [Download Direto](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest))*
+
+<br/>
+
 [![Versão](https://img.shields.io/badge/versão-1.3.1-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
@@ -82,6 +90,48 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
 
 ➡️ **Detalhe completo:** [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md)
+
+---
+
+## ⚡ Core5 Continuum Protocol (C5CP)
+
+> **O modelo nunca para de responder.** O C5CP garante continuidade mesmo quando modelos com limite de TPM baixo (Kimi, DeepSeek, Groq...) batem no teto de tokens ou no limite de passos do agente.
+
+### Dois problemas resolvidos de vez
+
+| Problema | Como aparecia | Como o C5CP resolve |
+|---|---|---|
+| **Input bloqueado** | Não dava para enviar nova mensagem enquanto o modelo "pensava" | MQAM: fila assíncrona — envie N mensagens enquanto o modelo processa; elas respondem em ordem |
+| **Limite de passos / TPM** | O agente parava com "Limite de passos atingido" e não retomava | TRL: detecta o limite, calcula o cooldown preciso, aguarda e retoma do ponto exato sem reiniciar |
+
+### Adaptive Model Throughput (AMT)
+
+O submódulo AMT gerencia o ritmo em tempo real, adaptando a velocidade de envio ao limite real de cada modelo:
+
+| Família de modelo | TPM aproximado | Comportamento do AMT |
+|---|---|---|
+| Gemini 2.5 Pro | 2.000.000 | Sem throttle na prática |
+| GPT-4o / GPT-4.1 | 800.000 | Throttle muito raro |
+| Claude Sonnet/Opus | 200.000–400.000 | Throttle em sessões longas |
+| Kimi / Moonshot | 60.000 | Throttle frequente → AMT ativo |
+| DeepSeek / Qwen | 60.000 | Throttle frequente → AMT ativo |
+| Groq | 30.000 | AMT em standby constante |
+| Ollama / local | ilimitado | AMT desligado |
+
+**O que acontece quando o limite é atingido:**
+1. 🔍 Detecção automática (429, "step limit", "context length") sem exibir erro
+2. ⏸ Badge `⏸ TPM 60k atingido · aguardando 42s` aparece no chat
+3. 🔄 Retry automático com o contexto preservado (sem reiniciar a conversa)
+4. 🧠 Core5 aprende o comportamento do modelo entre sessões para calibrar antecipadamente
+
+### Benefício para COSMOS e Stars 1-4
+
+O COSMOS (Maestro) aguardando resposta de uma Star que travou por limite de tokens agora recebe a resposta normalmente — o C5CP opera de forma invisível no slot da Star, sem que o COSMOS perceba qualquer interrupção.
+
+```
+Sem C5CP:  Star 2 (kimi-k3) trava → COSMOS fica pendurado → timeout → falha de missão
+Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS recebe resposta normal
+```
 
 ---
 
