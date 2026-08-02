@@ -53,6 +53,10 @@ winget install StudioCodeAI.LyaStudioCoder
 
 ## 🎯 O problema que a Lya resolve
 
+<div align="center">
+  <img src="assets/screenshots/tela-geral.png" alt="Tela Geral da IDE" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+</div>
+
 Cansado de ser um **"copista de contexto"** entre abas do Claude e o VS Code?
 
 Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a resposta, volta ao terminal, esquece onde estava. Repete. Todo dia. Com cada modelo diferente.
@@ -71,6 +75,10 @@ Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a respo
 ---
 
 ## ✨ Funcionalidades
+
+<div align="center">
+  <img src="assets/screenshots/editor.png" alt="Editor de Código Integrado" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+</div>
 
 Cada módulo é uma capacidade real, testada e em uso — não maquete.
 
@@ -230,6 +238,10 @@ Cada melhoria de engenharia é um argumento de venda — não uma linha de chang
 
 ## 🧠 Inteligência Multi-Agente
 
+<div align="center">
+  <img src="assets/screenshots/orquestracao.png" alt="Missão Multi-Agente COSMOS" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+</div>
+
 A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs single-agent para tarefas paralelas).
 
 - **COSMOS + Stars 1–4** — orquestrador-CEO soberano lidera até 4 workers independentes (API / CLI / local), cada um com motor, chave e ferramentas próprios.
@@ -277,6 +289,10 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 ---
 
 ## 🧠 Memória de Longo Prazo — Core5 (768d)
+
+<div align="center">
+  <img src="assets/screenshots/memoria.png" alt="Interface de Memória Core5" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+</div>
 
 A Lya não esquece o seu projeto quando você fecha a aba. O **Core5** é o motor de memória
 embutido na IDE — 100% local, sem servidor externo obrigatório.
@@ -452,6 +468,10 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 ---
 
 ## 🔒 Privacidade
+
+<div align="center">
+  <img src="assets/screenshots/provedores.png" alt="Provedores e Chaves Locais" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+</div>
 
 - **Local-first por princípio.** Banco vetorial, modelos, histórico e configurações ficam em `~/.coreLyaDB` — só na sua máquina.
 - **Suas chaves, seu controle.** Nenhuma chave de API é enviada para nós.

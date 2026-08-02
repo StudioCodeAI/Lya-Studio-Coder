@@ -1,0 +1,4 @@
+theme: jekyll-theme-slate
+title: Lya Studio Coder
+description: "A IDE multi-IA com zero vendor lock-in. Claude, Gemini, GPT e Ollama num único cockpit."
+show_downloads: true
