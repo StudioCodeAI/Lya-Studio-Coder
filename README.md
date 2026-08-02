@@ -505,7 +505,6 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
-- [ ] 🔮 Tradutor de linguagem nativo no motor (multi-linguagem, arquivos modulares lado a lado) — visão de longo prazo
 
 Acompanhe em [Discussions → Roadmap](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions) e no [CHANGELOG](CHANGELOG.md).
 
@@ -515,9 +514,7 @@ Acompanhe em [Discussions → Roadmap](https://github.com/StudioCodeAI/Lya-Studi
 
 > Quando existe uma ferramenta open source que já resolve bem um problema, a estratégia da Lya é **integrar**, não competir nem reinventar.
 
-**[OmniRouter](https://github.com/diegosouzapw/OmniRoute)** é um roteador de modelos local que a Lya adotou como **provedor nativo** — lado a lado com Ollama e Llama.cpp na aba Provedores. Ele fica com o que já faz melhor do que qualquer coisa que escreveríamos do zero: um gateway OpenAI-compatível com um catálogo enorme de modelos atrás de um único endpoint local. A Lya cuida do resto — instalar, ligar/desligar direto da aba Integrações e descobrir sozinha os modelos reais que ele expõe.
-
-Não absorvemos o OmniRouter inteiro para dentro do código da Lya — ele é escrito em JS/Rust, um stack diferente do nosso (TypeScript/Node), então integrar via API foi o caminho certo em vez de fork. É uma fronteira que pretendemos derrubar de verdade: o motor da Lya vai ganhar, no futuro, um **tradutor de linguagem nativo** capaz de rodar múltiplas linguagens e arquivos modulares lado a lado no mesmo projeto — abrindo caminho para esse tipo de absorção completa entre ecossistemas diferentes. (Visão de longo prazo, sem data.)
+**OmniRouter** é um roteador de modelos local que a Lya adotou como **provedor nativo** — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades em ([clique aqui](https://github.com/diegosouzapw/OmniRoute)): um gateway OpenAI-compatível com um catálogo enorme de modelos atrás de um único endpoint local. A Lya cuida do resto — instalar, ligar/desligar direto da aba Integrações e descobrir sozinha os modelos reais que ele expõe. Integrar via API local foi o caminho certo em vez de fork.
 
 **Obrigado à equipe do OmniRouter** por construir uma ferramenta tão sólida e aberta. 🙏
 
