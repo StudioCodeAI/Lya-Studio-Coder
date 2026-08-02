@@ -54,7 +54,7 @@ winget install StudioCodeAI.LyaStudioCoder
 ## 🎯 O problema que a Lya resolve
 
 <div align="center">
-  <img src="assets/screenshots/tela-geral.png" alt="Tela Geral da IDE" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+  <img src="assets/screenshots/tela-geral.png?v=2" alt="Tela Geral da IDE" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
 </div>
 
 Cansado de ser um **"copista de contexto"** entre abas do Claude e o VS Code?
@@ -239,7 +239,7 @@ Cada melhoria de engenharia é um argumento de venda — não uma linha de chang
 ## 🧠 Inteligência Multi-Agente
 
 <div align="center">
-  <img src="assets/screenshots/orquestracao.png" alt="Missão Multi-Agente COSMOS" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+  <img src="assets/screenshots/orquestracao.png?v=2" alt="Missão Multi-Agente COSMOS" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
 </div>
 
 A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs single-agent para tarefas paralelas).
@@ -366,7 +366,7 @@ Como uma ordem vira entrega: o COSMOS planeja (com **Auto Scar Fix** preventivo)
 
 <div align="center">
 
-![Visão geral da Lya Studio Coder](assets/screenshots/tela-geral.png)
+![Visão geral da Lya Studio Coder](assets/screenshots/tela-geral.png?v=2)
 
 **O cockpit completo** — explorador de arquivos, editor de código, terminal e chat COSMOS, lado a lado.
 
@@ -374,11 +374,11 @@ Como uma ordem vira entrega: o COSMOS planeja (com **Auto Scar Fix** preventivo)
 
 | | |
 |:---:|:---:|
-| ![Provedores](assets/screenshots/provedores.png) | ![Orquestração](assets/screenshots/orquestracao.png) |
+| ![Provedores](assets/screenshots/provedores.png?v=2) | ![Orquestração](assets/screenshots/orquestracao.png?v=2) |
 | **🤖 Multi-provider** — Claude, Gemini, GPT, Ollama, Groq e mais, com status ao vivo. | **🎛️ Orquestração COSMOS** — agentes com motores independentes, status live. |
-| ![COSMOS](assets/screenshots/cosmos.png) | ![Publisher](assets/screenshots/publisher.png) |
+| ![COSMOS](assets/screenshots/cosmos.png?v=2) | ![Publisher](assets/screenshots/publisher.png?v=2) |
 | **🧠 Inteligência COSMOS** — chat com contexto total e liderança de IAs. | **🚀 Lya Publisher** — publique na Microsoft Store direto da IDE. |
-| ![n8n](assets/screenshots/n8n.png) | ![Skills](assets/screenshots/skills.png) |
+| ![n8n](assets/screenshots/n8n.png?v=2) | ![Skills](assets/screenshots/skills.png?v=2) |
 | **🔗 n8n Live** — automação e pipelines RAG gerenciados pela IDE. | **🛒 Loja de Skills** — importe skills de qualquer repositório Git. |
 
 ---
@@ -470,7 +470,7 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 ## 🔒 Privacidade
 
 <div align="center">
-  <img src="assets/screenshots/provedores.png" alt="Provedores e Chaves Locais" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+  <img src="assets/screenshots/provedores.png?v=2" alt="Provedores e Chaves Locais" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
 </div>
 
 - **Local-first por princípio.** Banco vetorial, modelos, histórico e configurações ficam em `~/.coreLyaDB` — só na sua máquina.
