@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download — Lya Studio Coder</title>
+    <meta name="description" content="Baixe o Lya Studio Coder para Windows x64: Microsoft Store (1 clique, sem SmartScreen), winget ou instalador direto (.exe / .msi / .msix).">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="site.css">
+    <style>
+        .install-hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.1rem;
+            margin-top: 1rem;
+        }
+        .install-card {
+            border-radius: 18px;
+            padding: 1.6rem;
+            border: 1px solid var(--border-soft);
+            background: var(--bg-card);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        .install-card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+        .install-card.featured {
+            border-color: rgba(0, 120, 212, 0.45);
+            background: linear-gradient(160deg, rgba(0, 120, 212, 0.12), rgba(15, 23, 42, 0.65));
+        }
+        .install-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .install-card .why { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.65; flex: 1; margin-bottom: 1.1rem; }
+        .badge-best {
+            align-self: flex-start;
+            font-size: 0.65rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+            padding: 0.25rem 0.6rem; border-radius: 6px; margin-bottom: 0.8rem;
+            background: rgba(0, 120, 212, 0.2); border: 1px solid rgba(0, 120, 212, 0.5); color: #7dd3fc;
+        }
+        .hash {
+            font-family: 'JetBrains Mono', Consolas, monospace;
+            font-size: 0.72rem; color: #94a3b8; word-break: break-all;
+        }
+    </style>
+</head>
+<body class="page">
+    <div class="space-background">
+        <div class="glow-orb top-left"></div>
+        <div class="glow-orb bottom-right"></div>
+        <div class="stars"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <svg width="24" height="24" viewBox="0 0 100 100" class="logo-icon">
+                        <circle cx="50" cy="50" r="15" fill="#f59e0b" />
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(0 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(60 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(120 50 50)"/>
+                    </svg>
+                    <span>Lya Studio Coder</span>
+                </a>
+            </div>
+        </div>
+        <div class="nav-middle">
+            <a href="funcionalidades.html">Funcionalidades</a>
+            <a href="cosmos.html">COSMOS</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="download.html" class="active">Download</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+        <div class="nav-right">
+            <a href="manual.html" class="btn-outline">Documentação</a>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-eyebrow"><span class="dot primary"></span> Windows 10/11 · x64 · v1.3.2</div>
+        <h1 class="page-title">Baixar o Lya Studio Coder</h1>
+        <p class="page-lead">
+            Gratuito. Instala por usuário, sem privilégio de administrador. O runtime vem embutido —
+            você não precisa instalar Node, Python nem nada antes.
+        </p>
+        <div class="cta-row center">
+            <a class="btn-store" href="https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&amp;gl=BR" target="_blank" rel="noopener">
+                🏪 Instalar pela Microsoft Store
+            </a>
+            <a class="btn-ghost" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest" target="_blank" rel="noopener">
+                ⬇ Download direto (.exe)
+            </a>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+        <!-- ================= CAMINHOS DE INSTALAÇÃO ================= -->
+        <section class="block">
+            <div class="block-head">
+                <h2>Três caminhos, mesmo aplicativo</h2>
+                <p>Escolha pelo que te incomoda menos: um clique, uma linha de comando, ou o arquivo na mão.</p>
+            </div>
+
+            <div class="install-hero">
+                <div class="install-card featured">
+                    <span class="badge-best">Recomendado</span>
+                    <h3>🏪 Microsoft Store</h3>
+                    <p class="why">
+                        Um clique, <strong>sem aviso do SmartScreen</strong> (o pacote é assinado pela própria
+                        Microsoft na certificação) e com <strong>atualização automática</strong>. A v1.3.2 está
+                        certificada e ao vivo desde 03/08/2026 — e foi enviada pelo Lya Publisher,
+                        de dentro da própria IDE.
+                    </p>
+                    <a class="btn-store" href="https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&amp;gl=BR" target="_blank" rel="noopener">Abrir na Store</a>
+                </div>
+
+                <div class="install-card">
+                    <h3>⌨️ winget</h3>
+                    <p class="why">
+                        Para quem já vive no terminal ou provisiona a máquina por script. Uma linha,
+                        sem navegador no meio.
+                    </p>
+                    <pre class="flush"><code>winget install StudioCodeAI.LyaStudioCoder</code></pre>
+                    <a class="btn-ghost" href="https://github.com/microsoft/winget-pkgs" target="_blank" rel="noopener">Sobre o winget</a>
+                </div>
+
+                <div class="install-card">
+                    <h3>📦 Instalador direto</h3>
+                    <p class="why">
+                        O arquivo na sua mão, com o SHA-256 publicado para conferência.
+                        <code>.exe</code> para uso pessoal, <code>.msi</code> para implantação corporativa,
+                        <code>.msix</code> para sideload com identidade.
+                    </p>
+                    <a class="btn-ghost" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest" target="_blank" rel="noopener">Ver a última release</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ARQUIVOS ================= -->
+        <section class="block">
+            <div class="block-head">
+                <h2>Arquivos da v1.3.2</h2>
+                <p>Todo instalador publicado tem o hash registrado. Baixou? Confira antes de rodar.</p>
+            </div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr><th>Arquivo</th><th>Para quem</th><th>Tamanho</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.2/Lya.Studio.Coder_1.3.2_x64-setup.exe"><strong>Lya Studio Coder_1.3.2_x64-setup.exe</strong></a></td>
+                            <td>Maioria dos usuários — instala por usuário, sem admin</td>
+                            <td>~58 MB</td>
+                        </tr>
+                        <tr>
+                            <td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.2/Lya.Studio.Coder_1.3.2_x64_en-US.msi"><strong>Lya Studio Coder_1.3.2_x64_en-US.msi</strong></a></td>
+                            <td>Ambientes corporativos — implantação via política</td>
+                            <td>~90 MB</td>
+                        </tr>
+                        <tr>
+                            <td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.2/LyaStudioCoder_1.3.2.0_x64.msix"><strong>LyaStudioCoder_1.3.2.0_x64.msix</strong></a></td>
+                            <td>Microsoft Store / sideload com identidade Partner Center</td>
+                            <td>~95 MB</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub">Conferir o hash no PowerShell</h3>
+            <pre><code>Get-FileHash "Lya Studio Coder_1.3.2_x64-setup.exe" -Algorithm SHA256</code></pre>
+            <p class="body">
+                Compare o resultado com o SHA-256 publicado na
+                <a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest" target="_blank" rel="noopener">página da release</a>.
+                Diferente? Não execute — baixe de novo pela fonte oficial.
+            </p>
+
+            <div class="note warn">
+                <strong>SmartScreen no .exe/.msi:</strong> pode aparecer o aviso de "editor desconhecido" —
+                clique em <strong>Mais informações → Executar assim mesmo</strong>. Quer instalação sem
+                nenhum aviso? Use a <a class="link" href="https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&amp;gl=BR" target="_blank" rel="noopener">Microsoft Store</a>.
+            </div>
+        </section>
+
+        <!-- ================= REQUISITOS ================= -->
+        <section class="block">
+            <div class="block-head">
+                <h2>Requisitos</h2>
+                <p>Curto porque é curto mesmo.</p>
+            </div>
+
+            <div class="grid cols-3">
+                <div class="card">
+                    <span class="icon">🪟</span>
+                    <h4>Windows 10 ou 11</h4>
+                    <p>Arquitetura x64. Instalação por usuário — não pede administrador no <code>.exe</code>.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">💾</span>
+                    <h4>Espaço em disco</h4>
+                    <p>Cerca de 200 MB instalado. O runtime já vem dentro do pacote.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">🔌</span>
+                    <h4>Opcionais</h4>
+                    <p>Ollama para modelos locais, Python para a memória vetorial completa. A IDE instala o que faltar, sob demanda.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DEPOIS DE INSTALAR ================= -->
+        <section class="block">
+            <div class="block-head">
+                <h2>Instalou. E agora?</h2>
+                <p>O caminho mais curto entre abrir a IDE pela primeira vez e ver a IA trabalhando no seu código.</p>
+            </div>
+
+            <ol class="steps">
+                <li><strong>Abra a IDE</strong> e escolha na tela de boas-vindas: criar um projeto do zero, abrir uma pasta existente ou clonar um repositório do Git.</li>
+                <li><strong>Conecte um motor.</strong> Sem chave de API? Instale o Ollama e baixe um modelo local — funciona offline e não custa nada.</li>
+                <li><strong>Converse com a orquestradora</strong> no chat e peça a primeira alteração. Ela lê e escreve no workspace de verdade.</li>
+                <li><strong>Quando a tarefa tiver frentes paralelas</strong>, abra a Orquestração e dispare uma missão com a equipe inteira.</li>
+            </ol>
+
+            <div class="cta-row">
+                <a class="btn-store" href="manual.html#primeiros-passos">📘 Primeiros passos no manual</a>
+                <a class="btn-ghost" href="funcionalidades.html">✨ Ver o que a IDE faz</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-links">
+            <a href="index.html">Início</a>
+            <a href="funcionalidades.html">Funcionalidades</a>
+            <a href="cosmos.html">COSMOS</a>
+            <a href="manual.html">Documentação</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+        © Lya Studio. Todos os direitos reservados.
+    </footer>
+</body>
+</html>

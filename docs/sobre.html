@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre — Lya Studio Coder</title>
+    <meta name="description" content="Quem somos e o que fazemos: Studio CodeAI, de Ponta Grossa (Brasil), construindo uma IDE local-first que orquestra várias IAs em um cockpit só.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="site.css">
+    <style>
+        .quote {
+            font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+            line-height: 1.5;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            text-align: center;
+            max-width: 780px;
+            margin: 1rem auto;
+            background: linear-gradient(135deg, #ffffff 0%, #ddd6fe 60%, #fbcfe8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .timeline { border-left: 2px solid rgba(139, 92, 246, 0.3); margin: 1.5rem 0 0 0.6rem; padding-left: 1.75rem; }
+        .tl-item { position: relative; padding-bottom: 1.6rem; max-width: 780px; }
+        .tl-item::before {
+            content: ""; position: absolute; left: -2.32rem; top: 0.35rem;
+            width: 11px; height: 11px; border-radius: 50%;
+            background: #0b1020; border: 2px solid var(--violet-soft);
+        }
+        .tl-item.now::before { background: var(--amber); border-color: var(--amber); box-shadow: 0 0 12px var(--amber); }
+        .tl-date { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--violet-soft); display: block; margin-bottom: 0.3rem; }
+        .tl-item h4 { font-size: 0.98rem; font-weight: 650; margin-bottom: 0.3rem; }
+        .tl-item p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; }
+    </style>
+</head>
+<body class="page">
+    <div class="space-background">
+        <div class="glow-orb top-left"></div>
+        <div class="glow-orb bottom-right"></div>
+        <div class="stars"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <svg width="24" height="24" viewBox="0 0 100 100" class="logo-icon">
+                        <circle cx="50" cy="50" r="15" fill="#f59e0b" />
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(0 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(60 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(120 50 50)"/>
+                    </svg>
+                    <span>Lya Studio Coder</span>
+                </a>
+            </div>
+        </div>
+        <div class="nav-middle">
+            <a href="funcionalidades.html">Funcionalidades</a>
+            <a href="cosmos.html">COSMOS</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html" class="active">Sobre</a>
+        </div>
+        <div class="nav-right">
+            <a href="manual.html" class="btn-outline">Documentação</a>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-eyebrow"><span class="dot primary"></span> Studio CodeAI · Ponta Grossa, Brasil</div>
+        <h1 class="page-title">Sobre nós</h1>
+        <p class="page-lead">
+            Somos um estúdio brasileiro construindo ferramentas para quem <em>orquestra</em> inteligência
+            em vez de apenas consumi-la. O Lya Studio Coder é o nosso produto principal: uma IDE que
+            trata várias IAs como uma equipe, e trata a sua máquina como o lugar onde as coisas acontecem.
+        </p>
+    </header>
+
+    <main class="wrap">
+
+        <!-- ============== O PROBLEMA ============== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>O problema que nos incomodou</h2>
+            </div>
+
+            <p class="body">
+                Você explica o projeto para uma IA. Troca de aba. Explica de novo. Copia a resposta.
+                Volta ao terminal. Esquece onde estava. Repete — todo dia, com cada modelo diferente.
+                Virou rotina chamar isso de "trabalhar com IA", mas o nome certo é
+                <strong>ser copista de contexto</strong>.
+            </p>
+            <p class="body">
+                É trabalho braçal, e ninguém deveria estar fazendo isso em 2026. A Lya nasceu para
+                acabar com esse atrito: um ambiente só, memória que atravessa sessões, uma equipe de
+                modelos coordenada por um maestro, e tudo rodando na sua máquina.
+            </p>
+
+            <div class="quote">"Você traz as chaves. A Lya traz a inteligência coordenada."</div>
+        </section>
+
+        <!-- ============== PRINCÍPIOS ============== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>No que a gente não abre mão</h2>
+                <p>Estes quatro princípios decidem toda discussão de arquitetura aqui dentro.</p>
+            </div>
+
+            <div class="grid cols-2">
+                <div class="card">
+                    <span class="icon">🏠</span>
+                    <h4>Local-first, de verdade</h4>
+                    <p>
+                        Não existe servidor nosso no caminho. Se a internet cair e você estiver com modelos
+                        locais, a IDE continua inteira. Privacidade aqui é arquitetura, não promessa.
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="icon">🔓</span>
+                    <h4>Sem lock-in</h4>
+                    <p>
+                        As chaves são suas, os modelos são os que você escolher, e trocar de provedor é
+                        um seletor — não uma migração. Nenhum modelo é obrigatório para a IDE funcionar.
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="icon">📏</span>
+                    <h4>Nada é vitrine</h4>
+                    <p>
+                        Se está desenhado ou escrito, tem que existir e funcionar. Botão que não faz nada
+                        é bug, não protótipo. Por isso publicamos o percentual honesto de cada módulo.
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="icon">🔬</span>
+                    <h4>Auditado, não prometido</h4>
+                    <p>
+                        Os 20 módulos passam por auditoria fio a fio, e o resultado vira número público.
+                        Quando algo está a 70%, dizemos 70% — em vez de esconder atrás de um selo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== O QUE FAZEMOS ============== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>O que a Lya faz</h2>
+                <p>Resumo em três frases, para quem chegou agora.</p>
+            </div>
+
+            <ul class="checks">
+                <li><strong>Um cockpit só.</strong> Editor, terminal, depurador, explorador e chat com IA na mesma janela — sem alt-tab entre a IDE, o navegador e o app de chat.</li>
+                <li><strong>Uma equipe, não um chat.</strong> A orquestradora COSMOS planeja, distribui às Stars, revisa cada entrega, manda refazer o que veio errado e consolida.</li>
+                <li><strong>Memória que sobrevive.</strong> O que a IDE aprende com seu projeto e com os próprios erros fica indexado localmente e volta na próxima sessão.</li>
+            </ul>
+
+            <figure class="shot">
+                <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/tela-geral.jpg" alt="Lya Studio Coder em uso" loading="lazy">
+                <figcaption>A IDE em uso — a captura é real, sem mockup.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ============== LINHA DO TEMPO ============== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>Como chegamos aqui</h2>
+                <p>Marcos que mudaram o produto de patamar.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="tl-item">
+                    <span class="tl-date">Junho 2026</span>
+                    <h4>COSMOS soberano</h4>
+                    <p>A orquestração deixa de ser disparo paralelo e ganha o laço de revisão: o maestro lê cada entrega e manda refazer o que não passou.</p>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">Junho 2026</span>
+                    <h4>Lya Publisher</h4>
+                    <p>A IDE aprende a se publicar: bump de versão, build, empacotamento e submissão à Microsoft Store, tudo por dentro.</p>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">Julho 2026</span>
+                    <h4>Interface trilíngue e memória endurecida</h4>
+                    <p>Português, inglês e espanhol em paridade total. A memória vetorial ganha gestão — e aprende a esquecer o que não serve mais.</p>
+                </div>
+                <div class="tl-item">
+                    <span class="tl-date">Julho 2026</span>
+                    <h4>Auditoria fio a fio</h4>
+                    <p>Os 20 módulos são varridos um a um, dezenas de defeitos reais corrigidos, e o percentual honesto de cada módulo passa a ser publicado.</p>
+                </div>
+                <div class="tl-item now">
+                    <span class="tl-date">Agosto 2026 · agora</span>
+                    <h4>v1.3.2 — rede de segurança do agente</h4>
+                    <p>Rollback das edições feitas pela IA, trilha de auditoria persistente e memória com ganho medido. Certificada e ao vivo na Microsoft Store — publicada pela própria IDE.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== CRÉDITOS ============== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>Ombros de gigantes</h2>
+                <p>A Lya se apoia em projetos abertos excelentes, e isso merece nome e link.</p>
+            </div>
+
+            <div class="grid cols-3">
+                <div class="card">
+                    <span class="icon">🧭</span>
+                    <h4>OmniRouter</h4>
+                    <p>Roteador de modelos local que adotamos como provedor nativo, lado a lado com Ollama. Integramos via API local em vez de fazer fork — e agradecemos à equipe pela ferramenta sólida e aberta.</p>
+                    <div class="tag-row"><a class="tag" href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener">Ver o projeto ↗</a></div>
+                </div>
+                <div class="card">
+                    <span class="icon">🧩</span>
+                    <h4>Open VSX</h4>
+                    <p>Registro aberto de extensões do VS Code — é dele que vem o catálogo da aba Extensões, sem intermediário proprietário.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">🦙</span>
+                    <h4>Ollama &amp; ecossistema local</h4>
+                    <p>Modelos rodando na sua CPU/GPU são o que torna possível trabalhar com custo zero e dado sensível sem sair de casa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============== COMUNIDADE ============== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>Falar com a gente</h2>
+                <p>Todo relato é lido, etiquetado e respondido. Sugestão vira roadmap; bug vira correção.</p>
+            </div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead><tr><th>Você quer…</th><th>Canal</th></tr></thead>
+                    <tbody>
+                        <tr><td>🐞 Reportar um bug</td><td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose" target="_blank" rel="noopener">Issues → Relatar problema</a></td></tr>
+                        <tr><td>💡 Sugerir uma funcionalidade</td><td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions/new?category=feature-ideas" target="_blank" rel="noopener">Discussions → Feature Ideas</a></td></tr>
+                        <tr><td>❓ Tirar uma dúvida</td><td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions/new?category=q-a" target="_blank" rel="noopener">Discussions → Q&amp;A</a></td></tr>
+                        <tr><td>📧 Assunto direto / privacidade</td><td><a class="link" href="mailto:luis.dronespg@gmail.com">luis.dronespg@gmail.com</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub">Licença e distribuição</h3>
+            <p class="body">
+                O Lya Studio Coder é distribuído como <strong>software proprietário e gratuito</strong> para
+                uso pessoal e avaliação. O código-fonte não é aberto. Os instaladores são publicados
+                exclusivamente via <a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases" target="_blank" rel="noopener">GitHub Releases</a>
+                e pela <a class="link" href="https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&amp;gl=BR" target="_blank" rel="noopener">Microsoft Store</a>.
+                Não baixe a Lya de outras fontes.
+            </p>
+
+            <div class="quote spaced-top">
+                Se você pensa, você executa.<br>
+                Se você executa, você indexa.<br>
+                Se você indexa, você evolui.
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-links">
+            <a href="index.html">Início</a>
+            <a href="funcionalidades.html">Funcionalidades</a>
+            <a href="cosmos.html">COSMOS</a>
+            <a href="manual.html">Documentação</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+        Studio CodeAI · Ponta Grossa, Brasil 🇧🇷 — © Lya Studio. Todos os direitos reservados.
+    </footer>
+</body>
+</html>

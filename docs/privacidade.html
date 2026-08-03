@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacidade — Lya Studio Coder</title>
+    <meta name="description" content="Política de privacidade do Lya Studio Coder: software local-first, sem telemetria, sem back-end próprio. Seus dados ficam no seu dispositivo.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body class="page">
+    <div class="space-background">
+        <div class="glow-orb top-left"></div>
+        <div class="glow-orb bottom-right"></div>
+        <div class="stars"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <svg width="24" height="24" viewBox="0 0 100 100" class="logo-icon">
+                        <circle cx="50" cy="50" r="15" fill="#f59e0b" />
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(0 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(60 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(120 50 50)"/>
+                    </svg>
+                    <span>Lya Studio Coder</span>
+                </a>
+            </div>
+        </div>
+        <div class="nav-middle">
+            <a href="funcionalidades.html">Funcionalidades</a>
+            <a href="cosmos.html">COSMOS</a>
+            <a href="privacidade.html" class="active">Privacidade</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+        <div class="nav-right">
+            <a href="manual.html" class="btn-outline">Documentação</a>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-eyebrow"><span class="dot primary"></span> Local-first por projeto, não por marketing</div>
+        <h1 class="page-title">Privacidade</h1>
+        <p class="page-lead">
+            O Lya Studio Coder não tem back-end próprio. Não existe servidor nosso para onde
+            mandar seu código, sua conversa ou sua chave de API — porque ele simplesmente não existe.
+            Última atualização: <strong>15 de junho de 2026</strong>.
+        </p>
+    </header>
+
+    <main class="wrap">
+
+        <!-- ================== RESUMO EM 4 CARTAS ================== -->
+        <section class="block">
+            <div class="grid cols-4">
+                <div class="card">
+                    <span class="icon">🚫</span>
+                    <h4>Zero telemetria</h4>
+                    <p>Nenhuma análise de uso, nenhum relatório automático de falha, nenhum rastreamento de comportamento.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">🏠</span>
+                    <h4>Tudo no seu disco</h4>
+                    <p>Conversas, missões, memória e credenciais vivem numa pasta sua. Nunca saem dela por conta própria.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">🔐</span>
+                    <h4>Chaves cifradas</h4>
+                    <p>Chaves de API e tokens são cifrados em repouso com AES-256-GCM antes de tocarem o disco.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">🧱</span>
+                    <h4>Sandbox de arquivos</h4>
+                    <p>A IA só lê e escreve dentro dos caminhos que você autorizou. Fora deles, a operação é recusada.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== 1 ================== -->
+        <section class="block">
+            <div class="block-head"><h2>1. Resumo executivo</h2></div>
+            <p class="body">
+                O Lya Studio Coder é um software <strong>local-first</strong>: todos os dados do usuário
+                ficam armazenados exclusivamente no dispositivo local. O aplicativo <strong>não coleta,
+                não transmite e não armazena</strong> dados pessoais em servidores próprios.
+            </p>
+        </section>
+
+        <!-- ================== 2 ================== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>2. Dados armazenados localmente</h2>
+                <p>O aplicativo cria e mantém os seguintes arquivos no diretório <code>~/.coreLyaDB/</code> do usuário.</p>
+            </div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr><th>Arquivo / Pasta</th><th>Conteúdo</th><th>Onde fica</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>accounts.json</code></td><td>Chaves de API e tokens OAuth (cifrados com AES-256-GCM)</td><td>Somente no dispositivo</td></tr>
+                        <tr><td><code>conversations.json</code></td><td>Histórico de conversas com as IAs</td><td>Somente no dispositivo</td></tr>
+                        <tr><td><code>mission-state.json</code></td><td>Estado de missões de orquestração</td><td>Somente no dispositivo</td></tr>
+                        <tr><td><code>fs-allowed-paths.json</code></td><td>Caminhos autorizados pelo sandbox de arquivos</td><td>Somente no dispositivo</td></tr>
+                        <tr><td><code>memory/</code></td><td>Banco vetorial de memória do projeto (NeuroCORE)</td><td>Somente no dispositivo</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="note">
+                Esses arquivos <strong>nunca são enviados</strong> ao desenvolvedor ou a terceiros.
+                Para apagá-los, basta remover a pasta — não existe cópia em nenhum outro lugar.
+            </div>
+        </section>
+
+        <!-- ================== 3 ================== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>3. Conexões de rede realizadas pelo aplicativo</h2>
+                <p>
+                    O Lya Studio Coder <strong>não possui back-end próprio</strong>. As únicas conexões de
+                    rede são iniciadas por você ao configurar provedores de IA.
+                </p>
+            </div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr><th>Provedor</th><th>Quem processa os dados</th><th>Política de privacidade</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Anthropic (Claude)</td><td>Anthropic PBC</td><td><a class="link" href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">anthropic.com/privacy</a></td></tr>
+                        <tr><td>Google (Gemini)</td><td>Google LLC</td><td><a class="link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></td></tr>
+                        <tr><td>OpenAI (GPT)</td><td>OpenAI OpCo LLC</td><td><a class="link" href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">openai.com/policies</a></td></tr>
+                        <tr><td>Ollama (modelos locais)</td><td><strong>Nenhuma</strong> — roda 100% offline</td><td>—</td></tr>
+                        <tr><td>OpenRouter</td><td>OpenRouter Inc.</td><td><a class="link" href="https://openrouter.ai/privacy" target="_blank" rel="noopener">openrouter.ai/privacy</a></td></tr>
+                        <tr><td>Groq</td><td>Groq Inc.</td><td><a class="link" href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">groq.com/privacy-policy</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="note warn">
+                <strong>Importante:</strong> você fornece suas próprias chaves de API. Os prompts e
+                respostas trocados com esses provedores são governados pelas políticas de cada
+                provedor, não pelo Lya Studio Coder. Quer nenhuma conexão externa? Use só modelos
+                locais — a IDE funciona inteira offline.
+            </div>
+        </section>
+
+        <!-- ================== 4-7 ================== -->
+        <section class="block">
+            <div class="block-head"><h2>4. Telemetria e rastreamento</h2></div>
+            <p class="body">
+                O Lya Studio Coder <strong>não inclui telemetria</strong>, análise de uso, relatórios de
+                falhas automáticos ou qualquer forma de rastreamento de comportamento do usuário.
+            </p>
+        </section>
+
+        <section class="block">
+            <div class="block-head"><h2>5. Dados de crianças</h2></div>
+            <p class="body">
+                O aplicativo é destinado a desenvolvedores adultos. Não coletamos intencionalmente dados
+                de menores de 13 anos (ou da idade mínima aplicável em sua jurisdição).
+            </p>
+        </section>
+
+        <section class="block">
+            <div class="block-head"><h2>6. Segurança</h2></div>
+            <ul class="checks">
+                <li>Chaves de API e tokens OAuth são cifrados em repouso com <strong>AES-256-GCM</strong> antes de serem gravados em disco.</li>
+                <li>A chave mestra fica em <code>~/.coreLyaDB/.master.key</code> (modo 0600), acessível apenas pelo usuário do sistema operacional.</li>
+                <li>O acesso ao sistema de arquivos é controlado por uma lista de permissões — o agente de IA não pode ler nem escrever fora dos caminhos autorizados.</li>
+                <li>O servidor local da IDE só aceita requisições da própria máquina; chamadas de origem externa são recusadas.</li>
+            </ul>
+        </section>
+
+        <section class="block">
+            <div class="block-head"><h2>7. Atualizações desta política</h2></div>
+            <p class="body">
+                Eventuais alterações serão publicadas nesta página com a data de atualização. O uso
+                continuado do aplicativo após a publicação implica aceitação dos termos revisados.
+            </p>
+        </section>
+
+        <section class="block">
+            <div class="block-head"><h2>8. Contato</h2></div>
+            <p class="body">
+                Dúvidas sobre privacidade: <a class="link" href="mailto:luis.dronespg@gmail.com">luis.dronespg@gmail.com</a><br>
+                Repositório: <a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder" target="_blank" rel="noopener">github.com/StudioCodeAI/Lya-Studio-Coder</a>
+            </p>
+            <p class="body fineprint">
+                Esta política se aplica ao Lya Studio Coder versão 1.0.2 e posteriores.
+                Desenvolvedor: Studio CodeAI — Luis Antonio Cardozo.
+            </p>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-links">
+            <a href="index.html">Início</a>
+            <a href="funcionalidades.html">Funcionalidades</a>
+            <a href="cosmos.html">COSMOS</a>
+            <a href="manual.html">Documentação</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+        © Lya Studio. Todos os direitos reservados.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual — Lya Studio Coder</title>
+    <meta name="description" content="Manual completo do Lya Studio Coder: cada painel, cada aba, como criar agentes, orquestrar missões, ligar chaves, CLIs, Core5, Loja, MCP, provedores e publicar na Store.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body class="page">
+    <div class="space-background">
+        <div class="glow-orb top-left"></div>
+        <div class="glow-orb bottom-right"></div>
+        <div class="stars"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <svg width="24" height="24" viewBox="0 0 100 100" class="logo-icon">
+                        <circle cx="50" cy="50" r="15" fill="#f59e0b" />
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(0 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(60 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(120 50 50)"/>
+                    </svg>
+                    <span>Lya Studio Coder</span>
+                </a>
+            </div>
+        </div>
+        <div class="nav-middle">
+            <a href="funcionalidades.html">Funcionalidades</a>
+            <a href="cosmos.html">COSMOS</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+        <div class="nav-right">
+            <a href="manual.html" class="btn-outline active">Documentação</a>
+        </div>
+    </nav>
+
+    <header class="page-hero hero-tight">
+        <div class="page-eyebrow"><span class="dot primary"></span> Manual do usuário · v1.3.2</div>
+        <h1 class="page-title">Documentação</h1>
+        <p class="page-lead">
+            Tudo o que a IDE faz, painel por painel, aba por aba: como criar um projeto, conectar
+            chaves, ligar motores locais e CLIs, montar agentes, orquestrar uma missão, usar a
+            memória, instalar skills e extensões, e publicar seu app na Store.
+        </p>
+    </header>
+
+    <div class="wrap manual-layout">
+
+        <!-- ============================ ÍNDICE ============================ -->
+        <aside class="toc" id="toc">
+            <h5>Começar</h5>
+            <a href="#primeiros-passos">1. Primeiros passos</a>
+            <a href="#interface">2. Tour da interface</a>
+            <a href="#projetos">3. Projetos e arquivos</a>
+
+            <h5>O básico do dia</h5>
+            <a href="#editor">4. Editor de código</a>
+            <a href="#terminal">5. Terminal integrado</a>
+            <a href="#chat">6. Chat com a IA</a>
+
+            <h5>Ligar a inteligência</h5>
+            <a href="#chaves">7. Chaveiro de chaves</a>
+            <a href="#provedores">8. Configurar um provedor</a>
+            <a href="#motores-locais">9. Motores locais e OmniRouter</a>
+            <a href="#clis">10. CLIs de agente</a>
+
+            <h5>A equipe</h5>
+            <a href="#agentes">11. Criar e ajustar agentes</a>
+            <a href="#orquestrar">12. Orquestrar uma missão</a>
+
+            <h5>Conhecimento</h5>
+            <a href="#memoria">13. Memória Deep</a>
+            <a href="#core5">14. Core5 e backends</a>
+            <a href="#skills">15. Skills</a>
+
+            <h5>Extensibilidade</h5>
+            <a href="#loja">16. Loja Lya</a>
+            <a href="#extensoes">17. Extensões (Open VSX)</a>
+            <a href="#mcp">18. Servidores MCP</a>
+            <a href="#n8n">19. n8n e RAG</a>
+
+            <h5>Construir e entregar</h5>
+            <a href="#compilador">20. Compilador e Simulador</a>
+            <a href="#debug">21. Run &amp; Debug</a>
+            <a href="#publisher">22. Lya Publisher</a>
+
+            <h5>Casa em ordem</h5>
+            <a href="#seguranca">23. Segurança e sandbox</a>
+            <a href="#config">24. Configurações</a>
+            <a href="#atalhos">25. Atalhos</a>
+            <a href="#problemas">26. Se algo der errado</a>
+        </aside>
+
+        <!-- ============================ CORPO ============================ -->
+        <main class="manual-body">
+
+            <!-- 1 -->
+            <section id="primeiros-passos">
+                <h2><span class="num">01</span>Primeiros passos</h2>
+                <p class="manual-lead">
+                    Do instalador à primeira resposta da IA no seu código. Cinco minutos, sendo generoso.
+                </p>
+
+                <h3>Instalar</h3>
+                <ol class="steps">
+                    <li><strong>Instale a IDE</strong> pela <a class="link" href="download.html">página de download</a> — Microsoft Store (um clique, sem SmartScreen), <code>winget</code> ou o <code>.exe</code> direto.</li>
+                    <li><strong>Abra o Lya Studio Coder</strong> pelo menu Iniciar. Na primeira execução aparece a splash com o manifesto — você pode revê-la depois em <em>Ver Manifesto</em>.</li>
+                    <li><strong>Escolha o ponto de partida</strong> na tela de boas-vindas: criar projeto do zero, abrir uma pasta existente ou clonar um repositório do Git.</li>
+                </ol>
+
+                <h3>Ligar um motor de IA</h3>
+                <p>
+                    A IDE abre funcional mesmo sem nenhuma IA conectada — mas o interessante começa quando
+                    você liga um motor. Há dois caminhos, e você pode ter os dois:
+                </p>
+                <ul>
+                    <li><strong>Sem chave, offline:</strong> instale o Ollama, baixe um modelo e selecione-o na IDE. Custo zero, dado nenhum sai da máquina. Veja <a class="link" href="#motores-locais">§9</a>.</li>
+                    <li><strong>Com chave, na nuvem:</strong> registre sua chave no Chaveiro (<a class="link" href="#chaves">§7</a>) e configure o provedor (<a class="link" href="#provedores">§8</a>).</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Dica de primeira hora:</strong> comece com um único motor funcionando bem antes
+                    de montar a equipe inteira. Orquestração com um assento offline é a causa nº 1 de
+                    "a missão travou".
+                </div>
+
+                <h3>Primeira conversa</h3>
+                <ol class="steps">
+                    <li>Abra o <strong>chat</strong> e peça algo concreto sobre o projeto aberto — por exemplo: <em>"leia o package.json e me diga o que este projeto faz"</em>.</li>
+                    <li>Repare que a IA <strong>usa ferramentas de verdade</strong>: ela lê o arquivo em vez de inventar. Cada ferramenta usada aparece na conversa.</li>
+                    <li>Peça uma alteração. A IA edita o arquivo e você revisa o resultado no editor — com o diff do Git marcado na régua.</li>
+                </ol>
+            </section>
+
+            <!-- 2 -->
+            <section id="interface">
+                <h2><span class="num">02</span>Tour da interface</h2>
+                <p class="manual-lead">Quatro regiões, e você já sabe onde tudo mora.</p>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/tela-geral.jpg" alt="Layout geral da IDE" loading="lazy">
+                    <figcaption>Barra superior, barra de atividades à esquerda, editor ao centro, terminal abaixo e o chat da orquestradora.</figcaption>
+                </figure>
+
+                <h3>Barra superior</h3>
+                <ul>
+                    <li><strong>Menus</strong> Ver, Terminal e Ajuda — abrir painéis, criar ou dividir terminal.</li>
+                    <li><strong>Busca</strong> (lupa) — arquivos e conteúdo do workspace.</li>
+                    <li><strong>Super CLI</strong> — lançamento rápido de qualquer agente de código instalado, direto no terminal integrado, com o ícone real de cada motor e um selo <code>off</code> quando não está disponível.</li>
+                    <li><strong>Olho do COSMOS</strong> — estado global num relance: missão, equipe e build. Diz se há missão rodando, quantos assentos estão configurados e como terminou o último build.</li>
+                    <li><strong>Zoom</strong> (<code>Ctrl +</code> / <code>Ctrl -</code> / <code>Ctrl 0</code>) e os botões de janela.</li>
+                </ul>
+
+                <h3>Barra de atividades (esquerda)</h3>
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Ícone</th><th>Painel</th><th>Para quê</th></tr></thead>
+                        <tbody>
+                            <tr><td>📂</td><td><strong>Explorador</strong></td><td>Árvore de arquivos, busca, Git, menu de contexto</td></tr>
+                            <tr><td>🎛️</td><td><strong>Orquestração IA</strong></td><td>Mission Control, perfis dos agentes, fila de ordens</td></tr>
+                            <tr><td>🔗</td><td><strong>n8n &amp; RAG Nodes</strong></td><td>Servidor n8n gerenciado e editor de pipeline RAG</td></tr>
+                            <tr><td>🧠</td><td><strong>Memória Deep</strong></td><td>Memória vetorial: buscar, ingerir, gerir, medir</td></tr>
+                            <tr><td>🛒</td><td><strong>Loja Lya</strong></td><td>Skills, plugins de CLI, temas, linguagens, capacidades</td></tr>
+                            <tr><td>🧩</td><td><strong>Extensões</strong></td><td>Catálogo Open VSX de extensões do VS Code</td></tr>
+                            <tr><td>🏗️</td><td><strong>Compilador &amp; Simulador</strong></td><td>Build, run e preview ao vivo</td></tr>
+                            <tr><td>🚀</td><td><strong>Lya Publisher</strong></td><td>Publicação na Microsoft Store</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Rodapé da barra lateral</h3>
+                <p>
+                    Ali ficam o indicador de <strong>Memória: Conectada / Inativa</strong>, o acesso às
+                    <strong>Configurações</strong> e o atalho para rever o manifesto. A borda animada da
+                    memória é o próprio indicador de status — girando, está online; parada, offline.
+                </p>
+            </section>
+
+            <!-- 3 -->
+            <section id="projetos">
+                <h2><span class="num">03</span>Projetos e arquivos</h2>
+                <p class="manual-lead">Criar do zero, abrir o que existe ou clonar do Git — e achar qualquer coisa depois.</p>
+
+                <h3>Criar um projeto novo</h3>
+                <ol class="steps">
+                    <li>Na tela de boas-vindas, escolha <strong>Criar projeto</strong>.</li>
+                    <li>Selecione um modelo de partida <em>ou</em> use <strong>"Descreva seu projeto e o COSMOS monta"</strong> — escreva em português o que você quer (ex.: <em>"uma API REST em Node com autenticação JWT e testes"</em>).</li>
+                    <li>Escolha a pasta onde criar. A IDE cria a estrutura e convoca a orquestradora para montar o esqueleto.</li>
+                </ol>
+
+                <h3>Abrir um projeto existente</h3>
+                <ul>
+                    <li><strong>Abrir pasta…</strong> na tela de boas-vindas, ou <strong>Abrir Pasta</strong> no topo do Explorador (troca o workspace).</li>
+                    <li>A lista de <strong>Recentes</strong> guarda as últimas pastas — um clique volta ao trabalho de ontem.</li>
+                    <li>A IDE lembra do último workspace e reabre nele na próxima vez.</li>
+                </ul>
+
+                <h3>Clonar um repositório</h3>
+                <p>
+                    <strong>Clonar do Git</strong> na tela de boas-vindas: cole a URL
+                    (<code>https://github.com/usuario/repo.git</code>), escolha onde clonar e pronto — a
+                    pasta clonada já abre como workspace.
+                </p>
+
+                <h3>Explorador</h3>
+                <ul>
+                    <li><strong>Novo arquivo / Nova pasta / Renomear / Copiar caminho / Revelar / Excluir</strong> no menu de contexto (botão direito).</li>
+                    <li><strong>Status do Git</strong> por arquivo: modificado, adicionado, não rastreado, deletado, renomeado, conflito.</li>
+                    <li><strong>Recolher tudo</strong> e <strong>Atualizar</strong> no cabeçalho do painel.</li>
+                </ul>
+
+                <h3>Busca</h3>
+                <p>Dois modos no mesmo campo:</p>
+                <ul>
+                    <li><strong>Nome</strong> — filtra arquivos pelo nome, instantâneo.</li>
+                    <li><strong>Conteúdo</strong> — varre o texto dos arquivos com <em>regex</em> e opção de diferenciar maiúsculas. Mostra trecho, arquivo e linha; clicar leva direto ao ponto.</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Pasta muito profunda?</strong> A árvore lê até 5 níveis para não travar em
+                    monorepos gigantes. Além disso, use a busca (<code>Ctrl+P</code> / buscar em arquivos)
+                    ou abra a subpasta diretamente como workspace.
+                </div>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/tela-geral.jpg" alt="Explorador de arquivos na lateral esquerda da IDE" loading="lazy">
+                    <figcaption>O Explorador ocupa a lateral esquerda: árvore, status do Git e busca por nome ou conteúdo.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 4 -->
+            <section id="editor">
+                <h2><span class="num">04</span>Editor de código</h2>
+                <p class="manual-lead">É o motor do VS Code por dentro — então o que você já sabe, funciona.</p>
+
+                <h3>O que está disponível</h3>
+                <ul>
+                    <li><strong>IntelliSense</strong>, <code>F12</code> (ir para definição), find references, multi-cursor (<code>Ctrl+D</code>).</li>
+                    <li><strong>Minimap</strong> e realce do <strong>diff do Git</strong> na régua lateral.</li>
+                    <li><strong>Botão ▶</strong> executa o arquivo atual no terminal integrado.</li>
+                    <li><strong>Temas de sintaxe e de ícones</strong> instaláveis pela Loja — a coloração usa gramáticas reais, não regex improvisada.</li>
+                </ul>
+
+                <h3>Editar com IA — <code>Ctrl+K</code></h3>
+                <ol class="steps">
+                    <li>Selecione o trecho que quer mudar (ou nada, para agir no arquivo).</li>
+                    <li>Pressione <code>Ctrl+K</code> e descreva a alteração em português.</li>
+                    <li>A IDE mostra um <strong>diff lado a lado</strong>. Você decide: <strong>Aplicar</strong> ou <strong>Descartar</strong>.</li>
+                </ol>
+
+                <div class="note">
+                    <strong>Rede de segurança:</strong> edições feitas pelo agente entram na trilha de
+                    auditoria e podem ser revertidas (<em>rollback</em>) — você não fica refém de uma
+                    alteração automática que deu errado.
+                </div>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/editor.png" alt="Editor Monaco na IDE" loading="lazy">
+                    <figcaption>Editor com realce, minimap e o fluxo de edição por IA.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 5 -->
+            <section id="terminal">
+                <h2><span class="num">05</span>Terminal integrado</h2>
+                <p class="manual-lead">PTY nativo — um terminal de verdade, com cores, TUI e tudo mais.</p>
+
+                <ul>
+                    <li><strong>Novo Terminal</strong> e <strong>Dividir Terminal</strong> (lado a lado) pelo menu Terminal.</li>
+                    <li>Roda o que você roda normalmente: <code>npm</code>, <code>python</code>, <code>node</code>, <code>git</code>, <code>tsc</code>, <code>gradle</code>…</li>
+                    <li>O botão ▶ do editor e o Compilador transmitem a saída aqui, ao vivo.</li>
+                    <li>O <strong>Super CLI</strong> da barra superior abre qualquer agente de código instalado direto numa aba deste terminal.</li>
+                </ul>
+
+                <div class="note warn">
+                    <strong>Atenção ao contexto:</strong> comandos como <code>npm run dev</code> rodam
+                    <em>o seu projeto</em>, não a IDE. Se um comando derrubar o servidor do seu app,
+                    é o app dele que caiu — a IDE segue de pé.
+                </div>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/compilador.png" alt="Saída de build transmitida ao vivo no terminal integrado" loading="lazy">
+                    <figcaption>O terminal recebe a saída real dos comandos — aqui, um build transmitido ao vivo.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 6 -->
+            <section id="chat">
+                <h2><span class="num">06</span>Chat com a IA</h2>
+                <p class="manual-lead">A sala central. Aqui você fala com a orquestradora — e ela age no projeto.</p>
+
+                <h3>Enviar</h3>
+                <ul>
+                    <li><strong>Tecla de envio configurável:</strong> <code>Enter</code> envia e <code>Shift+Enter</code> quebra linha — ou o contrário, se você preferir. Ajuste nas Configurações.</li>
+                    <li><strong>Parar geração:</strong> o botão ⏹ aborta de verdade a requisição em andamento, inclusive no provedor de origem.</li>
+                    <li><strong>Editar mensagem enviada:</strong> <code>Ctrl+Enter</code> confirma, <code>Esc</code> cancela.</li>
+                </ul>
+
+                <h3>Anexos e voz</h3>
+                <ul>
+                    <li><strong>Anexar arquivos</strong> e <strong>colar print</strong> direto no campo (multimodal, quando o motor suporta).</li>
+                    <li><strong>Gravar voz</strong> com player no preview antes de enviar.</li>
+                </ul>
+
+                <h3>Ferramentas do agente</h3>
+                <p>
+                    O chat não é só texto: a IA tem ferramentas reais — ler e escrever arquivos, rodar
+                    comandos no terminal, buscar na memória, acionar servidores MCP conectados e usar
+                    comandos de extensões instaladas. Cada ferramenta pode ser <strong>ligada ou desligada
+                    individualmente</strong>, e o uso aparece na conversa: você vê o que ela fez, não só o
+                    que ela disse.
+                </p>
+
+                <h3>Continuidade em modelos com limite apertado</h3>
+                <p>
+                    Modelos com teto baixo de tokens por minuto costumam interromper a resposta no meio.
+                    A IDE detecta o limite, mostra um selo com o tempo de espera, aguarda e
+                    <strong>retoma do ponto exato</strong> — sem reiniciar a conversa e sem perder contexto.
+                    Você também pode continuar enviando mensagens enquanto o modelo processa: elas entram
+                    numa fila e são respondidas em ordem.
+                </p>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/cosmos.png" alt="Chat da orquestradora COSMOS" loading="lazy">
+                    <figcaption>Chat da orquestradora, com histórico, ferramentas e custo acompanhado.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 7 -->
+            <section id="chaves">
+                <h2><span class="num">07</span>Chaveiro de chaves de API</h2>
+                <p class="manual-lead">Um lugar só para as chaves, cifradas em repouso. Você nunca precisa colá-las de novo.</p>
+
+                <h3>Registrar uma chave</h3>
+                <ol class="steps">
+                    <li>Abra <strong>Configurações → Provedores</strong> e escolha o provedor (ou crie um novo).</li>
+                    <li>No bloco <strong>Chaveiro de APIs Seguro</strong>, clique em <strong>+ Nova Chave</strong>.</li>
+                    <li>Dê um <strong>identificador</strong> que faça sentido para você (ex.: <em>"Gemini pessoal"</em>, <em>"Claude do trabalho"</em>) e cole a chave.</li>
+                    <li><strong>Gravar no Chaveiro.</strong> A chave é cifrada com AES-256-GCM antes de tocar o disco — a partir daí você só a seleciona pelo nome, nunca vê o valor bruto de novo.</li>
+                </ol>
+
+                <h3>Reaproveitar</h3>
+                <p>
+                    A mesma chave serve a vários lugares: o chat, os assentos da equipe e a memória
+                    (quando ela usa embeddings na nuvem). Registre uma vez, use em todo canto — e quando
+                    a chave girar, você troca num lugar só.
+                </p>
+
+                <h3>Onde mais entram credenciais</h3>
+                <ul>
+                    <li><strong>Carteira de contas</strong> — além dos modelos, guarda credenciais de serviços como GitHub, Drive, SMTP e Partner Center, com <strong>teste real</strong> de conexão (não é só salvar e torcer).</li>
+                    <li><strong>Endpoints locais</strong> — a chave é opcional; só preencha se o seu servidor local exigir.</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Onde isso mora:</strong> tudo em <code>~/.coreLyaDB/</code>, na sua máquina.
+                    A chave mestra fica em <code>.master.key</code>, acessível só pelo seu usuário do
+                    sistema. Detalhes na <a class="link" href="privacidade.html">política de privacidade</a>.
+                </div>
+            </section>
+
+            <!-- 8 -->
+            <section id="provedores">
+                <h2><span class="num">08</span>Configurar um provedor</h2>
+                <p class="manual-lead">
+                    Qualquer endpoint compatível com OpenAI entra aqui — NVIDIA NIM, Groq, DeepSeek,
+                    Together, OpenRouter e o que mais existir amanhã.
+                </p>
+
+                <h3>Passo a passo</h3>
+                <ol class="steps">
+                    <li>Abra <strong>Provedores</strong> e clique em <strong>Adicionar provedor</strong>.</li>
+                    <li><strong>Identidade visual:</strong> dê um nome e um símbolo. O botão <em>Obter</em> baixa o logo automaticamente para você reconhecê-lo no seletor.</li>
+                    <li><strong>Tipo:</strong> <em>Local</em> (roda na sua máquina) ou <em>Remoto</em> (API na nuvem).</li>
+                    <li><strong>URL:</strong> o host da API — ex.: <code>http://localhost:11434</code> para local, ou <code>https://api.seu-provedor.com/v1</code> para remoto.</li>
+                    <li><strong>Chave:</strong> selecione uma do Chaveiro (<a class="link" href="#chaves">§7</a>). Em endpoint local, geralmente pode ficar vazio.</li>
+                    <li><strong>Testar Conexão.</strong> O console de handshake mostra a conversa real com o servidor.</li>
+                    <li><strong>Escolha o modelo padrão</strong> entre os motores que a API realmente devolveu — e adicione outros se quiser alternar.</li>
+                </ol>
+
+                <div class="note">
+                    <strong>Por que testar importa:</strong> a IDE lista os motores que a <em>sua chave</em>
+                    libera de fato, não um catálogo decorativo. Se um modelo não aparece, sua conta não
+                    tem acesso a ele — melhor descobrir aqui do que no meio de uma missão.
+                </div>
+
+                <h3>Memória no provedor (RAG)</h3>
+                <ul>
+                    <li><strong>RAG v2</strong> (padrão) — as respostas recebem contexto recuperado da memória vetorial local.</li>
+                    <li><strong>RAG v1</strong> — sem recuperação: o modelo responde só com o histórico da conversa.</li>
+                </ul>
+                <p>A preferência é salva por provedor, então você pode ter um "com memória" e outro "puro".</p>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/provedores.png" alt="Tela de configuração de provedores" loading="lazy">
+                    <figcaption>Provedor configurado, chaveiro à esquerda e console de handshake mostrando o teste real.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 9 -->
+            <section id="motores-locais">
+                <h2><span class="num">09</span>Motores locais e OmniRouter</h2>
+                <p class="manual-lead">Custo zero, offline e sem nenhum dado saindo da máquina.</p>
+
+                <h3>Ollama</h3>
+                <ol class="steps">
+                    <li>Instale o <a class="link" href="https://ollama.com" target="_blank" rel="noopener">Ollama</a> na máquina.</li>
+                    <li>Baixe um modelo pelo terminal integrado — ex.: <code>ollama pull mistral</code>.</li>
+                    <li>Na IDE, o provedor local aparece com os modelos detectados. Selecione e use.</li>
+                </ol>
+                <p>
+                    Nas configurações avançadas do provedor local você ajusta <strong>janela de contexto</strong>,
+                    <strong>limite de geração</strong> e <strong>tempo de permanência do modelo na memória</strong> —
+                    por modelo. A IDE avisa quando o pedido não cabe na janela, em vez de cortar em silêncio.
+                </p>
+
+                <h3>OmniRouter — instalar e ligar</h3>
+                <p>
+                    O <a class="link" href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener">OmniRouter</a>
+                    é um roteador de modelos local: um gateway compatível com OpenAI que coloca um catálogo
+                    enorme de modelos atrás de um único endereço na sua máquina. A IDE o adotou como
+                    provedor nativo e cuida do ciclo de vida dele.
+                </p>
+                <ol class="steps">
+                    <li>Abra <strong>Configurações → Infraestrutura</strong> (capacidades instaláveis).</li>
+                    <li>No cartão do <strong>OmniRouter</strong>, clique em <strong>Instalar</strong> — a IDE baixa e prepara tudo.</li>
+                    <li>Clique em <strong>Iniciar OmniRouter</strong>. O status passa a Instalado/rodando.</li>
+                    <li>Clique em <strong>Abrir Dashboard</strong> e configure lá suas contas e modelos.</li>
+                    <li>A chave gerada no dashboard vai para o <strong>Chaveiro</strong> do provedor "OmniRouter" em Provedores — e os modelos reais expostos aparecem sozinhos no seletor.</li>
+                </ol>
+
+                <div class="note">
+                    <strong>Por que isso é bom:</strong> um endpoint local, um catálogo grande e nenhuma
+                    troca de configuração quando você muda de modelo. Para a IDE, é só mais um provedor
+                    local — com todas as garantias de um.
+                </div>
+
+                <h3>Capacidades de desenvolvimento</h3>
+                <p>
+                    Ainda em <strong>Infraestrutura</strong>, a IDE detecta e instala sob demanda
+                    <em>type checkers</em> (LSP), linters, formatters e test runners — e sabe
+                    <strong>executá-los sobre o workspace</strong>. Nada de "instale isso manualmente e boa sorte":
+                    o botão <em>Rodar no projeto</em> executa de verdade.
+                </p>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/omnirouter-infra.png" alt="Aba de infraestrutura com OmniRouter" loading="lazy">
+                    <figcaption>Infraestrutura — capacidades instaláveis, OmniRouter e túnel de compartilhamento.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 10 -->
+            <section id="clis">
+                <h2><span class="num">10</span>CLIs de agente</h2>
+                <p class="manual-lead">
+                    Agentes de código de linha de comando viram assentos da equipe — com as ferramentas
+                    deles, dentro da sua missão.
+                </p>
+
+                <h3>Instalar as CLIs oficiais</h3>
+                <ol class="steps">
+                    <li>Vá em <strong>Configurações → Infraestrutura → CLI de Agentes IA</strong>.</li>
+                    <li>A IDE mostra o <strong>caminho real detectado</strong> de cada CLI, ou <em>não detectado</em>.</li>
+                    <li>Clique em <strong>Instalar</strong> para instalação com um clique, ou <strong>Abrir terminal</strong> para fazer à mão.</li>
+                    <li>Depois de instalar, <strong>Verificar</strong> confirma que o executável responde.</li>
+                    <li><strong>Autentique</strong> a CLI uma vez no terminal integrado (cada uma tem seu próprio login).</li>
+                </ol>
+                <p>
+                    <strong>Claude Code</strong> (Anthropic) e <strong>AGY / Antigravity</strong> (o oficial do Google)
+                    têm instalação assistida aqui. A Gemini CLI foi descontinuada em 18/06/2026 — se você
+                    usa um fork da comunidade, aponte o executável manualmente.
+                </p>
+
+                <h3>Ligar o opencode ou qualquer CLI própria</h3>
+                <ol class="steps">
+                    <li>Instale a CLI normalmente pelo terminal integrado (por exemplo, o <code>opencode</code>).</li>
+                    <li>Em <strong>CLI de Agentes IA</strong>, use <strong>📁 Caminho manual</strong> para apontar o executável — serve para fork, instalação própria ou versão fora do PATH.</li>
+                    <li>Ou cadastre do zero em <strong>+ Cadastrar CLI</strong>: nome + comando/caminho do executável.</li>
+                    <li><strong>Salvar</strong> e depois <strong>Verificar</strong>.</li>
+                </ol>
+
+                <h3>Onde as CLIs aparecem</h3>
+                <p>
+                    Tudo que estiver marcado como <strong>visível</strong> na lista de "CLIs registradas"
+                    aparece nos seletores do chat e dos assentos Star 1–4, além do <strong>Super CLI</strong>
+                    da barra superior. As CLIs fixas não podem ser excluídas (vivem no código), mas podem
+                    ser <strong>ocultadas</strong>; as personalizadas podem ser editadas ou excluídas.
+                </p>
+
+                <div class="note">
+                    <strong>Vantagem de usar CLI como assento:</strong> ela traz o próprio conjunto de
+                    ferramentas e a própria sessão autenticada. Para a orquestradora, tanto faz — o
+                    resultado volta pelo mesmo caminho de um modelo por API.
+                </div>
+            </section>
+
+            <!-- 11 -->
+            <section id="agentes">
+                <h2><span class="num">11</span>Criar e ajustar agentes</h2>
+                <p class="manual-lead">
+                    Cada assento tem nome, personalidade, motor e um cardápio de skills. Você monta a
+                    equipe do jeito que o seu trabalho pede.
+                </p>
+
+                <h3>Onde fica</h3>
+                <p>
+                    Painel <strong>Orquestração IA</strong> → aba <strong>🤖 Perfil</strong>. À esquerda,
+                    a lista de inteligências ("Filhas de Lya"); à direita, o perfil da selecionada.
+                </p>
+
+                <h3>Configurar um agente</h3>
+                <ol class="steps">
+                    <li><strong>Nome da IA</strong> — aparece no cabeçalho do chat, nas mensagens e no projeto todo.</li>
+                    <li><strong>Tagline</strong> — o subtítulo dela (ex.: <em>Orquestradora</em>).</li>
+                    <li><strong>Prompt base / personalidade</strong> — quem ela é e como deve trabalhar. É aqui que você define método, tom e limites.</li>
+                    <li><strong>Motor</strong> — escolha entre modelo local, provedor de API ou uma CLI registrada. Use <strong>📡 Testar conexão</strong>: manda um "oi" real e mostra a resposta.</li>
+                    <li><strong>Skills</strong> — anexe roteiros do cardápio (<a class="link" href="#skills">§15</a>). Cada skill é um procedimento que ela passa a saber executar.</li>
+                    <li><strong>Seu nome</strong> — como <em>você</em> aparece no chat. Vazio vira "Arquiteto".</li>
+                </ol>
+
+                <h3>Níveis de agressividade</h3>
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Controle</th><th>No máximo</th><th>No mínimo</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Agressividade crítica</strong><br><span class="cell-hint">rigidez ao refutar solução e acusar bug</span></td>
+                                <td>Análise incisiva, raciocínio longo e explícito</td>
+                                <td>Análise balanceada e pragmática</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Verbosidade</strong><br><span class="cell-hint">volume das justificativas</span></td>
+                                <td>Documenta explicações, variáveis e contexto em detalhe</td>
+                                <td>Respostas condensadas e diretas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Assertividade / autonomia de escrita</strong><br><span class="cell-hint">quanto ela mexe sem perguntar</span></td>
+                                <td>Edita e salva os arquivos automaticamente</td>
+                                <td>Sugere em markdown e espera sua aprovação</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note warn">
+                    <strong>Comece conservador.</strong> Assertividade no máximo é ótima quando você já
+                    confia no agente e no sandbox — e é exatamente o que você <em>não</em> quer na primeira
+                    hora de uso, num repositório sem commit recente.
+                </div>
+
+                <h3>Quem orquestra</h3>
+                <p>
+                    Marque a <strong>Orquestradora Ativa</strong>: quem estiver marcado planeja, distribui e
+                    consolida, comandando as demais com o motor próprio. O padrão é o COSMOS — e a
+                    recomendação é mantê-lo, já que a soberania da revisão é dele.
+                </p>
+            </section>
+
+            <!-- 12 -->
+            <section id="orquestrar">
+                <h2><span class="num">12</span>Orquestrar uma missão</h2>
+                <p class="manual-lead">Do objetivo escrito em português à entrega consolidada, com a equipe inteira trabalhando.</p>
+
+                <h3>Antes de disparar</h3>
+                <ul class="checks">
+                    <li>Cada assento que você pretende usar tem um motor selecionado e <strong>ONLINE</strong> (teste com 📡).</li>
+                    <li>O workspace aberto é o certo — a equipe vai agir sobre ele.</li>
+                    <li>O teto de custo está no valor que você aceita gastar nessa missão.</li>
+                </ul>
+
+                <h3>Disparar</h3>
+                <ol class="steps">
+                    <li>Painel <strong>Orquestração IA</strong> → aba <strong>Orquestração</strong>.</li>
+                    <li>Escreva a <strong>Meta / Objetivo</strong>. Seja específico no <em>resultado</em>, não no passo a passo: <em>"migrar todos os callers da APIv1 para a v2 conforme MIGRATION.md e deixar os testes verdes"</em>.</li>
+                    <li>Clique em <strong>Iniciar Orquestração</strong>.</li>
+                    <li>Acompanhe o <strong>Mapa da Equipe</strong>: quem está ativo, em qual motor, com qual estado.</li>
+                </ol>
+
+                <h3>Durante</h3>
+                <ul>
+                    <li><strong>Pausar / Retomar</strong> a missão inteira — ou só um agente, deixando os demais seguirem.</li>
+                    <li><strong>Parar</strong> aborta de verdade (não é um pedido educado que fica pendurado).</li>
+                    <li><strong>Fila de ordens</strong> — enfileire as próximas missões; <em>avançar</em> inicia a seguinte na hora, e uma ordem pode ser cancelada.</li>
+                    <li><strong>Custo</strong> — tokens estimados e custo real, ao vivo. Ao bater o teto, a missão é abortada de fato.</li>
+                    <li><strong>Mural / feed da equipe</strong> — o que cada Star entregou, e o que o maestro devolveu para refazer.</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Missão sobrevive a reinício:</strong> o estado é gravado em disco. Se a IDE
+                    fechar no meio, ela volta sabendo onde estava.
+                </div>
+
+                <h3>Como saber que está orquestrando de verdade</h3>
+                <p>
+                    Procure o laço de revisão no feed: a orquestradora <em>lê</em> a entrega de cada Star,
+                    aponta o problema e <em>manda refazer</em>. Se as entregas só se acumulam e viram um
+                    resumo no fim, aquilo é disparo paralelo — não orquestração. Entenda o modelo completo
+                    na <a class="link" href="cosmos.html">página do COSMOS</a>.
+                </p>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/orquestracao.png" alt="Painel de orquestração em execução" loading="lazy">
+                    <figcaption>Missão em andamento: mapa da equipe, estado por agente e custo acompanhado.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 13 -->
+            <section id="memoria">
+                <h2><span class="num">13</span>Memória Deep</h2>
+                <p class="manual-lead">O que a IDE aprende sobre o seu projeto fica — e volta na próxima sessão.</p>
+
+                <h3>As abas do painel</h3>
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Aba</th><th>O que você faz nela</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Memórias</strong></td><td>Ver o que está guardado, por coleção e por importância</td></tr>
+                            <tr><td><strong>Busca</strong></td><td>Busca semântica — encontra por sentido, não por palavra exata</td></tr>
+                            <tr><td><strong>Inbox</strong></td><td>Jogar texto para dentro da memória na hora (nome + conteúdo)</td></tr>
+                            <tr><td><strong>Motores</strong></td><td>Status real de cada engrenagem: banco vetorial, modelos, embeddings</td></tr>
+                            <tr><td><strong>Filesystem</strong></td><td>Pastas monitoradas — ingestão automática com dedup por hash</td></tr>
+                            <tr><td><strong>Config</strong></td><td>Conectar instância local ou externa, porta, coleções, prefixo</td></tr>
+                            <tr><td><strong>Gerir</strong></td><td>Revisar e <strong>apagar</strong> — a memória também precisa esquecer</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Como o conhecimento é organizado</h3>
+                <ul>
+                    <li><strong>Episódico</strong> — o que aconteceu (sessões, missões, decisões).</li>
+                    <li><strong>Semântico</strong> — fatos e conceitos do domínio.</li>
+                    <li><strong>Procedural</strong> — como se faz (receitas que funcionaram).</li>
+                    <li><strong>Identidade</strong> — quem é quem, preferências, contexto do projeto.</li>
+                </ul>
+
+                <h3>Alimentar a memória</h3>
+                <ol class="steps">
+                    <li><strong>Sozinha:</strong> decisões relevantes da conversa são enfileiradas e gravadas em lote, sem travar o chat.</li>
+                    <li><strong>Pela Inbox:</strong> cole um texto, dê um nome, salve.</li>
+                    <li><strong>Por pasta monitorada:</strong> aponte um diretório e a IDE ingere o conteúdo, sem reprocessar o que não mudou.</li>
+                </ol>
+
+                <div class="note">
+                    <strong>Guarda anti-eco:</strong> o que já veio de uma busca na memória não é regravado
+                    como memória nova, e fragmentos triviais são descartados. Sem isso, a base incha com
+                    cópias do que ela mesma disse.
+                </div>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/memoria.png" alt="Painel de memória" loading="lazy">
+                    <figcaption>Memória Deep — coleções, importância e o velocímetro com telemetria real.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 14 -->
+            <section id="core5">
+                <h2><span class="num">14</span>Core5 e backends de memória</h2>
+                <p class="manual-lead">Qual motor de memória usar — e a resposta curta é: não mexa, já vem certo.</p>
+
+                <h3>Core5 (padrão, embutido)</h3>
+                <ul>
+                    <li>Roda <strong>dentro do processo da IDE</strong>. Não exige Python, Docker nem serviço em segundo plano.</li>
+                    <li>Embedding <strong>nomic-embed-text-v1.5, 768 dimensões</strong>.</li>
+                    <li>Cascata segura: embedding online (chave resolvida da carteira) → modelo local na CPU → guarda que <strong>descarta vetor de dimensão incompatível</strong>. É por isso que a base não corrompe.</li>
+                    <li><strong>Velocímetro</strong> com embeddings por segundo, latência, fonte ativa e capacidade — telemetria real, não enfeite.</li>
+                </ul>
+
+                <h3>ChromaDB (legado, opcional)</h3>
+                <p>
+                    É o motor anterior, que precisava de Python à parte. Continua disponível e só participa
+                    das buscas se você habilitar. Faz sentido ligar <strong>apenas</strong> se você já tem uma
+                    base ChromaDB de uma versão anterior e quer consultá-la. Os dois podem rodar juntos:
+                    cada busca consulta os motores habilitados e mescla os resultados sem duplicar.
+                </p>
+
+                <h3>Compartilhar memória com outras ferramentas</h3>
+                <p>
+                    A IDE fala <strong>MCP</strong> com uma instância externa do Core5 — assim uma CLI de
+                    agente e a IDE trabalham sobre o mesmo contexto do mesmo projeto. O indicador de status
+                    só acende quando a conexão foi <em>provada</em> por handshake real. Como conectar:
+                    <a class="link" href="#mcp">§18</a>.
+                </p>
+
+                <h3>Cicatrizes: aprender com o próprio erro</h3>
+                <p>
+                    Quando um erro de build é resolvido, a receita vira uma <strong>cicatriz</strong>
+                    consultável — da próxima vez que o mesmo erro aparecer, a IA já entra sabendo o
+                    caminho. Cicatriz só nasce de <strong>sucesso comprovado</strong> (código de saída real
+                    do comando), nunca de uma IA alegando que consertou.
+                </p>
+
+            </section>
+
+            <!-- 15 -->
+            <section id="skills">
+                <h2><span class="num">15</span>Skills — ensinar procedimentos à IA</h2>
+                <p class="manual-lead">
+                    Uma skill é um roteiro real de comandos que o agente passa a saber executar. É como
+                    treinar um colega novo: uma vez, e ele sabe para sempre.
+                </p>
+
+                <h3>Obter skills</h3>
+                <ol class="steps">
+                    <li>Abra a <strong>Loja Lya</strong>.</li>
+                    <li><strong>Importar do Git:</strong> cole a URL <code>https://…</code> de um repositório — a IDE clona, varre as definições de skill e indexa de verdade no catálogo.</li>
+                    <li><strong>Compilar uma nova:</strong> descreva a ideia e deixe a IA montar o cartão da skill.</li>
+                    <li><strong>Criar/editar à mão</strong> pelo editor de skills: nome, descrição, categoria e funções.</li>
+                </ol>
+
+                <h3>Ativar numa IA</h3>
+                <ol class="steps">
+                    <li>Vá em <strong>Orquestração IA → 🤖 Perfil</strong> e selecione o agente.</li>
+                    <li>No <strong>Cardápio de Skills</strong>, clique em <strong>+ Anexar</strong> nas que ele deve saber.</li>
+                    <li>As anexadas aparecem em <strong>Habilidades Adquiridas</strong> — clique numa delas para remover.</li>
+                </ol>
+                <p>
+                    Skills anexadas à orquestradora são carregadas no chat do agente. Anexe o que é
+                    pertinente ao papel: encher todo mundo de tudo só gasta contexto.
+                </p>
+
+                <h3>Modo de consulta do catálogo</h3>
+                <ul>
+                    <li><strong>Cartões de visita</strong> — a visão legível, para você navegar.</li>
+                    <li><strong>IA (modo otimizado)</strong> — índice compacto e categorizado que a IA consulta. Em vez de engolir o script inteiro de cada ferramenta, ela lê um menu seletivo — o que derruba drasticamente o contexto gasto.</li>
+                </ul>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/skills.png" alt="Loja de skills" loading="lazy">
+                    <figcaption>Catálogo de skills, com filtro por categoria e os dois modos de consulta.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 16 -->
+            <section id="loja">
+                <h2><span class="num">16</span>Loja Lya</h2>
+                <p class="manual-lead">Um lugar para tudo que se instala na IDE.</p>
+
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Categoria</th><th>O que tem</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Plugins (CLI)</strong></td><td>Agentes de código de linha de comando, com estado <em>instalado / não instalado</em> e botão de instalar</td></tr>
+                            <tr><td><strong>Inteligência Artificial</strong></td><td>Skills de análise, geração e revisão</td></tr>
+                            <tr><td><strong>Automação &amp; Workspace</strong></td><td>Roteiros que agem sobre arquivos e comandos do projeto</td></tr>
+                            <tr><td><strong>Banco de Dados</strong></td><td>Procedimentos de consulta, migração e inspeção</td></tr>
+                            <tr><td><strong>Infraestrutura</strong></td><td>Build, deploy, containers, ambiente</td></tr>
+                            <tr><td><strong>n8n &amp; Fluxos</strong></td><td>Integrações prontas para o painel de automação</td></tr>
+                            <tr><td><strong>🎨 Temas</strong></td><td>Temas de sintaxe e de ícones para o editor</td></tr>
+                            <tr><td><strong>🔤 Linguagens</strong></td><td>Gramáticas e snippets — realce correto por linguagem</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>
+                    Cada item traz origem, autor e as funções que expõe. Skills importadas podem ser
+                    editadas ou removidas do registro a qualquer momento.
+                </p>
+            </section>
+
+            <!-- 17 -->
+            <section id="extensoes">
+                <h2><span class="num">17</span>Extensões (Open VSX)</h2>
+                <p class="manual-lead">Extensões reais do VS Code, vindas de um registro aberto.</p>
+
+                <ol class="steps">
+                    <li>Abra o painel <strong>Extensões</strong> e busque (ex.: <em>prettier</em>, <em>python</em>, <em>eslint</em>).</li>
+                    <li>Repare no selo de suporte de cada resultado — a IDE é honesta sobre o que roda:
+                        <ul>
+                            <li><strong>JS — roda no host</strong>: extensão com código, executada no Extension Host.</li>
+                            <li><strong>Declarativa</strong>: tema, snippet ou keymap — aplicada sem executar código.</li>
+                            <li><strong>Não suportada</strong>: depende de recurso que a IDE ainda não oferece (ex.: debuggers).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Instalar</strong> — a instalação é real; o que não é suportado é recusado com o motivo, em vez de fingir sucesso.</li>
+                    <li><strong>Ativar / Desativar / Desinstalar</strong> na lista de instaladas. Extensões ativas carregam em runtime, sem rebuild.</li>
+                </ol>
+
+                <p>
+                    Também dá para <strong>importar um <code>.vsix</code> local</strong> ou instalar por URL —
+                    com o mesmo crivo de validação. Fonte de terceiros é sinalizada como não verificada.
+                </p>
+
+                <div class="note">
+                    <strong>Bônus para a equipe:</strong> comandos registrados por extensões instaladas
+                    viram ferramentas que os agentes podem invocar durante uma missão.
+                </div>
+            </section>
+
+            <!-- 18 -->
+            <section id="mcp">
+                <h2><span class="num">18</span>Servidores MCP</h2>
+                <p class="manual-lead">
+                    Cada servidor MCP conectado expõe ferramentas reais para a orquestradora usar.
+                </p>
+
+                <ol class="steps">
+                    <li>Abra <strong>Configurações → Servidores MCP</strong> e clique em <strong>Adicionar servidor MCP</strong>.</li>
+                    <li><strong>Nome</strong> do servidor (ex.: <em>filesystem</em>).</li>
+                    <li><strong>Transporte:</strong>
+                        <ul>
+                            <li><strong>STDIO</strong> — processo local: informe o <em>comando</em>, os <em>argumentos</em> e, se precisar, o <em>diretório de trabalho</em>.</li>
+                            <li><strong>HTTP</strong> ou <strong>SSE</strong> — servidor remoto: informe a URL.</li>
+                        </ul>
+                    </li>
+                    <li>Adicione <strong>variáveis de ambiente</strong> se o servidor exigir (chaves, caminhos).</li>
+                    <li><strong>Salvar</strong> e depois <strong>Testar conexão real</strong>.</li>
+                    <li>Conectado, a IDE mostra <em>● conectado — N ferramenta(s) disponível(is)</em>. Só então elas ficam ao alcance da IA.</li>
+                </ol>
+
+                <div class="note">
+                    <strong>Sem status decorativo:</strong> enquanto você não testar, o servidor aparece como
+                    <em>não testado</em>. A IDE não pinta verde por otimismo — e a negociação de versão do
+                    protocolo é real nos dois papéis.
+                </div>
+
+                <p>
+                    Servidores podem ser <strong>ativados/desativados</strong> sem perder a configuração, editados
+                    ou excluídos.
+                </p>
+            </section>
+
+            <!-- 19 -->
+            <section id="n8n">
+                <h2><span class="num">19</span>n8n e pipeline RAG</h2>
+                <p class="manual-lead">Automação visual gerenciada pela própria IDE.</p>
+
+                <ul>
+                    <li><strong>Servidor n8n gerenciado:</strong> instalar, iniciar e parar pelo painel — sem terminal, sem configurar serviço.</li>
+                    <li><strong>Editor de pipeline RAG:</strong> monte o fluxo <em>recupera memória → dispara o modelo com contexto → publica o resultado</em>.</li>
+                    <li><strong>Webhooks:</strong> combinado com o túnel de compartilhamento, seus fluxos recebem chamadas externas enquanto você testa.</li>
+                </ul>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/n8n.png" alt="Painel n8n dentro da IDE" loading="lazy">
+                    <figcaption>n8n rodando sob gestão da IDE, com o pipeline RAG ao lado.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 20 -->
+            <section id="compilador">
+                <h2><span class="num">20</span>Compilador e Simulador</h2>
+                <p class="manual-lead">Build e run reais, com a saída transmitida ao vivo.</p>
+
+                <ul>
+                    <li><strong>Detecção do comando</strong> do projeto — npm, gradle, tsc, python — sem você configurar.</li>
+                    <li><strong>Saída ao vivo</strong> no terminal, em streaming: você vê o erro no instante em que ele acontece.</li>
+                    <li><strong>Preview ao vivo</strong> — dev server gerenciado e a interface do seu app dentro da IDE, em molde de celular ou desktop.</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Autocorreção de build:</strong> quando o build quebra, a IDE pode diagnosticar e
+                    tentar consertar sozinha — e o conserto que funcionou vira cicatriz na memória
+                    (<a class="link" href="#core5">§14</a>), para não repetir o mesmo erro amanhã.
+                </div>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/compilador.png" alt="Compilador e simulador" loading="lazy">
+                    <figcaption>Compilador com saída ao vivo e o simulador de interface.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 21 -->
+            <section id="debug">
+                <h2><span class="num">21</span>Run &amp; Debug</h2>
+                <p class="manual-lead">Depuração de verdade — breakpoint, passo a passo, variáveis.</p>
+
+                <ul>
+                    <li><strong>Node.js</strong> via protocolo do Chrome DevTools e <strong>Python</strong> via debugpy/DAP.</li>
+                    <li><strong>Breakpoints</strong>, <em>step over / into / out</em>.</li>
+                    <li><strong>Variáveis</strong> e <strong>call stack</strong> inspecionáveis durante a pausa.</li>
+                </ul>
+                <p>
+                    Combine com o chat: pare no breakpoint, mostre o estado à IA e pergunte por que a
+                    variável está com aquele valor. Ela lê o código que produziu aquilo.
+                </p>
+            </section>
+
+            <!-- 22 -->
+            <section id="publisher">
+                <h2><span class="num">22</span>Lya Publisher — publicar na Microsoft Store</h2>
+                <p class="manual-lead">
+                    Da versão ao pacote submetido, sem sair da IDE. É assim que a própria Lya se publica.
+                </p>
+
+                <h3>Preparar uma vez</h3>
+                <ol class="steps">
+                    <li>Tenha uma conta de desenvolvedor no <strong>Partner Center</strong> e um app reservado.</li>
+                    <li>Cadastre as credenciais (Entra ID) na <strong>Carteira de contas</strong> — elas são cifradas com AES-256-GCM, como qualquer chave.</li>
+                    <li>Prepare as <strong>screenshots obrigatórias</strong> (mínimo 1366×768) — arraste e solte no painel.</li>
+                </ol>
+
+                <h3>Publicar</h3>
+                <ol class="steps">
+                    <li>Abra o painel <strong>Lya Publisher</strong>.</li>
+                    <li>Rode o <strong>dry-run</strong> primeiro: ele percorre o pipeline sem submeter nada.</li>
+                    <li><strong>Bump de versão</strong> — a IDE atualiza todos os arquivos de versão do projeto de uma vez.</li>
+                    <li><strong>Build + empacotamento</strong> geram o pacote de instalação.</li>
+                    <li>Em <strong>Pacote a enviar</strong>, escolha explicitamente o pacote pela versão e pelo hash — nada de adivinhação sobre qual arquivo subiu.</li>
+                    <li><strong>Enviar.</strong> O log ao vivo acompanha upload e submissão; o histórico guarda cada envio.</li>
+                </ol>
+
+                <div class="note">
+                    <strong>Guia detalhado:</strong> a configuração completa (manual ou delegada à IA) está em
+                    <a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/blob/main/docs/LYA-PUBLISHER-SETUP.md" target="_blank" rel="noopener">LYA-PUBLISHER-SETUP.md</a>.
+                </div>
+
+                <figure class="shot">
+                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/publisher.png" alt="Lya Publisher" loading="lazy">
+                    <figcaption>Publisher com pipeline, seleção de pacote, screenshots e log ao vivo.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 23 -->
+            <section id="seguranca">
+                <h2><span class="num">23</span>Segurança e sandbox</h2>
+                <p class="manual-lead">O que a IA pode tocar — e o que ela não alcança de jeito nenhum.</p>
+
+                <ul>
+                    <li><strong>Sandbox de caminhos:</strong> o agente só lê e escreve dentro dos diretórios autorizados. Tentativa de sair da árvore permitida é recusada, inclusive por caminho relativo malicioso.</li>
+                    <li><strong>Credenciais cifradas</strong> em repouso (AES-256-GCM), com a chave mestra restrita ao seu usuário do sistema.</li>
+                    <li><strong>Servidor local fechado:</strong> a IDE só aceita requisições da própria máquina.</li>
+                    <li><strong>Trilha de auditoria:</strong> as ações do agente ficam registradas — e edições podem ser revertidas.</li>
+                    <li><strong>Teto de custo</strong> por missão, que aborta de verdade ao estourar.</li>
+                </ul>
+
+                <div class="note warn">
+                    <strong>Túnel de compartilhamento:</strong> enquanto ligado, sua IDE local fica acessível
+                    publicamente por uma URL temporária. É ótimo para testar de outro dispositivo ou receber
+                    webhook — e péssimo para esquecer ligado. Pare quando terminar.
+                </div>
+            </section>
+
+            <!-- 24 -->
+            <section id="config">
+                <h2><span class="num">24</span>Configurações</h2>
+                <p class="manual-lead">Onde ajustar aparência, atalhos, infraestrutura e atualização.</p>
+
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Seção</th><th>O que tem</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Temas</strong></td><td>Skin visual e cor de destaque da interface</td></tr>
+                            <tr><td><strong>Provedores</strong></td><td>Motores de IA, chaveiro e teste de conexão (<a class="link" href="#provedores">§8</a>)</td></tr>
+                            <tr><td><strong>Contas</strong></td><td>Carteira de credenciais de serviços, com teste real</td></tr>
+                            <tr><td><strong>Infraestrutura</strong></td><td>Capacidades instaláveis, OmniRouter, CLIs de agente, túnel (<a class="link" href="#motores-locais">§9</a>, <a class="link" href="#clis">§10</a>)</td></tr>
+                            <tr><td><strong>Servidores MCP</strong></td><td>Conectar ferramentas externas à IA (<a class="link" href="#mcp">§18</a>)</td></tr>
+                            <tr><td><strong>Chat</strong></td><td>Tecla de envio, fonte do chat, comportamento de anexos</td></tr>
+                            <tr><td><strong>Notas de versão</strong></td><td>O que mudou, e <strong>Verificar atualização</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Idioma</h3>
+                <p>
+                    Português, English e Español — a interface inteira, incluindo mensagens de erro da
+                    orquestração. Troque na barra superior; a mudança é imediata.
+                </p>
+
+                <h3>Atualizar a IDE</h3>
+                <p>
+                    <strong>Configurações → Verificar atualização</strong>. Instalado pela Microsoft Store, a
+                    atualização é automática; instalado pelo <code>.exe</code>, a IDE aponta a nova versão e
+                    você instala por cima.
+                </p>
+            </section>
+
+            <!-- 25 -->
+            <section id="atalhos">
+                <h2><span class="num">25</span>Atalhos essenciais</h2>
+
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Atalho</th><th>Faz</th></tr></thead>
+                        <tbody>
+                            <tr><td><code>Ctrl+K</code></td><td>Editar a seleção com IA (com diff antes de aplicar)</td></tr>
+                            <tr><td><code>Ctrl+P</code></td><td>Abertura rápida de arquivo</td></tr>
+                            <tr><td><code>Ctrl+F</code></td><td>Buscar no arquivo atual</td></tr>
+                            <tr><td><code>Ctrl+Shift+F</code></td><td>Buscar em todos os arquivos</td></tr>
+                            <tr><td><code>F12</code></td><td>Ir para a definição</td></tr>
+                            <tr><td><code>Ctrl+D</code></td><td>Multi-cursor na próxima ocorrência</td></tr>
+                            <tr><td><code>Ctrl+/</code></td><td>Comentar / descomentar</td></tr>
+                            <tr><td><code>Ctrl+`</code></td><td>Abrir / fechar o terminal</td></tr>
+                            <tr><td><code>Ctrl</code> <code>+</code> / <code>-</code> / <code>0</code></td><td>Zoom da interface</td></tr>
+                            <tr><td><code>Enter</code> ou <code>Ctrl+Enter</code></td><td>Enviar no chat (configurável)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 26 -->
+            <section id="problemas">
+                <h2><span class="num">26</span>Se algo der errado</h2>
+
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Sintoma</th><th>O que checar</th></tr></thead>
+                        <tbody>
+                            <tr><td>A IA não responde</td><td>Provedor selecionado e chave válida. Use <strong>Testar Conexão</strong> — o console de handshake mostra o motivo real.</td></tr>
+                            <tr><td>Um modelo não aparece na lista</td><td>Sua chave provavelmente não tem acesso a ele. A IDE lista só o que a API devolveu de verdade.</td></tr>
+                            <tr><td>Missão trava logo no início</td><td>Algum assento com motor <strong>OFFLINE</strong>. Teste cada agente com 📡 antes de disparar.</td></tr>
+                            <tr><td>Resposta cortada no meio</td><td>Limite de tokens por minuto do modelo. A IDE aguarda e retoma sozinha — o selo mostra o tempo restante.</td></tr>
+                            <tr><td>Pedido não cabe na janela</td><td>Aumente a janela de contexto do modelo local ou reduza o escopo. A IDE avisa em vez de cortar em silêncio.</td></tr>
+                            <tr><td>Memória aparece como inativa</td><td>Aba <strong>Motores</strong> da Memória Deep: verifique o backend ativo e reinicie-o por lá.</td></tr>
+                            <tr><td>CLI não detectada</td><td>Instale ou aponte o <strong>caminho manual</strong> do executável e clique em <strong>Verificar</strong>.</td></tr>
+                            <tr><td>Servidor MCP sem ferramentas</td><td>Ele está <em>não testado</em>. Clique em <strong>Testar</strong> — só depois da conexão provada as ferramentas ficam disponíveis.</td></tr>
+                            <tr><td>Extensão recusada</td><td>O tipo não é suportado (ex.: debugger). O motivo aparece no selo, antes mesmo de instalar.</td></tr>
+                            <tr><td>Aviso do SmartScreen ao instalar</td><td><strong>Mais informações → Executar assim mesmo</strong>, ou instale pela Store (sem aviso).</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Ainda travado?</h3>
+                <ul>
+                    <li><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose" target="_blank" rel="noopener">Abrir uma issue</a> — todo relato é lido e respondido.</li>
+                    <li><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions/new?category=q-a" target="_blank" rel="noopener">Perguntar em Discussions → Q&amp;A</a>.</li>
+                    <li>Documentos complementares: <a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/blob/main/docs/INSTALACAO.md" target="_blank" rel="noopener">Instalação</a> · <a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/blob/main/docs/QUICK_START.md" target="_blank" rel="noopener">Quick Start</a> · <a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/blob/main/docs/FAQ.md" target="_blank" rel="noopener">FAQ</a> · <a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Arquitetura</a></li>
+                </ul>
+
+                <div class="note spaced-top">
+                    Este manual acompanha a <strong>v1.3.2</strong>. Achou algo desatualizado ou que ficou
+                    confuso? Abra uma issue — documentação errada é bug.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="page-footer">
+        <div class="footer-links">
+            <a href="index.html">Início</a>
+            <a href="funcionalidades.html">Funcionalidades</a>
+            <a href="cosmos.html">COSMOS</a>
+            <a href="manual.html">Documentação</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+        © Lya Studio. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        // Destaca no índice a seção visível no viewport
+        (function () {
+            const links = Array.from(document.querySelectorAll('#toc a'));
+            const byId = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+            const sections = Array.from(document.querySelectorAll('.manual-body section'));
+            if (!sections.length) return;
+
+            const setCurrent = (id) => {
+                links.forEach(a => a.classList.remove('current'));
+                const active = byId.get(id);
+                if (active) active.classList.add('current');
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                // Considera a seção mais alta que está visível
+                const visible = entries
+                    .filter(e => e.isIntersecting)
+                    .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+                if (visible) setCurrent(visible.target.id);
+            }, { rootMargin: '-10% 0px -70% 0px', threshold: 0 });
+
+            sections.forEach(s => observer.observe(s));
+        })();
+    </script>
+</body>
+</html>

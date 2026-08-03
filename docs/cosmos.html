@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COSMOS — a orquestradora do Lya Studio Coder</title>
+    <meta name="description" content="COSMOS é a orquestradora soberana da IDE: planeja, distribui às Stars, revisa a entrega de cada uma, manda refazer e consolida. Entenda a arquitetura multi-agente.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="site.css">
+    <style>
+        /* Pipeline de estados da missão */
+        .pipeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: stretch;
+            margin: 1.5rem 0 0.5rem;
+        }
+        .stage {
+            flex: 1 1 140px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(139, 92, 246, 0.25);
+            border-radius: 12px;
+            padding: 0.9rem 0.85rem;
+            position: relative;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+        .stage .st-num {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #a78bfa;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .stage .st-name {
+            font-size: 0.85rem;
+            font-weight: 650;
+            color: #e2e8f0;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .stage .st-desc {
+            font-size: 0.74rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .stage.loop {
+            border-color: rgba(251, 191, 36, 0.35);
+            background: rgba(251, 191, 36, 0.05);
+        }
+        .stage.loop .st-num { color: #fcd34d; }
+
+        /* Mapa da constelação */
+        .constellation {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .star-card {
+            border-radius: 16px;
+            padding: 1.25rem;
+            border: 1px solid var(--border-soft);
+            background: var(--bg-card);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+        .star-card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+        .star-card.core {
+            border-color: rgba(251, 191, 36, 0.45);
+            background: linear-gradient(160deg, rgba(251, 191, 36, 0.09), rgba(15, 23, 42, 0.6));
+        }
+        .star-dot {
+            width: 12px; height: 12px; border-radius: 50%;
+            display: inline-block; margin-bottom: 0.7rem;
+        }
+        .star-dot.sd-cosmos { background: #fbbf24; box-shadow: 0 0 10px #fbbf24; }
+        .star-dot.sd-1 { background: #f97316; box-shadow: 0 0 10px #f97316; }
+        .star-dot.sd-2 { background: #3b82f6; box-shadow: 0 0 10px #3b82f6; }
+        .star-dot.sd-3 { background: #10b981; box-shadow: 0 0 10px #10b981; }
+        .star-dot.sd-4 { background: #8b5cf6; box-shadow: 0 0 10px #8b5cf6; }
+        .star-card h4 { font-size: 0.98rem; font-weight: 700; margin-bottom: 0.35rem; }
+        .star-card .role {
+            font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--text-secondary); font-weight: 700; margin-bottom: 0.6rem; display: block;
+        }
+        .star-card p { font-size: 0.83rem; line-height: 1.6; color: var(--text-secondary); }
+    </style>
+</head>
+<body class="page">
+    <div class="space-background">
+        <div class="glow-orb top-left"></div>
+        <div class="glow-orb bottom-right"></div>
+        <div class="stars"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <svg width="24" height="24" viewBox="0 0 100 100" class="logo-icon">
+                        <circle cx="50" cy="50" r="15" fill="#f59e0b" />
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(0 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(60 50 50)"/>
+                        <ellipse cx="50" cy="50" rx="45" ry="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" transform="rotate(120 50 50)"/>
+                    </svg>
+                    <span>Lya Studio Coder</span>
+                </a>
+            </div>
+        </div>
+        <div class="nav-middle">
+            <a href="funcionalidades.html">Funcionalidades</a>
+            <a href="cosmos.html" class="active">COSMOS</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+        <div class="nav-right">
+            <a href="manual.html" class="btn-outline">Documentação</a>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-eyebrow"><span class="dot primary"></span> Orquestração soberana</div>
+
+        <div class="atom-container atom-center" id="atom-container"></div>
+
+        <h1 class="page-title">COSMOS</h1>
+        <p class="page-lead">
+            Um chat te dá uma resposta. O COSMOS te dá uma <strong>equipe</strong>: ele lê o objetivo,
+            decide se dá para resolver sozinho, convoca as Stars que forem necessárias, <strong>lê a
+            entrega de cada uma</strong>, aponta o erro, manda refazer e só então consolida.
+            Se ele não revisa e não manda refazer, não é orquestração — é disparo de tarefa.
+        </p>
+    </header>
+
+    <main class="wrap">
+
+        <!-- ====================== O QUE MUDA ====================== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>O que muda quando existe um maestro</h2>
+                <p>
+                    A diferença entre rodar quatro modelos ao mesmo tempo e ter uma equipe é a
+                    autoridade no meio. Sem ela você recebe quatro respostas divergentes e o
+                    trabalho de juntá-las sobra pra você.
+                </p>
+            </div>
+
+            <div class="grid cols-3">
+                <div class="card">
+                    <span class="icon">🎯</span>
+                    <h4>Triagem antes de convocar</h4>
+                    <p>
+                        Tarefa trivial ou que não se divide, o COSMOS resolve sozinho. A equipe só é
+                        chamada quando existem frentes realmente paralelas — economia de tempo e de token
+                        antes de qualquer linha ser escrita.
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="icon">🔎</span>
+                    <h4>Revisão como parte do fluxo</h4>
+                    <p>
+                        Cada entrega volta para o maestro. Ele confere contra o objetivo, aponta a falha
+                        e devolve a tarefa. Refazer não é exceção — é etapa prevista da máquina de estados.
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="icon">🧾</span>
+                    <h4>Consolidação com um dono</h4>
+                    <p>
+                        O texto final é sempre do COSMOS. Nenhuma Star escreve a conclusão da missão,
+                        justamente para não existirem duas versões da verdade.
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="icon">💰</span>
+                    <h4>Teto de custo que aborta</h4>
+                    <p>
+                        Limite em dólares e em tokens por missão. Ao estourar, a missão para de verdade —
+                        não é um aviso amarelo enquanto a conta continua correndo.
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="icon">⏸️</span>
+                    <h4>Pausa e retomada finas</h4>
+                    <p>
+                        Pausar a missão inteira ou só um agente, retomar de onde parou, cancelar uma ordem
+                        da fila — e a missão sobrevive a um reinício da IDE.
+                    </p>
+                </div>
+                <div class="card">
+                    <span class="icon">🛠️</span>
+                    <h4>Motores diferentes por papel</h4>
+                    <p>
+                        Cada assento pode rodar num motor distinto: modelo local, API na nuvem ou uma CLI
+                        de agente instalada na máquina. Você escolhe quem senta onde.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================== PIPELINE ====================== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>O ciclo de uma missão</h2>
+                <p>
+                    Toda ordem percorre uma máquina de estados explícita. Você vê em qual estágio ela
+                    está, ao vivo, no Mission Control — inclusive quando volta atrás.
+                </p>
+            </div>
+
+            <div class="pipeline">
+                <div class="stage">
+                    <span class="st-num">01</span>
+                    <span class="st-name">Planejar</span>
+                    <span class="st-desc">O objetivo vira plano: frentes, dependências e critério de pronto.</span>
+                </div>
+                <div class="stage">
+                    <span class="st-num">02</span>
+                    <span class="st-name">Distribuir</span>
+                    <span class="st-desc">Cada frente é entregue a uma Star, com o contexto exato que ela precisa.</span>
+                </div>
+                <div class="stage">
+                    <span class="st-num">03</span>
+                    <span class="st-name">Executar</span>
+                    <span class="st-desc">As Stars trabalham em paralelo, com ferramentas reais sobre o workspace.</span>
+                </div>
+                <div class="stage loop">
+                    <span class="st-num">04 ↺</span>
+                    <span class="st-name">Revisar</span>
+                    <span class="st-desc">O COSMOS lê cada entrega. Errou, volta para a etapa 03 com a correção pedida.</span>
+                </div>
+                <div class="stage">
+                    <span class="st-num">05</span>
+                    <span class="st-name">Consolidar</span>
+                    <span class="st-desc">As partes viram uma entrega só, escrita pelo maestro.</span>
+                </div>
+                <div class="stage">
+                    <span class="st-num">06</span>
+                    <span class="st-name">Indexar</span>
+                    <span class="st-desc">O aprendizado da missão vai para a memória e serve a próxima.</span>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Por que o laço importa:</strong> o estágio 04 é o que separa uma orquestração
+                de um <em>fan-out</em>. Sem ele, uma Star que alucinou entrega lixo e o lixo entra na
+                consolidação sem que ninguém tenha olhado.
+            </div>
+
+            <figure class="shot">
+                <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/orquestracao.png" alt="Mission Control com a equipe de agentes em execução" loading="lazy">
+                <figcaption>Mission Control — mapa da equipe, motor de cada agente, custo estimado e custo real da missão.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ====================== A CONSTELAÇÃO ====================== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>A constelação</h2>
+                <p>
+                    O ícone da IDE é um átomo: o núcleo é o COSMOS, os elétrons são as Stars.
+                    As Stars 1 a 3 são trabalhadoras genéricas — não têm papel fixo, o maestro
+                    distribui por disponibilidade e capacidade. A Star 4 é a única especializada.
+                </p>
+            </div>
+
+            <div class="constellation">
+                <div class="star-card core">
+                    <span class="star-dot sd-cosmos"></span>
+                    <h4>COSMOS</h4>
+                    <span class="role">Núcleo · Orquestradora</span>
+                    <p>Planeja, distribui, revisa, manda refazer, consolida e responde. É a única voz que fecha a missão.</p>
+                </div>
+                <div class="star-card">
+                    <span class="star-dot sd-1"></span>
+                    <h4>Star 1</h4>
+                    <span class="role">Worker genérico</span>
+                    <p>Recebe a frente que o maestro designar. Sem papel fixo — hoje pode codar, amanhã testar.</p>
+                </div>
+                <div class="star-card">
+                    <span class="star-dot sd-2"></span>
+                    <h4>Star 2</h4>
+                    <span class="role">Worker genérico</span>
+                    <p>Trabalha em paralelo com as irmãs, isolada no seu escopo para não colidir com elas.</p>
+                </div>
+                <div class="star-card">
+                    <span class="star-dot sd-3"></span>
+                    <h4>Star 3</h4>
+                    <span class="role">Worker genérico</span>
+                    <p>Mais uma frente simultânea. Pode ser pausada sozinha sem parar a missão inteira.</p>
+                </div>
+                <div class="star-card">
+                    <span class="star-dot sd-4"></span>
+                    <h4>Star 4</h4>
+                    <span class="role">Cérebro &amp; Memória</span>
+                    <p>Cuida do contexto compartilhado e do arquivamento. É a âncora contra alucinação da equipe.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================== SBB ====================== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>SBB — Shared Blackboard</h2>
+                <p>
+                    A memória situacional da missão, dividida e compartilhada em tempo real. Todo mundo
+                    escreve nele, todo mundo lê dele.
+                </p>
+            </div>
+
+            <p class="body">
+                Numa equipe humana, o quadro branco da sala é o que impede duas pessoas de refazerem a
+                mesma coisa. O <strong>SBB</strong> é isso para as IAs: o que já foi descoberto, o que
+                já foi decidido e o que já foi entregue fica visível para todos os assentos enquanto a
+                missão corre. Uma Star que entra depois não precisa reler a conversa inteira — ela lê
+                o quadro.
+            </p>
+            <p class="body">
+                Isso ataca o pior defeito de sistemas multi-agente: a alucinação por falta de contexto.
+                Em vez de cada agente inventar a parte que não viu, ele encontra a informação escrita
+                por quem realmente fez. E quando a missão fecha, o quadro é arquivado na memória de
+                longa duração — vira contexto para a próxima.
+            </p>
+
+            <div class="tag-row">
+                <span class="tag">Grounding anti-alucinação</span>
+                <span class="tag">Contexto ao vivo</span>
+                <span class="tag">Arquivamento automático</span>
+                <span class="tag neutral">Diagnóstico no Olho do COSMOS</span>
+            </div>
+        </section>
+
+        <!-- ====================== MOTORES ====================== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>Quem pode sentar em cada assento</h2>
+                <p>
+                    A IDE trata três origens de motor exatamente igual. Para o COSMOS, tanto faz se a
+                    resposta veio de um modelo local, de uma API ou de uma CLI instalada na máquina.
+                </p>
+            </div>
+
+            <div class="table-scroll">
+                <table>
+                    <thead>
+                        <tr><th>Origem</th><th>O que é</th><th>Quando usar</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Local</strong></td>
+                            <td>Modelos rodando na sua máquina via Ollama ou roteador local.</td>
+                            <td>Dado sensível, custo zero, trabalho offline.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>API</strong></td>
+                            <td>Claude, Gemini, GPT e qualquer endpoint compatível com OpenAI.</td>
+                            <td>Raciocínio pesado, contexto grande, qualidade máxima.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CLI</strong></td>
+                            <td>Agentes de código de linha de comando já instalados e autenticados.</td>
+                            <td>Quando você quer o agente com as ferramentas dele, dentro da missão.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="note">
+                <strong>Ferramentas de verdade:</strong> os assentos não só conversam. Eles leem e
+                escrevem arquivos do workspace, rodam comandos no terminal, consultam a memória e
+                acionam servidores MCP conectados — dentro de um sandbox de caminhos que você controla.
+            </div>
+        </section>
+
+        <!-- ====================== CTA ====================== -->
+        <section class="block">
+            <div class="block-head">
+                <h2>Rodar a primeira missão</h2>
+                <p>O manual tem o passo a passo: configurar os assentos, escrever o objetivo e acompanhar ao vivo.</p>
+            </div>
+            <div class="cta-row">
+                <a class="btn-store" href="manual.html#orquestrar">🎛️ Como orquestrar uma missão</a>
+                <a class="btn-ghost" href="manual.html#agentes">🤖 Como criar os agentes</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-links">
+            <a href="index.html">Início</a>
+            <a href="funcionalidades.html">Funcionalidades</a>
+            <a href="cosmos.html">COSMOS</a>
+            <a href="manual.html">Documentação</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="download.html">Download</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+        © Lya Studio. Todos os direitos reservados.
+    </footer>
+
+    <script src="atom-animation.js"></script>
+</body>
+</html>
