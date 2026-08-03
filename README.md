@@ -548,11 +548,9 @@ Acompanhe em [Discussions → Roadmap](https://github.com/StudioCodeAI/Lya-Studi
 
 ## 🤝 Integrações abertas & agradecimentos
 
-> Quando existe uma ferramenta open source que já resolve bem um problema, a estratégia da Lya é **integrar**, não competir nem reinventar.
+OmniRouter é um roteador de modelos local que a Lya adotou como provedor nativo — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades em ([clique aqui](https://github.com/diegosouzapw/OmniRoute)).
 
-**OmniRouter** é um roteador de modelos local que a Lya adotou como **provedor nativo** — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades em ([clique aqui](https://github.com/diegosouzapw/OmniRoute)): um gateway OpenAI-compatível com um catálogo enorme de modelos atrás de um único endpoint local. A Lya cuida do resto — instalar, ligar/desligar direto da aba Integrações e descobrir sozinha os modelos reais que ele expõe. Integrar via API local foi o caminho certo em vez de fork.
-
-**Obrigado à equipe do OmniRouter** por construir uma ferramenta tão sólida e aberta. 🙏
+Obrigado à equipe do OmniRouter por construir uma ferramenta tão sólida e aberta. 🙏
 
 ---
 
