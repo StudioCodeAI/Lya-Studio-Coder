@@ -461,9 +461,9 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 > 🚀 **Versão mais recente: [v1.3.2 — Rede de segurança do agente](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2)** ([o que muda](#-v132--rede-de-segurança-do-agente-rollback-auditoria-e-memória-medida)) — rollback de edições do agente, trilha de auditoria e reranking de memória medido.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A **v1.3.2 foi enviada pelo Lya Publisher, de dentro da própria IDE**, e está em análise da Microsoft — a build ao vivo na Store é a v1.3.1 até a certificação concluir.
+> A **v1.3.2 foi enviada pelo Lya Publisher, de dentro da própria IDE**, e já está **certificada e ao vivo** na Store desde 03/08/2026.
 
-> 📦 **winget** — [PR em moderação](https://github.com/microsoft/winget-pkgs/pulls?q=StudioCodeAI.LyaStudioCoder). Assim que aprovado:
+> 📦 **winget** — [PR #411452 em moderação](https://github.com/microsoft/winget-pkgs/pull/411452). Assim que aprovado:
 > ```powershell
 > winget install StudioCodeAI.LyaStudioCoder
 > ```
@@ -535,7 +535,7 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ **v1.3.1 na Microsoft Store** — certificada e ao vivo, **publicada pelo Lya Publisher de dentro da própria IDE**
 - [x] ✅ **OmniRouter** integrado como provedor local nativo (instalar/iniciar/parar pela aba Integrações, descoberta automática de modelos)
 - [x] ✅ **v1.3.2 — Rede de segurança do agente** — rollback de edições, trilha de auditoria persistente, reranking de memória medido (hit@1 1/12→11/12) e AgentSkills · **🚀 versão mais recente**
-- [ ] 🔄 v1.3.2 na Microsoft Store — enviada, aguardando certificação da Microsoft
+- [x] ✅ **v1.3.2 na Microsoft Store** — certificada e ao vivo (03/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE**
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
