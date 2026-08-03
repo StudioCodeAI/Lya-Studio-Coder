@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://studiocodeai.github.io/Lya-Studio-Coder/"><img src="assets/lya-logo.jpg" alt="Lya Studio Coder — site oficial" width="220" /></a>
+<a href="https://studiocodeai.github.io/Lya-Studio-Coder/index.html"><img src="assets/lya-logo.jpg" alt="Lya Studio Coder — site oficial" width="220" /></a>
 
 <br/>
 
@@ -20,9 +20,9 @@
 &nbsp;
 [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 &nbsp;
-[![Site oficial](https://img.shields.io/badge/🌐_SITE_OFICIAL-studiocodeai.github.io-f59e0b?style=for-the-badge&logoColor=white)](https://studiocodeai.github.io/Lya-Studio-Coder/)
+[![Site oficial](https://img.shields.io/badge/🌐_SITE_OFICIAL-studiocodeai.github.io-f59e0b?style=for-the-badge&logoColor=white)](https://studiocodeai.github.io/Lya-Studio-Coder/index.html)
 
-**🌐 [Conheça a IDE no site oficial →](https://studiocodeai.github.io/Lya-Studio-Coder/)**
+**🌐 [Conheça a IDE no site oficial →](https://studiocodeai.github.io/Lya-Studio-Coder/index.html)**
 
 <br/>
 
@@ -78,11 +78,11 @@ Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a respo
 
 ---
 
-### 🧭 OmniRouter
+### 🧭 OmniRoute
 
-> **[OmniRouter](https://github.com/diegosouzapw/OmniRoute) é um roteador de modelos local que a Lya adotou como provedor nativo** — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades em ([clique aqui](https://github.com/diegosouzapw/OmniRoute)): um gateway OpenAI-compatível com um catálogo enorme de modelos atrás de um único endpoint local. A Lya cuida do resto — instalar, ligar/desligar direto da aba Integrações e descobrir sozinha os modelos reais que ele expõe. Integrar via API local foi o caminho certo em vez de fork.
+> **[OmniRoute](https://omniroute.online/) é um roteador de modelos local que a Lya adotou como provedor nativo** — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades no [site oficial](https://omniroute.online/) ou no [repositório](https://github.com/diegosouzapw/OmniRoute): um gateway OpenAI-compatível com um catálogo enorme de modelos atrás de um único endpoint local. A Lya cuida do resto — instalar, ligar/desligar direto da aba Integrações e descobrir sozinha os modelos reais que ele expõe. Integrar via API local foi o caminho certo em vez de fork.
 >
-> Obrigado à equipe do OmniRouter por construir uma ferramenta tão sólida e aberta.
+> Obrigado à equipe do OmniRoute por construir uma ferramenta tão sólida e aberta.
 
 ---
 
@@ -97,7 +97,7 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🧩 Módulo | O que entrega |
 |---|---|
 | 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT, Ollama (local + cloud) e **Antigravity** na mesma sala. Streaming cancelável, markdown, anexos, **gravação de voz**, function-calling real e histórico completo. |
-| 🧭 **OmniRouter — Provedor Local Nativo** | O [OmniRouter](https://github.com/diegosouzapw/OmniRoute) entra como provedor de 1ª classe, lado a lado com Ollama e Llama.cpp: instale, inicie (terminal real dentro da IDE, sem processo escondido) e pare direto da aba Integrações. A IDE descobre sozinha os modelos reais expostos pelo seu OmniRouter — zero configuração manual. |
+| 🧭 **OmniRoute — Provedor Local Nativo** | O [OmniRoute](https://github.com/diegosouzapw/OmniRoute) entra como provedor de 1ª classe, lado a lado com Ollama e Llama.cpp: instale, inicie (terminal real dentro da IDE, sem processo escondido) e pare direto da aba Integrações. A IDE descobre sozinha os modelos reais expostos pelo seu OmniRoute — zero configuração manual. |
 | 🎛️ **COSMOS — Orquestração** | Até 4 agentes de IA em paralelo (API, CLI, local). Cada slot com motor independente, status ao vivo, contexto compartilhado e **tools MCP dinâmico**. |
 | 🩹 **CURE — Auto-Correção** | A IDE conserta o próprio build sozinha: loop build→mistake→correção→rebuild com disjuntor anti-degeneração, **CURE SCAR** (memória de cicatrizes com dinâmica de confiança), **Auto Scar Fix** (preview preventivo no composer, custo zero) e **roteamento Planner→Executor** por classificação de ferida. |
 | 🧠 **Core5 — Memória 768d** | Motor de memória embutido (LanceDB, **nomic-embed-text-v1.5 768d**, zero dependência de Python/Docker). Cascata de embedding dimensão-safe (Gemini online 768d → nomic local 768d). Captura contínua write-behind com anti-loop de feedback. Continuidade MCP com Core5 externo (Claude Code, Claude Desktop). |
@@ -321,8 +321,8 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 ### 🔜 Em breve — próximo bloco
 
 - **Mais cobertura de extensões** — ampliar a faixa de extensões JS suportadas pelo Extension Host (linters, language servers) mantendo a transparência do badge honesto.
-- **COSMOS operando o OmniRouter via MCP** — trocar combo, checar cota/custo e trocar provider ativo autonomamente pelo chat.
-- **Navegador embutido na IDE** — abrir dashboards externos (ex.: OmniRouter) sem sair da Lya.
+- **COSMOS operando o OmniRoute via MCP** — trocar combo, checar cota/custo e trocar provider ativo autonomamente pelo chat.
+- **Navegador embutido na IDE** — abrir dashboards externos (ex.: OmniRoute) sem sair da Lya.
 
 ---
 
@@ -418,8 +418,8 @@ Uma ordem sua vira quatro frentes de trabalho em paralelo. O COSMOS planeja, dis
 | **🧠 Inteligência COSMOS** — chat com contexto total e liderança de IAs. | **🚀 Lya Publisher** — publique na Microsoft Store direto da IDE. |
 | ![n8n](assets/screenshots/n8n.png?v=2) | ![Skills](assets/screenshots/skills.png?v=2) |
 | **🔗 n8n Live** — automação e pipelines RAG gerenciados pela IDE. | **🛒 Loja de Skills** — importe skills de qualquer repositório Git. |
-| ![OmniRouter](assets/screenshots/omnirouter-infra.png?v=2) | |
-| **🧭 OmniRouter** — instala, liga e desliga direto da aba Integrações; a IDE descobre os modelos sozinha. | |
+| ![OmniRoute](assets/screenshots/omnirouter-infra.png?v=2) | |
+| **🧭 OmniRoute** — instala, liga e desliga direto da aba Integrações; a IDE descobre os modelos sozinha. | |
 
 ---
 
@@ -539,7 +539,7 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ **v1.3.0 na Microsoft Store** — certificada e ao vivo (MSIX assinado pela Microsoft)
 - [x] ✅ **v1.3.1 — Varredura Total** — 20 módulos auditados, 69 defeitos corrigidos, MCP 2025-11-25, contexto local honesto no Ollama e teto de gasto por missão
 - [x] ✅ **v1.3.1 na Microsoft Store** — certificada e ao vivo, **publicada pelo Lya Publisher de dentro da própria IDE**
-- [x] ✅ **OmniRouter** integrado como provedor local nativo (instalar/iniciar/parar pela aba Integrações, descoberta automática de modelos)
+- [x] ✅ **OmniRoute** integrado como provedor local nativo (instalar/iniciar/parar pela aba Integrações, descoberta automática de modelos)
 - [x] ✅ **v1.3.2 — Rede de segurança do agente** — rollback de edições, trilha de auditoria persistente, reranking de memória medido (hit@1 1/12→11/12) e AgentSkills · **🚀 versão mais recente**
 - [x] ✅ **v1.3.2 na Microsoft Store** — certificada e ao vivo (03/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE**
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
@@ -552,9 +552,9 @@ Acompanhe em [Discussions → Roadmap](https://github.com/StudioCodeAI/Lya-Studi
 
 ## 🤝 Integrações abertas & agradecimentos
 
-OmniRouter é um roteador de modelos local que a Lya adotou como provedor nativo — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades em ([clique aqui](https://github.com/diegosouzapw/OmniRoute)).
+OmniRoute é um roteador de modelos local que a Lya adotou como provedor nativo — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades no [site oficial](https://omniroute.online/) ou no [repositório](https://github.com/diegosouzapw/OmniRoute).
 
-Obrigado à equipe do OmniRouter por construir uma ferramenta tão sólida e aberta. 🙏
+Obrigado à equipe do OmniRoute por construir uma ferramenta tão sólida e aberta. 🙏
 
 ---
 
