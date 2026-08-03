@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/lya-logo.jpg" alt="Lya Studio Coder" width="220" />
+<a href="https://studiocodeai.github.io/Lya-Studio-Coder/"><img src="assets/lya-logo.jpg" alt="Lya Studio Coder — site oficial" width="220" /></a>
 
 <br/>
 
@@ -19,6 +19,10 @@
 [![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.2-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
 [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
+&nbsp;
+[![Site oficial](https://img.shields.io/badge/🌐_SITE_OFICIAL-studiocodeai.github.io-f59e0b?style=for-the-badge&logoColor=white)](https://studiocodeai.github.io/Lya-Studio-Coder/)
+
+**🌐 [Conheça a IDE no site oficial →](https://studiocodeai.github.io/Lya-Studio-Coder/)**
 
 <br/>
 
@@ -370,29 +374,29 @@ embutido na IDE — 100% local, sem servidor externo obrigatório.
 
 ## 🏗️ Arquitetura
 
-Da casca desktop ao orquestrador soberano — toda a Lya em uma visão. **Tudo roda na sua máquina**: shell Tauri (Rust) → servidor Node local (auth-gate `127.0.0.1`) → COSMOS coordenando até 4 Stars com **CURE** (auto-correção + cicatrizes), memória vetorial 768d (Core5/LanceDB + cascata Gemini/nomic), **MCP bidirecional** (cliente + servidor), e segredos cifrados (AES-256-GCM) — sem nuvem no caminho crítico.
+Um núcleo enxuto e dezoito módulos em volta dele. **Tudo roda na sua máquina** — a nuvem é opcional, e nada aqui é obrigatório além do núcleo.
 
 <div align="center">
 
-![Arquitetura geral da Lya Studio Coder](assets/arquitetura-geral.png)
+![Arquitetura modular da Lya Studio Coder](assets/arquitetura-geral.png?v=4)
 
-**Visão geral** — Tauri shell · React SPA · Node/Express · CURE · Core5 768d · MCP bidirecional · Extension Host (em testes) · 8+ provedores de IA.
+**Quatro famílias em órbita** — o que você vê (editor, chat, terminal, temas), a inteligência (equipe de agentes, roteador, auto-correção), seus dados (memória, cofre cifrado, auditoria) e o que é aberto para plugar (loja, automações, conectores, provedores). Desligue um módulo e o resto continua de pé.
 
 </div>
 
-### Pipeline de Orquestração COSMOS + CURE
+### Sala de Comando — COSMOS e as Stars
 
-Como uma ordem vira entrega: o COSMOS planeja (com **Auto Scar Fix** preventivo), distribui dinamicamente por capacidade, as Stars 1–3 executam em paralelo (com tools MCP dinâmico) e o COSMOS consolida e indexa — com a Star 4 (Cérebro/Memória) alimentando o **SBB — Shared Blackboard**. Em missões **AUTO_FIX**, o loop CURE opera com disjuntor, cicatrizes e roteamento por classificação de ferida.
+Uma ordem sua vira quatro frentes de trabalho em paralelo. O COSMOS planeja, distribui por capacidade, **revisa cada entrega e manda refazer o que sair torto** — e todos os agentes leem o mesmo quadro ao vivo, o **SBB (Shared Blackboard)**.
 
 <div align="center">
 
-![Pipeline de orquestração COSMOS + CURE](assets/pipeline-orquestracao.png)
+![Sala de comando: COSMOS distribuindo ordens às Stars](assets/pipeline-orquestracao.png?v=4)
 
-**Máquina de estados** — `PENDING → PLANNING → DISTRIBUTING → EXECUTING → CONSOLIDATING → INDEXING → DONE` · CURE: `verify → fingerprint → disjuntor d1–d4 → re-brief → fix`.
+**Cada Star pluga onde você quiser** — modelo local, assistente de linha de comando ou provedor por API. As quatro podem estar em plataformas diferentes na mesma missão, e você acompanha custo, teto de gasto e o quadro compartilhado em tempo real.
 
 </div>
 
-> 📐 Fonte editável: [`docs/ARQUITETURA-LYA-STUDIO-CODER.drawio`](docs/ARQUITETURA-LYA-STUDIO-CODER.drawio) (abra no [draw.io](https://www.drawio.com/)).
+> 📐 Versão em draw.io (esquema alternativo, editável): [`docs/ARQUITETURA-LYA-STUDIO-CODER.drawio`](docs/ARQUITETURA-LYA-STUDIO-CODER.drawio) — abra no [draw.io](https://www.drawio.com/).
 
 ---
 
