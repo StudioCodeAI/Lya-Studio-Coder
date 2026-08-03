@@ -6,10 +6,58 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
-## [Não lançado] — Projeto CURE: auto-correção que aprende · em desenvolvimento
+## [1.3.2] — Rede de segurança do agente: rollback, auditoria e memória medida · 2026-08-03
 
-> **Eles têm correção. O Lya Studio Coder tem CURE.** Novo bloco em progresso:
-> a IDE conserta o próprio build sozinha — e **lembra de cada mistake (erro do dia a dia) já corrigido**.
+> Três pendências reais que ficaram registradas desde a 1.3.1 ("em breve — próximo bloco")
+> saem do papel nesta versão: desfazer o que o agente escreveu, saber o que ele fez, e provar
+> (com número, não promessa) que a busca da memória melhorou.
+
+### 🩹 Desfazer o que o agente escreveu (R1.1)
+- Toda vez que uma ferramenta do agente (`write_file`) sobrescreve um arquivo que já existia,
+  a IDE agora guarda o conteúdo anterior antes de gravar por cima — silenciosamente, sem
+  atrapalhar a escrita. Até 20 versões por arquivo. Reverter é uma chamada de API
+  (`GET /api/agent-backups`, `POST /api/agent-backups/revert`) que restaura o conteúdo exato,
+  respeitando o mesmo sandbox de filesystem que protege qualquer escrita do agente.
+
+### 🔍 Trilha de auditoria das ações do agente (R7.4)
+- Toda execução de ferramenta (sucesso ou erro) agora fica registrada num log persistente
+  (`~/.coreLyaDB/audit/agent-actions.jsonl`), consultável por `GET /api/audit/actions`
+  (filtro por ferramenta, missão ou janela de tempo). Responde de verdade "o que a IA fez no
+  meu projeto e quando" — sem depender do chat ainda estar na tela.
+
+### 🧠 Memória com número, não promessa (R3.3)
+- O rerank híbrido que já corrigia a ordenação ruim do vetor em português curto ganhou uma
+  métrica de verdade: um conjunto fixo de perguntas com resposta certa conhecida, medindo
+  a taxa de acerto **antes e depois** do rerank. Resultado medido: hit@1 saiu de 1/12
+  (só distância vetorial) para 11/12 com o rerank; hit@3 foi de 1/12 para 12/12.
+- Avaliado por escrito se valia adicionar um cross-encoder (2ª passada por modelo dedicado):
+  decisão foi **não agora** — o ganho residual não paga o custo de peso extra no instalador e
+  latência por busca, dado que o rerank híbrido já fecha a maior parte do problema real medido.
+
+### 📖 AgentSkills — documentação do próprio catálogo de ferramentas, sempre em dia
+- `GET /api/agent-skills` gera documentação `SKILL.md` por categoria (missão, memória,
+  arquivos, build, etc.) direto do catálogo real de ferramentas do agente — nunca dessincroniza
+  do código porque é gerada, não escrita à mão.
+
+### 🐛 3 bugs achados ao rodar o gate completo (nenhum introduzido nesta versão)
+- **Crash de tela em branco** na barra lateral quando o backend respondia parcialmente ao
+  status dos motores conectados (`/api/engines`) — um motor recém-adicionado sem resposta
+  ainda podia derrubar a lista inteira de integrações.
+- Um teste automatizado da Sidebar tinha um seletor ambíguo (corrigido, sem efeito no app real).
+- Um teste E2E cobrava um comportamento que já tinha sido mudado de propósito duas versões
+  atrás (roster de agentes visível ao Arquiteto omitindo os 2 especialistas de teste internos)
+  — o teste nunca tinha sido atualizado; corrigido para refletir o comportamento real.
+
+**Gate:** `tsc --noEmit` 0 erros · i18n 1994 chaves em paridade, 0 texto fixo · version-audit
+sincronizado em 1.3.2 · testes de backend (47 suítes) verdes · **420/420** testes de componente
+· **73/73** E2E.
+
+---
+
+## [1.3.1] — Varredura Total: a IDE auditada fio a fio · 2026-07-27
+
+> Esta seção ficou marcada "Não lançado" por engano quando a 1.3.1 saiu — o conteúdo abaixo
+> já está em produção desde 27/07/2026 (GitHub Release, winget e Microsoft Store).
 
 ### 🏪 O Lya Publisher passou a entregar o pacote de verdade (2026-07-27)
 - O envio para a Microsoft Store pela própria IDE **nunca chegava ao fim** — e agora chega. Três defeitos em série no caminho do Publisher:

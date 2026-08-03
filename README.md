@@ -16,7 +16,7 @@
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.2-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
 [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 
@@ -35,7 +35,7 @@ winget install StudioCodeAI.LyaStudioCoder
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.3.1-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Versão](https://img.shields.io/badge/versão-1.3.2-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
 [![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
@@ -146,6 +146,32 @@ O COSMOS (Maestro) aguardando resposta de uma Star que travou por limite de toke
 Sem C5CP:  Star 2 (kimi-k3) trava → COSMOS fica pendurado → timeout → falha de missão
 Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS recebe resposta normal
 ```
+
+---
+
+## 🩹 v1.3.2 — Rede de segurança do agente: rollback, auditoria e memória medida
+
+> A 1.3.1 tinha deixado três pendências marcadas "em breve — próximo bloco". As três saem do
+> papel aqui, e uma métrica de verdade prova o que a 1.3.1 já tinha melhorado.
+
+- **Desfazer o que o agente escreveu.** Toda sobrescrita de arquivo pela IA agora guarda o
+  conteúdo anterior antes de gravar (até 20 versões por arquivo) — reverter é uma chamada de
+  API, respeitando o mesmo sandbox que já protege qualquer escrita do agente.
+- **Trilha de auditoria das ações do agente.** Toda execução de ferramenta (sucesso ou erro)
+  fica registrada, consultável por ferramenta/missão/janela de tempo — responde "o que a IA fez
+  no meu projeto" sem depender do chat ainda estar na tela.
+- **Memória com número, não promessa.** O rerank híbrido da 1.3.1 (que já corrigia a ordenação
+  ruim do vetor em português curto) ganhou métrica: hit@1 saiu de 1/12 pra 11/12, hit@3 de 1/12
+  pra 12/12. Avaliado por escrito um cross-encoder de 2ª passada — decisão foi não adotar agora,
+  o ganho residual não paga o custo de peso extra no instalador.
+- **AgentSkills.** Documentação (`SKILL.md`) do catálogo de ferramentas do agente, gerada do
+  próprio código — nunca dessincroniza porque não é escrita à mão.
+- No caminho, o gate completo (rodado do zero pela primeira vez em algumas sessões) achou e
+  corrigiu 3 bugs pré-existentes: crash da barra lateral com resposta parcial do backend de
+  status dos motores, um teste com seletor ambíguo, e um teste E2E desatualizado.
+
+**Gate:** lint 0 erros · i18n 1994 chaves em paridade · **420/420** testes de componente ·
+**73/73** E2E.
 
 ---
 
@@ -282,10 +308,9 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 
 ### 🔜 Em breve — próximo bloco
 
-- **Desfazer o que o agente escreveu** — checkpoint antes de cada edição feita pela IA, com rollback de um clique mesmo em pasta sem repositório Git.
-- **Trilha de auditoria das ações do agente** — responder com precisão "o que a IA fez ontem no meu projeto?", persistido e consultável.
-- **Reranking de 2ª passada na memória** — hoje a busca devolve na ordem do vetor; a 2ª passada reordena por relevância real.
 - **Mais cobertura de extensões** — ampliar a faixa de extensões JS suportadas pelo Extension Host (linters, language servers) mantendo a transparência do badge honesto.
+- **COSMOS operando o OmniRouter via MCP** — trocar combo, checar cota/custo e trocar provider ativo autonomamente pelo chat.
+- **Navegador embutido na IDE** — abrir dashboards externos (ex.: OmniRouter) sem sair da Lya.
 
 ---
 
@@ -425,12 +450,12 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 
 ## ⬇️ Download
 
-> 🚀 **Versão mais recente: [v1.3.1 — Varredura Total](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.1)** ([o que muda](#-v131--varredura-total-a-ide-auditada-fio-a-fio)) — nenhum módulo novo, 69 defeitos reais corrigidos nos 20 módulos auditados.
+> 🚀 **Versão mais recente: [v1.3.2 — Rede de segurança do agente](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2)** ([o que muda](#-v132--rede-de-segurança-do-agente-rollback-auditoria-e-memória-medida)) — rollback de edições do agente, trilha de auditoria e reranking de memória medido.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A build ao vivo na Store é a **v1.3.1**, certificada e assinada pela própria Microsoft em 27/07/2026 — e enviada pelo **Lya Publisher, de dentro da própria IDE**. Store, GitHub Release e código fonte na mesma versão.
+> A **v1.3.2 foi enviada pelo Lya Publisher, de dentro da própria IDE**, e está em análise da Microsoft — a build ao vivo na Store é a v1.3.1 até a certificação concluir.
 
-> 📦 **winget** — em moderação na [winget-pkgs](https://github.com/microsoft/winget-pkgs/pull/408479). Assim que aprovado:
+> 📦 **winget** — [PR em moderação](https://github.com/microsoft/winget-pkgs/pulls?q=StudioCodeAI.LyaStudioCoder). Assim que aprovado:
 > ```powershell
 > winget install StudioCodeAI.LyaStudioCoder
 > ```
@@ -439,9 +464,9 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 | Instalador | Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`Lya Studio Coder_1.3.1_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.1/Lya.Studio.Coder_1.3.1_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~58 MB | `901955F5…C6E538AB1B` |
-| [**`Lya Studio Coder_1.3.1_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.1/Lya.Studio.Coder_1.3.1_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~90 MB | `DEE12E1A…B97428614F` |
-| [**`LyaStudioCoder_1.3.1.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.1/LyaStudioCoder_1.3.1.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~95 MB | `17CF9B12…5B7EF0BA1A` |
+| [**`Lya Studio Coder_1.3.2_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.2/Lya.Studio.Coder_1.3.2_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~58 MB | `965BE765…C28AA8B43F` |
+| [**`Lya Studio Coder_1.3.2_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.2/Lya.Studio.Coder_1.3.2_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~90 MB | `6D8CC4AB…22DA5679C0` |
+| [**`LyaStudioCoder_1.3.2.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.2/LyaStudioCoder_1.3.2.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~95 MB | `40245D58…003D14A4CF7EA05F3` |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
@@ -449,14 +474,14 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 <summary>🔐 SHA-256 completos para verificação</summary>
 
 ```
-Lya Studio Coder_1.3.1_x64-setup.exe
-901955F55E6CD3CE28539A606D6307246F5D84BF6AE8068D5777EAC6E538AB1B
+Lya Studio Coder_1.3.2_x64-setup.exe
+965BE76523ACF8FEB8B8183BC7B39DA3A506B7527D88335AC7CDEDC28AA8B43F
 
-Lya Studio Coder_1.3.1_x64_en-US.msi
-DEE12E1A54006F66074AA662C56FC4A1FF8D3AE74B88A01151998BB97428614F
+Lya Studio Coder_1.3.2_x64_en-US.msi
+6D8CC4AB66470D6EC4B41B7666C398227A672E14D82DCF8FDF25B422DA5679C0
 
-LyaStudioCoder_1.3.1.0_x64.msix
-17CF9B12462BECE832E78B520A59D1385A27533666C497A7A44F935B7EF0BA1A
+LyaStudioCoder_1.3.2.0_x64.msix
+40245D58BC51BD7602DC57F7448A4041BAC124ADD2B0E4C003D14A4CF7EA05F3
 ```
 
 Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
@@ -498,10 +523,11 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ v1.1.4 — Consolidação: CURE completo, Core5 768d, MCP bidirecional, Loja de Linguagens, hardening de segurança · **🏪 certificada na Microsoft Store**
 - [x] ✅ **v1.3.0 — Projeto Fábrica** — testes E2E industriais, RAG do código-base + histórico da IDE, agentes de QA sob o COSMOS, Tela Inicial + Explorer forte, Open VSX real (`.vsix`/URL), e o **Lya Build Releases** (a IDE publica a própria release)
 - [x] ✅ **v1.3.0 na Microsoft Store** — certificada e ao vivo (MSIX assinado pela Microsoft)
-- [x] ✅ **v1.3.1 — Varredura Total** — 20 módulos auditados, 69 defeitos corrigidos, MCP 2025-11-25, contexto local honesto no Ollama e teto de gasto por missão · **🚀 versão mais recente**
+- [x] ✅ **v1.3.1 — Varredura Total** — 20 módulos auditados, 69 defeitos corrigidos, MCP 2025-11-25, contexto local honesto no Ollama e teto de gasto por missão
 - [x] ✅ **v1.3.1 na Microsoft Store** — certificada e ao vivo, **publicada pelo Lya Publisher de dentro da própria IDE**
 - [x] ✅ **OmniRouter** integrado como provedor local nativo (instalar/iniciar/parar pela aba Integrações, descoberta automática de modelos)
-- [ ] 🔄 Pós-1.3.1 — desfazer as edições do agente (rollback), trilha de auditoria persistente das ações do agente e reranking de 2ª passada na memória
+- [x] ✅ **v1.3.2 — Rede de segurança do agente** — rollback de edições, trilha de auditoria persistente, reranking de memória medido (hit@1 1/12→11/12) e AgentSkills · **🚀 versão mais recente**
+- [ ] 🔄 v1.3.2 na Microsoft Store — enviada, aguardando certificação da Microsoft
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
@@ -556,7 +582,7 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 
 ➡️ **Pronto para consolidar seu fluxo de IA?**
 
-[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.3.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.3.2-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 
 *Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 
