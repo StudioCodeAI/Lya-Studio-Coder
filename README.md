@@ -53,10 +53,6 @@ winget install StudioCodeAI.LyaStudioCoder
 
 ## 🎯 O problema que a Lya resolve
 
-<div align="center">
-  <img src="assets/screenshots/tela-geral.jpg" alt="Tela Geral da IDE" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
-</div>
-
 Cansado de ser um **"copista de contexto"** entre abas do Claude e o VS Code?
 
 Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a resposta, volta ao terminal, esquece onde estava. Repete. Todo dia. Com cada modelo diferente.
@@ -72,9 +68,15 @@ Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a respo
 
 > **Você traz as chaves. A Lya traz a inteligência coordenada.**
 
+<div align="center">
+  <img src="assets/screenshots/tela-geral.jpg" alt="Tela Geral da IDE" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+</div>
+
 ---
 
-> 🧭 **[OmniRouter](https://github.com/diegosouzapw/OmniRoute) é um roteador de modelos local que a Lya adotou como provedor nativo** — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades em ([clique aqui](https://github.com/diegosouzapw/OmniRoute)): um gateway OpenAI-compatível com um catálogo enorme de modelos atrás de um único endpoint local. A Lya cuida do resto — instalar, ligar/desligar direto da aba Integrações e descobrir sozinha os modelos reais que ele expõe. Integrar via API local foi o caminho certo em vez de fork.
+### 🧭 OmniRouter
+
+> **[OmniRouter](https://github.com/diegosouzapw/OmniRoute) é um roteador de modelos local que a Lya adotou como provedor nativo** — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades em ([clique aqui](https://github.com/diegosouzapw/OmniRoute)): um gateway OpenAI-compatível com um catálogo enorme de modelos atrás de um único endpoint local. A Lya cuida do resto — instalar, ligar/desligar direto da aba Integrações e descobrir sozinha os modelos reais que ele expõe. Integrar via API local foi o caminho certo em vez de fork.
 >
 > Obrigado à equipe do OmniRouter por construir uma ferramenta tão sólida e aberta.
 
