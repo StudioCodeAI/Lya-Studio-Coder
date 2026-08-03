@@ -436,16 +436,24 @@
                 </p>
                 <ol class="steps">
                     <li>Abra <strong>Configurações → Infraestrutura</strong> (capacidades instaláveis).</li>
-                    <li>No cartão do <strong>OmniRoute</strong>, clique em <strong>Instalar</strong> — a IDE baixa e prepara tudo.</li>
-                    <li>Clique em <strong>Iniciar OmniRoute</strong>. O status passa a Instalado/rodando.</li>
-                    <li>Clique em <strong>Abrir Dashboard</strong> e configure lá suas contas e modelos.</li>
-                    <li>A chave gerada no dashboard vai para o <strong>Chaveiro</strong> do provedor "OmniRoute" em Provedores — e os modelos reais expostos aparecem sozinhos no seletor.</li>
+                    <li>No cartão do <strong>OmniRoute</strong>, clique em <strong>Instalar</strong> — a IDE baixa, prepara e <strong>já liga o serviço</strong>.</li>
+                    <li>Pronto. A partir daí ele <strong>sobe junto com a IDE</strong> em todo boot e a conexão é feita sozinha: nada de chave para colar, nada de voltar em Provedores para salvar. Se preferir ligar na mão, desmarque <strong>"Subir junto com a IDE"</strong> no mesmo cartão.</li>
+                    <li><strong>Abrir Dashboard</strong> serve para cadastrar contas novas no OmniRoute — não é um passo obrigatório do dia a dia.</li>
                 </ol>
 
                 <div class="note">
                     <strong>Por que isso é bom:</strong> um endpoint local, um catálogo grande e nenhuma
                     troca de configuração quando você muda de modelo. Para a IDE, é só mais um provedor
                     local — com todas as garantias de um.
+                </div>
+
+                <div class="note">
+                    <strong>Só o que funciona no seletor:</strong> o catálogo do OmniRoute tem centenas de
+                    entradas, boa parte de contas que você não tem. A IDE cruza esse catálogo com as
+                    conexões realmente ativas, descarta apelidos repetidos e variantes duplicadas, e ainda
+                    <strong>lembra dos modelos que já falharam de verdade</strong> — depois de dois erros
+                    definitivos o modelo sai do seletor. O cartão mostra quantos sobraram e tem o botão
+                    <strong>"Dar outra chance aos reprovados"</strong> quando você renovar uma conta.
                 </div>
 
                 <h3>Capacidades de desenvolvimento</h3>
