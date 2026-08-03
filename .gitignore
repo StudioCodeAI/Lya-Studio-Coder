@@ -48,13 +48,17 @@
 # screenshots da galeria — só os verificados/usados (sem caminhos com username)
 !/assets/screenshots/
 /assets/screenshots/*
-!/assets/screenshots/tela-geral.png
+!/assets/screenshots/tela-geral.jpg
 !/assets/screenshots/provedores.png
 !/assets/screenshots/orquestracao.png
 !/assets/screenshots/editor.png
 !/assets/screenshots/compilador.png
 !/assets/screenshots/n8n.png
 !/assets/screenshots/skills.png
+!/assets/screenshots/cosmos.png
+!/assets/screenshots/memoria.png
+!/assets/screenshots/publisher.png
+!/assets/screenshots/omnirouter-infra.png
 
 # Garantias extras (redundância contra vazamento de código/segredos)
 *.env

@@ -54,7 +54,7 @@ winget install StudioCodeAI.LyaStudioCoder
 ## 🎯 O problema que a Lya resolve
 
 <div align="center">
-  <img src="assets/screenshots/tela-geral.png?v=2" alt="Tela Geral da IDE" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+  <img src="assets/screenshots/tela-geral.jpg" alt="Tela Geral da IDE" width="800" style="border-radius: 8px; margin: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
 </div>
 
 Cansado de ser um **"copista de contexto"** entre abas do Claude e o VS Code?
@@ -71,6 +71,12 @@ Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a respo
 - 🔒 **100% na sua máquina.** Nenhum dado seu toca nossos servidores. Zero telemetria oculta.
 
 > **Você traz as chaves. A Lya traz a inteligência coordenada.**
+
+---
+
+> 🧭 **[OmniRouter](https://github.com/diegosouzapw/OmniRoute) é um roteador de modelos local que a Lya adotou como provedor nativo** — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades em ([clique aqui](https://github.com/diegosouzapw/OmniRoute)): um gateway OpenAI-compatível com um catálogo enorme de modelos atrás de um único endpoint local. A Lya cuida do resto — instalar, ligar/desligar direto da aba Integrações e descobrir sozinha os modelos reais que ele expõe. Integrar via API local foi o caminho certo em vez de fork.
+>
+> Obrigado à equipe do OmniRouter por construir uma ferramenta tão sólida e aberta.
 
 ---
 
@@ -392,7 +398,7 @@ Como uma ordem vira entrega: o COSMOS planeja (com **Auto Scar Fix** preventivo)
 
 <div align="center">
 
-![Visão geral da Lya Studio Coder](assets/screenshots/tela-geral.png?v=2)
+![Visão geral da Lya Studio Coder](assets/screenshots/tela-geral.jpg)
 
 **O cockpit completo** — explorador de arquivos, editor de código, terminal e chat COSMOS, lado a lado.
 
@@ -406,6 +412,8 @@ Como uma ordem vira entrega: o COSMOS planeja (com **Auto Scar Fix** preventivo)
 | **🧠 Inteligência COSMOS** — chat com contexto total e liderança de IAs. | **🚀 Lya Publisher** — publique na Microsoft Store direto da IDE. |
 | ![n8n](assets/screenshots/n8n.png?v=2) | ![Skills](assets/screenshots/skills.png?v=2) |
 | **🔗 n8n Live** — automação e pipelines RAG gerenciados pela IDE. | **🛒 Loja de Skills** — importe skills de qualquer repositório Git. |
+| ![OmniRouter](assets/screenshots/omnirouter-infra.png?v=2) | |
+| **🧭 OmniRouter** — instala, liga e desliga direto da aba Integrações; a IDE descobre os modelos sozinha. | |
 
 ---
 
