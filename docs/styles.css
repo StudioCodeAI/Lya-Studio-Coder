@@ -87,7 +87,9 @@ body {
     align-items: center;
     padding: 1.5rem 3rem;
     position: relative;
-    z-index: 10;
+    /* Acima de qualquer conteúdo: o .hero sobe 3rem por margem negativa e,
+       com z-index empatado, cobriria os links do menu e mataria o clique. */
+    z-index: 100;
 }
 
 .nav-left {
@@ -149,7 +151,7 @@ body {
     text-align: center;
     padding: 2rem 1rem;
     position: relative;
-    z-index: 10;
+    z-index: 1; /* acima do fundo espacial (-1), abaixo da navbar (100) */
     margin-top: -3rem; /* Para centralizar melhor com a navbar em cima */
 }
 
