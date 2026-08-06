@@ -345,13 +345,13 @@ sincronizado em 1.3.2 · testes de backend (47 suítes) verdes · **420/420** te
 
 > Elimina handshakes redundantes entre etapas da mesma missão. ~85% cache-hit.
 
-- **`buildStarInstruction` (`orchestration.ts:280`)** — refatorado para retornar `{ pms: string, dynamic: string }` em vez de string única. PMS = prefixo estático byte-idêntico entre Stars/tasks (persona + regras + formato). Dynamic = goal, taskId, directive, errors, memoryContext, plan, previousOutput (variável por task).
-- **`anthropicCachedSystem` (`llm.ts:216`)** — overload: aceita `(systemPrompt, pms?)`. Se `pms` é fornecido, monta `[{pms, cache_control: ephemeral}, {dynamic}]` (só PMS cacheado). Compat: se `pms` ausente, cacheia o systemPrompt inteiro como antes.
-- **`geminiCachedContent` (`llm.ts:583`)** — overload: cacheia **só o PMS** (estável) no `cachedContent` Gemini. Fallback: comportamento antigo. O dynamic vai como `systemInstruction` separado em cada chamada.
-- **`agentAnthropic` / `agentGemini` (`llm.ts:542, 601`)** — ganham parâmetro `pms?: string` (opcional). Propagam para os helpers de cache.
-- **`EngineRequest` (`engine-adapter.ts:84`)** — campo `pms?: string` adicionado.
-- **`runEngine` (`engine-adapter.ts:135, 139`)** — propaga `req.pms` para `agentAnthropic`/`agentGemini`.
-- **Call sites (`orchestration.ts:929, 1239`)** — destructuring `{ pms: starPms, dynamic: starInput }`, passam `systemPrompt: starPms, pms: starPms, content: starInput` (PMS como system, dynamic como user message).
+- **`buildStarInstruction` (`orchestration.ts`)** — refatorado para retornar `{ pms: string, dynamic: string }` em vez de string única. PMS = prefixo estático byte-idêntico entre Stars/tasks (persona + regras + formato). Dynamic = goal, taskId, directive, errors, memoryContext, plan, previousOutput (variável por task).
+- **`anthropicCachedSystem` (`llm.ts`)** — overload: aceita `(systemPrompt, pms?)`. Se `pms` é fornecido, monta `[{pms, cache_control: ephemeral}, {dynamic}]` (só PMS cacheado). Compat: se `pms` ausente, cacheia o systemPrompt inteiro como antes.
+- **`geminiCachedContent` (`llm.ts`)** — overload: cacheia **só o PMS** (estável) no `cachedContent` Gemini. Fallback: comportamento antigo. O dynamic vai como `systemInstruction` separado em cada chamada.
+- **`agentAnthropic` / `agentGemini` (`llm.ts`)** — ganham parâmetro `pms?: string` (opcional). Propagam para os helpers de cache.
+- **`EngineRequest` (`engine-adapter.ts`)** — campo `pms?: string` adicionado.
+- **`runEngine` (`engine-adapter.ts`)** — propaga `req.pms` para `agentAnthropic`/`agentGemini`.
+- **Call sites (`orchestration.ts`)** — destructuring `{ pms: starPms, dynamic: starInput }`, passam `systemPrompt: starPms, pms: starPms, content: starInput` (PMS como system, dynamic como user message).
 - **`plan` do COSMOS** movido de `personaSystem` (system antigo) para `buildStarInstruction` (dynamic) — preserva contexto sem quebrar o cache do PMS.
 
 **Verificado:** `lint 0` · `test:core 61/61` · `test:units 61/61` · `test:memory 21/21` · `test:attach 24/24` · `test:hijk 67/67` = **234/234**.
