@@ -6,6 +6,85 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.3.3] — O chat que não estoura: contexto sob controle e voz de mão dupla · 2026-08-14
+
+> 🧪 **Versão de pré-lançamento.** Está **certificada e ao vivo na Microsoft Store**, mas é a
+> primeira build com esta safra de mudanças no caminho mais quente do produto (chat, contexto e
+> limites). Use, e [conte o que quebrar](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose)
+> — é assim que a nota de estabilidade sobe.
+
+### 🧠 O chat parou de estourar no meio do trabalho
+
+A queixa era concreta: numa tarefa longa o agente ia bem até certo ponto e então morria com
+"contexto excedido" — jogando fora todo o trabalho que já tinha sido pago. Esta versão ataca isso
+em cinco frentes:
+
+- **Medidor de contexto na tela**, ao lado do campo de mensagem: quanto da janela do modelo já
+  está ocupado, ao vivo. Com botão **Compactar agora** para você resumir a conversa quando quiser,
+  em vez de descobrir o limite quando ele estoura.
+- **O turno sempre termina entregando.** Ao chegar no fim do orçamento, as ferramentas são
+  desligadas e o modelo recebe a ordem de responder com o que já apurou. Você recebe o trabalho
+  parcial e útil — não uma mensagem de erro no lugar de 20 minutos de trabalho.
+- **Limite medido pela régua de cada modelo.** Antes havia um teto único em número fixo, que era
+  grande demais para modelo de janela pequena (nunca disparava, e o provedor recusava antes) e
+  pequeno demais para modelo de janela gigante (matava trabalho legítimo na primeira volta). Agora
+  o gatilho é proporcional à janela real de quem está respondendo.
+- **Ferramentas por divulgação progressiva.** O catálogo inteiro de ferramentas viajava em toda
+  mensagem, ocupando milhares de tokens da sua janela antes de você escrever a primeira palavra.
+  Agora só o núcleo viaja; o resto é descoberto sob demanda. Em modelo de janela pequena, é a
+  diferença entre caber e não caber.
+- **Recusa por janela pequena virou mensagem acionável.** Em vez do erro cru do provedor, a IDE diz
+  o número real da janela e o que resolve — aumentar a janela do servidor, desligar ferramentas que
+  você não vai usar naquele chat, ou trocar de modelo.
+
+### 💰 Você decide quanto gastar — a IDE pergunta, não corta
+
+- **Checkpoint de consentimento:** trabalho longo no chat não é mais interrompido por conta
+  própria. Ao atingir o teto, a IDE **entrega a fração pronta e pergunta se você autoriza
+  continuar**, com o total gasto na tela. Você clica em continuar e o trabalho retoma exatamente
+  de onde parou — nada é descartado, nada recomeça do zero.
+- **Missão do COSMOS não tem teto:** o escopo já foi aprovado quando a missão foi criada;
+  perguntar de novo no meio seria revogar uma decisão sua.
+- **Cache do prefixo visível no medidor:** quando o provedor reaproveita o começo da conversa em
+  vez de reprocessar, o número aparece ao lado do total. É a prova, em token, do que você **não**
+  pagou de novo.
+
+### 🎙️ Voz de mão dupla
+
+- **Ditado por voz (STT)** — fale em vez de digitar, direto no campo do chat.
+- **Ouvir a resposta (TTS)** com play/stop por mensagem, prévia de voz, opção grátis e opção por
+  provedor, além de auto-leitura configurável.
+
+### 🌐 Navegador dentro da IDE
+
+Painel de navegação embutido (WebView2 nativo): abra dashboards, documentação e o preview do seu
+app sem sair da IDE. E o **COSMOS sabe operar a própria IDE** — navegar, trocar de painel e ler o
+estado da tela para se situar antes de agir.
+
+### 📁 Explorer, memória e busca
+
+- **Duplicar arquivo e pasta** pelo menu de contexto, com resolução automática de nome repetido —
+  e o sufixo entra antes da extensão (`api.ts` → `api copy.ts`), para a cópia não perder o realce
+  de sintaxe.
+- **Memória mais enxuta:** comando de compactação da conversa, arquivo de memória do projeto e uma
+  rotina de curadoria que remove duplicidade em vez de deixar a base inchar.
+- **Busca no código consertada** — a busca por conteúdo estava falhando silenciosamente em projeto
+  grande; agora responde, e foi medida contra uma varredura de quase 1 GB.
+
+### 🔌 Provedores
+
+- **Xiaomi MiMo** entra como provedor, com os provedores conectados destacados no topo da lista.
+- **Login Google do Antigravity** funcionando de ponta a ponta, com os modelos reais da sua conta.
+
+### 🔧 Manutenção
+
+- **26 dependências atualizadas** em lotes separados, com a suíte completa verde entre um lote e o
+  outro — inclusive o núcleo do React, o motor de build e a camada de testes.
+- Correções de acessibilidade (contraste), de credenciais entre camadas e de estabilidade do
+  navegador embutido.
+
+---
+
 ## [1.3.2] — Rede de segurança do agente: rollback, auditoria e memória medida · 2026-08-03
 
 > Três pendências reais que ficaram registradas desde a 1.3.1 ("em breve — próximo bloco")

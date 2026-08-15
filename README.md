@@ -16,7 +16,7 @@
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.2-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.3-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
 [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 &nbsp;
@@ -158,6 +158,40 @@ O COSMOS (Maestro) aguardando resposta de uma Star que travou por limite de toke
 Sem C5CP:  Star 2 (kimi-k3) trava → COSMOS fica pendurado → timeout → falha de missão
 Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS recebe resposta normal
 ```
+
+---
+
+## 🧪 v1.3.3 — O chat que não estoura *(pré-lançamento)*
+
+> **Certificada e ao vivo na Microsoft Store**, e ainda assim marcada como pré-lançamento: é a
+> primeira build com esta safra de mudanças no caminho mais quente do produto — chat, contexto e
+> limites de gasto. Funciona, foi testada, e agora precisa de uso real.
+> **[Conte o que quebrar](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose).**
+
+A queixa que originou esta versão é a que todo mundo que usa IA para trabalho longo conhece: a
+tarefa vai bem até certo ponto e então morre com *"contexto excedido"* — levando junto todo o
+trabalho que já tinha sido pago.
+
+- **Você vê a janela encher.** Medidor de contexto ao vivo ao lado do campo de mensagem, com botão
+  **Compactar agora** — em vez de descobrir o limite quando ele estoura.
+- **O turno sempre termina entregando.** No fim do orçamento as ferramentas são desligadas e o
+  modelo responde com o que já apurou. Trabalho parcial e útil, nunca uma mensagem de erro no lugar
+  de vinte minutos de trabalho.
+- **A IDE pergunta antes de gastar.** Ao bater no teto, ela entrega a fração pronta, mostra o total
+  consumido e pergunta se você autoriza continuar — e a retomada segue de onde parou, sem recomeçar.
+- **Cada modelo medido pela própria régua.** O limite passou a ser proporcional à janela real de
+  quem está respondendo, não um número fixo igual para todos.
+- **Menos imposto de catálogo.** As ferramentas são reveladas por demanda em vez de viajarem
+  inteiras em toda mensagem — em modelo de janela pequena, é a diferença entre caber e não caber.
+- **Cache do prefixo à vista:** quando o provedor reaproveita o começo da conversa, o número
+  aparece no medidor. É a prova, em token, do que você **não** pagou de novo.
+
+Também nesta versão: **voz de mão dupla** (ditado por voz e leitura da resposta, com prévia e
+auto-leitura), **navegador embutido** na IDE, **COSMOS operando a própria interface**, **duplicar
+arquivo/pasta** no Explorer, **busca no código consertada** em projeto grande, provedor **Xiaomi
+MiMo** e **26 dependências atualizadas** com a suíte verde entre cada lote.
+
+📋 [Changelog completo da 1.3.3](CHANGELOG.md#133--o-chat-que-não-estoura-contexto-sob-controle-e-voz-de-mão-dupla--2026-08-14)
 
 ---
 
@@ -464,12 +498,13 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 
 ## ⬇️ Download
 
-> 🚀 **Versão mais recente: [v1.3.2 — Rede de segurança do agente](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2)** ([o que muda](#-v132--rede-de-segurança-do-agente-rollback-auditoria-e-memória-medida)) — rollback de edições do agente, trilha de auditoria e reranking de memória medido.
+> 🧪 **Versão mais recente: [v1.3.3 — O chat que não estoura](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.3)** ([o que muda](#-v133--o-chat-que-não-estoura-pré-lançamento)) — **pré-lançamento**: contexto sob controle, a IDE pergunta antes de gastar, voz de mão dupla e navegador embutido.
+> Prefere terreno já rodado? A [v1.3.2](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2) continua disponível.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A **v1.3.2 foi enviada pelo Lya Publisher, de dentro da própria IDE**, e já está **certificada e ao vivo** na Store desde 03/08/2026.
+> A **v1.3.3 foi enviada pelo Lya Publisher, de dentro da própria IDE**, e está **certificada e ao vivo** na Store desde 14/08/2026 — como a 1.3.2 e a 1.3.1 antes dela.
 
-> 📦 **winget** — [PR #411452 em moderação](https://github.com/microsoft/winget-pkgs/pull/411452). Assim que aprovado:
+> 📦 **winget** — o pacote está no catálogo oficial ([PR #411452 aprovado](https://github.com/microsoft/winget-pkgs/pull/411452)):
 > ```powershell
 > winget install StudioCodeAI.LyaStudioCoder
 > ```
@@ -478,9 +513,9 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 | Instalador | Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`Lya Studio Coder_1.3.2_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.2/Lya.Studio.Coder_1.3.2_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~58 MB | `965BE765…C28AA8B43F` |
-| [**`Lya Studio Coder_1.3.2_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.2/Lya.Studio.Coder_1.3.2_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~90 MB | `6D8CC4AB…22DA5679C0` |
-| [**`LyaStudioCoder_1.3.2.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.2/LyaStudioCoder_1.3.2.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~95 MB | `40245D58…003D14A4CF7EA05F3` |
+| [**`Lya Studio Coder_1.3.3_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.3/Lya.Studio.Coder_1.3.3_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~53 MB | `816D02E0…88A1682353` |
+| [**`Lya Studio Coder_1.3.3_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.3/Lya.Studio.Coder_1.3.3_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~79 MB | `7F8AD219…19D951F1A` |
+| [**`LyaStudioCoder_1.3.3.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.3/LyaStudioCoder_1.3.3.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~84 MB | `32D6D3A2…32C6B5CFE` |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
@@ -488,14 +523,14 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 <summary>🔐 SHA-256 completos para verificação</summary>
 
 ```
-Lya Studio Coder_1.3.2_x64-setup.exe
-965BE76523ACF8FEB8B8183BC7B39DA3A506B7527D88335AC7CDEDC28AA8B43F
+Lya Studio Coder_1.3.3_x64-setup.exe
+816D02E0AC7B1324B95361927B5B466E48DB2D2CA6AA0F976EEC2788A1682353
 
-Lya Studio Coder_1.3.2_x64_en-US.msi
-6D8CC4AB66470D6EC4B41B7666C398227A672E14D82DCF8FDF25B422DA5679C0
+Lya Studio Coder_1.3.3_x64_en-US.msi
+7F8AD219DA39C83CE1F96E6B43C71EB9B48C84C11FFB0F2033A4E8519D951F1A
 
-LyaStudioCoder_1.3.2.0_x64.msix
-40245D58BC51BD7602DC57F7448A4041BAC124ADD2B0E4C003D14A4CF7EA05F3
+LyaStudioCoder_1.3.3.0_x64.msix
+32D6D3A2AD61B1FD72D5B35AAC514FDEE26B0A062C4BF065C8CA83732C6B5CFE
 ```
 
 Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
