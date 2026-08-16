@@ -55,11 +55,16 @@ em cinco frentes:
 - **Ouvir a resposta (TTS)** com play/stop por mensagem, prévia de voz, opção grátis e opção por
   provedor, além de auto-leitura configurável.
 
-### 🌐 Navegador dentro da IDE
+### 🌐 Painel de navegação — preview local pronto, externo em beta
 
-Painel de navegação embutido (WebView2 nativo): abra dashboards, documentação e o preview do seu
-app sem sair da IDE. E o **COSMOS sabe operar a própria IDE** — navegar, trocar de painel e ler o
-estado da tela para se situar antes de agir.
+O painel abre o app que você está construindo lado a lado com o código, e o **COSMOS sabe operar a
+própria IDE**: trocar de painel e ler o estado da tela para se situar antes de agir.
+
+> ⚠️ **Estado honesto da navegação externa.** Abrir sites de fora usa o webview nativo e só existe
+> no **aplicativo instalado** (`.exe`/`.msi`/`.msix`). Rodando a IDE pelo navegador em modo de
+> desenvolvimento, endereços externos caem num proxy que só reescreve marcação estática — páginas
+> feitas em JavaScript pesado aparecem vazias ou quebradas. Trate a navegação externa como **beta**;
+> páginas locais e o preview do seu app são o caminho sólido hoje.
 
 ### 📁 Explorer, memória e busca
 

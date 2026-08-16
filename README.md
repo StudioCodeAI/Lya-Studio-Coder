@@ -187,7 +187,8 @@ trabalho que já tinha sido pago.
   aparece no medidor. É a prova, em token, do que você **não** pagou de novo.
 
 Também nesta versão: **voz de mão dupla** (ditado por voz e leitura da resposta, com prévia e
-auto-leitura), **navegador embutido** na IDE, **COSMOS operando a própria interface**, **duplicar
+auto-leitura), **preview embutido** na IDE *(navegação externa em beta — só no app instalado)*,
+**COSMOS operando a própria interface**, **duplicar
 arquivo/pasta** no Explorer, **busca no código consertada** em projeto grande, provedor **Xiaomi
 MiMo** e **26 dependências atualizadas** com a suíte verde entre cada lote.
 
@@ -356,7 +357,9 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 
 - **Mais cobertura de extensões** — ampliar a faixa de extensões JS suportadas pelo Extension Host (linters, language servers) mantendo a transparência do badge honesto.
 - **COSMOS operando o OmniRoute via MCP** — trocar combo, checar cota/custo e trocar provider ativo autonomamente pelo chat.
-- **Navegador embutido na IDE** — abrir dashboards externos (ex.: OmniRoute) sem sair da Lya.
+- **Navegação externa de verdade no painel embutido** — hoje o preview local é sólido e sites
+  externos são beta (funcionam no app instalado, via webview nativo). O objetivo é abrir qualquer
+  dashboard, com sessão e login, sem sair da Lya.
 
 ---
 
@@ -498,7 +501,7 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 
 ## ⬇️ Download
 
-> 🧪 **Versão mais recente: [v1.3.3 — O chat que não estoura](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.3)** ([o que muda](#-v133--o-chat-que-não-estoura-pré-lançamento)) — **pré-lançamento**: contexto sob controle, a IDE pergunta antes de gastar, voz de mão dupla e navegador embutido.
+> 🧪 **Versão mais recente: [v1.3.3 — O chat que não estoura](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.3)** ([o que muda](#-v133--o-chat-que-não-estoura-pré-lançamento)) — **pré-lançamento**: contexto sob controle, a IDE pergunta antes de gastar e voz de mão dupla.
 > Prefere terreno já rodado? A [v1.3.2](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2) continua disponível.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
