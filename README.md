@@ -96,7 +96,7 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 
 | 🧩 Módulo | O que entrega |
 |---|---|
-| 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT, Ollama (local + cloud) e **Antigravity** na mesma sala. Streaming cancelável, markdown, anexos, **gravação de voz**, function-calling real e histórico completo. |
+| 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT, Ollama (local + cloud) e **Antigravity** na mesma sala. Streaming cancelável, markdown, anexos de imagem/áudio/PDF, **voz de mão dupla** (ditado + leitura em voz alta), function-calling real e histórico completo. |
 | 🧭 **OmniRoute — Provedor Local Nativo** | O [OmniRoute](https://omniroute.online/) entra como provedor de 1ª classe, lado a lado com Ollama e Llama.cpp: **instalou, acabou** — o serviço sobe junto com a IDE em todo boot (desligável num clique) e a conexão é feita sozinha, sem chave para colar. E o seletor mostra **só os modelos que funcionam**: catálogo cruzado com as contas realmente ativas, sem apelidos repetidos e sem os modelos que já falharam de verdade. |
 | 🎛️ **COSMOS — Orquestração** | Até 4 agentes de IA em paralelo (API, CLI, local). Cada slot com motor independente, status ao vivo, contexto compartilhado e **tools MCP dinâmico**. |
 | 🩹 **CURE — Auto-Correção** | A IDE conserta o próprio build sozinha: loop build→mistake→correção→rebuild com disjuntor anti-degeneração, **CURE SCAR** (memória de cicatrizes com dinâmica de confiança), **Auto Scar Fix** (preview preventivo no composer, custo zero) e **roteamento Planner→Executor** por classificação de ferida. |
@@ -114,6 +114,10 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🌍 **Interface em 9 idiomas** | Português, Inglês, Espanhol, Alemão, Francês, Japonês, Coreano, Russo e Chinês nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **2220 chaves i18n em paridade nos 9 idiomas** (PT, EN, ES, DE, FR, JA, KO, RU, ZH), conferidas por auditoria automática a cada build. |
 | 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (Claude Code/Desktop/Cursor conectam e usam missão/SBB/CURE como tools). |
 | ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
+| 🗣️ **Voz de mão dupla** | Fale com a IDE e ouça a resposta: **ditado por microfone** (push-to-talk, transcrição por Whisper local ou API) e **leitura em voz alta** com 8 motores de síntese — incluindo uma **opção gratuita que não pede chave nenhuma**. Texto longo é quebrado e remontado sem cortar palavra. |
+| 🧩 **Motores locais em dupla** | O `llama.cpp` acompanha o ciclo de vida do Ollama: **subiu o Ollama, sobe junto; desligou, cai junto** — em segundo plano, sem janela de console e sem tocar na VRAM antes da primeira chamada. A IDE só derruba o servidor que ela mesma subiu: um `llama-server` que você abriu na mão continua sendo seu. |
+| 🗄️ **Banco vetorial sem Python** | O servidor Chroma sobe pelo **binário nativo que já viajava dentro do instalador** (53 MB que antes eram peso morto por um defeito de carregamento do pacote upstream). Quem nunca instalou Python passa a ter memória vetorial funcionando igual — o Python virou opcional, não pré-requisito. |
+| 🔐 **Módulos com integridade verificada** | Cada módulo baixado sob demanda confere o **hash publicado** e, se não bater, **apaga o arquivo e falha** em vez de instalar algo diferente do esperado. Download interrompido retoma de onde parou; origem sem hash publicado é marcada como **não verificada** — a IDE não finge que conferiu. |
 | 🌐 **Painel de navegação embutido** | Preview do seu app e documentação sem sair da IDE, com abas, histórico e **F12 para inspecionar**. O COSMOS também navega por ele durante uma missão. **O limite é declarado, não descoberto:** fora do app instalado, o modo compatibilidade **entrega** a página mas não **executa** o JavaScript dela — site moderno chega vazio, e a IDE diz isso na tela com a saída para o navegador do sistema ao lado. Navegação externa plena (webview nativo) só no app instalado, e ainda em **beta**. |
 
 ➡️ **Detalhe completo:** [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md)
@@ -539,12 +543,12 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 ## ⬇️ Download
 
 > 🧪 **Versão mais recente: [v1.3.5 — Memória embarcada, voz que funciona e 9 idiomas](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.5)** ([o que muda](#-v135--memória-embarcada-voz-que-funciona-e-9-idiomas-pré-lançamento)) — **pré-lançamento**: memória de longo prazo dentro do app, banco vetorial sem Python e interface em 9 idiomas.
-> Prefere terreno já rodado? A [v1.3.2](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2) continua disponível — é ela que o `winget` entrega hoje.
+> Prefere terreno já rodado? A [v1.3.2](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2) continua disponível.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A **v1.3.5 foi enviada pelo Lya Publisher, de dentro da própria IDE**, em 18/08/2026 e está **em certificação** na Microsoft — a v1.3.3 segue ao vivo na Store até a nova ser aprovada. O MSIX é **assinado pela própria Microsoft** na certificação, como em toda versão desde a 1.1.4.
+> A **v1.3.5 foi enviada pelo Lya Publisher, de dentro da própria IDE**, em 18/08/2026: **passou na certificação da Microsoft no mesmo dia** e está em publicação na Store. O MSIX é **assinado pela própria Microsoft** na certificação, como em toda versão desde a 1.1.4 — nenhum certificado de terceiro no caminho.
 
-> 📦 **winget** — o pacote está no catálogo oficial ([PR #411452 aprovado](https://github.com/microsoft/winget-pkgs/pull/411452)). O `winget` entrega a **linha estável (v1.3.2)** de propósito: ele atualiza todo mundo de uma vez com `winget upgrade`, e as versões 1.3.3+ são **pré-lançamento**. Quem quer a mais recente usa a Store ou o download direto:
+> 📦 **winget** — o pacote está no catálogo oficial ([PR #411452 aprovado](https://github.com/microsoft/winget-pkgs/pull/411452)), e **toda versão é enviada para lá** — o catálogo guarda a linha do tempo do produto. Em análise agora: [#419885 (v1.3.5)](https://github.com/microsoft/winget-pkgs/pull/419885) e [#419888 (v1.3.3)](https://github.com/microsoft/winget-pkgs/pull/419888).
 > ```powershell
 > winget install StudioCodeAI.LyaStudioCoder
 > ```
@@ -620,7 +624,7 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ **v1.3.3 — O chat que não estoura** — medidor de contexto ao vivo, turno que sempre termina entregando, checkpoint de consentimento antes de gastar, limite proporcional à janela real de cada modelo, voz de mão dupla, painel de navegação embutido e 26 dependências atualizadas
 - [x] ✅ **v1.3.3 na Microsoft Store** — certificada e ao vivo (14/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE** — a terceira seguida enviada pela própria IDE
 - [x] ✅ **v1.3.5 — Memória embarcada, voz que funciona e 9 idiomas** — memória de longo prazo dentro do app, banco vetorial sem Python, motor local que acompanha o Ollama em silêncio, opção grátis de voz consertada, módulos com integridade por hash e interface em 9 idiomas · **🚀 versão mais recente**
-- [x] ✅ **v1.3.5 enviada à Microsoft Store** — em certificação desde 18/08/2026, **publicada pelo Lya Publisher de dentro da própria IDE**, com o texto de apresentação da loja no mesmo envio
+- [x] ✅ **v1.3.5 na Microsoft Store** — **certificada em 18/08/2026** e em publicação, enviada pelo Lya Publisher de dentro da própria IDE, com o texto de apresentação da loja no mesmo envio
 - [ ] 🔄 Navegação externa plena no painel embutido (hoje beta, só no app instalado)
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
