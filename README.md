@@ -6,17 +6,17 @@
 
 # 🌌 Lya Studio Coder: Sua central de orquestração multi-IA
 
-### 92% auditado nos 20 módulos. 100% local. Zero vendor lock-in. Interface 100% traduzida em 3 idiomas.
+### 92,2% auditado nos 20 módulos (ago/2026). 100% local. Zero vendor lock-in. Interface 100% traduzida em 9 idiomas.
 
 *Claude · Gemini · GPT · Ollama — um cockpit. Muitas IAs. Nenhum vendor lock-in.*
 
 <br/>
 
-![Estabilidade auditada 92%](https://img.shields.io/badge/Auditada-92%25_·_20_módulos-22c55e?style=flat-square) ![Local-First](https://img.shields.io/badge/Local--First-100%25-7c3aed?style=flat-square) ![Multi-Agente](https://img.shields.io/badge/Multi--Agente-COSMOS-ff0055?style=flat-square) ![Idiomas](https://img.shields.io/badge/PT_·_EN_·_ES-100%25_i18n-0ea5e9?style=flat-square) ![CURE](https://img.shields.io/badge/CURE-Auto--Fix-ff6b9d?style=flat-square)
+![Estabilidade auditada 92,2%](https://img.shields.io/badge/Auditada-92,2%25_·_20_módulos_·_ago%2F2026-22c55e?style=flat-square) ![Local-First](https://img.shields.io/badge/Local--First-100%25-7c3aed?style=flat-square) ![Multi-Agente](https://img.shields.io/badge/Multi--Agente-COSMOS-ff0055?style=flat-square) ![Idiomas](https://img.shields.io/badge/9_idiomas-100%25_i18n-0ea5e9?style=flat-square) ![CURE](https://img.shields.io/badge/CURE-Auto--Fix-ff6b9d?style=flat-square)
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.3-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.5-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
 [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 &nbsp;
@@ -39,7 +39,7 @@ winget install StudioCodeAI.LyaStudioCoder
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.3.2-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Versão](https://img.shields.io/badge/versão-1.3.5-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
 [![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
@@ -110,10 +110,11 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🔒 **LSCode Keychain** | Gerenciador centralizado de chaves API (Carteira cifrada AES-256-GCM). Fonte única da verdade para todos os provedores — seus segredos ficam só na sua máquina. |
 | 🛒 **Loja de Skills + Linguagens** | Importe skills de repositórios Git (indexação real na memória vetorial). Grammars, snippets, **8+ temas de cor** (Dracula, Tokyo Night, Atom One Dark…) e icon themes — tudo instalável direto na Store. |
 | 🖥️ **Desktop Self-Contained** | `.exe` e `.msi` que embute o runtime. **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
-| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE: build Tauri + MSIX + upload + Partner Center. **Provado no mundo real** — a v1.3.1 que está na Store foi enviada por ele, da própria IDE, e certificada pela Microsoft no mesmo dia. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
-| 🌍 **Interface 100% Trilíngue** | Português, Inglês e Espanhol nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **1986 chaves i18n em paridade**. |
+| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE: build Tauri + MSIX + upload + Partner Center. **Provado no mundo real** — as quatro últimas versões na Store (v1.3.1, v1.3.2, v1.3.3 e v1.3.5) foram enviadas por ele, de dentro da própria IDE. Desde a 1.3.5 ele publica também **o texto de apresentação da loja** junto com o pacote, num envio só. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
+| 🌍 **Interface em 9 idiomas** | Português, Inglês, Espanhol, Alemão, Francês, Japonês, Coreano, Russo e Chinês nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **2220 chaves i18n em paridade nos 9 idiomas** (PT, EN, ES, DE, FR, JA, KO, RU, ZH), conferidas por auditoria automática a cada build. |
 | 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (Claude Code/Desktop/Cursor conectam e usam missão/SBB/CURE como tools). |
 | ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
+| 🌐 **Painel de navegação embutido** | Preview do seu app e documentação sem sair da IDE, com abas, histórico e **F12 para inspecionar**. O COSMOS também navega por ele durante uma missão. **O limite é declarado, não descoberto:** fora do app instalado, o modo compatibilidade **entrega** a página mas não **executa** o JavaScript dela — site moderno chega vazio, e a IDE diz isso na tela com a saída para o navegador do sistema ao lado. Navegação externa plena (webview nativo) só no app instalado, e ainda em **beta**. |
 
 ➡️ **Detalhe completo:** [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md)
 
@@ -158,6 +159,32 @@ O COSMOS (Maestro) aguardando resposta de uma Star que travou por limite de toke
 Sem C5CP:  Star 2 (kimi-k3) trava → COSMOS fica pendurado → timeout → falha de missão
 Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS recebe resposta normal
 ```
+
+---
+
+## 🧪 v1.3.5 — Memória embarcada, voz que funciona e 9 idiomas *(pré-lançamento)*
+
+> A 1.3.4 foi construída e **retida** — nunca publicada. O que ela levava está aqui, junto com o
+> que veio depois. Track de pré-lançamento: use, e [conte o que quebrar](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose).
+
+- **A memória de longo prazo mora dentro do app.** Deixou de depender de um programa externo
+  instalado à parte — a IDE carrega o motor de memória embarcado e responde sozinha.
+- **Banco vetorial sem Python.** O servidor vetorial sobe pelo binário nativo que já viajava dentro
+  do instalador. Quem nunca instalou Python passa a ter memória funcionando do mesmo jeito.
+- **Motor local companheiro.** Ligou o Ollama, sobe junto; desligou, cai junto — em silêncio, sem
+  janela de console e sem tocar na sua VRAM antes da primeira chamada.
+- **Voz de mão dupla, incluindo a opção grátis.** Ditado por microfone e leitura em voz alta. A
+  opção gratuita de síntese **era recusada pela própria IDE** por um defeito de configuração
+  interna — agora funciona sem nenhuma chave.
+- **Navegador embutido no lugar certo.** Abre dentro da área do painel, e o COSMOS enxerga a página
+  que você está vendo (não o encanamento interno).
+- **Interface em 9 idiomas.** Chegaram alemão, francês, japonês, coreano, russo e chinês —
+  **2220 chaves em paridade**, conferidas por auditoria automática a cada build.
+- **Módulos com integridade verificada.** O download de cada módulo confere o hash publicado e
+  **falha honestamente** quando não bate, em vez de instalar algo diferente do esperado.
+- **O Publisher agora publica também o texto da loja.** Pacote e apresentação sobem no mesmo envio.
+
+📋 [Changelog completo da 1.3.5](CHANGELOG.md#135--memória-embarcada-voz-que-funciona-e-9-idiomas--2026-08-18)
 
 ---
 
@@ -268,8 +295,8 @@ agora roda antes de cada release:
   com juiz dedicado, ~2,5× mais caro) e a fronteira anti-prompt-injection do `prompt-safety`.
 
 **A prova acompanha a correção:** cada onda entregou suítes novas **dentro do `npm test` no mesmo
-commit** — suíte fora do gate apodrece. Estado do portão hoje: **lint 0 erros · 1986 chaves i18n
-em paridade e 0 texto fixo · 420/420 testes de componente · 73/73 E2E**.
+commit** — suíte fora do gate apodrece. Estado do portão hoje: **lint 0 erros · 2220 chaves i18n
+em paridade nos 9 idiomas · 459/459 testes de componente · 73/73 E2E · 335 rotas sem duplicidade**.
 
 📊 Média auditada dos 20 módulos: **92,2%** — sem nenhum achado alto ou crítico em aberto. O que
 sobrou no funil é eixo de *prova* (mais teste automatizado), não de comportamento.
@@ -360,6 +387,9 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 - **Navegação externa de verdade no painel embutido** — hoje o preview local é sólido e sites
   externos são beta (funcionam no app instalado, via webview nativo). O objetivo é abrir qualquer
   dashboard, com sessão e login, sem sair da Lya.
+- **Aviso de cota antes do teto** — o teto de gasto por missão já freia em US$/tokens; falta o
+  aviso proativo para contas de plano com janela que reseta, para o COSMOS trocar de motor sozinho
+  antes de travar no meio da missão.
 
 ---
 
@@ -462,27 +492,33 @@ Uma ordem sua vira quatro frentes de trabalho em paralelo. O COSMOS planeja, dis
 
 ## 📊 Mapa de Estabilidade
 
-Transparência total. Cada módulo tem nota baseada em testes reais e uso em produção.
+Transparência total. Cada nota abaixo saiu da **auditoria fio a fio dos 20 módulos** — uma rubrica
+de 7 eixos aplicada módulo a módulo, não uma impressão. Onde a medição foi mais dura que a nota
+antiga, **a nota desceu**: número que só sobe não é medição, é propaganda.
 
 ### ✅ Estável — pronto para o dia a dia
 
 | Funcionalidade | Estabilidade | Status |
 |---|:---:|---|
-| **Interface Trilíngue (PT/EN/ES)** | `98%` | 🟢 Estável — 1986 chaves i18n, 0 hardcoded (erros de orquestração traduzidos) |
-| Chat Multi-Provider | `97%` | 🟢 Estável — cancelamento Gemini encerra o request de verdade |
-| **COSMOS — Orquestração multi-agente** | `97%` | 🟢 Estável — /parar cancela a inferência em voo (AbortController por missão) |
-| Editor Monaco + TextMate + Snippets | `96%` | 🟢 Estável — Salvar grava em disco de verdade (✓ só com confirmação do backend) |
-| **Memória Core5 768d (embutida)** | `94%` | 🟢 Estável — LanceDB + nomic 768d + dedup em janela deslizante |
-| Zoom Global | `92%` | 🟢 Estável |
-| Explorer + Find in Files | `93%` | 🟢 Estável — sandbox com `realpath` nos dois lados (symlink-escape fechado) |
-| **Loja de Skills + Linguagens** | `91%` | 🟢 Estável — import Git real + temas + grammars |
-| Terminal Integrado (PTY) | `92%` | 🟢 Estável — sem PTY órfão (teardown no shutdown) |
-| App Desktop (.exe / .msi / .msix) | `91%` | 🟢 Estável — carimbo de versão com guarda de drift |
+| **Chat Multi-Provider** | `100%` | 🟢 Estável — nenhum achado em aberto; cancelamento encerra o request de verdade |
+| **Memória Core5 768d (embutida)** | `100%` | 🟢 Estável — LanceDB + nomic 768d + rerank híbrido medido (hit@1 1/12 → 11/12) |
+| **COSMOS — Orquestração multi-agente** | `97%` | 🟢 Estável — painel `99,7%` · motor de missão `93,2%`; /parar cancela a inferência em voo |
+| **Interface Trilíngue (PT/EN/ES)** | `98%` | 🟢 Estável — 2172 chaves em paridade nos 3 idiomas, auditadas a cada build (4 textos fixos residuais em telas de configuração, em fila) |
+| Editor Monaco + TextMate + Snippets | `95%` | 🟢 Estável — Salvar grava em disco de verdade (✓ só com confirmação do backend) |
+| Explorer + Find in Files | `95%` | 🟢 Estável — sandbox com `realpath` nos dois lados (symlink-escape fechado) |
+| Terminal Integrado (PTY) | `95%` | 🟢 Estável — sem PTY órfão (teardown no shutdown) |
+| Workspace & Git | `95%` | 🟢 Estável — criar, renomear, excluir, copiar e duplicar; `git status` sem custo com a IDE minimizada |
+| **Segurança & Contas (Carteira cifrada)** | `92%` | 🟢 Estável — AES-256-GCM em repouso; credencial recusada nunca volta verde |
 | **Embeddings 768d (Cascata)** | `92%` | 🟢 Estável — Gemini online → nomic local → guarda + sem vetor-zero morto |
-| **Lya Publisher (Microsoft Store)** | `96%` | 🟢 Estável — **publicou a própria v1.3.1 na Store de ponta a ponta**: troca de pacote, empacotamento e envio cobertos por teste |
+| Zoom Global | `92%` | 🟢 Estável |
+| **Lya Publisher (Microsoft Store)** | `92%` | 🟢 Estável — **publicou as v1.3.1, v1.3.2, v1.3.3 e v1.3.5 na Store de ponta a ponta**, de dentro da própria IDE — desde a 1.3.5 o texto da loja vai no mesmo envio |
+| **MissionTracker** | `92%` | 🟢 Estável — Pausar/Parar com confirmação do backend, não disparo-e-esquece |
+| App Desktop (.exe / .msi / .msix) | `91%` | 🟢 Estável — carimbo de versão com guarda de drift |
+| **Ferramentas & Sandbox do agente** | `90%` | 🟢 Estável — default-deny, exit code real, saída nunca cortada em silêncio |
+| **Loja de Skills + Linguagens** | `88%` | 🟢 Estável — import Git real + temas + grammars |
 | Compilador & Build | `88%` | 🟢 Estável |
 | Run & Debug (Node + Python) | `88%` | 🟢 Estável — falha de conexão do debugger reportada (sem ok falso) |
-| n8n Live + Pipeline RAG | `89%` | 🟢 Estável — disparo real via Webhook + auto-start + resultado retornado |
+| n8n Live + Pipeline RAG | `88%` | 🟢 Estável — disparo real via Webhook + auto-start + resultado retornado |
 
 ### 🧪 Em testes — use e nos ajude a melhorar
 
@@ -490,24 +526,25 @@ Transparência total. Cada módulo tem nota baseada em testes reais e uso em pro
 |---|:---:|---|
 | **CURE — Auto-Correção (AUTO_FIX)** | `84%` | 🧪 Pré-lançamento — cicatriz neutra deixou de virar órfã |
 | **MCP Bidirecional (cliente + servidor)** | `82%` | 🧪 Pré-lançamento — sem servidor MCP órfão no shutdown |
-| **Antigravity (Google Managed Agents)** | `78%` | 🧪 Pré-lançamento |
+| **Painel de navegação embutido** | `80%` | 🧪 Pré-lançamento — 79 asserções cobrindo proxy, painel e ponte; **navegação externa em beta** (modo compatibilidade não executa o JavaScript da página, e diz isso na tela) |
 | Config. Provedores Remotos | `79%` | 🧪 Pré-lançamento — teste SMTP real + erro de rede propagado |
+| **Antigravity (Google Managed Agents)** | `78%` | 🧪 Pré-lançamento |
 | Preview ao Vivo | `78%` | 🧪 Pré-lançamento — detecta `0.0.0.0`/IP LAN + sem dev server órfão |
 | Túnel de Compartilhamento | `74%` | 🧪 Pré-lançamento — túnel encerrado no shutdown (URL não fica pública sem dono) |
 
-> 💡 Módulo `🧪` com problema? **[Abra um relato](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose)** e ajude a levar a nota acima de 85%.
+> 💡 Módulo `🧪` com problema? **[Abra um relato](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues/new/choose)** e ajude a levar a nota acima de 85%. É exatamente essa faixa que segura a média do produto em 92,2% — nenhum deles tem defeito alto ou crítico em aberto; o que falta é **prova automatizada** e uso real.
 
 ---
 
 ## ⬇️ Download
 
-> 🧪 **Versão mais recente: [v1.3.3 — O chat que não estoura](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.3)** ([o que muda](#-v133--o-chat-que-não-estoura-pré-lançamento)) — **pré-lançamento**: contexto sob controle, a IDE pergunta antes de gastar e voz de mão dupla.
-> Prefere terreno já rodado? A [v1.3.2](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2) continua disponível.
+> 🧪 **Versão mais recente: [v1.3.5 — Memória embarcada, voz que funciona e 9 idiomas](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.5)** ([o que muda](#-v135--memória-embarcada-voz-que-funciona-e-9-idiomas-pré-lançamento)) — **pré-lançamento**: memória de longo prazo dentro do app, banco vetorial sem Python e interface em 9 idiomas.
+> Prefere terreno já rodado? A [v1.3.2](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2) continua disponível — é ela que o `winget` entrega hoje.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A **v1.3.3 foi enviada pelo Lya Publisher, de dentro da própria IDE**, e está **certificada e ao vivo** na Store desde 14/08/2026 — como a 1.3.2 e a 1.3.1 antes dela.
+> A **v1.3.5 foi enviada pelo Lya Publisher, de dentro da própria IDE**, em 18/08/2026 e está **em certificação** na Microsoft — a v1.3.3 segue ao vivo na Store até a nova ser aprovada. O MSIX é **assinado pela própria Microsoft** na certificação, como em toda versão desde a 1.1.4.
 
-> 📦 **winget** — o pacote está no catálogo oficial ([PR #411452 aprovado](https://github.com/microsoft/winget-pkgs/pull/411452)):
+> 📦 **winget** — o pacote está no catálogo oficial ([PR #411452 aprovado](https://github.com/microsoft/winget-pkgs/pull/411452)). O `winget` entrega a **linha estável (v1.3.2)** de propósito: ele atualiza todo mundo de uma vez com `winget upgrade`, e as versões 1.3.3+ são **pré-lançamento**. Quem quer a mais recente usa a Store ou o download direto:
 > ```powershell
 > winget install StudioCodeAI.LyaStudioCoder
 > ```
@@ -516,9 +553,9 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 | Instalador | Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`Lya Studio Coder_1.3.3_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.3/Lya.Studio.Coder_1.3.3_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~53 MB | `816D02E0…88A1682353` |
-| [**`Lya Studio Coder_1.3.3_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.3/Lya.Studio.Coder_1.3.3_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~79 MB | `7F8AD219…19D951F1A` |
-| [**`LyaStudioCoder_1.3.3.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.3/LyaStudioCoder_1.3.3.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~84 MB | `32D6D3A2…32C6B5CFE` |
+| [**`Lya Studio Coder_1.3.5_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.5/Lya.Studio.Coder_1.3.5_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~62 MB | `4F799F81…2BB1D91F17` |
+| [**`Lya Studio Coder_1.3.5_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.5/Lya.Studio.Coder_1.3.5_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~92 MB | `AF22ACFE…FF686922B5` |
+| [**`LyaStudioCoder_1.3.5.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.5/LyaStudioCoder_1.3.5.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~98 MB | `2B9118F3…D6A5318AA6` |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
@@ -526,14 +563,14 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 <summary>🔐 SHA-256 completos para verificação</summary>
 
 ```
-Lya Studio Coder_1.3.3_x64-setup.exe
-816D02E0AC7B1324B95361927B5B466E48DB2D2CA6AA0F976EEC2788A1682353
+Lya Studio Coder_1.3.5_x64-setup.exe
+4F799F81255F7E5D25D7C30411BC48E2E323914A4911C331338A052BB1D91F17
 
-Lya Studio Coder_1.3.3_x64_en-US.msi
-7F8AD219DA39C83CE1F96E6B43C71EB9B48C84C11FFB0F2033A4E8519D951F1A
+Lya Studio Coder_1.3.5_x64_en-US.msi
+AF22ACFE1CC06AE8C347D676E1661AFFC61B7C9EB9843F6BA1BA37FF686922B5
 
-LyaStudioCoder_1.3.3.0_x64.msix
-32D6D3A2AD61B1FD72D5B35AAC514FDEE26B0A062C4BF065C8CA83732C6B5CFE
+LyaStudioCoder_1.3.5.0_x64.msix
+2B9118F3239866B3CEE89DCF285B13D21D392F0E270825F853F415D6A5318AA6
 ```
 
 Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
@@ -580,6 +617,11 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ **OmniRoute** integrado como provedor local nativo (instalar/iniciar/parar pela aba Integrações, descoberta automática de modelos)
 - [x] ✅ **v1.3.2 — Rede de segurança do agente** — rollback de edições, trilha de auditoria persistente, reranking de memória medido (hit@1 1/12→11/12) e AgentSkills · **🚀 versão mais recente**
 - [x] ✅ **v1.3.2 na Microsoft Store** — certificada e ao vivo (03/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE**
+- [x] ✅ **v1.3.3 — O chat que não estoura** — medidor de contexto ao vivo, turno que sempre termina entregando, checkpoint de consentimento antes de gastar, limite proporcional à janela real de cada modelo, voz de mão dupla, painel de navegação embutido e 26 dependências atualizadas
+- [x] ✅ **v1.3.3 na Microsoft Store** — certificada e ao vivo (14/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE** — a terceira seguida enviada pela própria IDE
+- [x] ✅ **v1.3.5 — Memória embarcada, voz que funciona e 9 idiomas** — memória de longo prazo dentro do app, banco vetorial sem Python, motor local que acompanha o Ollama em silêncio, opção grátis de voz consertada, módulos com integridade por hash e interface em 9 idiomas · **🚀 versão mais recente**
+- [x] ✅ **v1.3.5 enviada à Microsoft Store** — em certificação desde 18/08/2026, **publicada pelo Lya Publisher de dentro da própria IDE**, com o texto de apresentação da loja no mesmo envio
+- [ ] 🔄 Navegação externa plena no painel embutido (hoje beta, só no app instalado)
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
 - [ ] 🍎 Build para macOS / Linux
@@ -632,7 +674,7 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 
 ➡️ **Pronto para consolidar seu fluxo de IA?**
 
-[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.3.2-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.3.3-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 
 *Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 

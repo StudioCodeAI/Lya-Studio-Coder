@@ -6,6 +6,67 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.3.5] — Memória embarcada, voz que funciona e 9 idiomas · 2026-08-18
+
+> 🧪 **Versão de pré-lançamento**, enviada à Microsoft Store pelo próprio Lya Publisher em
+> 18/08/2026 e **em certificação**. A **1.3.4 foi construída e retida** — nunca publicada; o que
+> ela levava está incorporado aqui.
+
+### 🧠 A memória de longo prazo mora dentro do app
+
+- **Motor de memória embarcado.** Deixou de depender de um programa externo instalado à parte: a
+  IDE carrega o motor no próprio processo e responde sozinha, com busca por texto e por vetor.
+- **Banco vetorial sem Python.** O servidor vetorial sobe pelo binário nativo que **já viajava
+  dentro do instalador** e antes ficava inerte por um defeito de carregamento do pacote upstream.
+  Quem nunca instalou Python passa a ter memória funcionando igual.
+- **Módulos com integridade verificada.** Cada módulo baixado confere o hash publicado e **falha
+  apagando o arquivo** quando não bate. Origem sem hash publicado é marcada como não verificada —
+  a IDE não finge que conferiu.
+- **Diagnóstico honesto.** Quando nenhum backend de memória grava, a IDE responde *falhou* — e diz
+  qual backend ficou de fora e o que resolve.
+
+### 🗣️ Voz
+
+- **Ditado e leitura em voz alta** com vários motores de síntese.
+- **A opção gratuita voltou a existir.** O provedor de voz que não pede chave nenhuma **era
+  recusado pela própria IDE** — ela respondia "não tem chave configurada" para quem não usa chave.
+  A lista de provedores gratuitos passou a ser derivada do catálogo, então a divergência não volta.
+- **Texto longo é quebrado corretamente** antes de virar áudio, sem pedaços vazios indo à rede.
+
+### 🌍 Interface em 9 idiomas
+
+Chegaram **alemão, francês, japonês, coreano, russo e chinês**, ao lado de português, inglês e
+espanhol: **2220 chaves em paridade**, conferidas por auditoria automática a cada build.
+A auditoria também foi consertada — ela estava **cega em 186 linhas** de tela por um defeito no
+varredor de comentários, e passava por verde sem enxergar o que havia ali.
+
+### 🌐 Navegador embutido
+
+- Abre **dentro da área do painel**, e não sobreposto à IDE.
+- O COSMOS enxerga **a página que você está vendo**, não o endereço interno do adaptador.
+- Falha ao escutar eventos do webview virou erro tratado, em vez de rejeição solta no console.
+
+### 🚀 Publicação
+
+- O **Lya Publisher publica também o texto de apresentação da loja** — pacote e vitrine sobem no
+  mesmo envio, e campo não informado continua exatamente como está publicado.
+- O gerador do pacote MSIX **voltou a rodar em Windows PowerShell 5.1** (um caractere especial sem
+  marca de codificação quebrava o script antes de executar qualquer coisa).
+
+### 🧪 Qualidade
+
+Quatro suítes novas entraram no portão junto com as correções: voz (síntese e ditado), licença,
+varredor da auditoria de i18n e publicação do texto da loja. Estado do portão nesta versão:
+**lint 0 erros · 2220 chaves i18n em paridade nos 9 idiomas · 459/459 testes de componente ·
+73/73 E2E · 335 rotas sem duplicidade · Rust 26/26**.
+
+### 📝 Nota sobre o Cosmos IDE+
+
+O ativador de licença aparece na interface, mas **nada é bloqueado por licença nesta versão** —
+a cobrança começa apenas na 2.0. Até lá, todos os recursos ficam abertos.
+
+---
+
 ## [1.3.3] — O chat que não estoura: contexto sob controle e voz de mão dupla · 2026-08-14
 
 > 🧪 **Versão de pré-lançamento.** Está **certificada e ao vivo na Microsoft Store**, mas é a
