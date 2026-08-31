@@ -6,6 +6,30 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.3.6] — Estabilidade na instalação de extensões · 2026-08-31
+
+> 🧪 **Versão de pré-lançamento**, certificada e ao vivo na Microsoft Store.
+
+### 🧩 Extensões
+
+- **Corrigido um travamento na tela de extensões.** O cartão de status da Claude Code podia
+  quebrar a interface quando o acompanhamento da instalação ficava sem um trabalho ativo para
+  mostrar.
+- **Base pronta para a próxima loja de extensões.** O motor de instalação por trás da Claude
+  Code passou a aceitar qualquer extensão publicada no Open VSX, não só ela. A tela para você
+  escolher livremente ainda não existe — é o próximo passo — mas o alicerce já está no ar e
+  testado.
+
+### 🧪 Qualidade
+
+**59 testes novos** cobrem a instalação de extensões ponta a ponta, incluindo um caso real de
+corrida encontrado e corrigido nesta rodada: aguardar o fim de uma instalação genérica não podia
+se confundir com o status da Claude Code. Estado do portão nesta versão: **lint 0 erros (62
+avisos pré-existentes, nenhum novo) · 511/511 testes de componente · 2428 chaves i18n em
+paridade nos 9 idiomas · 370 rotas sem duplicidade**.
+
+---
+
 ## [1.3.5] — Memória embarcada, voz que funciona e 9 idiomas · 2026-08-18
 
 > 🧪 **Versão de pré-lançamento**, enviada à Microsoft Store pelo próprio Lya Publisher em

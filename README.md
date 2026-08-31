@@ -16,7 +16,7 @@
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.5-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.6-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)
 &nbsp;
 [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 &nbsp;
@@ -35,21 +35,21 @@
 ```bash
 winget install StudioCodeAI.LyaStudioCoder
 ```
-*(Ou instale via [Microsoft Store](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR) / [Download Direto](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest))*
+*(Ou instale via [Microsoft Store](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR) / [Download Direto](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6))*
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.3.5-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
-[![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Versão](https://img.shields.io/badge/versão-1.3.6-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)
+[![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
-[![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)
 [![Licença](https://img.shields.io/badge/Licença-Proprietária-orange?style=flat-square)](LICENSE)
 [![Issues](https://img.shields.io/github/issues/StudioCodeAI/Lya-Studio-Coder?style=flat-square&color=ff0055)](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues)
 [![Discussions](https://img.shields.io/github/discussions/StudioCodeAI/Lya-Studio-Coder?style=flat-square&color=7c3aed)](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions)
 
 <br/>
 
-[**⬇️ Download**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest) · [**✨ Funcionalidades**](#-funcionalidades) · [**🚀 Quick Start**](docs/QUICK_START.md) · [**📊 Estabilidade**](#-mapa-de-estabilidade) · [**💬 Comunidade**](COMMUNITY.md) · [**❓ FAQ**](COMMUNITY.md#faq-da-comunidade)
+[**⬇️ Download**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6) · [**✨ Funcionalidades**](#-funcionalidades) · [**🚀 Quick Start**](docs/QUICK_START.md) · [**📊 Estabilidade**](#-mapa-de-estabilidade) · [**💬 Comunidade**](COMMUNITY.md) · [**❓ FAQ**](COMMUNITY.md#faq-da-comunidade)
 
 </div>
 
@@ -110,7 +110,7 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🔒 **LSCode Keychain** | Gerenciador centralizado de chaves API (Carteira cifrada AES-256-GCM). Fonte única da verdade para todos os provedores — seus segredos ficam só na sua máquina. |
 | 🛒 **Loja de Skills + Linguagens** | Importe skills de repositórios Git (indexação real na memória vetorial). Grammars, snippets, **8+ temas de cor** (Dracula, Tokyo Night, Atom One Dark…) e icon themes — tudo instalável direto na Store. |
 | 🖥️ **Desktop Self-Contained** | `.exe` e `.msi` que embute o runtime. **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
-| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE: build Tauri + MSIX + upload + Partner Center. **Provado no mundo real** — as quatro últimas versões na Store (v1.3.1, v1.3.2, v1.3.3 e v1.3.5) foram enviadas por ele, de dentro da própria IDE. Desde a 1.3.5 ele publica também **o texto de apresentação da loja** junto com o pacote, num envio só. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
+| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE: build Tauri + MSIX + upload + Partner Center. **Provado no mundo real** — as cinco últimas versões na Store (v1.3.1, v1.3.2, v1.3.3, v1.3.5 e v1.3.6) foram enviadas por ele, de dentro da própria IDE. Desde a 1.3.5 ele publica também **o texto de apresentação da loja** junto com o pacote, num envio só. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
 | 🌍 **Interface em 9 idiomas** | Português, Inglês, Espanhol, Alemão, Francês, Japonês, Coreano, Russo e Chinês nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **2220 chaves i18n em paridade nos 9 idiomas** (PT, EN, ES, DE, FR, JA, KO, RU, ZH), conferidas por auditoria automática a cada build. |
 | 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (Claude Code/Desktop/Cursor conectam e usam missão/SBB/CURE como tools). |
 | ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
@@ -163,6 +163,23 @@ O COSMOS (Maestro) aguardando resposta de uma Star que travou por limite de toke
 Sem C5CP:  Star 2 (kimi-k3) trava → COSMOS fica pendurado → timeout → falha de missão
 Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS recebe resposta normal
 ```
+
+---
+
+## 🧪 v1.3.6 — Estabilidade na instalação de extensões *(pré-lançamento)*
+
+> Certificada e ao vivo na Microsoft Store. Build focada em base e correção, não em recursos
+> grandes — a próxima loja de extensões continua em construção.
+
+- **Corrigido um travamento na tela de extensões**, quando o acompanhamento de uma instalação
+  ficava sem um trabalho ativo para mostrar.
+- **Base pronta para a próxima loja de extensões** — o motor de instalação passou a aceitar
+  qualquer extensão do Open VSX, não só a Claude Code. A tela para escolher livremente ainda não
+  existe.
+- **59 testes novos** cobrindo a instalação de extensões ponta a ponta, incluindo uma corrida
+  real encontrada e corrigida nesta rodada.
+
+📋 [Changelog completo da 1.3.6](CHANGELOG.md#136--estabilidade-na-instalação-de-extensões--2026-08-31)
 
 ---
 
@@ -515,7 +532,7 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 | **Segurança & Contas (Carteira cifrada)** | `92%` | 🟢 Estável — AES-256-GCM em repouso; credencial recusada nunca volta verde |
 | **Embeddings 768d (Cascata)** | `92%` | 🟢 Estável — Gemini online → nomic local → guarda + sem vetor-zero morto |
 | Zoom Global | `92%` | 🟢 Estável |
-| **Lya Publisher (Microsoft Store)** | `92%` | 🟢 Estável — **publicou as v1.3.1, v1.3.2, v1.3.3 e v1.3.5 na Store de ponta a ponta**, de dentro da própria IDE — desde a 1.3.5 o texto da loja vai no mesmo envio |
+| **Lya Publisher (Microsoft Store)** | `92%` | 🟢 Estável — **publicou as v1.3.1, v1.3.2, v1.3.3, v1.3.5 e v1.3.6 na Store de ponta a ponta**, de dentro da própria IDE — desde a 1.3.5 o texto da loja vai no mesmo envio |
 | **MissionTracker** | `92%` | 🟢 Estável — Pausar/Parar com confirmação do backend, não disparo-e-esquece |
 | App Desktop (.exe / .msi / .msix) | `91%` | 🟢 Estável — carimbo de versão com guarda de drift |
 | **Ferramentas & Sandbox do agente** | `90%` | 🟢 Estável — default-deny, exit code real, saída nunca cortada em silêncio |
@@ -542,24 +559,24 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 
 ## ⬇️ Download
 
-> 🧪 **Versão mais recente: [v1.3.5 — Memória embarcada, voz que funciona e 9 idiomas](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.5)** ([o que muda](#-v135--memória-embarcada-voz-que-funciona-e-9-idiomas-pré-lançamento)) — **pré-lançamento**: memória de longo prazo dentro do app, banco vetorial sem Python e interface em 9 idiomas.
+> 🧪 **Versão mais recente: [v1.3.6 — Estabilidade na instalação de extensões](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)** ([o que muda](#-v136--estabilidade-na-instalação-de-extensões-pré-lançamento)) — **pré-lançamento**: correção de travamento na tela de extensões e base testada para a próxima loja de extensões.
 > Prefere terreno já rodado? A [v1.3.2](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2) continua disponível.
 
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A **v1.3.5 foi enviada pelo Lya Publisher, de dentro da própria IDE**, em 18/08/2026: **passou na certificação da Microsoft no mesmo dia** e está em publicação na Store. O MSIX é **assinado pela própria Microsoft** na certificação, como em toda versão desde a 1.1.4 — nenhum certificado de terceiro no caminho.
+> A **v1.3.6 foi enviada pelo Lya Publisher, de dentro da própria IDE**, em 30/08/2026: **certificada e publicada na Store**. O MSIX é **assinado pela própria Microsoft** na certificação, como em toda versão desde a 1.1.4 — nenhum certificado de terceiro no caminho.
 
-> 📦 **winget** — o pacote está no catálogo oficial ([PR #411452 aprovado](https://github.com/microsoft/winget-pkgs/pull/411452)), e **toda versão é enviada para lá** — o catálogo guarda a linha do tempo do produto. Em análise agora: [#419885 (v1.3.5)](https://github.com/microsoft/winget-pkgs/pull/419885) e [#419888 (v1.3.3)](https://github.com/microsoft/winget-pkgs/pull/419888).
+> 📦 **winget** — o pacote está no catálogo oficial ([PR #411452 aprovado](https://github.com/microsoft/winget-pkgs/pull/411452)). Aprovadas até aqui: [#419885 (v1.3.5)](https://github.com/microsoft/winget-pkgs/pull/419885) e [#419888 (v1.3.3)](https://github.com/microsoft/winget-pkgs/pull/419888) — `winget install`/`upgrade` entrega a v1.3.5 hoje.
 > ```powershell
 > winget install StudioCodeAI.LyaStudioCoder
 > ```
 
-Prefere o instalador direto? A versão mais recente está sempre em **[Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)**.
+Prefere o instalador direto? A versão mais recente está sempre em **[Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)**.
 
 | Instalador | Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`Lya Studio Coder_1.3.5_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.5/Lya.Studio.Coder_1.3.5_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~62 MB | `4F799F81…2BB1D91F17` |
-| [**`Lya Studio Coder_1.3.5_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.5/Lya.Studio.Coder_1.3.5_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~92 MB | `AF22ACFE…FF686922B5` |
-| [**`LyaStudioCoder_1.3.5.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.5/LyaStudioCoder_1.3.5.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~98 MB | `2B9118F3…D6A5318AA6` |
+| [**`Lya Studio Coder_1.3.6_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.6/Lya.Studio.Coder_1.3.6_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~62 MB | `045CDE79…174B276114` |
+| [**`Lya Studio Coder_1.3.6_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.6/Lya.Studio.Coder_1.3.6_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~93 MB | `41B44FBC…EE09CBEF62` |
+| [**`LyaStudioCoder_1.3.6.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.6/LyaStudioCoder_1.3.6.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~99 MB | `30E53699…81302A5150` |
 
 **Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
 
@@ -567,14 +584,14 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 <summary>🔐 SHA-256 completos para verificação</summary>
 
 ```
-Lya Studio Coder_1.3.5_x64-setup.exe
-4F799F81255F7E5D25D7C30411BC48E2E323914A4911C331338A052BB1D91F17
+Lya Studio Coder_1.3.6_x64-setup.exe
+045CDE791BC712BFFD431E7EB397C554DD84BA3B7E22B8D1C0891D174B276114
 
-Lya Studio Coder_1.3.5_x64_en-US.msi
-AF22ACFE1CC06AE8C347D676E1661AFFC61B7C9EB9843F6BA1BA37FF686922B5
+Lya Studio Coder_1.3.6_x64_en-US.msi
+41B44FBCB47513BF97D57EA3E7D8A9D46D42593703BDAB53042EF3EE09CBEF62
 
-LyaStudioCoder_1.3.5.0_x64.msix
-2B9118F3239866B3CEE89DCF285B13D21D392F0E270825F853F415D6A5318AA6
+LyaStudioCoder_1.3.6.0_x64.msix
+30E536996D5836792CAB1FEE32A4F76F3EE8D882F5499944653F8D81302A5150
 ```
 
 Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
@@ -623,8 +640,10 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ **v1.3.2 na Microsoft Store** — certificada e ao vivo (03/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE**
 - [x] ✅ **v1.3.3 — O chat que não estoura** — medidor de contexto ao vivo, turno que sempre termina entregando, checkpoint de consentimento antes de gastar, limite proporcional à janela real de cada modelo, voz de mão dupla, painel de navegação embutido e 26 dependências atualizadas
 - [x] ✅ **v1.3.3 na Microsoft Store** — certificada e ao vivo (14/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE** — a terceira seguida enviada pela própria IDE
-- [x] ✅ **v1.3.5 — Memória embarcada, voz que funciona e 9 idiomas** — memória de longo prazo dentro do app, banco vetorial sem Python, motor local que acompanha o Ollama em silêncio, opção grátis de voz consertada, módulos com integridade por hash e interface em 9 idiomas · **🚀 versão mais recente**
-- [x] ✅ **v1.3.5 na Microsoft Store** — **certificada em 18/08/2026** e em publicação, enviada pelo Lya Publisher de dentro da própria IDE, com o texto de apresentação da loja no mesmo envio
+- [x] ✅ **v1.3.5 — Memória embarcada, voz que funciona e 9 idiomas** — memória de longo prazo dentro do app, banco vetorial sem Python, motor local que acompanha o Ollama em silêncio, opção grátis de voz consertada, módulos com integridade por hash e interface em 9 idiomas
+- [x] ✅ **v1.3.5 na Microsoft Store** — **certificada em 18/08/2026**, enviada pelo Lya Publisher de dentro da própria IDE, com o texto de apresentação da loja no mesmo envio
+- [x] ✅ **v1.3.6 — Estabilidade na instalação de extensões** — corrige travamento na tela de extensões e generaliza o motor de instalação para qualquer extensão do Open VSX (base para a próxima loja) · **🚀 versão mais recente**
+- [x] ✅ **v1.3.6 na Microsoft Store** — **certificada e ao vivo (30/08/2026)**, enviada pelo Lya Publisher de dentro da própria IDE
 - [ ] 🔄 Navegação externa plena no painel embutido (hoje beta, só no app instalado)
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
@@ -678,7 +697,7 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 
 ➡️ **Pronto para consolidar seu fluxo de IA?**
 
-[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.3.3-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.3.6-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)
 
 *Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 
