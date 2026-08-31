@@ -565,7 +565,7 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 > 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
 > A **v1.3.6 foi enviada pelo Lya Publisher, de dentro da própria IDE**, em 30/08/2026: **certificada e publicada na Store**. O MSIX é **assinado pela própria Microsoft** na certificação, como em toda versão desde a 1.1.4 — nenhum certificado de terceiro no caminho.
 
-> 📦 **winget** — o pacote está no catálogo oficial ([PR #411452 aprovado](https://github.com/microsoft/winget-pkgs/pull/411452)). Aprovadas até aqui: [#419885 (v1.3.5)](https://github.com/microsoft/winget-pkgs/pull/419885) e [#419888 (v1.3.3)](https://github.com/microsoft/winget-pkgs/pull/419888) — `winget install`/`upgrade` entrega a v1.3.5 hoje.
+> 📦 **winget** — o pacote está no catálogo oficial ([PR #411452 aprovado](https://github.com/microsoft/winget-pkgs/pull/411452)). Aprovadas até aqui: [#419885 (v1.3.5)](https://github.com/microsoft/winget-pkgs/pull/419885) e [#419888 (v1.3.3)](https://github.com/microsoft/winget-pkgs/pull/419888) — `winget install`/`upgrade` entrega a v1.3.5 hoje. [#426828 (v1.3.6)](https://github.com/microsoft/winget-pkgs/pull/426828) está em análise.
 > ```powershell
 > winget install StudioCodeAI.LyaStudioCoder
 > ```
