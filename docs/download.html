@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download — Lya Studio Coder</title>
-    <meta name="description" content="Baixe o Lya Studio Coder para Windows x64: Microsoft Store (1 clique, sem SmartScreen), winget ou instalador direto (.exe / .msi / .msix).">
+    <meta name="description" content="Baixe o Lya Studio Coder para Windows x64 e macOS Apple Silicon: Microsoft Store (1 clique, sem SmartScreen), winget, Azure CDN ou instalador direto (.msix / .dmg / .tar.gz). v1.4.1.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,7 +83,7 @@
     </nav>
 
     <header class="page-hero">
-        <div class="page-eyebrow"><span class="dot primary"></span> Windows 10/11 · x64 · v1.3.6</div>
+        <div class="page-eyebrow"><span class="dot primary"></span> Windows 10/11 · macOS (Apple Silicon) · v1.4.1</div>
         <h1 class="page-title">Baixar o Lya Studio Coder</h1>
         <p class="page-lead">
             Gratuito. Instala por usuário, sem privilégio de administrador. O runtime vem embutido —
@@ -93,8 +93,11 @@
             <a class="btn-store" href="https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&amp;gl=BR" target="_blank" rel="noopener">
                 🏪 Instalar pela Microsoft Store
             </a>
-            <a class="btn-ghost" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6" target="_blank" rel="noopener">
-                ⬇ Download direto (.exe)
+            <a class="btn-ghost" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder-macOS-arm64-v1.4.1.dmg" target="_blank" rel="noopener">
+                🍎 Baixar para macOS (.dmg)
+            </a>
+            <a class="btn-ghost" href="https://black-rock-023c8940f.6.azurestaticapps.net" target="_blank" rel="noopener">
+                ☁️ Portal Azure CDN
             </a>
         </div>
     </header>
@@ -104,21 +107,30 @@
         <!-- ================= CAMINHOS DE INSTALAÇÃO ================= -->
         <section class="block">
             <div class="block-head">
-                <h2>Três caminhos, mesmo aplicativo</h2>
-                <p>Escolha pelo que te incomoda menos: um clique, uma linha de comando, ou o arquivo na mão.</p>
+                <h2>Multiplataforma: Escolha sua Plataforma</h2>
+                <p>Instalação em um clique na loja oficial, comando no terminal ou pacote direto para Windows e Mac.</p>
             </div>
 
             <div class="install-hero">
                 <div class="install-card featured">
-                    <span class="badge-best">Recomendado</span>
+                    <span class="badge-best">Recomendado Windows</span>
                     <h3>🏪 Microsoft Store</h3>
                     <p class="why">
                         Um clique, <strong>sem aviso do SmartScreen</strong> (o pacote é assinado pela própria
-                        Microsoft na certificação) e com <strong>atualização automática</strong>. A v1.3.6
-                        <strong>foi certificada e está publicada (30/08/2026)</strong> — enviada
-                        pelo Lya Publisher, de dentro da própria IDE, com o texto da loja no mesmo envio.
+                        Microsoft na certificação) e com <strong>atualização automática</strong>. A v1.4.1 está
+                        certificada e oficialmente publicada no Partner Center.
                     </p>
                     <a class="btn-store" href="https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&amp;gl=BR" target="_blank" rel="noopener">Abrir na Store</a>
+                </div>
+
+                <div class="install-card">
+                    <span class="badge-best" style="background: rgba(16, 185, 129, 0.2); border-color: rgba(16, 185, 129, 0.5); color: #6ee7b7;">Novo macOS</span>
+                    <h3>🍎 macOS (Apple Silicon)</h3>
+                    <p class="why">
+                        Instalador oficial <strong>.DMG</strong> para chips M1/M2/M3/M4, com atalho de arrastar para
+                        <code>/Applications</code> e arquivo portátil <code>.tar.gz</code>.
+                    </p>
+                    <a class="btn-ghost" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder-macOS-arm64-v1.4.1.dmg" target="_blank" rel="noopener">Baixar .DMG (70 MB)</a>
                 </div>
 
                 <div class="install-card">
@@ -132,13 +144,12 @@
                 </div>
 
                 <div class="install-card">
-                    <h3>📦 Instalador direto</h3>
+                    <h3>☁️ Portal Azure CDN</h3>
                     <p class="why">
-                        O arquivo na sua mão, com o SHA-256 publicado para conferência.
-                        <code>.exe</code> para uso pessoal, <code>.msi</code> para implantação corporativa,
-                        <code>.msix</code> para sideload com identidade.
+                        Portal de distribuição de alta velocidade hospedado no Azure Static Web Apps com SSL gerenciado
+                        e espelho oficial dos pacotes de instalação.
                     </p>
-                    <a class="btn-ghost" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6" target="_blank" rel="noopener">Ver a última release</a>
+                    <a class="btn-ghost" href="https://black-rock-023c8940f.6.azurestaticapps.net" target="_blank" rel="noopener">Acessar Portal Azure</a>
                 </div>
             </div>
         </section>
@@ -146,47 +157,46 @@
         <!-- ================= ARQUIVOS ================= -->
         <section class="block">
             <div class="block-head">
-                <h2>Arquivos da v1.3.6</h2>
-                <p>Todo instalador publicado tem o hash registrado. Baixou? Confira antes de rodar.</p>
+                <h2>Arquivos da Versão v1.4.1</h2>
+                <p>Todos os instaladores publicados têm seus hashes SHA-256 registrados para conferência de integridade.</p>
             </div>
 
             <div class="table-scroll">
                 <table>
                     <thead>
-                        <tr><th>Arquivo</th><th>Para quem</th><th>Tamanho</th></tr>
+                        <tr><th>Arquivo</th><th>Plataforma / Finalidade</th><th>Tamanho</th><th>SHA-256</th></tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.6/Lya.Studio.Coder_1.3.6_x64-setup.exe"><strong>Lya Studio Coder_1.3.6_x64-setup.exe</strong></a></td>
-                            <td>Maioria dos usuários — instala por usuário, sem admin</td>
-                            <td>~62 MB</td>
+                            <td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder_1.4.1.0_x64.msix"><strong>LyaStudioCoder_1.4.1.0_x64.msix</strong></a></td>
+                            <td>Windows 10/11 x64 (Microsoft Store & Sideload)</td>
+                            <td>99.45 MB</td>
+                            <td><code class="hash">D751402C...8BBF6A29</code></td>
                         </tr>
                         <tr>
-                            <td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.6/Lya.Studio.Coder_1.3.6_x64_en-US.msi"><strong>Lya Studio Coder_1.3.6_x64_en-US.msi</strong></a></td>
-                            <td>Ambientes corporativos — implantação via política</td>
-                            <td>~92 MB</td>
+                            <td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder-macOS-arm64-v1.4.1.dmg"><strong>LyaStudioCoder-macOS-arm64-v1.4.1.dmg</strong></a></td>
+                            <td>macOS Apple Silicon (Instalador DMG Drag-to-Applications)</td>
+                            <td>70.61 MB</td>
+                            <td><code class="hash">09D0522A...72A755</code></td>
                         </tr>
                         <tr>
-                            <td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.6/LyaStudioCoder_1.3.6.0_x64.msix"><strong>LyaStudioCoder_1.3.6.0_x64.msix</strong></a></td>
-                            <td>Microsoft Store / sideload com identidade Partner Center</td>
-                            <td>~99 MB</td>
+                            <td><a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder-macOS-arm64-v1.4.1.tar.gz"><strong>LyaStudioCoder-macOS-arm64-v1.4.1.tar.gz</strong></a></td>
+                            <td>macOS Apple Silicon (Portátil .app comprimido)</td>
+                            <td>53.17 MB</td>
+                            <td><code class="hash">D0499106...BE3565</code></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3 class="sub">Conferir o hash no PowerShell</h3>
-            <pre><code>Get-FileHash "Lya Studio Coder_1.3.6_x64-setup.exe" -Algorithm SHA256</code></pre>
-            <p class="body">
-                Compare o resultado com o SHA-256 publicado na
-                <a class="link" href="https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6" target="_blank" rel="noopener">página da release</a>.
-                Diferente? Não execute — baixe de novo pela fonte oficial.
-            </p>
+            <h3 class="sub">Conferir integridade do download</h3>
+            <p class="body">No Windows (PowerShell):</p>
+            <pre><code>Get-FileHash "LyaStudioCoder_1.4.1.0_x64.msix" -Algorithm SHA256</code></pre>
+            <p class="body">No macOS (Terminal):</p>
+            <pre><code>shasum -a 256 LyaStudioCoder-macOS-arm64-v1.4.1.dmg</code></pre>
 
-            <div class="note warn">
-                <strong>SmartScreen no .exe/.msi:</strong> pode aparecer o aviso de "editor desconhecido" —
-                clique em <strong>Mais informações → Executar assim mesmo</strong>. Quer instalação sem
-                nenhum aviso? Use a <a class="link" href="https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&amp;gl=BR" target="_blank" rel="noopener">Microsoft Store</a>.
+            <div class="note info" style="margin-top: 1rem; border-color: rgba(99, 102, 241, 0.4); background: rgba(99, 102, 241, 0.08); padding: 1rem; border-radius: 10px;">
+                <strong>Nota sobre macOS:</strong> Como este é um build comunitário independente (sem a assinatura paga Apple Developer de \$99/ano), o Gatekeeper do macOS pode exibir um aviso na primeira inicialização. Para abrir, clique com o botão direito sobre o app e selecione <strong>Abrir</strong>, ou execute no terminal: <code>xattr -d com.apple.quarantine /Applications/LyaStudioCoder.app</code>.
             </div>
         </section>
 

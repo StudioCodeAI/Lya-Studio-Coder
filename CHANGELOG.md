@@ -6,27 +6,74 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
-## [1.3.6] — Estabilidade na instalação de extensões · 2026-08-31
+## [1.4.1] — Sincronização em Nuvem Azure Cosmos DB Free Tier & Suporte Multiplataforma · 2026-09-06
 
-> 🧪 **Versão de pré-lançamento**, certificada e ao vivo na Microsoft Store.
+> 🚀 **Release de Produção Oficial.** Certificada e publicada na Microsoft Store (App ID `9NRW0DWTW9Z8`), no portal oficial Azure Static Web Apps CDN e no catálogo oficial.
 
-### 🧩 Extensões
+### ☁️ Sincronização em Nuvem Soberana (Azure Cosmos DB Free Tier)
+- **Sincronização ponta a ponta:** Preferências do usuário, temas, idioma e estado do workspace com o Azure Cosmos DB (`lya_cloud_db` / `user_profiles`).
+- **Política $0 Spend:** Operação 100% dentro do Free Tier vitalício do Azure (1.000 RU/s + 25 GB sem faturamento).
+- **REST Nativo:** Assinatura canônica HMAC-SHA256 sem dependência de SDKs externos pesados.
+- **UI Integrada:** Botões *"Sincronizar com a Nuvem Azure"* e *"Restaurar da Nuvem"* nas Configurações da IDE e indicador "Azure $0" na StatusBar.
 
-- **Corrigido um travamento na tela de extensões.** O cartão de status da Claude Code podia
-  quebrar a interface quando o acompanhamento da instalação ficava sem um trabalho ativo para
-  mostrar.
-- **Base pronta para a próxima loja de extensões.** O motor de instalação por trás da Claude
-  Code passou a aceitar qualquer extensão publicada no Open VSX, não só ela. A tela para você
-  escolher livremente ainda não existe — é o próximo passo — mas o alicerce já está no ar e
-  testado.
+### 🌐 Portal Oficial de Distribuição Multiplataforma (Azure Static Web Apps)
+- **CDN Global:** Landing page e espelho de distribuição com SSL gerenciado gratuito em [black-rock-023c8940f.6.azurestaticapps.net](https://black-rock-023c8940f.6.azurestaticapps.net).
+- **Acesso Direto:** Deep link para a Microsoft Store (`ms-windows-store://pdp/?productid=9NRW0DWTW9Z8`), comando WinGet de 1 clique e pacotes para macOS e Windows.
 
-### 🧪 Qualidade
+### 🍎 Suporte Multiplataforma para macOS a Custo Zero
+- **Esteira CI/CD:** GitHub Actions com runners `macos-14` (Apple Silicon M2) gerando binários universais sem custo.
+- **Instaladores:** Pacote oficial **`.dmg`** (Drag-to-Applications) e arquivo portátil **`.tar.gz`** disponíveis no Releases.
 
-**59 testes novos** cobrem a instalação de extensões ponta a ponta, incluindo um caso real de
-corrida encontrado e corrigido nesta rodada: aguardar o fim de uma instalação genérica não podia
-se confundir com o status da Claude Code. Estado do portão nesta versão: **lint 0 erros (62
-avisos pré-existentes, nenhum novo) · 511/511 testes de componente · 2428 chaves i18n em
-paridade nos 9 idiomas · 370 rotas sem duplicidade**.
+### ⚡ Conectividade de Provedores & Antigravity CLI (AGY)
+- **Provedores Globais & Locais:** Claude, Gemini, GPT, DeepSeek, Xiaomi MiMo, Ollama e MoE local.
+- **Antigravity CLI (`agy`):** Integração nativa para orquestração de subagentes e tarefas em lote via PTY e MCP bidirecional.
+
+---
+
+## [1.4.0] — Evolução em 4 Horizontes: Orquestração Híbrida, Streaming e CURE SCAR · 2026-09-04
+
+### 🌟 Orquestração Híbrida, Heavy Grunt e Streaming em Tempo Real (Plano 029)
+
+- **Star Delta Streaming em Tempo Real (Plano 010 - A2):**
+  - Streaming incremental de tokens decodificados em tempo real para provedores OpenAI-compatíveis (Xiaomi MiMo, Groq, OpenRouter).
+  - Emitter com throttling canônico de 80ms / 200 caracteres, estimativa parcial de tokens e visualização multi-star paralela com replay no `MissionTracker`.
+- **Heavy Grunt Slot com Xiaomi MiMo V2.5 Pro:**
+  - Orquestração em lote e subordinado de volume no COSMOS (`mimo_batch_tests`, `mimo_batch_boilerplate`, `mimo_delegate`) com fallback automático para tarefas repetitivas.
+- **Conector do Antigravity CLI no Engine-Adapter:**
+  - Roteamento mecânico de compilação, pacotes e tarefas de terminal para o `agy` local com custo zero de tokens nobres.
+- **Diagnósticos CURE SCAR Inline no Editor Monaco:**
+  - Detecção ativa e em tempo real de anti-receitas e receitas comprovadas salvas no ledger do Core5 diretamente no código, com modal de mitigação e salto para linha.
+  - Integração com a aba *Problemas* do Terminal integrado para visão unificada de guardrails.
+- **Painel Visual de Impacto AST (Grafo do Código):**
+  - Inspeção visual de `kg_impact` e `kg_neighbors` direto na IDE, permitindo auditar a árvore de impacto e símbolos dependentes antes de cometer alterações.
+- **Unificação do Supervisor na FSM do COSMOS & AbortController:**
+  - Eliminação de esteiras concorrentes, orçamentos compartilhados de tokens e blindagem de subprocessos com timeout estrito e cancelamento seguro.
+- **Resiliência de Memória & Core5/Core6 In-Process:**
+  - Expurgos periódicos de overflow, persistência atômica de resumos e interceptador de saída (`SIGINT`/`SIGTERM`) para flush completo da fila write-behind.
+
+---
+
+## [1.3.6] — Extension Host: a Claude Code chega e se instala sozinha · 2026-08-30
+
+> 🧪 **Versão de pré-lançamento**, enviada à Microsoft Store pelo próprio Lya Publisher em
+> 30/08/2026 (submission `1152921505701772321`) e **em certificação**.
+
+### 🧩 Extension Host — a Claude Code chega e se instala sozinha
+
+- **A extensão que dá nome ao projeto roda de verdade dentro da IDE.** Um Extension Host Node
+  dedicado sobe como processo dedicado; a IDE busca a Claude Code for VS Code, confere a
+  integridade (hash publicado batendo com o gravado, bytes baixados batendo com o publicado) e
+  instala sozinha — sem passo manual. Barra de progresso e erro real quando o pacote falha a
+  verificação.
+- **Instalar e remover pela IDE**, com o mesmo cuidado nas duas pontas: a extensão só é dada
+  como instalada quando aparece no disco (nunca só pelo código de saída do instalador), e a
+  remoção não deixa rastro órfão que quebre a instalação seguinte.
+- **A rota de instalação deixou de ser exclusiva da Claude Code** — aceita qualquer extensão
+  publicada no Open VSX, abrindo caminho para o resto do catálogo chegar pela mesma rota
+  verificada (a interface para escolher livremente ainda não existe; por enquanto só a
+  extensão fixa usa a rota).
+- Barra de status e integração com controle de versão (SCM) do editor passaram a funcionar
+  dentro do runtime de extensões, sem os avisos de "serviço ausente" que apareciam no console.
 
 ---
 

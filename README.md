@@ -16,9 +16,11 @@
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.3.6-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.4.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
-[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
+[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar_v1.4.1-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
+&nbsp;
+[![Portal Azure SWA CDN](https://img.shields.io/badge/☁️_AZURE_CDN-black--rock-008AD7?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://black-rock-023c8940f.6.azurestaticapps.net)
 &nbsp;
 [![Site oficial](https://img.shields.io/badge/🌐_SITE_OFICIAL-studiocodeai.github.io-f59e0b?style=for-the-badge&logoColor=white)](https://studiocodeai.github.io/Lya-Studio-Coder/index.html)
 
@@ -35,21 +37,22 @@
 ```bash
 winget install StudioCodeAI.LyaStudioCoder
 ```
-*(Ou instale via [Microsoft Store](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR) / [Download Direto](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6))*
+*(Ou instale via [Microsoft Store](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR) / [Portal Azure CDN (Windows & Mac)](https://black-rock-023c8940f.6.azurestaticapps.net) / [Download Direto](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest))*
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.3.6-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)
-[![Plataforma](https://img.shields.io/badge/Windows-10%20%2F%2011_x64-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)
+[![Versão](https://img.shields.io/badge/versão-1.4.1-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Plataformas](https://img.shields.io/badge/Plataformas-Windows%20%7C%20macOS-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Azure Cosmos DB](https://img.shields.io/badge/Cosmos_DB-Free_Tier_$0-0089D6?style=flat-square&logo=microsoftazure)](https://github.com/StudioCodeAI/Lya-Studio-Coder)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
-[![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)
+[![Gratuito](https://img.shields.io/badge/Gratuito-para_avaliar-22c55e?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Licença](https://img.shields.io/badge/Licença-Proprietária-orange?style=flat-square)](LICENSE)
 [![Issues](https://img.shields.io/github/issues/StudioCodeAI/Lya-Studio-Coder?style=flat-square&color=ff0055)](https://github.com/StudioCodeAI/Lya-Studio-Coder/issues)
 [![Discussions](https://img.shields.io/github/discussions/StudioCodeAI/Lya-Studio-Coder?style=flat-square&color=7c3aed)](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions)
 
 <br/>
 
-[**⬇️ Download**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6) · [**✨ Funcionalidades**](#-funcionalidades) · [**🚀 Quick Start**](docs/QUICK_START.md) · [**📊 Estabilidade**](#-mapa-de-estabilidade) · [**💬 Comunidade**](COMMUNITY.md) · [**❓ FAQ**](COMMUNITY.md#faq-da-comunidade)
+[**⬇️ Download**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest) · [**✨ Funcionalidades**](#-funcionalidades) · [**📖 Manual do Usuário**](docs/MANUAL_DO_USUARIO.md) · [**🚀 Quick Start**](docs/QUICK_START.md) · [**📊 Estabilidade**](#-mapa-de-estabilidade) · [**💬 Comunidade**](COMMUNITY.md) · [**❓ FAQ**](COMMUNITY.md#faq-da-comunidade)
 
 </div>
 
@@ -78,11 +81,12 @@ Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a respo
 
 ---
 
-### 🧭 OmniRoute
+### 🚀 Provedores Globais, Inferência Local & CLI do Antigravity (AGY)
 
-> **[OmniRoute](https://omniroute.online/) é um roteador de modelos local que a Lya adotou como provedor nativo** — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades no [site oficial](https://omniroute.online/) ou no [repositório](https://github.com/diegosouzapw/OmniRoute): um gateway OpenAI-compatível com um catálogo enorme de modelos atrás de um único endpoint local. A Lya cuida do resto — instalar, ligar/desligar direto da aba Integrações e descobrir sozinha os modelos reais que ele expõe. Integrar via API local foi o caminho certo em vez de fork.
->
-> Obrigado à equipe do OmniRoute por construir uma ferramenta tão sólida e aberta.
+> **Cockpit Universal de Inteligência Artificial:** O Lya Studio Coder conecta-se nativamente a todos os grandes modelos de IA do mercado:
+> - **Nuvem & Servidores via API:** Claude (Anthropic), Gemini (Google), GPT-4o/o3 (OpenAI), DeepSeek, Groq e Xiaomi MiMo V2.5.
+> - **Motores Locais Soberanos:** Ollama e Llama.cpp, com suporte direto a modelos MoE locais (como LyaMoE 35b, Qwen 2.5 Coder) e alocação dinâmica de tensores GPU+CPU.
+> - **⚡ Integração de Primeira Classe com Antigravity (`agy`):** A Lya é o cockpit definitivo para operar com o **Antigravity CLI** da Google DeepMind. Através do terminal PTY nativo de baixa latência e MCP bidirecional, você pode delegar tarefas de scaffolding, subagentes autônomos, testes e geração em lote aproveitando o ecossistema Antigravity com modelos Gemini a custo zero.
 
 ---
 
@@ -97,10 +101,10 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🧩 Módulo | O que entrega |
 |---|---|
 | 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT, Ollama (local + cloud) e **Antigravity** na mesma sala. Streaming cancelável, markdown, anexos de imagem/áudio/PDF, **voz de mão dupla** (ditado + leitura em voz alta), function-calling real e histórico completo. |
-| 🧭 **OmniRoute — Provedor Local Nativo** | O [OmniRoute](https://omniroute.online/) entra como provedor de 1ª classe, lado a lado com Ollama e Llama.cpp: **instalou, acabou** — o serviço sobe junto com a IDE em todo boot (desligável num clique) e a conexão é feita sozinha, sem chave para colar. E o seletor mostra **só os modelos que funcionam**: catálogo cruzado com as contas realmente ativas, sem apelidos repetidos e sem os modelos que já falharam de verdade. |
+| 🚀 **Provedores Globais, Locais & CLI (`agy`)** | Conexão com os principais provedores via API (Claude, GPT, Gemini, DeepSeek, MiMo), inferência 100% local com **Ollama / Llama.cpp / MoE**, e orquestração de **CLIs locais** com destaque para o **Antigravity CLI (`agy`)** e Claude Code integrados via PTY nativo e MCP bidirecional. |
 | 🎛️ **COSMOS — Orquestração** | Até 4 agentes de IA em paralelo (API, CLI, local). Cada slot com motor independente, status ao vivo, contexto compartilhado e **tools MCP dinâmico**. |
-| 🩹 **CURE — Auto-Correção** | A IDE conserta o próprio build sozinha: loop build→mistake→correção→rebuild com disjuntor anti-degeneração, **CURE SCAR** (memória de cicatrizes com dinâmica de confiança), **Auto Scar Fix** (preview preventivo no composer, custo zero) e **roteamento Planner→Executor** por classificação de ferida. |
-| 🧠 **Core5 — Memória 768d** | Motor de memória embutido (LanceDB, **nomic-embed-text-v1.5 768d**, zero dependência de Python/Docker). Cascata de embedding dimensão-safe (Gemini online 768d → nomic local 768d). Captura contínua write-behind com anti-loop de feedback. Continuidade MCP com Core5 externo (Claude Code, Claude Desktop). |
+| 🩹 **CURE — Auto-Mitigação & Diagnósticos** | Sistema de auto-cura proativo e reativo: detecção em tempo real de falhas no chat e no Monaco Editor (diagnósticos e tooltips inline), disjuntor adaptativo (10 estados, half-open automático), **CURE SCAR** (cicatrizes indexadas no Core5) e injeção contextual de mitigação sem invalidar o cache de prompt. |
+| 🧠 **Core5 V2 — Memória Nativa 768d** | Motor hiper-dimensional nativo em Rust (`src-tauri/core5`, **LanceDB embarcado**, espaço vetorial canônico **768d bge-base-en-v1.5**, zero dependência externa). 8 tools MCP in-process (`memory_boot`, `memory_search`, `cure_report`, etc.), compartilhamento inteligente da base local e autenticação por token criptográfico de 128 bits. |
 | 📝 **Editor Monaco** | O mesmo motor do VS Code. IntelliSense, F12, multi-cursor, diff de Git, **Ctrl+K** edita código com IA inline. **Grammars TextMate** (vscode-textmate + oniguruma WASM, offline) + **snippets** ativáveis por pacote. |
 | 🔍 **Explorer + Find in Files** | Árvore VS Code-like, busca por nome **e por conteúdo** (regex, case-sensitive), preview. **Temas de ícone** (Studio, Emoji, Mono). |
 | 💻 **Terminal Integrado** | PTY nativo (node-pty) real. Rode npm, python, git, qualquer coisa — sem sair da IDE. |
@@ -109,8 +113,9 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🔗 **n8n Live + Pipeline RAG** | Servidor n8n gerenciado + editor de pipeline RAG que recupera memória, dispara LLM com contexto e publica resultado. |
 | 🔒 **LSCode Keychain** | Gerenciador centralizado de chaves API (Carteira cifrada AES-256-GCM). Fonte única da verdade para todos os provedores — seus segredos ficam só na sua máquina. |
 | 🛒 **Loja de Skills + Linguagens** | Importe skills de repositórios Git (indexação real na memória vetorial). Grammars, snippets, **8+ temas de cor** (Dracula, Tokyo Night, Atom One Dark…) e icon themes — tudo instalável direto na Store. |
-| 🖥️ **Desktop Self-Contained** | `.exe` e `.msi` que embute o runtime. **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
-| 🚀 **Lya Publisher** | Dashboard integrado para publicar na **Microsoft Store** sem sair da IDE: build Tauri + MSIX + upload + Partner Center. **Provado no mundo real** — as cinco últimas versões na Store (v1.3.1, v1.3.2, v1.3.3, v1.3.5 e v1.3.6) foram enviadas por ele, de dentro da própria IDE. Desde a 1.3.5 ele publica também **o texto de apresentação da loja** junto com o pacote, num envio só. 📘 [Guia de configuração](docs/LYA-PUBLISHER-SETUP.md) |
+| 🖥️ **Desktop Multiplataforma** | `.exe` e `.msix` para Windows e `.dmg` / `.tar.gz` para macOS (Apple Silicon & Intel). **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
+| ☁️ **Nuvem Azure Cosmos DB ($0)** | Sincronização soberana de configurações, perfis, temas e estado do workspace com o **Azure Cosmos DB Free Tier** (1.000 RU/s + 25 GB vitalício sem faturamento). REST nativo com assinatura HMAC-SHA256 sem dependências pesadas e higienização estrita de segredos. |
+| 🚀 **Lya Publisher & Azure Ops** | Dashboard integrado para publicar na **Microsoft Store** e distribuir na CDN do **Azure Static Web Apps** sem sair da IDE: build MSIX + upload + Partner Center + controle de custo zero ($0.00 spend guard). **Versão v1.4.1 oficialmente publicada na loja.** 📘 [Guia da esteira](docs/ESTEIRA_AUTONOMA_PUBLISHER_AZURE.md) |
 | 🌍 **Interface em 9 idiomas** | Português, Inglês, Espanhol, Alemão, Francês, Japonês, Coreano, Russo e Chinês nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **2220 chaves i18n em paridade nos 9 idiomas** (PT, EN, ES, DE, FR, JA, KO, RU, ZH), conferidas por auditoria automática a cada build. |
 | 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (Claude Code/Desktop/Cursor conectam e usam missão/SBB/CURE como tools). |
 | ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
@@ -120,7 +125,29 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🔐 **Módulos com integridade verificada** | Cada módulo baixado sob demanda confere o **hash publicado** e, se não bater, **apaga o arquivo e falha** em vez de instalar algo diferente do esperado. Download interrompido retoma de onde parou; origem sem hash publicado é marcada como **não verificada** — a IDE não finge que conferiu. |
 | 🌐 **Painel de navegação embutido** | Preview do seu app e documentação sem sair da IDE, com abas, histórico e **F12 para inspecionar**. O COSMOS também navega por ele durante uma missão. **O limite é declarado, não descoberto:** fora do app instalado, o modo compatibilidade **entrega** a página mas não **executa** o JavaScript dela — site moderno chega vazio, e a IDE diz isso na tela com a saída para o navegador do sistema ao lado. Navegação externa plena (webview nativo) só no app instalado, e ainda em **beta**. |
 
-➡️ **Detalhe completo:** [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md)
+➡️ **Detalhe completo:** [docs/FUNCIONALIDADES.md](docs/FUNCIONALIDADES.md) · **Manual Prático:** [docs/MANUAL_DO_USUARIO.md](docs/MANUAL_DO_USUARIO.md)
+
+---
+
+## 📸 Galeria da IDE em Execução
+
+Conheça os principais módulos da Lya Studio Coder em operação real:
+
+| 💻 Cockpit & Editor com IA | 🎛️ Orquestração Multi-Agente (COSMOS) |
+| :---: | :---: |
+| <img src="assets/screenshots/editor.png" alt="Editor Monaco com IA" width="400" /><br/>*Monaco Editor com diagnósticos inline do CURE e edição com IA* | <img src="assets/screenshots/cosmos.png" alt="COSMOS Multi-Agente" width="400" /><br/>*Orquestração paralela de até 4 agentes com ferramentas MCP* |
+
+| 🧠 Memória Core5 768d & CURE | 🧭 Hub de Provedores & Modelos Locais |
+| :---: | :---: |
+| <img src="assets/screenshots/memoria.png" alt="MemoryStudio & CURE" width="400" /><br/>*MemoryStudio com Core5 768d e telemetria de cicatrizes CURE* | <img src="assets/screenshots/provedores.png" alt="Hub de Provedores" width="400" /><br/>*Gerenciamento de Claude, Gemini, GPT, Ollama, Motores Locais e Antigravity (AGY)* |
+
+| 💻 Terminal Integrado PTY | 🛒 Loja de Skills, Temas & Grammars |
+| :---: | :---: |
+| <img src="assets/screenshots/terminal.png" alt="Terminal Integrado" width="400" /><br/>*Terminal PTY nativo para compilação, testes e git* | <img src="assets/screenshots/skills.png" alt="Loja de Skills" width="400" /><br/>*Loja de gramáticas TextMate, temas de cor e automações* |
+
+| 🚀 Lya Publisher (Microsoft Store) | 🤖 Orquestração de Agentes e Tarefas |
+| :---: | :---: |
+| <img src="assets/screenshots/publisher.png" alt="Lya Publisher" width="400" /><br/>*Publicação direta no Partner Center sem sair da IDE* | <img src="assets/screenshots/orquestracao.png" alt="Orquestração" width="400" /><br/>*Cockpit tático para missões autônomas e subagentes* |
 
 ---
 
@@ -164,22 +191,17 @@ Sem C5CP:  Star 2 (kimi-k3) trava → COSMOS fica pendurado → timeout → falh
 Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS recebe resposta normal
 ```
 
----
+## 🚀 v1.4.0 — Core5 V2 Nativo (768d), CURE Auto-Mitigação e Chat Sanitizado
 
-## 🧪 v1.3.6 — Estabilidade na instalação de extensões *(pré-lançamento)*
+> **A evolução da inteligência local com governança.** A versão 1.4.0 consolida o novo motor nativo de memória de longo prazo Core5 V2 em Rust, traz o sistema CURE de auto-mitigação com diagnósticos inline no Monaco e no Chat, e introduz blindagem estrita de privacidade em toda a distribuição de produção.
 
-> Certificada e ao vivo na Microsoft Store. Build focada em base e correção, não em recursos
-> grandes — a próxima loja de extensões continua em construção.
+- 🧠 **Core5 V2 Embarcado em Rust (768d):** O subsistema de memória agora roda como crate nativo de alta performance dentro do binário (`src-tauri/core5`), eliminando dependência de subprocessos externos. Espaço vetorial canônico unificado em 768 dimensões com LanceDB embarcado e 8 tools MCP nativas in-process (`memory_boot`, `memory_search`, `cure_report`, `memory_save`, etc.).
+- 🩹 **Projeto CURE com Diagnósticos Inline:** O motor CURE atua de forma proativa e reativa. Ao detectar falhas de build ou execução, localiza a cicatriz curada correspondente e exibe diagnósticos e tooltips inline no Monaco Editor e recomendações técnicas no Chat — sem invalidar o cache de prefixo dos provedores de IA.
+- 🛡️ **Privacidade Absoluta e Chat Sanitizado:** A versão de distribuição para a Microsoft Store e Winget passa por auditoria estrita de bundle (`scripts/audit-bundle.mjs`). Zero resíduos de conversas prévias, zero tokens confidenciais e tela de boas-vindas interativa (*Welcome Empty State*) para novas sessões.
+- 📊 **MemoryStudio Integrado:** Interface visual para gerenciar coleções vetoriais, inspecionar cicatrizes ativas do CURE (`CureScarCard`), métricas de feridas curadas e telemetria do disjuntor de segurança em tempo real.
+- 📖 **Novo Manual Oficial do Usuário:** Documentação aprofundada de arquitetura, fluxos operacionais e guias passo a passo em [`docs/MANUAL_DO_USUARIO.md`](docs/MANUAL_DO_USUARIO.md).
 
-- **Corrigido um travamento na tela de extensões**, quando o acompanhamento de uma instalação
-  ficava sem um trabalho ativo para mostrar.
-- **Base pronta para a próxima loja de extensões** — o motor de instalação passou a aceitar
-  qualquer extensão do Open VSX, não só a Claude Code. A tela para escolher livremente ainda não
-  existe.
-- **59 testes novos** cobrindo a instalação de extensões ponta a ponta, incluindo uma corrida
-  real encontrada e corrigida nesta rodada.
-
-📋 [Changelog completo da 1.3.6](CHANGELOG.md#136--estabilidade-na-instalação-de-extensões--2026-08-31)
+📋 [Changelog completo da 1.4.0](CHANGELOG.md#140--core5-v2-768d-cure-auto-mitigação-e-chat-sanitizado--2026-09-05)
 
 ---
 
@@ -404,7 +426,7 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 ### 🔜 Em breve — próximo bloco
 
 - **Mais cobertura de extensões** — ampliar a faixa de extensões JS suportadas pelo Extension Host (linters, language servers) mantendo a transparência do badge honesto.
-- **COSMOS operando o OmniRoute via MCP** — trocar combo, checar cota/custo e trocar provider ativo autonomamente pelo chat.
+- **COSMOS operando com Antigravity CLI (AGY) via MCP** — orquestração de subagentes autônomos, execução de tarefas mecânicas e testes em lote sem custo de tokens da IDE.
 - **Navegação externa de verdade no painel embutido** — hoje o preview local é sólido e sites
   externos são beta (funcionam no app instalado, via webview nativo). O objetivo é abrir qualquer
   dashboard, com sessão e login, sem sair da Lya.
@@ -506,8 +528,8 @@ Uma ordem sua vira quatro frentes de trabalho em paralelo. O COSMOS planeja, dis
 | **🧠 Inteligência COSMOS** — chat com contexto total e liderança de IAs. | **🚀 Lya Publisher** — publique na Microsoft Store direto da IDE. |
 | ![n8n](assets/screenshots/n8n.png?v=2) | ![Skills](assets/screenshots/skills.png?v=2) |
 | **🔗 n8n Live** — automação e pipelines RAG gerenciados pela IDE. | **🛒 Loja de Skills** — importe skills de qualquer repositório Git. |
-| ![OmniRoute](assets/screenshots/omnirouter-infra.png?v=2) | |
-| **🧭 OmniRoute** — instala, liga e desliga direto da aba Integrações; a IDE descobre os modelos sozinha. | |
+| ![Terminal PTY & Antigravity](assets/screenshots/terminal.png?v=2) | |
+| **⚡ Antigravity (`agy`) & PTY** — terminal de alta performance integrado com agentes e CLIs locais. | |
 
 ---
 
@@ -532,7 +554,7 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 | **Segurança & Contas (Carteira cifrada)** | `92%` | 🟢 Estável — AES-256-GCM em repouso; credencial recusada nunca volta verde |
 | **Embeddings 768d (Cascata)** | `92%` | 🟢 Estável — Gemini online → nomic local → guarda + sem vetor-zero morto |
 | Zoom Global | `92%` | 🟢 Estável |
-| **Lya Publisher (Microsoft Store)** | `92%` | 🟢 Estável — **publicou as v1.3.1, v1.3.2, v1.3.3, v1.3.5 e v1.3.6 na Store de ponta a ponta**, de dentro da própria IDE — desde a 1.3.5 o texto da loja vai no mesmo envio |
+| **Lya Publisher (Microsoft Store)** | `92%` | 🟢 Estável — **publicou as v1.3.1, v1.3.2, v1.3.3 e v1.3.5 na Store de ponta a ponta**, de dentro da própria IDE — desde a 1.3.5 o texto da loja vai no mesmo envio |
 | **MissionTracker** | `92%` | 🟢 Estável — Pausar/Parar com confirmação do backend, não disparo-e-esquece |
 | App Desktop (.exe / .msi / .msix) | `91%` | 🟢 Estável — carimbo de versão com guarda de drift |
 | **Ferramentas & Sandbox do agente** | `90%` | 🟢 Estável — default-deny, exit code real, saída nunca cortada em silêncio |
@@ -559,42 +581,44 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 
 ## ⬇️ Download
 
-> 🧪 **Versão mais recente: [v1.3.6 — Estabilidade na instalação de extensões](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)** ([o que muda](#-v136--estabilidade-na-instalação-de-extensões-pré-lançamento)) — **pré-lançamento**: correção de travamento na tela de extensões e base testada para a próxima loja de extensões.
-> Prefere terreno já rodado? A [v1.3.2](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.2) continua disponível.
+> 🚀 **Versão de Produção Oficial: [v1.4.1 — Sincronização em Nuvem Azure Cosmos DB Free Tier & Suporte Multiplataforma](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)** — traz a nova camada de sincronização de perfis e preferências via Azure Cosmos DB Free Tier ($0 spend) e o instalador oficial `.dmg` e portátil `.tar.gz` para macOS Apple Silicon.
 
-> 🏪 **Também na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A **v1.3.6 foi enviada pelo Lya Publisher, de dentro da própria IDE**, em 30/08/2026: **certificada e publicada na Store**. O MSIX é **assinado pela própria Microsoft** na certificação, como em toda versão desde a 1.1.4 — nenhum certificado de terceiro no caminho.
+> 🏪 **Publicada na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
+> A **v1.4.1 está oficialmente certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published). O MSIX é **assinado digitalmente pela própria Microsoft** na certificação — segurança e integridade nativas.
 
-> 📦 **winget** — o pacote está no catálogo oficial ([PR #411452 aprovado](https://github.com/microsoft/winget-pkgs/pull/411452)). Aprovadas até aqui: [#419885 (v1.3.5)](https://github.com/microsoft/winget-pkgs/pull/419885) e [#419888 (v1.3.3)](https://github.com/microsoft/winget-pkgs/pull/419888) — `winget install`/`upgrade` entrega a v1.3.5 hoje. [#426828 (v1.3.6)](https://github.com/microsoft/winget-pkgs/pull/426828) está em análise.
+> ☁️ **Portal Azure CDN (Alta Velocidade)** — distribuidor global com SSL gerenciado gratuito: **[black-rock-023c8940f.6.azurestaticapps.net](https://black-rock-023c8940f.6.azurestaticapps.net)**.
+
+> 📦 **winget** — pacote disponível no catálogo oficial do Windows Package Manager:
 > ```powershell
 > winget install StudioCodeAI.LyaStudioCoder
 > ```
 
-Prefere o instalador direto? A versão mais recente está sempre em **[Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)**.
+Prefere o instalador direto? A versão mais recente está sempre em **[Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)**.
 
-| Instalador | Para quem | Tamanho | SHA-256 |
+| Instalador | Plataforma / Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`Lya Studio Coder_1.3.6_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.6/Lya.Studio.Coder_1.3.6_x64-setup.exe) | Maioria dos usuários — instala por usuário, sem admin | ~62 MB | `045CDE79…174B276114` |
-| [**`Lya Studio Coder_1.3.6_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.6/Lya.Studio.Coder_1.3.6_x64_en-US.msi) | Ambientes corporativos / implantação via política | ~93 MB | `41B44FBC…EE09CBEF62` |
-| [**`LyaStudioCoder_1.3.6.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.3.6/LyaStudioCoder_1.3.6.0_x64.msix) | Microsoft Store / sideload com identidade Partner Center | ~99 MB | `30E53699…81302A5150` |
+| [**`LyaStudioCoder_1.4.1.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder_1.4.1.0_x64.msix) | Windows 10/11 x64 (Microsoft Store & Sideload) | 99.45 MB | `D751402C…8BBF6A29` |
+| [**`LyaStudioCoder-macOS-arm64-v1.4.1.dmg`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder-macOS-arm64-v1.4.1.dmg) | macOS Apple Silicon (Instalador DMG Drag-to-Applications) | 70.61 MB | `09D0522A…72A755` |
+| [**`LyaStudioCoder-macOS-arm64-v1.4.1.tar.gz`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder-macOS-arm64-v1.4.1.tar.gz) | macOS Apple Silicon (Portátil .app comprimido) | 53.17 MB | `D0499106…BE3565` |
 
-**Requisitos:** Windows 10/11 x64 · Runtime embutido · Sem dependências externas
+**Requisitos:** Windows 10/11 x64 · macOS Apple Silicon (M1/M2/M3/M4) · Runtime embutido · Sem dependências externas
 
 <details>
 <summary>🔐 SHA-256 completos para verificação</summary>
 
 ```
-Lya Studio Coder_1.3.6_x64-setup.exe
-045CDE791BC712BFFD431E7EB397C554DD84BA3B7E22B8D1C0891D174B276114
+LyaStudioCoder_1.4.1.0_x64.msix
+D751402C8605AF57EEFC2210A619DE9A19823AEBFF3FB6AC4E6CB6098BBF6A29
 
-Lya Studio Coder_1.3.6_x64_en-US.msi
-41B44FBCB47513BF97D57EA3E7D8A9D46D42593703BDAB53042EF3EE09CBEF62
+LyaStudioCoder-macOS-arm64-v1.4.1.dmg
+09D0522A9356E5DD5181031043503FAA89B53A80D7802C6B725AE9ACA872A755
 
-LyaStudioCoder_1.3.6.0_x64.msix
-30E536996D5836792CAB1FEE32A4F76F3EE8D882F5499944653F8D81302A5150
+LyaStudioCoder-macOS-arm64-v1.4.1.tar.gz
+D0499106096E82BAE4AD0424482E6282F3DCCBF1B56A8BA2B5E140A454BE3565
 ```
 
-Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
+Verificar no Windows (PowerShell): `Get-FileHash "LyaStudioCoder_1.4.1.0_x64.msix" -Algorithm SHA256`
+Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.4.1.dmg`
 </details>
 
 > ⚠️ **SmartScreen:** o `.exe`/`.msi` pode exibir aviso de "editor desconhecido" — clique em **Mais informações → Executar assim mesmo**. Quer instalação sem nenhum aviso? Use a **[Microsoft Store](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)** — o pacote MSIX é assinado pela própria Microsoft na certificação. A autoria e integridade de cada instalador ficam registradas com o **SHA-256** para conferência.
@@ -635,29 +659,22 @@ Verificar no PowerShell: `Get-FileHash "arquivo" -Algorithm SHA256`
 - [x] ✅ **v1.3.0 na Microsoft Store** — certificada e ao vivo (MSIX assinado pela Microsoft)
 - [x] ✅ **v1.3.1 — Varredura Total** — 20 módulos auditados, 69 defeitos corrigidos, MCP 2025-11-25, contexto local honesto no Ollama e teto de gasto por missão
 - [x] ✅ **v1.3.1 na Microsoft Store** — certificada e ao vivo, **publicada pelo Lya Publisher de dentro da própria IDE**
-- [x] ✅ **OmniRoute** integrado como provedor local nativo (instalar/iniciar/parar pela aba Integrações, descoberta automática de modelos)
-- [x] ✅ **v1.3.2 — Rede de segurança do agente** — rollback de edições, trilha de auditoria persistente, reranking de memória medido (hit@1 1/12→11/12) e AgentSkills · **🚀 versão mais recente**
+- [x] ✅ **Antigravity CLI (AGY) & Provedores de Ponta** — integração de primeira classe com CLI do Google DeepMind, Claude Code, Xiaomi MiMo V2.5 e modelos locais
+- [x] ✅ **v1.3.2 — Rede de segurança do agente** — rollback de edições, trilha de auditoria persistente, reranking de memória medido (hit@1 1/12→11/12) e AgentSkills
 - [x] ✅ **v1.3.2 na Microsoft Store** — certificada e ao vivo (03/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE**
 - [x] ✅ **v1.3.3 — O chat que não estoura** — medidor de contexto ao vivo, turno que sempre termina entregando, checkpoint de consentimento antes de gastar, limite proporcional à janela real de cada modelo, voz de mão dupla, painel de navegação embutido e 26 dependências atualizadas
-- [x] ✅ **v1.3.3 na Microsoft Store** — certificada e ao vivo (14/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE** — a terceira seguida enviada pela própria IDE
-- [x] ✅ **v1.3.5 — Memória embarcada, voz que funciona e 9 idiomas** — memória de longo prazo dentro do app, banco vetorial sem Python, motor local que acompanha o Ollama em silêncio, opção grátis de voz consertada, módulos com integridade por hash e interface em 9 idiomas
-- [x] ✅ **v1.3.5 na Microsoft Store** — **certificada em 18/08/2026**, enviada pelo Lya Publisher de dentro da própria IDE, com o texto de apresentação da loja no mesmo envio
-- [x] ✅ **v1.3.6 — Estabilidade na instalação de extensões** — corrige travamento na tela de extensões e generaliza o motor de instalação para qualquer extensão do Open VSX (base para a próxima loja) · **🚀 versão mais recente**
-- [x] ✅ **v1.3.6 na Microsoft Store** — **certificada e ao vivo (30/08/2026)**, enviada pelo Lya Publisher de dentro da própria IDE
+- [x] ✅ **v1.3.3 na Microsoft Store** — certificada e ao vivo (14/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE**
+- [x] ✅ **v1.3.5 — Memória embarcada, voz que funciona e 9 idiomas** — memória de longo prazo dentro do app, banco vetorial sem Python, motor local que acompanha o Ollama em silêncio e interface em 9 idiomas
+- [x] ✅ **v1.3.5 na Microsoft Store** — **certificada em 18/08/2026** e publicada
+- [x] ✅ **v1.3.6 na Microsoft Store** — certificada e publicada (30/08/2026)
+- [x] ✅ **v1.4.0 — Core5 V2 Nativo (768d)** — motor Rust LanceDB embarcado, telemetria CURE e sanitização
+- [x] ✅ **v1.4.1 — Sincronização em Nuvem Azure Cosmos DB Free Tier & Suporte Multiplataforma** — sincronização de perfis a custo zero ($0 spend), portal Azure CDN e instaladores para macOS Apple Silicon (.dmg e .tar.gz) · **🚀 versão de produção oficial**
+- [x] ✅ **v1.4.1 na Microsoft Store** — **certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published)
 - [ ] 🔄 Navegação externa plena no painel embutido (hoje beta, só no app instalado)
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
-- [ ] 🍎 Build para macOS / Linux
 
 Acompanhe em [Discussions → Roadmap](https://github.com/StudioCodeAI/Lya-Studio-Coder/discussions) e no [CHANGELOG](CHANGELOG.md).
-
----
-
-## 🤝 Integrações abertas & agradecimentos
-
-OmniRoute é um roteador de modelos local que a Lya adotou como provedor nativo — lado a lado com Ollama e Llama.cpp na aba Provedores. Veja configurações e funcionalidades no [site oficial](https://omniroute.online/) ou no [repositório](https://github.com/diegosouzapw/OmniRoute).
-
-Obrigado à equipe do OmniRoute por construir uma ferramenta tão sólida e aberta. 🙏
 
 ---
 
@@ -697,7 +714,7 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 
 ➡️ **Pronto para consolidar seu fluxo de IA?**
 
-[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.3.6-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.3.6)
+[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.4.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 
 *Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 

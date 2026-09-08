@@ -47,7 +47,7 @@
     </nav>
 
     <header class="page-hero hero-tight">
-        <div class="page-eyebrow"><span class="dot primary"></span> Manual do usuário · v1.3.3</div>
+        <div class="page-eyebrow"><span class="dot primary"></span> Manual do usuário · v1.4.1</div>
         <h1 class="page-title">Documentação</h1>
         <p class="page-lead">
             Tudo o que a IDE faz, painel por painel, aba por aba: como criar um projeto, conectar
@@ -73,7 +73,7 @@
             <h5>Ligar a inteligência</h5>
             <a href="#chaves">7. Chaveiro de chaves</a>
             <a href="#provedores">8. Configurar um provedor</a>
-            <a href="#motores-locais">9. Motores locais e OmniRoute</a>
+            <a href="#motores-locais">9. Motores locais e Antigravity (AGY)</a>
             <a href="#clis">10. CLIs de agente</a>
 
             <h5>A equipe</h5>
@@ -411,49 +411,36 @@
 
             <!-- 9 -->
             <section id="motores-locais">
-                <h2><span class="num">09</span>Motores locais e OmniRoute</h2>
+                <h2><span class="num">09</span>Motores locais e Antigravity (AGY)</h2>
                 <p class="manual-lead">Custo zero, offline e sem nenhum dado saindo da máquina.</p>
 
-                <h3>Ollama</h3>
+                <h3>Ollama &amp; Modelos MoE Locais</h3>
                 <ol class="steps">
                     <li>Instale o <a class="link" href="https://ollama.com" target="_blank" rel="noopener">Ollama</a> na máquina.</li>
-                    <li>Baixe um modelo pelo terminal integrado — ex.: <code>ollama pull mistral</code>.</li>
-                    <li>Na IDE, o provedor local aparece com os modelos detectados. Selecione e use.</li>
+                    <li>Baixe um modelo pelo terminal integrado — ex.: <code>ollama run qwen2.5-coder:14b</code> ou utilize modelos MoE compilados localmente como o <code>LyaMoE:35b</code>.</li>
+                    <li>Na IDE, o provedor local aparece com os modelos detectados. Selecione e use com Ctrl+K no editor Monaco.</li>
                 </ol>
                 <p>
                     Nas configurações avançadas do provedor local você ajusta <strong>janela de contexto</strong>,
-                    <strong>limite de geração</strong> e <strong>tempo de permanência do modelo na memória</strong> —
+                    <strong>limite de geração</strong> e <strong>alocação de tensores híbrida GPU+CPU</strong> —
                     por modelo. A IDE avisa quando o pedido não cabe na janela, em vez de cortar em silêncio.
                 </p>
 
-                <h3>OmniRoute — instalar e ligar</h3>
+                <h3>Antigravity CLI (<code>agy</code>) — Orquestração Local &amp; Subagentes</h3>
                 <p>
-                    O <a class="link" href="https://omniroute.online/" target="_blank" rel="noopener">OmniRoute</a>
-                    (<a class="link" href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener">repositório</a>)
-                    é um roteador de modelos local: um gateway compatível com OpenAI que coloca um catálogo
-                    enorme de modelos atrás de um único endereço na sua máquina. A IDE o adotou como
-                    provedor nativo e cuida do ciclo de vida dele.
+                    O ecossistema <strong>Antigravity</strong> da Google DeepMind é suportado nativamente na Lya.
+                    Através da porta CLI local e do terminal PTY, você pode delegar execuções em lote,
+                    tarefas secundárias de engenharia e subagentes com modelos Gemini de altíssima velocidade.
                 </p>
                 <ol class="steps">
-                    <li>Abra <strong>Configurações → Infraestrutura</strong> (capacidades instaláveis).</li>
-                    <li>No cartão do <strong>OmniRoute</strong>, clique em <strong>Instalar</strong> — a IDE baixa, prepara e <strong>já liga o serviço</strong>.</li>
-                    <li>Pronto. A partir daí ele <strong>sobe junto com a IDE</strong> em todo boot e a conexão é feita sozinha: nada de chave para colar, nada de voltar em Provedores para salvar. Se preferir ligar na mão, desmarque <strong>"Subir junto com a IDE"</strong> no mesmo cartão.</li>
-                    <li><strong>Abrir Dashboard</strong> serve para cadastrar contas novas no OmniRoute — não é um passo obrigatório do dia a dia.</li>
+                    <li>Disponível diretamente pelo terminal PTY integrado (atalho <code>Ctrl+`</code>).</li>
+                    <li>Execute comandos do Antigravity CLI com feedback ao vivo no terminal ou via rotas MCP bidirecionais.</li>
+                    <li>Integração total com o orquestrador COSMOS da Lya para tarefas autônomas em segundo plano.</li>
                 </ol>
 
                 <div class="note">
-                    <strong>Por que isso é bom:</strong> um endpoint local, um catálogo grande e nenhuma
-                    troca de configuração quando você muda de modelo. Para a IDE, é só mais um provedor
-                    local — com todas as garantias de um.
-                </div>
-
-                <div class="note">
-                    <strong>Só o que funciona no seletor:</strong> o catálogo do OmniRoute tem centenas de
-                    entradas, boa parte de contas que você não tem. A IDE cruza esse catálogo com as
-                    conexões realmente ativas, descarta apelidos repetidos e variantes duplicadas, e ainda
-                    <strong>lembra dos modelos que já falharam de verdade</strong> — depois de dois erros
-                    definitivos o modelo sai do seletor. O cartão mostra quantos sobraram e tem o botão
-                    <strong>"Dar outra chance aos reprovados"</strong> quando você renovar uma conta.
+                    <strong>Por que isso é bom:</strong> Você aproveita a potência de subagentes especializados
+                    e capacidades mecânicas sem estourar o contexto da conversa principal nem gerar custos extras na IDE.
                 </div>
 
                 <h3>Capacidades de desenvolvimento</h3>
@@ -463,11 +450,6 @@
                     <strong>executá-los sobre o workspace</strong>. Nada de "instale isso manualmente e boa sorte":
                     o botão <em>Rodar no projeto</em> executa de verdade.
                 </p>
-
-                <figure class="shot">
-                    <img src="https://raw.githubusercontent.com/StudioCodeAI/Lya-Studio-Coder/main/assets/screenshots/omnirouter-infra.png" alt="Aba de infraestrutura com OmniRoute" loading="lazy">
-                    <figcaption>Infraestrutura — capacidades instaláveis, OmniRoute e túnel de compartilhamento.</figcaption>
-                </figure>
             </section>
 
             <!-- 10 -->
@@ -963,7 +945,7 @@
                             <tr><td><strong>Temas</strong></td><td>Skin visual e cor de destaque da interface</td></tr>
                             <tr><td><strong>Provedores</strong></td><td>Motores de IA, chaveiro e teste de conexão (<a class="link" href="#provedores">§8</a>)</td></tr>
                             <tr><td><strong>Contas</strong></td><td>Carteira de credenciais de serviços, com teste real</td></tr>
-                            <tr><td><strong>Infraestrutura</strong></td><td>Capacidades instaláveis, OmniRoute, CLIs de agente, túnel (<a class="link" href="#motores-locais">§9</a>, <a class="link" href="#clis">§10</a>)</td></tr>
+                            <tr><td><strong>Infraestrutura</strong></td><td>Capacidades instaláveis, Antigravity (AGY), CLIs de agente, túnel (<a class="link" href="#motores-locais">§9</a>, <a class="link" href="#clis">§10</a>)</td></tr>
                             <tr><td><strong>Servidores MCP</strong></td><td>Conectar ferramentas externas à IA (<a class="link" href="#mcp">§18</a>)</td></tr>
                             <tr><td><strong>Chat</strong></td><td>Tecla de envio, fonte do chat, comportamento de anexos</td></tr>
                             <tr><td><strong>Notas de versão</strong></td><td>O que mudou, e <strong>Verificar atualização</strong></td></tr>
@@ -1038,7 +1020,7 @@
                 </ul>
 
                 <div class="note spaced-top">
-                    Este manual acompanha a <strong>v1.3.3</strong>. Achou algo desatualizado ou que ficou
+                    Este manual acompanha a <strong>v1.4.1</strong>. Achou algo desatualizado ou que ficou
                     confuso? Abra uma issue — documentação errada é bug.
                 </div>
             </section>
