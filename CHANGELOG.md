@@ -8,8 +8,8 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ## [1.5.0] — COSMOS Interactive v3: a orquestração que aparece, lembra com critério e nunca se cala · 2026-09
 
-> 🛠️ **Em preparação para a Microsoft Store.** A 1.5.0 passa pelo teste final na versão instalada antes do
-> envio à certificação. Até lá, a versão publicada segue sendo a [1.4.1](#141--sincronização-em-nuvem-azure-cosmos-db-free-tier--suporte-multiplataforma--2026-09-06).
+> 🚀 **Certificada e publicada na Microsoft Store.** Instaladores para Windows (`.msix`, `.exe`, `.msi`) e macOS
+> Apple Silicon (`.dmg`, `.tar.gz`) com SHA-256 em [Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.5.0).
 
 A maior evolução do COSMOS desde que ele nasceu. A sala de comando ganhou cara nova, a missão começa na hora e
 mostra o que está fazendo, a equipe trabalha em cima do plano de verdade e a memória passou a guardar só o que

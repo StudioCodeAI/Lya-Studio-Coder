@@ -16,9 +16,9 @@
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.4.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.5.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
-[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar_v1.4.1-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
+[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar_v1.5.0-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 &nbsp;
 [![Portal Azure SWA CDN](https://img.shields.io/badge/☁️_AZURE_CDN-black--rock-008AD7?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://black-rock-023c8940f.6.azurestaticapps.net)
 &nbsp;
@@ -41,7 +41,7 @@ winget install StudioCodeAI.LyaStudioCoder
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.4.1-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Versão](https://img.shields.io/badge/versão-1.5.0-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Plataformas](https://img.shields.io/badge/Plataformas-Windows%20%7C%20macOS-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Azure Cosmos DB](https://img.shields.io/badge/Cosmos_DB-Free_Tier_$0-0089D6?style=flat-square&logo=microsoftazure)](https://github.com/StudioCodeAI/Lya-Studio-Coder)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
@@ -193,11 +193,11 @@ Sem C5CP:  Star 2 trava → COSMOS fica pendurado → timeout → falha de miss�
 Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS recebe resposta normal
 ```
 
-## 🛠️ v1.5.0 — COSMOS Interactive v3 *(em preparação para a Microsoft Store)*
+## 🚀 v1.5.0 — COSMOS Interactive v3 *(publicada na Microsoft Store)*
 
 > **A orquestração que aparece, lembra com critério e nunca se cala.** A 1.5.0 é a maior evolução do COSMOS
-> desde que ele nasceu — tudo construído pela **Studio Code AI**, do motor à interface. Está no teste final da
-> versão instalada antes de seguir para a certificação; a versão publicada até lá é a **1.4.1**.
+> desde que ele nasceu — tudo construído pela **Studio Code AI**, do motor à interface. **Certificada e publicada**
+> na Microsoft Store, com instaladores para Windows e macOS em [Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest).
 
 - 🎛️ **Nova sala de comando (Interactive v3):** Cockpit Mission Control com borda viva, frota e mapa da equipe
   numa visão só, átomo orbital com o COSMOS no centro e as Stars em órbita, Onboarding v3 e o **NeuroCORE
@@ -609,12 +609,10 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 
 ## ⬇️ Download
 
-> 🛠️ **Chegando: v1.5.0 — COSMOS Interactive v3.** Em teste final antes do envio à Microsoft Store; os arquivos aparecem aqui assim que publicados. [Veja o que muda →](CHANGELOG.md#150--cosmos-interactive-v3-a-orquestração-que-aparece-lembra-com-critério-e-nunca-se-cala--2026-09)
-
-> 🚀 **Versão de Produção Oficial: [v1.4.1 — Sincronização em Nuvem Azure Cosmos DB Free Tier & Suporte Multiplataforma](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)** — traz a nova camada de sincronização de perfis e preferências via Azure Cosmos DB Free Tier ($0 spend) e o instalador oficial `.dmg` e portátil `.tar.gz` para macOS Apple Silicon.
+> 🚀 **Versão de Produção Oficial: [v1.5.0 — COSMOS Interactive v3](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)** — a orquestração que aparece, lembra com critério e nunca se cala: nova sala de comando, missão que parte em menos de 1 segundo, memória com julgamento e Stop de verdade. [Veja o que muda →](CHANGELOG.md#150--cosmos-interactive-v3-a-orquestração-que-aparece-lembra-com-critério-e-nunca-se-cala--2026-09)
 
 > 🏪 **Publicada na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A **v1.4.1 está oficialmente certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published). O MSIX é **assinado digitalmente pela própria Microsoft** na certificação — segurança e integridade nativas.
+> A **v1.5.0 está oficialmente certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published). O MSIX é **assinado digitalmente pela própria Microsoft** na certificação — segurança e integridade nativas.
 
 > ☁️ **Portal Azure CDN (Alta Velocidade)** — distribuidor global com SSL gerenciado gratuito: **[black-rock-023c8940f.6.azurestaticapps.net](https://black-rock-023c8940f.6.azurestaticapps.net)**.
 
@@ -627,9 +625,11 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 | Instalador | Plataforma / Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`LyaStudioCoder_1.4.1.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder_1.4.1.0_x64.msix) | Windows 10/11 x64 (Microsoft Store & Sideload) | 99.45 MB | `D751402C…8BBF6A29` |
-| [**`LyaStudioCoder-macOS-arm64-v1.4.1.dmg`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder-macOS-arm64-v1.4.1.dmg) | macOS Apple Silicon (Instalador DMG Drag-to-Applications) | 70.61 MB | `09D0522A…72A755` |
-| [**`LyaStudioCoder-macOS-arm64-v1.4.1.tar.gz`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.4.1/LyaStudioCoder-macOS-arm64-v1.4.1.tar.gz) | macOS Apple Silicon (Portátil .app comprimido) | 53.17 MB | `D0499106…BE3565` |
+| [**`LyaStudioCoder_1.5.0.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.0/LyaStudioCoder_1.5.0.0_x64.msix) | Windows 10/11 x64 (Microsoft Store & Sideload) | 99.83 MB | `498560FD…F09D3108` |
+| [**`Lya.Studio.Coder_1.5.0_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.0/Lya.Studio.Coder_1.5.0_x64-setup.exe) | Windows 10/11 x64 (Instalador NSIS) | 63.05 MB | `79560FDE…FEA69852` |
+| [**`Lya.Studio.Coder_1.5.0_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.0/Lya.Studio.Coder_1.5.0_x64_en-US.msi) | Windows 10/11 x64 (Instalador MSI corporativo) | 93.80 MB | `FC76092A…18E0B44D` |
+| [**`LyaStudioCoder-macOS-arm64-v1.5.0.dmg`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.0/LyaStudioCoder-macOS-arm64-v1.5.0.dmg) | macOS Apple Silicon (Instalador DMG Drag-to-Applications) | 66.71 MB | `5100B5C6…73FC5D4A` |
+| [**`LyaStudioCoder-macOS-arm64-v1.5.0.tar.gz`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.0/LyaStudioCoder-macOS-arm64-v1.5.0.tar.gz) | macOS Apple Silicon (Portátil .app comprimido) | 51.04 MB | `896478CF…1EA9F066` |
 
 **Requisitos:** Windows 10/11 x64 · macOS Apple Silicon (M1/M2/M3/M4) · Runtime embutido · Sem dependências externas
 
@@ -637,18 +637,24 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 <summary>🔐 SHA-256 completos para verificação</summary>
 
 ```
-LyaStudioCoder_1.4.1.0_x64.msix
-D751402C8605AF57EEFC2210A619DE9A19823AEBFF3FB6AC4E6CB6098BBF6A29
+LyaStudioCoder_1.5.0.0_x64.msix
+498560FD29E2D35B68A3EF5BBAE8683CF7AA99A63B04C4AFCFF28343F09D3108
 
-LyaStudioCoder-macOS-arm64-v1.4.1.dmg
-09D0522A9356E5DD5181031043503FAA89B53A80D7802C6B725AE9ACA872A755
+Lya.Studio.Coder_1.5.0_x64-setup.exe
+79560FDE01251D77F06E56936270B0B576F7886A9B80ED385D95EE32FEA69852
 
-LyaStudioCoder-macOS-arm64-v1.4.1.tar.gz
-D0499106096E82BAE4AD0424482E6282F3DCCBF1B56A8BA2B5E140A454BE3565
+Lya.Studio.Coder_1.5.0_x64_en-US.msi
+FC76092A1F0FD42E726C679D18BB98A112B9707E2021DF63EF5D3E2A18E0B44D
+
+LyaStudioCoder-macOS-arm64-v1.5.0.dmg
+5100B5C62DDA064822BB61E17760D14F7E79BA00DCD66FC6E7C00F9073FC5D4A
+
+LyaStudioCoder-macOS-arm64-v1.5.0.tar.gz
+896478CF8E637F97AC2776406586D64474BBDC05AB7C28BC4B8E2BA41EA9F066
 ```
 
-Verificar no Windows (PowerShell): `Get-FileHash "LyaStudioCoder_1.4.1.0_x64.msix" -Algorithm SHA256`
-Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.4.1.dmg`
+Verificar no Windows (PowerShell): `Get-FileHash "LyaStudioCoder_1.5.0.0_x64.msix" -Algorithm SHA256`
+Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.5.0.dmg`
 </details>
 
 > ⚠️ **SmartScreen:** o `.exe`/`.msi` pode exibir aviso de "editor desconhecido" — clique em **Mais informações → Executar assim mesmo**. Quer instalação sem nenhum aviso? Use a **[Microsoft Store](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)** — o pacote MSIX é assinado pela própria Microsoft na certificação. A autoria e integridade de cada instalador ficam registradas com o **SHA-256** para conferência.
@@ -698,10 +704,11 @@ Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.4.1.
 - [x] ✅ **v1.3.5 na Microsoft Store** — **certificada em 18/08/2026** e publicada
 - [x] ✅ **v1.3.6 na Microsoft Store** — certificada e publicada (30/08/2026)
 - [x] ✅ **v1.4.0 — Core5 V2 Nativo (768d)** — motor Rust LanceDB embarcado, telemetria CURE e sanitização
-- [x] ✅ **v1.4.1 — Sincronização em Nuvem Azure Cosmos DB Free Tier & Suporte Multiplataforma** — sincronização de perfis a custo zero ($0 spend), portal Azure CDN e instaladores para macOS Apple Silicon (.dmg e .tar.gz) · **🚀 versão de produção oficial**
+- [x] ✅ **v1.4.1 — Sincronização em Nuvem Azure Cosmos DB Free Tier & Suporte Multiplataforma** — sincronização de perfis a custo zero ($0 spend), portal Azure CDN e instaladores para macOS Apple Silicon (.dmg e .tar.gz)
 - [x] ✅ **v1.4.1 na Microsoft Store** — **certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published)
-- [x] ✅ **v1.5.0 — COSMOS Interactive v3 (desenvolvimento concluído)** — nova sala de comando, pré-voo em menos de 1 s, distribuição fiel ao plano, retomada de missão, memória com julgamento, degradação visível, busca de código sem índice e Stop de verdade
-- [ ] 🔄 **v1.5.0 na Microsoft Store** — teste final da versão instalada → certificação → publicação
+- [x] ✅ **v1.5.0 — COSMOS Interactive v3 (desenvolvimento concluído)** — nova sala de comando, pré-voo em menos de 1 s, distribuição fiel ao plano, retomada de missão, memória com julgamento, degradação visível, busca de código sem índice e Stop de verdade · **🚀 versão de produção oficial**
+- [x] ✅ **v1.5.0 na Microsoft Store** — **certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published)
+- [ ] 🔄 **v1.5.1 — endurecimento de segurança do servidor local** — em preparação
 - [ ] 🔜 **Motor de execução unificado** — cancelamento, contexto e segurança idênticos no chat, na missão e nas CLIs de agente
 - [ ] 🔄 Navegação externa plena no painel embutido (hoje beta, só no app instalado)
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
@@ -747,7 +754,7 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 
 ➡️ **Pronto para consolidar seu fluxo de IA?**
 
-[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.4.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.5.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 
 *Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 
