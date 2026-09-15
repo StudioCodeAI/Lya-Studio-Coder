@@ -6,6 +6,31 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.5.1] — Segurança e confiabilidade · 2026-09
+
+> 🔐 **Instaladores disponíveis** para Windows (`.msix`, `.exe`, `.msi`) e macOS Apple Silicon (`.dmg`, `.tar.gz`)
+> com SHA-256 em [Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.5.1). Na Microsoft
+> Store, a 1.5.1 está em certificação; até lá a Store entrega a 1.5.0.
+
+Uma versão dedicada a endurecer a base da 1.5.0. Nenhuma funcionalidade sai; o que muda é quanto a IDE
+resiste a uso indevido e a falhas da máquina.
+
+### 🔐 Segurança
+- **Endurecimento de segurança do servidor local:** a IDE só aceita conexões da própria máquina, com
+  verificação de origem mais rigorosa em todas as portas de comunicação.
+- **Credenciais protegidas contra perda:** a chave que cifra seus segredos nunca é substituída
+  automaticamente. Ela ganha cópia de segurança antes de qualquer alteração e, se não puder ser lida, a barra de
+  status avisa em vez de começar do zero em silêncio.
+
+### 🛑 Controle
+- **Stop de verdade também nas CLIs de agente:** interromper encerra o comando e todos os processos que ele abriu.
+
+### 🏪 Lya Publisher
+- **Pacote certo ou nada:** o envio recusa pacote de outra versão antes de tocar a Microsoft Store.
+- **Status real da certificação:** o acompanhamento mostra a etapa exata da análise, inclusive reprovação.
+
+---
+
 ## [1.5.0] — COSMOS Interactive v3: a orquestração que aparece, lembra com critério e nunca se cala · 2026-09
 
 > 🚀 **Certificada e publicada na Microsoft Store.** Instaladores para Windows (`.msix`, `.exe`, `.msi`) e macOS

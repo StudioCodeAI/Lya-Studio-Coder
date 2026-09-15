@@ -16,7 +16,7 @@
 
 <br/>
 
-[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.5.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.5.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
 [![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar_v1.5.0-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 &nbsp;
@@ -41,7 +41,7 @@ winget install StudioCodeAI.LyaStudioCoder
 
 <br/>
 
-[![Versão](https://img.shields.io/badge/versão-1.5.0-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![Versão](https://img.shields.io/badge/versão-1.5.1-7c3aed?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Plataformas](https://img.shields.io/badge/Plataformas-Windows%20%7C%20macOS-0078D6?style=flat-square&logo=windows)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 [![Azure Cosmos DB](https://img.shields.io/badge/Cosmos_DB-Free_Tier_$0-0089D6?style=flat-square&logo=microsoftazure)](https://github.com/StudioCodeAI/Lya-Studio-Coder)
 [![Local First](https://img.shields.io/badge/100%25-Local_First-ff0055?style=flat-square)](https://github.com/StudioCodeAI/Lya-Studio-Coder#-privacidade)
@@ -192,6 +192,23 @@ O COSMOS (Maestro) aguardando resposta de uma Star que travou por limite de toke
 Sem C5CP:  Star 2 trava → COSMOS fica pendurado → timeout → falha de missão
 Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS recebe resposta normal
 ```
+
+## 🔐 v1.5.1 — Segurança e confiabilidade
+
+> Uma versão dedicada a endurecer a base da 1.5.0: nenhuma funcionalidade sai, e a IDE resiste melhor a uso
+> indevido e a falhas da máquina. Instaladores em [Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.5.1);
+> na Microsoft Store, em certificação.
+
+- 🔐 **Servidor local mais rigoroso:** a IDE só aceita conexões da própria máquina, com verificação de origem
+  mais estrita em todas as portas de comunicação.
+- 🗝️ **Credenciais protegidas contra perda:** a chave que cifra seus segredos nunca é substituída
+  automaticamente, ganha cópia de segurança antes de qualquer alteração e, se não puder ser lida, a barra de
+  status avisa.
+- 🛑 **Stop também nas CLIs de agente:** interromper encerra o comando e todos os processos que ele abriu.
+- 🏪 **Lya Publisher:** o envio recusa pacote de outra versão e o acompanhamento mostra a etapa real da
+  certificação, inclusive reprovação.
+
+📋 [Changelog completo da 1.5.1](CHANGELOG.md#151--segurança-e-confiabilidade--2026-09)
 
 ## 🚀 v1.5.0 — COSMOS Interactive v3 *(publicada na Microsoft Store)*
 
@@ -609,7 +626,9 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 
 ## ⬇️ Download
 
-> 🚀 **Versão de Produção Oficial: [v1.5.0 — COSMOS Interactive v3](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)** — a orquestração que aparece, lembra com critério e nunca se cala: nova sala de comando, missão que parte em menos de 1 segundo, memória com julgamento e Stop de verdade. [Veja o que muda →](CHANGELOG.md#150--cosmos-interactive-v3-a-orquestração-que-aparece-lembra-com-critério-e-nunca-se-cala--2026-09)
+> 🔐 **Novo: [v1.5.1 — Segurança e confiabilidade](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.5.1)** — endurecimento de segurança do servidor local, credenciais protegidas contra perda e Stop que encerra também as CLIs de agente. Instaladores diretos abaixo; na Microsoft Store, a 1.5.1 está em certificação. [Veja o que muda →](CHANGELOG.md#151--segurança-e-confiabilidade--2026-09)
+
+> 🚀 **Base da 1.5.x: v1.5.0 — COSMOS Interactive v3** — a orquestração que aparece, lembra com critério e nunca se cala: nova sala de comando, missão que parte em menos de 1 segundo, memória com julgamento e Stop de verdade. [Veja o que muda →](CHANGELOG.md#150--cosmos-interactive-v3-a-orquestração-que-aparece-lembra-com-critério-e-nunca-se-cala--2026-09)
 
 > 🏪 **Publicada na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
 > A **v1.5.0 está oficialmente certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published). O MSIX é **assinado digitalmente pela própria Microsoft** na certificação — segurança e integridade nativas.
@@ -625,11 +644,11 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 
 | Instalador | Plataforma / Para quem | Tamanho | SHA-256 |
 |---|---|:---:|---|
-| [**`LyaStudioCoder_1.5.0.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.0/LyaStudioCoder_1.5.0.0_x64.msix) | Windows 10/11 x64 (Microsoft Store & Sideload) | 99.83 MB | `498560FD…F09D3108` |
-| [**`Lya.Studio.Coder_1.5.0_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.0/Lya.Studio.Coder_1.5.0_x64-setup.exe) | Windows 10/11 x64 (Instalador NSIS) | 63.05 MB | `79560FDE…FEA69852` |
-| [**`Lya.Studio.Coder_1.5.0_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.0/Lya.Studio.Coder_1.5.0_x64_en-US.msi) | Windows 10/11 x64 (Instalador MSI corporativo) | 93.80 MB | `FC76092A…18E0B44D` |
-| [**`LyaStudioCoder-macOS-arm64-v1.5.0.dmg`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.0/LyaStudioCoder-macOS-arm64-v1.5.0.dmg) | macOS Apple Silicon (Instalador DMG Drag-to-Applications) | 66.71 MB | `5100B5C6…73FC5D4A` |
-| [**`LyaStudioCoder-macOS-arm64-v1.5.0.tar.gz`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.0/LyaStudioCoder-macOS-arm64-v1.5.0.tar.gz) | macOS Apple Silicon (Portátil .app comprimido) | 51.04 MB | `896478CF…1EA9F066` |
+| [**`LyaStudioCoder_1.5.1.0_x64.msix`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.1/LyaStudioCoder_1.5.1.0_x64.msix) | Windows 10/11 x64 (Microsoft Store & Sideload) | 99.83 MB | `B7DFEC89…3478A648` |
+| [**`Lya.Studio.Coder_1.5.1_x64-setup.exe`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.1/Lya.Studio.Coder_1.5.1_x64-setup.exe) | Windows 10/11 x64 (Instalador NSIS) | 63.06 MB | `AA86697D…5E5B8859` |
+| [**`Lya.Studio.Coder_1.5.1_x64_en-US.msi`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.1/Lya.Studio.Coder_1.5.1_x64_en-US.msi) | Windows 10/11 x64 (Instalador MSI corporativo) | 93.81 MB | `314C45F2…0F7A1244` |
+| [**`LyaStudioCoder-macOS-arm64-v1.5.1.dmg`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.1/LyaStudioCoder-macOS-arm64-v1.5.1.dmg) | macOS Apple Silicon (Instalador DMG Drag-to-Applications) | 66.84 MB | `22FA4204…9F7212D3` |
+| [**`LyaStudioCoder-macOS-arm64-v1.5.1.tar.gz`**](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/download/v1.5.1/LyaStudioCoder-macOS-arm64-v1.5.1.tar.gz) | macOS Apple Silicon (Portátil .app comprimido) | 51.04 MB | `90BCC9BE…363D8AB0` |
 
 **Requisitos:** Windows 10/11 x64 · macOS Apple Silicon (M1/M2/M3/M4) · Runtime embutido · Sem dependências externas
 
@@ -637,24 +656,24 @@ Prefere o instalador direto? A versão mais recente está sempre em **[Releases]
 <summary>🔐 SHA-256 completos para verificação</summary>
 
 ```
-LyaStudioCoder_1.5.0.0_x64.msix
-498560FD29E2D35B68A3EF5BBAE8683CF7AA99A63B04C4AFCFF28343F09D3108
+LyaStudioCoder_1.5.1.0_x64.msix
+B7DFEC8968739C1699249DCA27054BA8B1479E6D6AE4CD8BB218E61E3478A648
 
-Lya.Studio.Coder_1.5.0_x64-setup.exe
-79560FDE01251D77F06E56936270B0B576F7886A9B80ED385D95EE32FEA69852
+Lya.Studio.Coder_1.5.1_x64-setup.exe
+AA86697DB0A54B2AE806D8D703FFBDFAC78AED443D5517354F867A625E5B8859
 
-Lya.Studio.Coder_1.5.0_x64_en-US.msi
-FC76092A1F0FD42E726C679D18BB98A112B9707E2021DF63EF5D3E2A18E0B44D
+Lya.Studio.Coder_1.5.1_x64_en-US.msi
+314C45F23A6F4D1DFF2EB58D5F3EA1A8938EBEF0D1420AFC9884E74C0F7A1244
 
-LyaStudioCoder-macOS-arm64-v1.5.0.dmg
-5100B5C62DDA064822BB61E17760D14F7E79BA00DCD66FC6E7C00F9073FC5D4A
+LyaStudioCoder-macOS-arm64-v1.5.1.dmg
+22FA4204A44E88D6AE80B8C2F48E4CCC427253C100B069C2A61902A29F7212D3
 
-LyaStudioCoder-macOS-arm64-v1.5.0.tar.gz
-896478CF8E637F97AC2776406586D64474BBDC05AB7C28BC4B8E2BA41EA9F066
+LyaStudioCoder-macOS-arm64-v1.5.1.tar.gz
+90BCC9BEA8D653CECFA88A0E8357220285006050952420948A40E86D363D8AB0
 ```
 
-Verificar no Windows (PowerShell): `Get-FileHash "LyaStudioCoder_1.5.0.0_x64.msix" -Algorithm SHA256`
-Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.5.0.dmg`
+Verificar no Windows (PowerShell): `Get-FileHash "LyaStudioCoder_1.5.1.0_x64.msix" -Algorithm SHA256`
+Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.5.1.dmg`
 </details>
 
 > ⚠️ **SmartScreen:** o `.exe`/`.msi` pode exibir aviso de "editor desconhecido" — clique em **Mais informações → Executar assim mesmo**. Quer instalação sem nenhum aviso? Use a **[Microsoft Store](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)** — o pacote MSIX é assinado pela própria Microsoft na certificação. A autoria e integridade de cada instalador ficam registradas com o **SHA-256** para conferência.
@@ -706,9 +725,10 @@ Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.5.0.
 - [x] ✅ **v1.4.0 — Core5 V2 Nativo (768d)** — motor Rust LanceDB embarcado, telemetria CURE e sanitização
 - [x] ✅ **v1.4.1 — Sincronização em Nuvem Azure Cosmos DB Free Tier & Suporte Multiplataforma** — sincronização de perfis a custo zero ($0 spend), portal Azure CDN e instaladores para macOS Apple Silicon (.dmg e .tar.gz)
 - [x] ✅ **v1.4.1 na Microsoft Store** — **certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published)
-- [x] ✅ **v1.5.0 — COSMOS Interactive v3 (desenvolvimento concluído)** — nova sala de comando, pré-voo em menos de 1 s, distribuição fiel ao plano, retomada de missão, memória com julgamento, degradação visível, busca de código sem índice e Stop de verdade · **🚀 versão de produção oficial**
+- [x] ✅ **v1.5.0 — COSMOS Interactive v3 (desenvolvimento concluído)** — nova sala de comando, pré-voo em menos de 1 s, distribuição fiel ao plano, retomada de missão, memória com julgamento, degradação visível, busca de código sem índice e Stop de verdade
 - [x] ✅ **v1.5.0 na Microsoft Store** — **certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published)
-- [ ] 🔄 **v1.5.1 — endurecimento de segurança do servidor local** — em preparação
+- [x] ✅ **v1.5.1 — Segurança e confiabilidade** — endurecimento do servidor local, credenciais protegidas contra perda, Stop nas CLIs de agente e status real da certificação no Publisher · **🚀 versão de produção oficial**
+- [ ] 🔄 **v1.5.1 na Microsoft Store** — em certificação → publicação
 - [ ] 🔜 **Motor de execução unificado** — cancelamento, contexto e segurança idênticos no chat, na missão e nas CLIs de agente
 - [ ] 🔄 Navegação externa plena no painel embutido (hoje beta, só no app instalado)
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
@@ -754,7 +774,7 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 
 ➡️ **Pronto para consolidar seu fluxo de IA?**
 
-[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.5.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.5.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 
 *Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 
