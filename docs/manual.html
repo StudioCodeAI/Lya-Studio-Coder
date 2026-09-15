@@ -47,7 +47,7 @@
     </nav>
 
     <header class="page-hero hero-tight">
-        <div class="page-eyebrow"><span class="dot primary"></span> Manual do usuário · v1.4.1</div>
+        <div class="page-eyebrow"><span class="dot primary"></span> Manual do usuário · v1.5.1</div>
         <h1 class="page-title">Documentação</h1>
         <p class="page-lead">
             Tudo o que a IDE faz, painel por painel, aba por aba: como criar um projeto, conectar
@@ -580,8 +580,9 @@
 
                 <h3>Durante</h3>
                 <ul>
+                    <li><strong>Pré-voo visível</strong> — a missão parte em menos de 1 segundo e cada estágio aparece na tela; tarefa simples o COSMOS resolve sozinho, sem convocar a equipe.</li>
                     <li><strong>Pausar / Retomar</strong> a missão inteira — ou só um agente, deixando os demais seguirem.</li>
-                    <li><strong>Parar</strong> aborta de verdade (não é um pedido educado que fica pendurado).</li>
+                    <li><strong>Parar</strong> aborta de verdade (não é um pedido educado que fica pendurado) — inclusive as CLIs de agente e todos os processos que elas abriram.</li>
                     <li><strong>Fila de ordens</strong> — enfileire as próximas missões; <em>avançar</em> inicia a seguinte na hora, e uma ordem pode ser cancelada.</li>
                     <li><strong>Custo</strong> — tokens estimados e custo real, ao vivo. Ao bater o teto, a missão é abortada de fato.</li>
                     <li><strong>Mural / feed da equipe</strong> — o que cada Star entregou, e o que o maestro devolveu para refazer.</li>
@@ -1000,6 +1001,7 @@
                             <tr><td>A IA não responde</td><td>Provedor selecionado e chave válida. Use <strong>Testar Conexão</strong> — o console de handshake mostra o motivo real.</td></tr>
                             <tr><td>Um modelo não aparece na lista</td><td>Sua chave provavelmente não tem acesso a ele. A IDE lista só o que a API devolveu de verdade.</td></tr>
                             <tr><td>Missão trava logo no início</td><td>Algum assento com motor <strong>OFFLINE</strong>. Teste cada agente com 📡 antes de disparar.</td></tr>
+                            <tr><td>Indicador âmbar na barra de status</td><td>Uma área está em modo reduzido (motor sem cota, pasta sem permissão, modelo de embedding indisponível). Passe o mouse para ver qual é e por quê — a IDE segue funcionando no resto.</td></tr>
                             <tr><td>Resposta cortada no meio</td><td>Limite de tokens por minuto do modelo. A IDE aguarda e retoma sozinha — o selo mostra o tempo restante.</td></tr>
                             <tr><td>Pedido não cabe na janela</td><td>Aumente a janela de contexto do modelo local ou reduza o escopo. A IDE avisa em vez de cortar em silêncio.</td></tr>
                             <tr><td>Memória aparece como inativa</td><td>Aba <strong>Motores</strong> da Memória Deep: verifique o backend ativo e reinicie-o por lá.</td></tr>
@@ -1019,7 +1021,7 @@
                 </ul>
 
                 <div class="note spaced-top">
-                    Este manual acompanha a <strong>v1.4.1</strong>. Achou algo desatualizado ou que ficou
+                    Este manual acompanha a <strong>v1.5.1</strong>. Achou algo desatualizado ou que ficou
                     confuso? Abra uma issue — documentação errada é bug.
                 </div>
             </section>

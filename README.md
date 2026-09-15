@@ -18,7 +18,7 @@
 
 [![⬇️ Download Grátis — Windows x64](https://img.shields.io/badge/⬇️_DOWNLOAD_GRÁTIS-Windows_x64_·_v1.5.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 &nbsp;
-[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar_v1.5.0-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
+[![Microsoft Store](https://img.shields.io/badge/Microsoft_Store-Instalar_v1.5.1-0078D4?style=for-the-badge&logo=microsoftstore&logoColor=white)](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)
 &nbsp;
 [![Portal Azure SWA CDN](https://img.shields.io/badge/☁️_AZURE_CDN-black--rock-008AD7?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://black-rock-023c8940f.6.azurestaticapps.net)
 &nbsp;
@@ -117,7 +117,7 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | 🛒 **Loja de Skills + Linguagens** | Importe skills de repositórios Git (indexação real na memória vetorial). Grammars, snippets, **8+ temas de cor** (Dracula, Tokyo Night, Atom One Dark…) e icon themes — tudo instalável direto na Store. |
 | 🖥️ **Desktop Multiplataforma** | `.exe` e `.msix` para Windows e `.dmg` / `.tar.gz` para macOS (Apple Silicon & Intel). **Não exige Node.js instalado.** Instala por usuário, sem privilégio de admin. |
 | ☁️ **Nuvem Azure Cosmos DB ($0)** | Sincronização soberana de configurações, perfis, temas e estado do workspace com o **Azure Cosmos DB Free Tier** (1.000 RU/s + 25 GB vitalício sem faturamento). REST nativo com assinatura HMAC-SHA256 sem dependências pesadas e higienização estrita de segredos. |
-| 🚀 **Lya Publisher & Azure Ops** | Dashboard integrado para publicar na **Microsoft Store** e distribuir na CDN do **Azure Static Web Apps** sem sair da IDE: build MSIX + upload + Partner Center + controle de custo zero ($0.00 spend guard). **Versão v1.4.1 oficialmente publicada na loja.** 📘 [Guia da esteira](docs/ESTEIRA_AUTONOMA_PUBLISHER_AZURE.md) |
+| 🚀 **Lya Publisher & Azure Ops** | Dashboard integrado para publicar na **Microsoft Store** e distribuir na CDN do **Azure Static Web Apps** sem sair da IDE: build MSIX + upload + Partner Center + controle de custo zero ($0.00 spend guard). **Versão v1.5.1 oficialmente publicada na loja.** 📘 [Guia da esteira](docs/ESTEIRA_AUTONOMA_PUBLISHER_AZURE.md) |
 | 🌍 **Interface em 9 idiomas** | Português, Inglês, Espanhol, Alemão, Francês, Japonês, Coreano, Russo e Chinês nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **2220 chaves i18n em paridade nos 9 idiomas** (PT, EN, ES, DE, FR, JA, KO, RU, ZH), conferidas por auditoria automática a cada build. |
 | 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (qualquer cliente MCP compatível conecta e usa missão/SBB/CURE como tools). |
 | ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (incluindo a LyaCode) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
@@ -197,7 +197,7 @@ Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS re
 
 > Uma versão dedicada a endurecer a base da 1.5.0: nenhuma funcionalidade sai, e a IDE resiste melhor a uso
 > indevido e a falhas da máquina. Instaladores em [Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.5.1);
-> na Microsoft Store, em certificação.
+> **certificada e publicada na Microsoft Store**.
 
 - 🔐 **Servidor local mais rigoroso:** a IDE só aceita conexões da própria máquina, com verificação de origem
   mais estrita em todas as portas de comunicação.
@@ -210,7 +210,7 @@ Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS re
 
 📋 [Changelog completo da 1.5.1](CHANGELOG.md#151--segurança-e-confiabilidade--2026-09)
 
-## 🚀 v1.5.0 — COSMOS Interactive v3 *(publicada na Microsoft Store)*
+## 🚀 v1.5.0 — COSMOS Interactive v3 *(base da 1.5.x)*
 
 > **A orquestração que aparece, lembra com critério e nunca se cala.** A 1.5.0 é a maior evolução do COSMOS
 > desde que ele nasceu — tudo construído pela **Studio Code AI**, do motor à interface. **Certificada e publicada**
@@ -626,12 +626,12 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 
 ## ⬇️ Download
 
-> 🔐 **Novo: [v1.5.1 — Segurança e confiabilidade](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.5.1)** — endurecimento de segurança do servidor local, credenciais protegidas contra perda e Stop que encerra também as CLIs de agente. Instaladores diretos abaixo; na Microsoft Store, a 1.5.1 está em certificação. [Veja o que muda →](CHANGELOG.md#151--segurança-e-confiabilidade--2026-09)
+> 🔐 **Novo: [v1.5.1 — Segurança e confiabilidade](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.5.1)** — endurecimento de segurança do servidor local, credenciais protegidas contra perda e Stop que encerra também as CLIs de agente. Certificada e publicada na Microsoft Store, com instaladores diretos abaixo. [Veja o que muda →](CHANGELOG.md#151--segurança-e-confiabilidade--2026-09)
 
 > 🚀 **Base da 1.5.x: v1.5.0 — COSMOS Interactive v3** — a orquestração que aparece, lembra com critério e nunca se cala: nova sala de comando, missão que parte em menos de 1 segundo, memória com julgamento e Stop de verdade. [Veja o que muda →](CHANGELOG.md#150--cosmos-interactive-v3-a-orquestração-que-aparece-lembra-com-critério-e-nunca-se-cala--2026-09)
 
 > 🏪 **Publicada na Microsoft Store** — instale com um clique, sem aviso de SmartScreen e com atualização automática: **[apps.microsoft.com → Lya Studio Coder](https://apps.microsoft.com/detail/9nrw0dwtw9z8?hl=pt-BR&gl=BR)**.
-> A **v1.5.0 está oficialmente certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published). O MSIX é **assinado digitalmente pela própria Microsoft** na certificação — segurança e integridade nativas.
+> A **v1.5.1 está oficialmente certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published). O MSIX é **assinado digitalmente pela própria Microsoft** na certificação — segurança e integridade nativas.
 
 > ☁️ **Portal Azure CDN (Alta Velocidade)** — distribuidor global com SSL gerenciado gratuito: **[black-rock-023c8940f.6.azurestaticapps.net](https://black-rock-023c8940f.6.azurestaticapps.net)**.
 
@@ -728,7 +728,7 @@ Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.5.1.
 - [x] ✅ **v1.5.0 — COSMOS Interactive v3 (desenvolvimento concluído)** — nova sala de comando, pré-voo em menos de 1 s, distribuição fiel ao plano, retomada de missão, memória com julgamento, degradação visível, busca de código sem índice e Stop de verdade
 - [x] ✅ **v1.5.0 na Microsoft Store** — **certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published)
 - [x] ✅ **v1.5.1 — Segurança e confiabilidade** — endurecimento do servidor local, credenciais protegidas contra perda, Stop nas CLIs de agente e status real da certificação no Publisher · **🚀 versão de produção oficial**
-- [ ] 🔄 **v1.5.1 na Microsoft Store** — em certificação → publicação
+- [x] ✅ **v1.5.1 na Microsoft Store** — **certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published)
 - [ ] 🔜 **Motor de execução unificado** — cancelamento, contexto e segurança idênticos no chat, na missão e nas CLIs de agente
 - [ ] 🔄 Navegação externa plena no painel embutido (hoje beta, só no app instalado)
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)

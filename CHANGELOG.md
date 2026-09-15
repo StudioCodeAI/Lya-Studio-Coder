@@ -8,9 +8,8 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ## [1.5.1] — Segurança e confiabilidade · 2026-09
 
-> 🔐 **Instaladores disponíveis** para Windows (`.msix`, `.exe`, `.msi`) e macOS Apple Silicon (`.dmg`, `.tar.gz`)
-> com SHA-256 em [Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.5.1). Na Microsoft
-> Store, a 1.5.1 está em certificação; até lá a Store entrega a 1.5.0.
+> 🔐 **Certificada e publicada na Microsoft Store.** Instaladores para Windows (`.msix`, `.exe`, `.msi`) e macOS
+> Apple Silicon (`.dmg`, `.tar.gz`) com SHA-256 em [Releases](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/tag/v1.5.1).
 
 Uma versão dedicada a endurecer a base da 1.5.0. Nenhuma funcionalidade sai; o que muda é quanto a IDE
 resiste a uso indevido e a falhas da máquina.
