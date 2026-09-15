@@ -81,12 +81,12 @@ Você explica o projeto pra uma IA, troca de aba, explica de novo, copia a respo
 
 ---
 
-### 🚀 Provedores Globais, Inferência Local & CLI do Antigravity (AGY)
+### 🚀 Provedores Globais, Inferência Local & CLIs de Agente
 
-> **Cockpit Universal de Inteligência Artificial:** O Lya Studio Coder conecta-se nativamente a todos os grandes modelos de IA do mercado:
-> - **Nuvem & Servidores via API:** Claude (Anthropic), Gemini (Google), GPT-4o/o3 (OpenAI), DeepSeek, Groq e Xiaomi MiMo V2.5.
-> - **Motores Locais Soberanos:** Ollama e Llama.cpp, com suporte direto a modelos MoE locais (como LyaMoE 35b, Qwen 2.5 Coder) e alocação dinâmica de tensores GPU+CPU.
-> - **⚡ Integração de Primeira Classe com Antigravity (`agy`):** A Lya é o cockpit definitivo para operar com o **Antigravity CLI** da Google DeepMind. Através do terminal PTY nativo de baixa latência e MCP bidirecional, você pode delegar tarefas de scaffolding, subagentes autônomos, testes e geração em lote aproveitando o ecossistema Antigravity com modelos Gemini a custo zero.
+> **Cockpit Universal de Inteligência Artificial:** o Lya Studio Coder conecta-se nativamente aos grandes modelos de IA do mercado — e o COSMOS da **Studio Code AI** coordena todos eles:
+> - **Nuvem & Servidores via API:** Claude (Anthropic), Gemini (Google), GPT (OpenAI), DeepSeek, Groq, NVIDIA, Xiaomi MiMo e Ollama Cloud.
+> - **Motores Locais Soberanos:** Ollama e Llama.cpp, com suporte direto a modelos MoE locais (como LyaMoE 35b) e alocação dinâmica de tensores GPU+CPU.
+> - **⚡ CLIs de agente como motor da equipe:** qualquer CLI de IA instalada na sua máquina vira motor de uma Star, operada pelo terminal PTY nativo e pelo MCP bidirecional — o COSMOS delega scaffolding, testes e tarefas em lote e continua no comando da revisão e da entrega.
 
 ---
 
@@ -100,13 +100,15 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 
 | 🧩 Módulo | O que entrega |
 |---|---|
-| 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT, Ollama (local + cloud) e **Antigravity** na mesma sala. Streaming cancelável, markdown, anexos de imagem/áudio/PDF, **voz de mão dupla** (ditado + leitura em voz alta), function-calling real e histórico completo. |
-| 🚀 **Provedores Globais, Locais & CLI (`agy`)** | Conexão com os principais provedores via API (Claude, GPT, Gemini, DeepSeek, MiMo), inferência 100% local com **Ollama / Llama.cpp / MoE**, e orquestração de **CLIs locais** com destaque para o **Antigravity CLI (`agy`)** e Claude Code integrados via PTY nativo e MCP bidirecional. |
-| 🎛️ **COSMOS — Orquestração** | Até 4 agentes de IA em paralelo (API, CLI, local). Cada slot com motor independente, status ao vivo, contexto compartilhado e **tools MCP dinâmico**. |
+| 🤖 **Chat Multi-Provider** | Claude, Gemini, GPT, Ollama (local + cloud) e CLIs de agente na mesma sala. Streaming cancelável, markdown, anexos de imagem/áudio/PDF, **voz de mão dupla** (ditado + leitura em voz alta), function-calling real e histórico completo. |
+| 🚀 **Provedores Globais, Locais & CLIs** | Conexão com os principais provedores via API (Claude, GPT, Gemini, DeepSeek, NVIDIA, MiMo), inferência 100% local com **Ollama / Llama.cpp / MoE**, e orquestração de **CLIs de agente locais** integradas via PTY nativo e MCP bidirecional. **Camada unificada de provedores** com Stop que interrompe até ferramenta em execução. |
+| 🎛️ **COSMOS — Orquestração (Interactive v3)** | Até 4 agentes de IA em paralelo (API, CLI, local). Cockpit Mission Control v3, átomo orbital, **pré-voo em menos de 1 s com estágios visíveis**, distribuição fiel ao plano, caminho solo para tarefa simples e **retomada da missão após fechar o app**. |
+| 🛡️ **Degradar sim, calar nunca** | Registro único de áreas em modo reduzido com **indicador âmbar na barra de status** e o motivo em 9 idiomas. Retry inteligente: cota, credencial e pedido recusado não se repetem, e ação que já alterou o projeto nunca roda duas vezes. |
+| 🔎 **Busca de código sem índice** | O agente busca por texto/regex, por padrão de arquivo e lista pastas na hora, dentro do sandbox — mesmo enquanto o índice semântico é construído. A busca semântica cai para texto e diz o motivo. |
 | 🩹 **CURE — Auto-Mitigação & Diagnósticos** | Sistema de auto-cura proativo e reativo: detecção em tempo real de falhas no chat e no Monaco Editor (diagnósticos e tooltips inline), disjuntor adaptativo (10 estados, half-open automático), **CURE SCAR** (cicatrizes indexadas no Core5) e injeção contextual de mitigação sem invalidar o cache de prompt. |
 | 🧠 **Core5 V2 — Memória Nativa 768d** | Motor hiper-dimensional nativo em Rust (`src-tauri/core5`, **LanceDB embarcado**, espaço vetorial canônico **768d bge-base-en-v1.5**, zero dependência externa). 8 tools MCP in-process (`memory_boot`, `memory_search`, `cure_report`, etc.), compartilhamento inteligente da base local e autenticação por token criptográfico de 128 bits. |
-| 📝 **Editor Monaco** | O mesmo motor do VS Code. IntelliSense, F12, multi-cursor, diff de Git, **Ctrl+K** edita código com IA inline. **Grammars TextMate** (vscode-textmate + oniguruma WASM, offline) + **snippets** ativáveis por pacote. |
-| 🔍 **Explorer + Find in Files** | Árvore VS Code-like, busca por nome **e por conteúdo** (regex, case-sensitive), preview. **Temas de ícone** (Studio, Emoji, Mono). |
+| 📝 **Editor Monaco** | Motor de edição profissional. IntelliSense, F12, multi-cursor, diff de Git, **Ctrl+K** edita código com IA inline. **Grammars TextMate** (vscode-textmate + oniguruma WASM, offline) + **snippets** ativáveis por pacote. |
+| 🔍 **Explorer + Find in Files** | Árvore de arquivos completa, busca por nome **e por conteúdo** (regex, case-sensitive), preview. **Temas de ícone** (Studio, Emoji, Mono). |
 | 💻 **Terminal Integrado** | PTY nativo (node-pty) real. Rode npm, python, git, qualquer coisa — sem sair da IDE. |
 | 🏗️ **Build & Compilador** | Build/run reais com saída ao vivo. Detecta automaticamente o comando do projeto (npm, gradle, tsc, python). |
 | 🐞 **Run & Debug** | Depuração real de **Node.js** (CDP) e **Python** (debugpy/DAP): breakpoints, step, variáveis, call stack. |
@@ -117,8 +119,8 @@ Cada módulo é uma capacidade real, testada e em uso — não maquete.
 | ☁️ **Nuvem Azure Cosmos DB ($0)** | Sincronização soberana de configurações, perfis, temas e estado do workspace com o **Azure Cosmos DB Free Tier** (1.000 RU/s + 25 GB vitalício sem faturamento). REST nativo com assinatura HMAC-SHA256 sem dependências pesadas e higienização estrita de segredos. |
 | 🚀 **Lya Publisher & Azure Ops** | Dashboard integrado para publicar na **Microsoft Store** e distribuir na CDN do **Azure Static Web Apps** sem sair da IDE: build MSIX + upload + Partner Center + controle de custo zero ($0.00 spend guard). **Versão v1.4.1 oficialmente publicada na loja.** 📘 [Guia da esteira](docs/ESTEIRA_AUTONOMA_PUBLISHER_AZURE.md) |
 | 🌍 **Interface em 9 idiomas** | Português, Inglês, Espanhol, Alemão, Francês, Japonês, Coreano, Russo e Chinês nativos via `i18next` em **toda** a IDE — Chat, Orquestração, Editor, Terminal, Loja, Memória, Publisher e Configurações. **2220 chaves i18n em paridade nos 9 idiomas** (PT, EN, ES, DE, FR, JA, KO, RU, ZH), conferidas por auditoria automática a cada build. |
-| 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (Claude Code/Desktop/Cursor conectam e usam missão/SBB/CURE como tools). |
-| ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (Claude Code, opencode, AGY, LyaCode…) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
+| 🔌 **MCP Bidirecional** | A IDE é **cliente MCP** (consome ferramentas de servidores externos) E **servidor MCP** (qualquer cliente MCP compatível conecta e usa missão/SBB/CURE como tools). |
+| ⚡ **Quick-Launch de CLIs** | Suas CLIs de IA (incluindo a LyaCode) viram ícones de 1 clique na TopBar — com o glifo da marca real. |
 | 🗣️ **Voz de mão dupla** | Fale com a IDE e ouça a resposta: **ditado por microfone** (push-to-talk, transcrição por Whisper local ou API) e **leitura em voz alta** com 8 motores de síntese — incluindo uma **opção gratuita que não pede chave nenhuma**. Texto longo é quebrado e remontado sem cortar palavra. |
 | 🧩 **Motores locais em dupla** | O `llama.cpp` acompanha o ciclo de vida do Ollama: **subiu o Ollama, sobe junto; desligou, cai junto** — em segundo plano, sem janela de console e sem tocar na VRAM antes da primeira chamada. A IDE só derruba o servidor que ela mesma subiu: um `llama-server` que você abriu na mão continua sendo seu. |
 | 🗄️ **Banco vetorial sem Python** | O servidor Chroma sobe pelo **binário nativo que já viajava dentro do instalador** (53 MB que antes eram peso morto por um defeito de carregamento do pacote upstream). Quem nunca instalou Python passa a ter memória vetorial funcionando igual — o Python virou opcional, não pré-requisito. |
@@ -139,7 +141,7 @@ Conheça os principais módulos da Lya Studio Coder em operação real:
 
 | 🧠 Memória Core5 768d & CURE | 🧭 Hub de Provedores & Modelos Locais |
 | :---: | :---: |
-| <img src="assets/screenshots/memoria.png" alt="MemoryStudio & CURE" width="400" /><br/>*MemoryStudio com Core5 768d e telemetria de cicatrizes CURE* | <img src="assets/screenshots/provedores.png" alt="Hub de Provedores" width="400" /><br/>*Gerenciamento de Claude, Gemini, GPT, Ollama, Motores Locais e Antigravity (AGY)* |
+| <img src="assets/screenshots/memoria.png" alt="MemoryStudio & CURE" width="400" /><br/>*MemoryStudio com Core5 768d e telemetria de cicatrizes CURE* | <img src="assets/screenshots/provedores.png" alt="Hub de Provedores" width="400" /><br/>*Gerenciamento de Claude, Gemini, GPT, Ollama, Motores Locais e CLIs de agente* |
 
 | 💻 Terminal Integrado PTY | 🛒 Loja de Skills, Temas & Grammars |
 | :---: | :---: |
@@ -187,9 +189,34 @@ O submódulo AMT gerencia o ritmo em tempo real, adaptando a velocidade de envio
 O COSMOS (Maestro) aguardando resposta de uma Star que travou por limite de tokens agora recebe a resposta normalmente — o C5CP opera de forma invisível no slot da Star, sem que o COSMOS perceba qualquer interrupção.
 
 ```
-Sem C5CP:  Star 2 (kimi-k3) trava → COSMOS fica pendurado → timeout → falha de missão
+Sem C5CP:  Star 2 trava → COSMOS fica pendurado → timeout → falha de missão
 Com C5CP:  Star 2 trava → AMT detecta → aguarda 42s → retoma → COSMOS recebe resposta normal
 ```
+
+## 🛠️ v1.5.0 — COSMOS Interactive v3 *(em preparação para a Microsoft Store)*
+
+> **A orquestração que aparece, lembra com critério e nunca se cala.** A 1.5.0 é a maior evolução do COSMOS
+> desde que ele nasceu — tudo construído pela **Studio Code AI**, do motor à interface. Está no teste final da
+> versão instalada antes de seguir para a certificação; a versão publicada até lá é a **1.4.1**.
+
+- 🎛️ **Nova sala de comando (Interactive v3):** Cockpit Mission Control com borda viva, frota e mapa da equipe
+  numa visão só, átomo orbital com o COSMOS no centro e as Stars em órbita, Onboarding v3 e o **NeuroCORE
+  Memory Atlas** — a memória da IDE como mapa navegável.
+- 🚀 **Missão que começa na hora:** o pré-voo parte em menos de 1 segundo e mostra cada estágio na tela. O
+  plano do COSMOS vira distribuição real para as Stars, tarefa simples é resolvida sem convocar a equipe e a
+  missão **retoma de onde parou** mesmo depois de fechar o app.
+- 🧠 **Memória com julgamento:** o COSMOS decide o que merece virar memória — só com prova do trabalho feito,
+  sem repetir o pedido e sem duplicar o que já sabe. Índice do workspace incremental: reindexa só o que mudou.
+- 🛡️ **Degradar sim, calar nunca:** indicador âmbar na barra de status diz qual área está em modo reduzido e
+  por quê. Retry inteligente: nada que já alterou seu projeto é executado duas vezes.
+- 🔎 **Busca de código que não espera o índice:** busca por texto/regex, por padrão de arquivo e listagem de
+  pasta respondem na hora; a busca semântica cai para texto e explica o motivo.
+- ⚡ **Stop de verdade e Ollama ponta a ponta:** interromper a IA para até ferramenta em execução; Ollama local
+  e Ollama Cloud com janela de contexto ajustada a cada requisição.
+
+📋 [Changelog completo da 1.5.0](CHANGELOG.md#150--cosmos-interactive-v3-a-orquestração-que-aparece-lembra-com-critério-e-nunca-se-cala--2026-09)
+
+---
 
 ## 🚀 v1.4.0 — Core5 V2 Nativo (768d), CURE Auto-Mitigação e Chat Sanitizado
 
@@ -405,9 +432,9 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 - **Auto Scar Fix** — prevenção custo-zero no composer: enquanto o Arquiteto digita, o sistema consulta a memória de cicatrizes usando **só embedding local do Core5** (ZERO chamada de modelo). Badge âmbar/vermelho aparece em tempo real com receita conhecida ou aviso de risco — **sem nunca bloquear o envio**.
 - **Roteamento Planner→Executor** — classifica a ferida por custo (receita existente → executor pequeno; erro novo estruturado → médio; anti-receita sem solução → grande/regente). O COSMOS escala automaticamente o motor certo para cada tipo de problema.
 - **MissionTracker com CURE** — painel rosa dedicado na interface: iterações, degrau d1–d4, alvo-verde, executor roteado, cicatriz citada, regente de plantão e pausa soberana — tudo ao vivo.
-- **Motor Antigravity (Google Managed Agents)** — provider selecionável como motor de Star: agente autônomo que roda num sandbox remoto e devolve o resultado pronto. Porta endurecida após revisão adversária: pré-voo honesto, retry desabilitado, timeout + cancelamento propagados.
+- **Agentes gerenciados em sandbox remoto** — provider selecionável como motor de Star: agente autônomo que roda num sandbox remoto e devolve o resultado pronto. Porta endurecida após revisão adversária: pré-voo honesto, retry desabilitado, timeout + cancelamento propagados.
 - **Tools MCP nas missões da equipe** — servidores MCP conectados no MCP Store ficam disponíveis para a equipe em missão (COSMOS + Stars), não só para o chat.
-- **IDE como Servidor MCP** — Claude Code/Desktop/Cursor/Antigravity conectam-se ao LSCoder e consomem missão/SBB/CURE como tools (`lscoder_*`). JSON-RPC 2.0, zero dependência nova.
+- **IDE como Servidor MCP** — qualquer cliente MCP compatível conecta-se ao LSCoder e consomem missão/SBB/CURE como tools (`lscoder_*`). JSON-RPC 2.0, zero dependência nova.
 
 ### 🧩 Extensões VS Code de verdade (v1.3.0)
 
@@ -426,7 +453,8 @@ A arquitetura do COSMOS segue o padrão **Multi-Agent** da Anthropic (+90% vs si
 ### 🔜 Em breve — próximo bloco
 
 - **Mais cobertura de extensões** — ampliar a faixa de extensões JS suportadas pelo Extension Host (linters, language servers) mantendo a transparência do badge honesto.
-- **COSMOS operando com Antigravity CLI (AGY) via MCP** — orquestração de subagentes autônomos, execução de tarefas mecânicas e testes em lote sem custo de tokens da IDE.
+- **Motor de execução unificado** — chat, missão e CLIs de agente com o mesmo cancelamento, o mesmo
+  controle de contexto e a mesma segurança.
 - **Navegação externa de verdade no painel embutido** — hoje o preview local é sólido e sites
   externos são beta (funcionam no app instalado, via webview nativo). O objetivo é abrir qualquer
   dashboard, com sessão e login, sem sair da Lya.
@@ -528,8 +556,8 @@ Uma ordem sua vira quatro frentes de trabalho em paralelo. O COSMOS planeja, dis
 | **🧠 Inteligência COSMOS** — chat com contexto total e liderança de IAs. | **🚀 Lya Publisher** — publique na Microsoft Store direto da IDE. |
 | ![n8n](assets/screenshots/n8n.png?v=2) | ![Skills](assets/screenshots/skills.png?v=2) |
 | **🔗 n8n Live** — automação e pipelines RAG gerenciados pela IDE. | **🛒 Loja de Skills** — importe skills de qualquer repositório Git. |
-| ![Terminal PTY & Antigravity](assets/screenshots/terminal.png?v=2) | |
-| **⚡ Antigravity (`agy`) & PTY** — terminal de alta performance integrado com agentes e CLIs locais. | |
+| ![Terminal PTY](assets/screenshots/terminal.png?v=2) | |
+| **⚡ Terminal PTY** — terminal de alta performance integrado com agentes e CLIs locais. | |
 
 ---
 
@@ -571,7 +599,7 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 | **MCP Bidirecional (cliente + servidor)** | `82%` | 🧪 Pré-lançamento — sem servidor MCP órfão no shutdown |
 | **Painel de navegação embutido** | `80%` | 🧪 Pré-lançamento — 79 asserções cobrindo proxy, painel e ponte; **navegação externa em beta** (modo compatibilidade não executa o JavaScript da página, e diz isso na tela) |
 | Config. Provedores Remotos | `79%` | 🧪 Pré-lançamento — teste SMTP real + erro de rede propagado |
-| **Antigravity (Google Managed Agents)** | `78%` | 🧪 Pré-lançamento |
+| **Agentes gerenciados em sandbox remoto** | `78%` | 🧪 Pré-lançamento |
 | Preview ao Vivo | `78%` | 🧪 Pré-lançamento — detecta `0.0.0.0`/IP LAN + sem dev server órfão |
 | Túnel de Compartilhamento | `74%` | 🧪 Pré-lançamento — túnel encerrado no shutdown (URL não fica pública sem dono) |
 
@@ -580,6 +608,8 @@ antiga, **a nota desceu**: número que só sobe não é medição, é propaganda
 ---
 
 ## ⬇️ Download
+
+> 🛠️ **Chegando: v1.5.0 — COSMOS Interactive v3.** Em teste final antes do envio à Microsoft Store; os arquivos aparecem aqui assim que publicados. [Veja o que muda →](CHANGELOG.md#150--cosmos-interactive-v3-a-orquestração-que-aparece-lembra-com-critério-e-nunca-se-cala--2026-09)
 
 > 🚀 **Versão de Produção Oficial: [v1.4.1 — Sincronização em Nuvem Azure Cosmos DB Free Tier & Suporte Multiplataforma](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)** — traz a nova camada de sincronização de perfis e preferências via Azure Cosmos DB Free Tier ($0 spend) e o instalador oficial `.dmg` e portátil `.tar.gz` para macOS Apple Silicon.
 
@@ -650,7 +680,7 @@ Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.4.1.
 - [x] ✅ Memória embedded Core5 768d (sem Python + ChromaDB) — nomic-embed-text-v1.5 unificado, cascata dimensão-safe, Velocímetro
 - [x] ✅ Ollama Cloud + Local providers — funcionais e em uso diário
 - [x] ✅ Projeto CURE completo — AUTO_FIX, CURE SCAR, Auto Scar Fix, roteamento Planner→Executor, MissionTracker
-- [x] ✅ Motor Antigravity (Google Managed Agents) — porta CLI + API endurecida
+- [x] ✅ Motor de agentes gerenciados em sandbox remoto — porta CLI + API endurecida
 - [x] ✅ MCP Bidirecional — IDE como cliente MCP + IDE como servidor MCP (6 tools `lscoder_*`)
 - [x] ✅ Loja de Linguagens — Grammars TextMate, snippets, icon themes, 8+ temas de cor
 - [x] ✅ Segurança: auth-gate RCE, sandbox default-deny, symlink-escape, chave n8n cifrada
@@ -659,7 +689,7 @@ Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.4.1.
 - [x] ✅ **v1.3.0 na Microsoft Store** — certificada e ao vivo (MSIX assinado pela Microsoft)
 - [x] ✅ **v1.3.1 — Varredura Total** — 20 módulos auditados, 69 defeitos corrigidos, MCP 2025-11-25, contexto local honesto no Ollama e teto de gasto por missão
 - [x] ✅ **v1.3.1 na Microsoft Store** — certificada e ao vivo, **publicada pelo Lya Publisher de dentro da própria IDE**
-- [x] ✅ **Antigravity CLI (AGY) & Provedores de Ponta** — integração de primeira classe com CLI do Google DeepMind, Claude Code, Xiaomi MiMo V2.5 e modelos locais
+- [x] ✅ **CLIs de agente & Provedores de Ponta** — CLIs de IA locais como motor da equipe, Xiaomi MiMo e modelos locais
 - [x] ✅ **v1.3.2 — Rede de segurança do agente** — rollback de edições, trilha de auditoria persistente, reranking de memória medido (hit@1 1/12→11/12) e AgentSkills
 - [x] ✅ **v1.3.2 na Microsoft Store** — certificada e ao vivo (03/08/2026), **publicada pelo Lya Publisher de dentro da própria IDE**
 - [x] ✅ **v1.3.3 — O chat que não estoura** — medidor de contexto ao vivo, turno que sempre termina entregando, checkpoint de consentimento antes de gastar, limite proporcional à janela real de cada modelo, voz de mão dupla, painel de navegação embutido e 26 dependências atualizadas
@@ -670,6 +700,9 @@ Verificar no macOS (Terminal): `shasum -a 256 LyaStudioCoder-macOS-arm64-v1.4.1.
 - [x] ✅ **v1.4.0 — Core5 V2 Nativo (768d)** — motor Rust LanceDB embarcado, telemetria CURE e sanitização
 - [x] ✅ **v1.4.1 — Sincronização em Nuvem Azure Cosmos DB Free Tier & Suporte Multiplataforma** — sincronização de perfis a custo zero ($0 spend), portal Azure CDN e instaladores para macOS Apple Silicon (.dmg e .tar.gz) · **🚀 versão de produção oficial**
 - [x] ✅ **v1.4.1 na Microsoft Store** — **certificada e publicada** (App ID `9NRW0DWTW9Z8`, Status: Published)
+- [x] ✅ **v1.5.0 — COSMOS Interactive v3 (desenvolvimento concluído)** — nova sala de comando, pré-voo em menos de 1 s, distribuição fiel ao plano, retomada de missão, memória com julgamento, degradação visível, busca de código sem índice e Stop de verdade
+- [ ] 🔄 **v1.5.0 na Microsoft Store** — teste final da versão instalada → certificação → publicação
+- [ ] 🔜 **Motor de execução unificado** — cancelamento, contexto e segurança idênticos no chat, na missão e nas CLIs de agente
 - [ ] 🔄 Navegação externa plena no painel embutido (hoje beta, só no app instalado)
 - [ ] 🔄 Mais cobertura de extensões JS (linters, language servers)
 - [ ] 🎨 Identidade visual definitiva da Lya
@@ -714,7 +747,7 @@ A Lya é construída com dedicação — e com muito token de IA. Se ela te ajud
 
 ➡️ **Pronto para consolidar seu fluxo de IA?**
 
-[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.4.0-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
+[![BAIXE A VERSÃO MAIS RECENTE](https://img.shields.io/badge/⬇️_BAIXE_A_VERSÃO_MAIS_RECENTE-Windows_x64_·_v1.4.1-7c3aed?style=for-the-badge&logoColor=white)](https://github.com/StudioCodeAI/Lya-Studio-Coder/releases/latest)
 
 *Um cockpit. Todas as suas IAs. Sua máquina. Seu controle.*
 

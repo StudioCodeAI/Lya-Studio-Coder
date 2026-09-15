@@ -26,8 +26,35 @@ on:
     types: [released]
   workflow_dispatch: # mantido para testes manuais pontuais
 
+#
+# Sessão 55 (2026-09-13): na v1.4.1 o job falhou com `--urls` vazio — a release só tinha
+# o .msix e o regex pede .msi. O `precheck` roda ANTES do gate e só deixa o job de
+# publicação existir quando há instalador casando o regex; e os dois só rodam na vitrine
+# (no repo privado os assets não são URL pública e o WINGET_TOKEN não existe).
+
 jobs:
+  precheck:
+    if: github.repository == 'StudioCodeAI/Lya-Studio-Coder'
+    runs-on: ubuntu-latest
+    outputs:
+      ready: ${{ steps.assets.outputs.ready }}
+    steps:
+      - id: assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          if [ -z "$TAG" ]; then echo "ready=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' | grep -q '\.msi$'; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Release $TAG sem .msi — nada para o winget ainda (o .msix sai primeiro)."
+          fi
+
   publish:
+    needs: precheck
+    if: needs.precheck.outputs.ready == 'true'
     runs-on: windows-latest
     environment: winget-release-gate
     steps:

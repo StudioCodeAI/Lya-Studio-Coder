@@ -17,9 +17,29 @@ A sala central da Lya. Conversa com vários modelos sem trocar de janela.
 - Dois temas: **COSMOS** (neon) e **OPUS** (clay) — você escolhe.
 - Atalhos de envio configuráveis (Enter / Ctrl+Enter).
 
+## 🎙️ Voz de mão dupla (STT + TTS) — `90%` 🟢
+
+Fale com a IA e deixe a IA falar com você — dois recursos independentes, cada um com
+opção 100% grátis, sem exigir chave de API pra funcionar no dia a dia.
+
+- **Modo Voz (ditado contínuo):** botão **VOZ** liga o microfone via Web Speech API do
+  navegador (Chrome/Edge) — grátis, sem instalar nada. Fala vira texto em tempo real no
+  campo de mensagem, com indicador **OUVINDO** ao vivo, reinício automático em silêncios
+  longos e auto-envio configurável por tempo de silêncio.
+- **Text-to-Speech, duas opções lado a lado:** grátis (voz do navegador ou **MiMo V2.5
+  TTS** — vozes premium sem custo) ou provedor pago de alta fidelidade (**OpenAI TTS**,
+  **ElevenLabs**).
+- **Auto-TTS:** interruptor no menu de modos do COSMOS liga a leitura automática de toda
+  resposta do agente.
+- **MiMo Voice Design:** cria uma voz nova só descrevendo as características em texto
+  (ex.: "voz feminina jovem, tom alegre e acolhedor") — sem gravar amostra nenhuma.
+- **Clonagem de voz:** envie uma amostra de áudio (ElevenLabs ou MiMo Voice Clone, grátis)
+  e a IA passa a responder com aquela voz. Controles finos por provedor: velocidade,
+  estabilidade e similaridade.
+
 ## 📝 Editor de Código (Monaco) — `90%` 🟢
 
-O mesmo motor do VS Code, integrado.
+Motor de edição profissional, integrado.
 
 - IntelliSense, **F12 / Go to Definition**, find references, multi-cursor (Ctrl+D).
 - Minimap, realce de **diff do Git** na régua.

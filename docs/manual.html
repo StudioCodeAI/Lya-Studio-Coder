@@ -73,7 +73,7 @@
             <h5>Ligar a inteligência</h5>
             <a href="#chaves">7. Chaveiro de chaves</a>
             <a href="#provedores">8. Configurar um provedor</a>
-            <a href="#motores-locais">9. Motores locais e Antigravity (AGY)</a>
+            <a href="#motores-locais">9. Motores locais e CLIs de agente</a>
             <a href="#clis">10. CLIs de agente</a>
 
             <h5>A equipe</h5>
@@ -411,7 +411,7 @@
 
             <!-- 9 -->
             <section id="motores-locais">
-                <h2><span class="num">09</span>Motores locais e Antigravity (AGY)</h2>
+                <h2><span class="num">09</span>Motores locais e CLIs de agente</h2>
                 <p class="manual-lead">Custo zero, offline e sem nenhum dado saindo da máquina.</p>
 
                 <h3>Ollama &amp; Modelos MoE Locais</h3>
@@ -426,16 +426,16 @@
                     por modelo. A IDE avisa quando o pedido não cabe na janela, em vez de cortar em silêncio.
                 </p>
 
-                <h3>Antigravity CLI (<code>agy</code>) — Orquestração Local &amp; Subagentes</h3>
+                <h3>CLIs de agente — orquestração local &amp; subagentes</h3>
                 <p>
-                    O ecossistema <strong>Antigravity</strong> da Google DeepMind é suportado nativamente na Lya.
-                    Através da porta CLI local e do terminal PTY, você pode delegar execuções em lote,
-                    tarefas secundárias de engenharia e subagentes com modelos Gemini de altíssima velocidade.
+                    Qualquer CLI de IA instalada na sua máquina pode trabalhar sob o comando do COSMOS.
+                    Pela porta CLI local e pelo terminal PTY, você delega execuções em lote,
+                    tarefas secundárias de engenharia e subagentes — e o COSMOS segue dono da revisão e da entrega.
                 </p>
                 <ol class="steps">
                     <li>Disponível diretamente pelo terminal PTY integrado (atalho <code>Ctrl+`</code>).</li>
-                    <li>Execute comandos do Antigravity CLI com feedback ao vivo no terminal ou via rotas MCP bidirecionais.</li>
-                    <li>Integração total com o orquestrador COSMOS da Lya para tarefas autônomas em segundo plano.</li>
+                    <li>Execute a CLI com feedback ao vivo no terminal ou via rotas MCP bidirecionais.</li>
+                    <li>Integração total com o orquestrador COSMOS para tarefas autônomas em segundo plano (ver <a class="link" href="#clis">§10</a>).</li>
                 </ol>
 
                 <div class="note">
@@ -469,9 +469,8 @@
                     <li><strong>Autentique</strong> a CLI uma vez no terminal integrado (cada uma tem seu próprio login).</li>
                 </ol>
                 <p>
-                    <strong>Claude Code</strong> (Anthropic) e <strong>AGY / Antigravity</strong> (o oficial do Google)
-                    têm instalação assistida aqui. A Gemini CLI foi descontinuada em 18/06/2026 — se você
-                    usa um fork da comunidade, aponte o executável manualmente.
+                    As CLIs de agente mais usadas têm instalação assistida aqui. Se a sua não aparece na lista,
+                    aponte o executável manualmente (próxima seção).
                 </p>
 
                 <h3>Ligar o opencode ou qualquer CLI própria</h3>
@@ -945,7 +944,7 @@
                             <tr><td><strong>Temas</strong></td><td>Skin visual e cor de destaque da interface</td></tr>
                             <tr><td><strong>Provedores</strong></td><td>Motores de IA, chaveiro e teste de conexão (<a class="link" href="#provedores">§8</a>)</td></tr>
                             <tr><td><strong>Contas</strong></td><td>Carteira de credenciais de serviços, com teste real</td></tr>
-                            <tr><td><strong>Infraestrutura</strong></td><td>Capacidades instaláveis, Antigravity (AGY), CLIs de agente, túnel (<a class="link" href="#motores-locais">§9</a>, <a class="link" href="#clis">§10</a>)</td></tr>
+                            <tr><td><strong>Infraestrutura</strong></td><td>Capacidades instaláveis, CLIs de agente, túnel (<a class="link" href="#motores-locais">§9</a>, <a class="link" href="#clis">§10</a>)</td></tr>
                             <tr><td><strong>Servidores MCP</strong></td><td>Conectar ferramentas externas à IA (<a class="link" href="#mcp">§18</a>)</td></tr>
                             <tr><td><strong>Chat</strong></td><td>Tecla de envio, fonte do chat, comportamento de anexos</td></tr>
                             <tr><td><strong>Notas de versão</strong></td><td>O que mudou, e <strong>Verificar atualização</strong></td></tr>

@@ -6,6 +6,61 @@ e o versionamento é [SemVer](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.5.0] — COSMOS Interactive v3: a orquestração que aparece, lembra com critério e nunca se cala · 2026-09
+
+> 🛠️ **Em preparação para a Microsoft Store.** A 1.5.0 passa pelo teste final na versão instalada antes do
+> envio à certificação. Até lá, a versão publicada segue sendo a [1.4.1](#141--sincronização-em-nuvem-azure-cosmos-db-free-tier--suporte-multiplataforma--2026-09-06).
+
+A maior evolução do COSMOS desde que ele nasceu. A sala de comando ganhou cara nova, a missão começa na hora e
+mostra o que está fazendo, a equipe trabalha em cima do plano de verdade e a memória passou a guardar só o que
+merece ser lembrado. Tudo construído pela Studio Code AI, do motor à interface.
+
+### 🎛️ COSMOS Interactive v3 — a nova sala de comando
+- **Cockpit Mission Control v3:** borda viva que pulsa com a missão, frota de agentes e mapa da equipe numa
+  visão só, seletor de especialidades e pulso de memória em tempo real.
+- **Átomo orbital:** o COSMOS no centro e as Stars em órbita — cada uma mostra seu estado ao vivo.
+- **Onboarding v3:** escolha do motor, da pele visual e resumo do ambiente logo na primeira abertura.
+- **NeuroCORE Memory Atlas v3:** a memória da IDE vira um mapa navegável dentro do MemoryStudio.
+- **Ctrl+K com seletor de motor** no editor e **paleta de comandos v3**.
+
+### 🚀 Missão que começa na hora e mostra o caminho
+- **Pré-voo visível e instantâneo:** a missão parte em menos de 1 segundo, com cada estágio na tela — acabou o
+  silêncio antes da primeira resposta.
+- **O plano vira distribuição real:** o que o COSMOS planeja é exatamente o que cada Star recebe.
+- **Caminho solo inteligente:** tarefa simples é resolvida pelo próprio COSMOS, sem convocar a equipe à toa.
+- **Retomada após fechar o app:** a missão continua de onde parou, sem duplicar memória.
+- **Entrega consolidada fiel:** o resultado final traz o trabalho produzido pela equipe, não um resumo dele.
+
+### 🧠 Memória com julgamento
+- **O COSMOS decide o que vira memória** — e só aceita com prova do trabalho feito.
+- **Nada de eco:** repetir o pedido do usuário ou algo que a memória já sabe não é gravado.
+- **Memória durável separada dos episódios:** o contexto de cada nova missão chega limpo e relevante.
+- **Índice incremental:** o workspace reindexa só o que mudou, com cascata automática de motores de embedding.
+
+### 🛡️ Degradar sim, calar nunca
+- **Indicador âmbar na barra de status:** quando uma área funciona em modo reduzido (motor sem cota, pasta sem
+  permissão, modelo de embedding indisponível), a IDE mostra qual é e por quê — em 9 idiomas.
+- **Retry inteligente:** falha passageira de rede é refeita; cota esgotada, credencial inválida e pedido
+  recusado não são repetidos à toa — e uma ação que já mudou algo no seu projeto **nunca** é executada duas vezes.
+- **Modo de operação protegido:** se a configuração do modo não puder ser lida, a IDE entra no modo mais
+  restritivo, nunca no mais permissivo.
+
+### 🔎 Busca de código que não espera o índice
+- **Três ferramentas novas para o agente:** busca por texto e regex, busca por padrão de arquivo e listagem de
+  pasta — respondem na hora, mesmo com o índice semântico ainda sendo construído.
+- **Busca semântica com rede de segurança:** se o índice não estiver pronto, cai para busca textual e diz o motivo.
+
+### ⚡ Camada unificada de provedores
+- **Stop de verdade:** interromper a IA para até uma ferramenta que está no meio da execução.
+- **Ollama local e Ollama Cloud ponta a ponta:** janela de contexto ajustada a cada requisição e recall de
+  memória que não trava o chat.
+
+### ✅ Qualidade
+- Acessibilidade revisada no Mission Control · análise estática sem nenhum aviso · dependências sem
+  vulnerabilidade alta · conexões estáveis em sessões longas · 88 testes de ponta a ponta verdes a cada envio.
+
+---
+
 ## [1.4.1] — Sincronização em Nuvem Azure Cosmos DB Free Tier & Suporte Multiplataforma · 2026-09-06
 
 > 🚀 **Release de Produção Oficial.** Certificada e publicada na Microsoft Store (App ID `9NRW0DWTW9Z8`), no portal oficial Azure Static Web Apps CDN e no catálogo oficial.

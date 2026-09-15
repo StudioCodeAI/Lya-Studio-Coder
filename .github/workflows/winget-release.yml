@@ -1,4 +1,15 @@
-name: Release to GitHub and Winget
+# Pré-scan VirusTotal dos instaladores de uma release.
+#
+# Achado de 2026-09-13 (sessão 55), ao investigar o vermelho da tag v1.4.1:
+#   1. Este arquivo mora no repo privado e é copiado para a vitrine pelo publish-vitrine.
+#      Rodava nos DOIS repos; no privado não há o que publicar (assets privados não servem
+#      de URL para o winget).
+#   2. A release v1.4.1 saiu só com o .msix (ordem oficial: .msix primeiro). O download
+#      de `*.exe` falhava e o job ficava vermelho — falso vermelho, a ordem estava certa.
+#   3. Havia aqui um segundo job que submetia ao winget SEM o environment
+#      `winget-release-gate` — foi o que abriu o PR #430120 (v1.4.0) sem aprovação. A
+#      submissão ao winget agora existe só em winget-publish.yml, atrás do gate.
+name: Pre-scan VirusTotal do release
 
 on:
   release:
@@ -7,27 +18,41 @@ on:
 jobs:
   security-prescan:
     name: VirusTotal Pre-scan
+    if: github.repository == 'StudioCodeAI/Lya-Studio-Coder'
     runs-on: windows-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Instalador .exe presente na release?
+        id: assets
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $names = gh release view '${{ github.event.release.tag_name }}' -R '${{ github.repository }}' --json assets --jq '.assets[].name'
+          if ($names -match '\.exe$') {
+            "exe=true" >> $env:GITHUB_OUTPUT
+          } else {
+            "exe=false" >> $env:GITHUB_OUTPUT
+            Write-Output "::notice::Release sem .exe (esperado quando o .msix sai primeiro). Pré-scan pulado."
+          }
+
       - name: Download release assets
+        if: steps.assets.outputs.exe == 'true'
         uses: robinraju/release-downloader@28fc21f50d76778e7023361aa1f863e717d3d56f # v1
         with:
           repository: ${{ github.repository }}
           tag: ${{ github.event.release.tag_name }}
           fileName: "*.exe"
-          # Ajuste para .msix se necessário
 
       - name: Run VirusTotal API Check
         # Só roda o pré-scan se o secret existir; sem ele o passo é pulado
         # (não bloqueia o release) em vez de quebrar o job inteiro.
         env:
           VT_API_KEY: ${{ secrets.VIRUSTOTAL_API_KEY }}
-        if: ${{ env.VT_API_KEY != '' }}
+        if: ${{ steps.assets.outputs.exe == 'true' && env.VT_API_KEY != '' }}
         run: |
-          # Encontra o instalador baixado
           $installer = Get-ChildItem -Filter "*.exe" | Select-Object -First 1
           if (-not $installer) {
             Write-Error "Nenhum instalador encontrado no release para análise."
@@ -36,15 +61,3 @@ jobs:
 
           Write-Host "Executando pré-scan de $($installer.Name) via VirusTotal..."
           .\scripts\virustotal-prescan.ps1 -FilePath $installer.FullName -ApiKey $env:VT_API_KEY
-
-  publish-winget:
-    name: Publish to Winget Packages
-    needs: security-prescan
-    runs-on: windows-latest
-    steps:
-      - name: Submit to Winget Releaser
-        uses: vedantmgoyal9/winget-releaser@4ffc7888bffd451b357355dc214d43bb9f23917e # v2
-        with:
-          identifier: StudioCodeAI.LyaStudioCoder
-          installers-regex: '\.exe$' # Ajuste se for msix
-          token: ${{ secrets.WINGET_TOKEN }}
